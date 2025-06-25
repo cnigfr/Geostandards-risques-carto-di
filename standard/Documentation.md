@@ -32,9 +32,9 @@ Etape 1 :
 python fig.py Document.md && pandoc -s -f gfm -t docx --toc --toc-depth=3 -o Document.docx --reference-doc=ModeleV4-commun.docx Document.md
 ````
 Etape 2 :
-````
+
 Fichier Document.docx-> Exporter -> Options -> Cocher créer des signets à l'aide de "Titres" -> Publier
-````
+
 Etape 3 :
 ````
 pdflatex -interaction=nonstopmode -halt-on-error page_de_garde.tex && rm -f page_de_garde.{aux,log,out}
