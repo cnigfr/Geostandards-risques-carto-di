@@ -27,7 +27,7 @@ Dans l'onglet package : Install missing packages on-the-fly en utilisant le prox
 
 # Etapes nécessaires pour conversion (dans GitBash ou équivalent) :
 
-
+````
 1) python fig.py Document.md && pandoc -s -f gfm -t docx --toc --toc-depth=3 -o Document.docx --reference-doc=ModeleV4-commun.docx Document.md
 
 2) Fichier Document.docx-> Exporter -> Options -> Cocher créer des signets à l'aide de "Titres" -> Publier
@@ -35,7 +35,7 @@ Dans l'onglet package : Install missing packages on-the-fly en utilisant le prox
 3) pdflatex -interaction=nonstopmode -halt-on-error page_de_garde.tex && rm -f page_de_garde.{aux,log,out}
 
 4) pdfunite page_de_garde.pdf Document.pdf document_final.pdf
-
+````
  
 _"python fig.py Document.md" permet de générer à l'endroit et à la place de la balise une numérotation automatique de la figure du tye "Figure X"._
 
