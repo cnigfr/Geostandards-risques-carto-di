@@ -29,7 +29,7 @@ Dans l'onglet package : Install missing packages on-the-fly en utilisant le prox
 
 Etape 1 :
 ````
-python fig.py Document.md && pandoc -s -f gfm -t docx --toc --toc-depth=3 -o Document.docx --reference-doc=ModeleV4-commun.docx Document.md
+python fig.py Document.md && pandoc -s -f gfm -t docx --toc --toc-depth=3 -o Document.docx --reference-doc=./modele/ModeleV4-commun.docx Document.md
 ````
 Etape 2 :
 
