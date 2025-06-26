@@ -15,13 +15,16 @@ Dans l'onglet package : Install missing packages on-the-fly en utilisant le prox
 
 
 # Documents nécessaires :
-    
-- fig.py
-- Document.md
-- Documentation.md
+
+Dossier modele : 
 - ModeleV4-commun.docx
-- Dossier avec les ressources
-- page_de_garde.tex (accompagné de config.tex & contenu.tex)
+- fig.py
+
+Dossier avec les ressources
+    
+- Document.md
+- page_de_garde.tex
+- Documentation.md
 
 
 
@@ -104,17 +107,14 @@ Le modèle définit des styles pour les différents niveaux de titres (Titre 1, 
 Les tableaux dans le document converti adoptent le style défini dans le modèle Word, notamment en termes de bordures, espacements, alignements et couleurs. Pour ajuster la présentation des tableaux : sélectionnez un tableau (ou insertion>Tableau) dans le Word -> cliquez sur l'onglet Conception de la table -> repérez la séction Styles de tableau -> cliquez sur la petite flèche en bas pour ouvrir le panneau des styles -> Allez sur Modifier le style de tableau ... -> Modifiez le style du tableau à votre convenance -> Cliquez sur ok.
 
 
-## Comment adapter la page de garde de son document en utilisant page_de_garde.tex/config.tex/contenu.tex ?
+## Comment adapter la page de garde de son document en utilisant page_de_garde.tex ?
 
-### page_de_garde.tex :
-C'est le fichier principal qui structure le document LaTeX. Il inclut la configuration et le contenu de la page de garde via les fichiers config.tex et contenu.tex.
+C'est le fichier LaTeX qui inclut la configuration et le contenu de la page de garde.
 
-### config.tex :
 Ce fichier contient les packages et paramètres LaTeX qui définissent la mise en forme générale de la page de garde :
 -  \usepackage{geometry} avec margin=2.5cm définit les marges
 
-### contenu.tex :
-Ce fichier contient le contenu concret de la page de garde.
+Il contient également le contenu avec les différents titres, sous-titres, logos etc.
 Pour personnaliser la page de garde :
 - il suffit de modifier les textes et d'adapter la taille de leur police (Huge, Large ...). 
 - Remplacez les chemins des images par les vôtres. 
