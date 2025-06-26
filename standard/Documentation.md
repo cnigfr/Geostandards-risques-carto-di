@@ -33,7 +33,7 @@ python ./modele/fig.py Document.md && pandoc -s -f gfm -t docx --toc --toc-depth
 ````
 Etape 2 :
 
-Fichier Document.docx-> Exporter -> Options -> Cocher créer des signets à l'aide de "Titres" -> Publier
+Fichier Document.docx-> Exporter -> Créer PDF -> Options -> Cocher créer des signets à l'aide de "Titres" -> Publier
 
 Etape 3 :
 ````
