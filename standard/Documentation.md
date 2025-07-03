@@ -1,10 +1,14 @@
 # Documentation de la conversion Markdown vers Word et PDF
 
+
 ## Introduction :
 
 Cette documentation décrit le processus complet permettant de convertir un document rédigé au format Markdown en un document finalisé au format Word ou PDF. Elle explique également comment intégrer une page de garde au document final et assurer une mise en page normalisée.
 
-L'objectif est de formaliser ce processus afin de le rendre facilement reproductible. La suite de ce document détaille pas à pas chaque étape, les prérequis à installer et les commandes à utiliser.
+L'objectif est de formaliser ce processus afin de le rendre facilement reproductible. 
+
+Le processus consiste d'abord à préparer l'environnement avec les outils requis puis de structurer les fichiers sources avant de convertir le Markdown en Word en appliquant un modèle de mise en forme. La suite consiste à exporter le document Word en PDF, à compiler la page de garde LaTeX et enfin de fusionner le tout pour obtenir le document final. La suite de ce document détaille pas à pas ces étapes, les prérequis à installer et les commandes à utiliser.
+
 
 ## Sommaire :
 
@@ -13,6 +17,7 @@ L'objectif est de formaliser ce processus afin de le rendre facilement reproduct
 3) Etapes nécessaires pour conversion (dans GitBash ou équivalent) :
 4) Utilisation et Adaptation :
 
+
 ## Installations préalables :
 
 -> Installez l'outil Pandoc (https://pandoc.org/installing.html)
@@ -20,9 +25,9 @@ L'objectif est de formaliser ce processus afin de le rendre facilement reproduct
 -> Installez l'outil Visual Studio Code (https://code.visualstudio.com/)
 
 -> Installez Python (ex version : 3.13.3) (https://www.python.org/downloads/),
-pip install chardet --proxy=http://proxy.ign.fr:3128
 
--> Installez MiKTeX (https://miktex.org/download) en choisissant : “Install for: Only for me (user mode)” , 
+-> Installez MiKTeX (https://miktex.org/download), utile pour gérer la compilation LaTeX de la page de garde. 
+en choisissant : “Install for: Only for me (user mode)” , 
 Ouvrir MiKTeX Console, 
 Dans l'onglet package : Install missing packages on-the-fly en utilisant le proxy
 
