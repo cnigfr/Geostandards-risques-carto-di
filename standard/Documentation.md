@@ -1,4 +1,19 @@
-# Installations préalables :
+# Documentation de la conversion Markdown vers Word et PDF
+
+## Introduction :
+
+Cette documentation décrit le processus complet permettant de convertir un document rédigé au format Markdown en un document finalisé au format Word ou PDF. Elle explique également comment intégrer une page de garde au document final et assurer une mise en page normalisée.
+
+L'objectif est de formaliser ce processus afin de le rendre facilement reproductible. La suite de ce document détaille pas à pas chaque étape, les prérequis à installer et les commandes à utiliser.
+
+## Sommaire :
+
+1) Installations préalables
+2) Documents nécessaires
+3) Etapes nécessaires pour conversion (dans GitBash ou équivalent) :
+4) Utilisation et Adaptation :
+
+## Installations préalables :
 
 -> Installez l'outil Pandoc (https://pandoc.org/installing.html)
 
@@ -14,7 +29,7 @@ Dans l'onglet package : Install missing packages on-the-fly en utilisant le prox
 
 
 
-# Documents nécessaires :
+## Documents nécessaires :
 
 Dossier modele : 
 - ModeleV4-commun.docx
@@ -28,7 +43,7 @@ Dossier avec les ressources
 
 
 
-# Etapes nécessaires pour conversion (dans GitBash ou équivalent) :
+## Etapes nécessaires pour conversion (dans GitBash ou équivalent) :
 
 Etape 1 :
 ````
@@ -61,8 +76,8 @@ _"pdfunite page_de_garde.pdf rapport.pdf document_final.pdf" permet de fusionner
 
 
 
-# Utilisation et Adaptation :
-## Comment utiliser le modèle : "Document.md" ?
+## Utilisation et Adaptation :
+### Comment utiliser le modèle : "Document.md" ?
 
 -> Ce modèle de standard est une ossature sur laquelle vous pourrez vous appuyer pour écrire votre standard conformément aux normes d'écritures en vigueur et aux bonnes pratiques du CNIG
 
@@ -83,31 +98,31 @@ _"pdfunite page_de_garde.pdf rapport.pdf document_final.pdf" permet de fusionner
 -> Pour souligner un mot : <u>mot</u>
 
 
-## Comment numéroter automatiquement les figures en utilisant la balise [FIG] ?
+### Comment numéroter automatiquement les figures en utilisant la balise [FIG] ?
 
 La balise [FIG] et la ligne de commande : "python fig.py Document.md" permet de générer à l'endroit et à la place de la balise une numérotation automatique de la figure du tye "Figure X". Pour ce faire, il suffit simplement de placer la balise [FIG] une ou plusieurs fois à ou aux endroits, où vous souhaiteriez indiquer la numérotation d'une figure dans le **Document.md**. Ainsi, une fois la ligne de commande "python fig.py Document.md" lancée, elle remplacera automatiquement la balise par la bonne numérotation.
 
 
-## Comment générer une table des matières en utilisant toc ?
+### Comment générer une table des matières en utilisant toc ?
 
 La ligne de commande "--toc --toc-depth=3" permet de générer automatiquement au début du document un sommaire qui reprend les titres et sous-titres du même document. "depth=3" indiqe le niveau maximal de titres à inclure, dans cet exemple il est préréglé à 3.
 
 
-## Comment adapter sa mise en page en utilisant le ModeleV4-commun.docx ?
+### Comment adapter sa mise en page en utilisant le ModeleV4-commun.docx ?
 
 Le "ModeleV4-commun.docx" est un fichier Word, utile pour la mise en page du Document.md lors de sa conversion en fichier Word puis en fichier pdf.
 
-### En-têtes :
+#### En-têtes :
 Le modèle contient des styles prédéfinis pour les en-têtes et pieds de page. Lors de la conversion, Pandoc applique automatiquement ces styles, ce qui garantit une uniformité sur toutes les pages. Pour personnaliser les en-têtes, modifiez-les directement. Vous pouvez y insérer des numéros de pages ou toute autre information répétée.
 
-### Style titres et texte :
+#### Style titres et texte :
 Le modèle définit des styles pour les différents niveaux de titres (Titre 1, Titre 2, Titre 3, etc.) ainsi que pour le corps du texte (Normal). Pour que la conversion applique correctement les styles, veillez à utiliser ces styles dans votre Markdown via la hiérarchie des titres (#,##,###), que Pandoc associera aux styles correspondants dans Word. Il est aussi possible de personnaliser la police, la taille, l'interligne et les couleurs en modifiant le modèle.
 
-### Mise en page des tableaux :
+#### Mise en page des tableaux :
 Les tableaux dans le document converti adoptent le style défini dans le modèle Word, notamment en termes de bordures, espacements, alignements et couleurs. Pour ajuster la présentation des tableaux : sélectionnez un tableau (ou insertion>Tableau) dans le Word -> cliquez sur l'onglet Conception de la table -> repérez la séction Styles de tableau -> cliquez sur la petite flèche en bas pour ouvrir le panneau des styles -> Allez sur Modifier le style de tableau ... -> Modifiez le style du tableau à votre convenance -> Cliquez sur ok.
 
 
-## Comment adapter la page de garde de son document en utilisant page_de_garde.tex ?
+### Comment adapter la page de garde de son document en utilisant page_de_garde.tex ?
 
 C'est le fichier LaTeX qui inclut la configuration et le contenu de la page de garde.
 
