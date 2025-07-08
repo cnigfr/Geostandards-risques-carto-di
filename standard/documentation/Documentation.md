@@ -211,7 +211,7 @@ Nous pouvons également convertir directement le fichier Markdown en PDF. Cette 
 
 Cependant, la mise en page ne sera pas personnalisée puisque cette méthode ne dispose pas d'un document Word pour choisir le style. Ainsi, cette méthode est pour l’instant à utiliser avec précaution et mérite d’être développée davantage par la suite.
 
-**Etape 1 (optionnelle si on utilise à l'étape 2 : --filter pandoc-crossref): Génération automatique des numéros des figures et des tables [(voir ci-dessus)](#etape1).**
+**Etape 1 (optionnelle si on utilise à l'étape 2 : --filter pandoc-crossref): Génération automatique des numéros des figures et des tables** [(voir ci-dessus)](#etape1).
 
 **Etape 2 : Conversion du Markdown en un document .pdf**
 
