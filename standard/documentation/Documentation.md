@@ -70,40 +70,40 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 `Document.md`
 
-→ c’est le document principal rédigé en Markdown qu'on convertira avec Pandoc.
+-> c’est le document principal rédigé en Markdown qu'on convertira avec Pandoc.
 
-→ il contient le texte structuré, les titres, les images, etc.
+-> il contient le texte structuré, les titres, les images, etc.
 
 `page_de_garde.tex`
 
-→ c’est le fichier LaTeX de la page de garde
+ -> c’est le fichier LaTeX de la page de garde
 
-→ il définit la présentation de la couverture (titres, logos, date, etc.)
+-> il définit la présentation de la couverture (titres, logos, date, etc.)
 
-→ il est compilé avec pdflatex pour produire la page de garde en PDF.
+-> il est compilé avec pdflatex pour produire la page de garde en PDF.
 
 `Dossier modele :` 
 - Modele-styles.docx
 
-→ c’est un modèle Word qui contient la mise en forme standardisée (styles de titres, pieds de page, en-têtes, etc.)
+-> c’est un modèle Word qui contient la mise en forme standardisée (styles de titres, pieds de page, en-têtes, etc.)
 
-→ Pandoc l’utilise comme référence pour appliquer la bonne mise en page quand il convertit ton Markdown en Word.
+-> Pandoc l’utilise comme référence pour appliquer la bonne mise en page quand il convertit ton Markdown en Word.
 
 - fig.py
 
-→ c’est un script Python
+-> c’est un script Python
 
-→ il remplace dans le Markdown les balises [FIG] par une numérotation automatique des figures (par exemple “Figure: 1”, “Figure: 2”…).
+-> il remplace dans le Markdown les balises [FIG] par une numérotation automatique des figures (par exemple “Figure: 1”, “Figure: 2”…).
 
-→ cela permet d'éviter de numéroter les figures à la main.
+-> cela permet d'éviter de numéroter les figures à la main.
 
 - tab.py
 
-→ c’est un script Python
+-> c’est un script Python
 
-→ il remplace dans le Markdown les balises [TAB] par une numérotation automatique des figures (par exemple “Table: 1”, “Table: 2”…).
+-> il remplace dans le Markdown les balises [TAB] par une numérotation automatique des figures (par exemple “Table: 1”, “Table: 2”…).
 
-→ cela permet d'éviter de numéroter les tableaux à la main.
+-> cela permet d'éviter de numéroter les tableaux à la main.
 
 `Dossier ressources :`
 
@@ -114,9 +114,9 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 - Documentation.md
 
-→ c’est la documentation d’explication
+-> c’est la documentation d’explication
 
-→ elle sert de guide technique, pour expliquer comment utiliser tous ces fichiers et reproduire le processus de conversion.
+-> elle sert de guide technique, pour expliquer comment utiliser tous ces fichiers et reproduire le processus de conversion.
 
 - Dossier ressources_documentation
 
