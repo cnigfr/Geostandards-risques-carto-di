@@ -35,7 +35,7 @@ Le processus consiste d'abord à préparer l'environnement avec les outils requi
 
 
 
-## Installations préalables : (#installations-prealables)
+## Installations préalables : 
 
 -> Installez l'outil Pandoc (https://pandoc.org/installing.html).
 
@@ -66,7 +66,7 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 
 
-## Ressources dans standard : (#ressources-dans-standard)
+## Ressources dans standard : 
 
 `Document.md`
 
@@ -122,9 +122,9 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 
 
-## Conversion d'un document Markdown en PDF (#conversion-dun-document-markdown-en-pdf)
+## Conversion d'un document Markdown en PDF 
 
-### Méthode 1 : Conversion en passant par Word (#conversion-en-passant-par-word)
+### Méthode 1 : Conversion en passant par Word 
 
 Nous allons maintenant aborder les différentes étapes pour convertir un document Markdown en un document PDf. Ces étapes doivent être réalisé dans un terminal de commande (de préférence GitBash).
 
@@ -205,7 +205,7 @@ pdfunite page_de_garde.pdf Document.pdf document_final.pdf
 - "pdfunite page_de_garde.pdf rapport.pdf document_final.pdf" permet de fusionner le fichier latex de la page de garde avec le document principal.
 
 
-### Méthode 2 : Conversion directe vers PDF (#conversion-directe-vers-pdf)
+### Méthode 2 : Conversion directe vers PDF 
 
 Nous pouvons également convertir directement le fichier Markdown en PDF. Cette méthode présente l’avantage d’être plus concise et de comporter moins d’étapes intermédiaires que la précédente. 
 
@@ -234,7 +234,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 [(voir ci-dessus)](#etape6).
 
 
-### Comparaison des deux méthodes : (#comparaison-des-deux-methodes)
+### Comparaison des deux méthodes : 
 
 **Méthode 1 :**
 
@@ -246,7 +246,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 
 
 ## Utilisation : (#utilisation)
-### Comment utiliser le modèle : "Document.md" ? (#comment-utiliser-le-modele)
+### Comment utiliser le modèle : "Document.md" ? 
 
 -> Ce modèle de standard est une ossature sur laquelle vous pourrez vous appuyer pour écrire votre standard conformément aux normes d'écritures en vigueur et aux bonnes pratiques du CNIG
 
@@ -254,7 +254,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 
 -> Les aides et explications sont `surlignés` et entourés des symboles <>. Ls exemples sont seulement `surlignés` (si vous choisissez de reprendre le texte de l'exemple, retirez le surlignage).
 
-### Comment utiliser le modèle : "page_de_garde.tex" ? (#comment-utiliser-le-modele-page_de_gardetex)
+### Comment utiliser le modèle : "page_de_garde.tex" ? 
 
 -> Si vous avez plusieurs sponsors, ils pourront être indiqués en partie 1.2,
 
@@ -262,7 +262,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 
 -> Le logo du sponsor doit être de la même hauteur que le logo du CNIG.
 
-### Les bases du langage Markdown : (#les-bases-du-langage-markdown)
+### Les bases du langage Markdown : 
 
 <img src=".\ressources_documentation\BasesMarkdown.PNG" alt="texte alternatif" width="400" />
 
@@ -277,9 +277,9 @@ Utilisez < br > pour aller à la ligne suivante (sans sauter de ligne) si vous �
 
 ## Adaptation :
 
-### Comment numéroter automatiquement les figures et les tableaux ? (#comment-numeroter-automatiquement-les-figures-et-les-tableaux)
+### Comment numéroter automatiquement les figures et les tableaux ? 
 
-### Comment générer automatiquement une liste de figures ou de tableaux ? (#comment-generer-automatiquement-une-liste-de-figures-ou-de-tableaux)
+### Comment générer automatiquement une liste de figures ou de tableaux ? 
 #### Méthode 1 : Utilisations de balises et de scripts python
 ##### Numérotation automatique des figures :
 
@@ -322,12 +322,12 @@ Il suffit d'insérer des balises spéciales dans le document Markdown à l'endro
 `\tablist`
 
 
-### Comment générer une table des matières ? (#comment-generer-une-table-des-matieres)
+### Comment générer une table des matières ? 
 
 L'option de la ligne de commande Pandoc "--toc --toc-depth=3" permet de générer automatiquement au début du document un sommaire qui reprend les titres et sous-titres du même document. "depth=3" indiqe le niveau maximal de titres à inclure, dans cet exemple il est préréglé à 3. On ne peut pas positionner la table des matières là où on le souhaite, elle s'affiche directement au début du document.
 
 
-### Comment adapter sa mise en page ? (#comment-adapter-sa-mise-en-page)
+### Comment adapter sa mise en page ? 
 
 Le "Modele-styles.docx" est un fichier Word, utile pour la mise en page du Document.md lors de sa conversion en fichier Word puis en fichier pdf.
 
@@ -372,7 +372,7 @@ ou en utilisant la balise :
 `| 1 | 2 |`
 
 
-### Comment adapter la page de garde de son document ? (#comment-adapter-la-page-de-garde-de-son-document)
+### Comment adapter la page de garde de son document ? 
 
 Le fichier page_de_garde.tex est un fichier LaTeX qui inclut la configuration et le contenu de la page de garde.
 
