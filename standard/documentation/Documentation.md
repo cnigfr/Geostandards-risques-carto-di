@@ -101,7 +101,7 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 → c’est un script Python
 
-→ il remplace dans le Markdown les balises [TAB] par une numérotation automatique des figures (par exemple “Tabe: 1”, “Table: 2”…).
+→ il remplace dans le Markdown les balises [TAB] par une numérotation automatique des figures (par exemple “Table: 1”, “Table: 2”…).
 
 → cela permet d'éviter de numéroter les tableaux à la main.
 
