@@ -128,7 +128,7 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 Nous allons maintenant aborder les différentes étapes pour convertir un document Markdown en un document PDf. Ces étapes doivent être réalisé dans un terminal de commande (de préférence GitBash).
 
-Etape 1 (optionnelle si on utilise à l'étape 2 : --filter pandoc-crossref): Génération automatique des numéros des figures et des tables
+**Etape 1 (optionnelle si on utilise à l'étape 2 : --filter pandoc-crossref): Génération automatique des numéros des figures et des tables**
 <span id="etape1"></span>
 
 ````
@@ -140,7 +140,7 @@ python ./modele/tab.py Document.md
 - "python ./modele/fig.py Document.md" permet de lancer un script python. Son but est de générer dans le Markdown à l'endroit et à la place de la balise [FIG] une numérotation automatique de la figure du tye "Figure: X". De même, il remplace la balise [TAB] par "Table: X".
 
 
-Etape 2 : Conversion du Markdown en un document .docx
+**Etape 2 : Conversion du Markdown en un document .docx**
 
 ````
 pandoc -s -f gfm -t docx --toc --toc-depth=3 --filter pandoc-crossref -o Document.docx --reference-doc=./modele/Modele-styles.docx Document.md
@@ -166,7 +166,7 @@ pandoc -s -f gfm -t docx --toc --toc-depth=3 --filter pandoc-crossref -o Documen
 - "Document.md" correspond au fichier source Markdown à convertir.
 
 
-Etape 3 : Exporter le .docx en PDF
+**Etape 3 : Exporter le .docx en PDF**
 
 Fichier Document.docx-> Exporter -> Créer PDF -> Options -> Cocher créer des signets à l'aide de "Titres" -> Publier
 
@@ -177,7 +177,7 @@ Fichier Document.docx-> Exporter -> Créer PDF -> Options -> Cocher créer des s
 - Cette étape permet d'exporter le document .docx en document .pdf tout en permettant la conservation des tables de matières.
 
 
-Etape 4 : Conversion de la page de garde Latex en PDF
+**Etape 4 : Conversion de la page de garde Latex en PDF**
 <span id="etape4"></span>
 ````
 pdflatex -interaction=nonstopmode -halt-on-error page_de_garde.tex
@@ -189,7 +189,7 @@ pdflatex -interaction=nonstopmode -halt-on-error page_de_garde.tex
 - "-halt-on-error" est une option qui indique d'arrêter la compilation si une erreur fatale survient afin d'éviter de produire un PDF corrompu.
 
 
-Etape 5 : Suppression des fichiers auxiliaires
+**Etape 5 : Suppression des fichiers auxiliaires**
 <span id="etape5"></span>
 ````
 rm -f page_de_garde.{aux,log,out}
@@ -197,7 +197,7 @@ rm -f page_de_garde.{aux,log,out}
 - la commande "rm" supprime les fichiers auxiliaires générés par LaTeX comme : page_de_garde.aux , page_de_garde.log , page_de_garde.out. Ces fichiers contiennnet des informations de compilation qui encombrent inutilement le répertoire.
 
 
-Etape 6 : Fusion de la page de garde et du document principal
+**Etape 6 : Fusion de la page de garde et du document principal**
 <span id="etape6"></span>
 ````
 pdfunite page_de_garde.pdf Document.pdf document_final.pdf
@@ -211,9 +211,9 @@ Nous pouvons également convertir directement le fichier Markdown en PDF. Cette 
 
 Cependant, la mise en page ne sera pas personnalisée puisque cette méthode ne dispose pas d'un document Word pour choisir le style. Ainsi, cette méthode est pour l’instant à utiliser avec précaution et mérite d’être développée davantage par la suite.
 
-Etape 1 (optionnelle si on utilise à l'étape 2 : --filter pandoc-crossref): Génération automatique des numéros des figures et des tables [(voir ci-dessus)](#etape1).
+**Etape 1 (optionnelle si on utilise à l'étape 2 : --filter pandoc-crossref): Génération automatique des numéros des figures et des tables [(voir ci-dessus)](#etape1).**
 
-Etape 2 : Conversion du Markdown en un document .pdf
+**Etape 2 : Conversion du Markdown en un document .pdf**
 
 ````
 pandoc Document.md -o Document.pdf --pdf-engine=xelatex
@@ -224,23 +224,23 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 - "--pdf-engine=xelatex" est une option qui précise quel moteur LaTeX utiliser pour produire le PDF. Par défaut, Pandoc ne crée pas directement de PDF. Il transforme d'abord le MAarkdown en Latex, puis utilise un moteur Latex pour le compiler en pdf.
 
 
-Etape 3 : Conversion de la page de garde Latex en PDF
+**Etape 3 : Conversion de la page de garde Latex en PDF**
 [(voir ci-dessus)](#etape4).
 
-Etape 5 : Suppression des fichiers auxiliaires
+**Etape 4 : Suppression des fichiers auxiliaires**
 [(voir ci-dessus)](#etape5).
 
-Etape 6 : Fusion de la page de garde et du document principal
+**Etape 5 : Fusion de la page de garde et du document principal**
 [(voir ci-dessus)](#etape6).
 
 
 ### Comparaison des deux méthodes :
 
-Méthode 1 :
+**Méthode 1 :**
 
 <img src=".\ressources_documentation\methode1.PNG" alt="texte alternatif" width="400" />
 
-Méthode 2 :
+**Méthode 2 :**
 
 <img src=".\ressources_documentation\methode2.PNG" alt="texte alternatif" width="400" />
 
