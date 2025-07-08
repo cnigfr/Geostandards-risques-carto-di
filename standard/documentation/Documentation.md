@@ -365,7 +365,7 @@ ou en utilisant la balise :
 
 - pour la légende d'une table : il faut que la légende soit située au-dessus du tableau. Ex :
 
-Table: La légende
+`Table: La légende`
 
 `| a | b |`  
 `|---|---|`  
@@ -381,7 +381,7 @@ Ce fichier contient les packages et paramètres LaTeX qui définissent la mise e
 
 Il contient également le contenu avec les différents titres, sous-titres, logos etc.
 Pour personnaliser la page de garde :
-- il suffit de modifier les textes et d'adapter la taille de leur police (Huge, Large ...). 
+- Il suffit de modifier les textes et d'adapter la taille de leur police (Huge, Large ...). 
 - Remplacez les chemins des images par les vôtres. 
 - Vous pouvez aussi adpater les espacements en cm. 
 - Une page blanche est insérée avec `\newpage \thispagestyle{empty} \mbox{} \newpage` pour séparer la page de garde du reste du document pour l'impression.
