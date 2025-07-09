@@ -307,6 +307,8 @@ Concrètement, lorsque vous écrivez dans le document Document.md vos tableaux e
 
 <img src=".\ressources_documentation\pandoc_crossref.PNG" alt="texte alternatif" width="500" />
 
+! Attention : pour que pandoc-crossref fonctionne normalement, il faut impérativement respecter la syntaxe d'écriture Markdown de vos tableaux et figures comme indiquée dans l'image ci-dessus !
+
 ##### Génération automatique de listes de figures et de tableaux 
 
 Pandoc-crossref permet également de générer automatiquement une liste de figures et une liste de tableaux avec leur numérotation et leur légende dans le document Markdown.
