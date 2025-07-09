@@ -1,7 +1,7 @@
 # Documentation de la conversion Markdown vers Word / PDF
 
 
-## Introduction :
+## Introduction 
 
 Cette documentation décrit le processus complet permettant de convertir un document rédigé au format Markdown en un document finalisé au format Word ou PDF. Elle explique également comment intégrer une page de garde au document final et assurer une mise en page normalisée.
 
@@ -10,7 +10,7 @@ L'objectif est de formaliser ce processus afin de le rendre facilement reproduct
 Le processus consiste d'abord à préparer l'environnement avec les outils requis puis de structurer les fichiers sources avant de convertir le Markdown en Word en appliquant un modèle de mise en forme. La suite consiste à exporter le document Word en PDF, à compiler la page de garde LaTeX et enfin de fusionner le tout pour obtenir le document final. La suite de ce document détaille pas à pas ces étapes, les prérequis à installer et les commandes à utiliser.
 
 
-## Sommaire :
+## Sommaire 
 
 1) [Installations préalables](#installations-prealables)
 
@@ -35,7 +35,7 @@ Le processus consiste d'abord à préparer l'environnement avec les outils requi
 
 
 
-## Installations préalables : 
+## Installations préalables 
 
 -> Installez l'outil Pandoc (https://pandoc.org/installing.html).
 
@@ -66,7 +66,7 @@ Utile pour gérer la compilation LaTeX de la page de garde.
 
 
 
-## Ressources dans standard : 
+## Ressources dans standard 
 
 `Document.md`
 
@@ -234,7 +234,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 [(voir ci-dessus)](#etape6).
 
 
-### Comparaison des deux méthodes : 
+### Comparaison des deux méthodes 
 
 **Méthode 1 :**
 
@@ -245,7 +245,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 <img src=".\ressources_documentation\methode2.PNG" alt="texte alternatif" width="400" />
 
 
-## Utilisation : (#utilisation)
+## Utilisation  
 ### Comment utiliser le modèle : "Document.md" ? 
 
 -> Ce modèle de standard est une ossature sur laquelle vous pourrez vous appuyer pour écrire votre standard conformément aux normes d'écritures en vigueur et aux bonnes pratiques du CNIG
@@ -262,7 +262,7 @@ pandoc Document.md -o Document.pdf --pdf-engine=xelatex
 
 -> Le logo du sponsor doit être de la même hauteur que le logo du CNIG.
 
-### Les bases du langage Markdown : 
+### Les bases du langage Markdown 
 
 <img src=".\ressources_documentation\BasesMarkdown.PNG" alt="texte alternatif" width="400" />
 
@@ -275,13 +275,13 @@ Utilisez < br > pour aller à la ligne suivante (sans sauter de ligne) si vous �
 
 
 
-## Adaptation :
+## Adaptation 
 
 ### Comment numéroter automatiquement les figures et les tableaux ? 
 
 ### Comment générer automatiquement une liste de figures ou de tableaux ? 
 #### Méthode 1 : Utilisations de balises et de scripts python
-##### Numérotation automatique des figures :
+##### Numérotation automatique des figures 
 
 La balise [FIG] et la ligne de commande : "python fig.py Document.md" permet de générer à l'endroit et à la place de la balise une numérotation automatique de la figure du type "Figure: X". Pour ce faire, il suffit simplement de placer la balise [FIG] une ou plusieurs fois à ou aux endroits, où vous souhaiteriez indiquer la numérotation d'une figure dans le **Document.md**. Ainsi, une fois la ligne de commande "python fig.py Document.md" lancée, elle remplacera automatiquement la balise par la bonne numérotation.
 
@@ -294,12 +294,12 @@ Après exécution du script :
 <img src=".\ressources_documentation\Exemple2_Balise.PNG" alt="texte alternatif" width="500" />
 
 
-##### Numérotation automatique des tableaux :
+##### Numérotation automatique des tableaux 
 
 La balise [TAB] et la ligne de commande : "python tab.py Document.md" permet de générer à l'endroit et à la place de la balise une numérotation automatique du tableau du type "Table: X". Pour ce faire, il suffit simplement de placer la balise [TAB] une ou plusieurs fois à ou aux endroits, où vous souhaiteriez indiquer la numérotation d'un tableau dans le **Document.md**. Ainsi, une fois la ligne de commande "python tab.py Document.md" lancée, elle remplacera automatiquement la balise par la bonne numérotation.
 
 #### Méthode 2 : Utilisations du filtre pandoc-crossref
-##### Numérotation automatique des figures et des tableaux :
+##### Numérotation automatique des figures et des tableaux 
 
 Pandoc-crossref est un filtre pour Pandoc qui ajoute aux documents des fonctions de numérotation automatique et de références croisées pour les tables et les figures.
 
@@ -307,7 +307,7 @@ Concrètement, lorsque vous écrivez dans le document Document.md vos tableaux e
 
 <img src=".\ressources_documentation\pandoc_crossref.PNG" alt="texte alternatif" width="500" />
 
-##### Génération automatique de listes de figures et de tableaux :
+##### Génération automatique de listes de figures et de tableaux 
 
 Pandoc-crossref permet également de générer automatiquement une liste de figures et une liste de tableaux avec leur numérotation et leur légende dans le document Markdown.
 
@@ -331,13 +331,13 @@ L'option de la ligne de commande Pandoc "--toc --toc-depth=3" permet de génére
 
 Le "Modele-styles.docx" est un fichier Word, utile pour la mise en page du Document.md lors de sa conversion en fichier Word puis en fichier pdf.
 
-#### En-têtes :
+#### En-têtes 
 Le modèle contient des styles prédéfinis pour les en-têtes et pieds de page. Lors de la conversion, Pandoc applique automatiquement ces styles, ce qui garantit une uniformité sur toutes les pages. Pour personnaliser les en-têtes, modifiez-les directement. Vous pouvez y insérer des numéros de pages ou toute autre information répétée.
 
-#### Style titres et texte :
+#### Style titres et texte 
 Le modèle définit des styles pour les différents niveaux de titres (Titre 1, Titre 2, Titre 3, etc.) ainsi que pour le corps du texte (Normal). Pour que la conversion applique correctement les styles, veillez à utiliser ces styles dans votre Markdown via la hiérarchie des titres (#,##,###), que Pandoc associera aux styles correspondants dans Word. Il est aussi possible de personnaliser la police, la taille, l'interligne et les couleurs en modifiant le modèle.
 
-#### Mise en page des tableaux :
+#### Mise en page des tableaux 
 Les tableaux dans le document converti adoptent le style défini dans le modèle Word, notamment en termes de police, bordures, taille, espacements, alignements, styles des titres de colonne ou encore les couleurs. Pour ajuster la présentation des tableaux : sélectionnez un tableau (ou insertion>Tableau) dans Word -> cliquez sur l'onglet Conception de la table -> repérez la section Styles de tableau -> cliquez sur la petite flèche en bas pour ouvrir le panneau des styles -> Allez sur Modifier le style de tableau ... -> Modifiez le style du tableau à votre convenance -> Cliquez sur ok.
 
 
@@ -347,7 +347,7 @@ Les tableaux dans le document converti adoptent le style défini dans le modèle
 D'autres fonctionnalités comme les répétitions des titres des colonnes lors des changements de page sont disponibles en cliquant le bouton Format.
 
 
-#### Mise en page des légendes :
+#### Mise en page des légendes 
 
 Vous pouvez choisir le style de vos légendes en modifiant dans le Word de référence les styles : - d'Image Caption (pour les légendes des figures/images) ou - de Table Caption (pour les légendes des tables).
 
