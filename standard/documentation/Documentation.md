@@ -12,24 +12,24 @@ Le processus consiste d'abord à préparer l'environnement avec les outils requi
 
 ## Sommaire 
 
-1) [Installations préalables](#installations-prealables)
+1) [Installations préalables](#installations-préalables)
 
 2) [Ressources dans standard](#ressources-dans-standard) 
 
 3) [Conversion d'un document Markdown en PDF](#conversion-dun-document-markdown-en-pdf)   
-3.a.  [Méthode 1 : Conversion en passant par Word](#methode-1--conversion-en-passant-par-word)   
-3.b.  [Méthode 2 : Conversion directe vers PDF](#methode-2--conversion-directe-vers-pdf)   
-3.c.  [Comparaison des deux méthodes](#comparaison-des-deux-methodes) 
+3.a.  [Méthode 1 : Conversion en passant par Word](#méthode-1--conversion-en-passant-par-word)   
+3.b.  [Méthode 2 : Conversion directe vers PDF](#méthode-2--conversion-directe-vers-pdf)   
+3.c.  [Comparaison des deux méthodes](#comparaison-des-deux-méthodes) 
 
 4) [Utilisation](#utilisation)  
-4.a.  [Comment utiliser le modèle : "Document.md" ?](#comment-utiliser-le-modele--documentmd)   
-4.b.  [Comment utiliser le modèle : "page_de_garde.tex" ?](#comment-utiliser-le-modele--page_de_gardetex)   
+4.a.  [Comment utiliser le modèle : "Document.md" ?](#comment-utiliser-le-modèle--documentmd)   
+4.b.  [Comment utiliser le modèle : "page_de_garde.tex" ?](#comment-utiliser-le-modèle--page_de_gardetex)   
 4.c.  [Les bases du langage Markdown](#les-bases-du-langage-markdown) 
 
 5) [Adaptation](#adaptation)  
-5.a.  [Comment numéroter automatiquement les figures et les tableaux ?](#comment-numeroter-automatiquement-les-figures-et-les-tableaux)   
-5.b.  [Comment générer automatiquement une liste de figures ou de tableaux ?](#comment-generer-automatiquement-une-liste-de-figures-ou-de-tableaux)   
-5.c.  [Comment générer une table des matières ?](#comment-generer-une-table-des-matières)   
+5.a.  [Comment numéroter automatiquement les figures et les tableaux ?](#comment-numéroter-automatiquement-les-figures-et-les-tableaux)   
+5.b.  [Comment générer automatiquement une liste de figures ou de tableaux ?](#comment-générer-automatiquement-une-liste-de-figures-ou-de-tableaux)   
+5.c.  [Comment générer une table des matières ?](#comment-générer-une-table-des-matières)   
 5.d.  [Comment adapter sa mise en page ?](#comment-adapter-sa-mise-en-page)   
 5.e.  [Comment adapter la page de garde de son document ?](#comment-adapter-la-page-de-garde-de-son-document) 
 
