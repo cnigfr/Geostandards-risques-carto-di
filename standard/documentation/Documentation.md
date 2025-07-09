@@ -143,13 +143,13 @@ python ./modele/tab.py Document.md
 **Etape 2 : Conversion du Markdown en un document .docx**
 
 ````
-pandoc -s -f gfm -t docx --toc --toc-depth=3 --filter pandoc-crossref -o Document.docx --reference-doc=./modele/Modele-styles.docx Document.md
+pandoc -s -f markdown -t docx --toc --toc-depth=3 --filter pandoc-crossref -o Document.docx --reference-doc=./modele/Modele-styles.docx Document.md
 ````
 - "pandoc" est un outil très puissant pour convertir des documents d’un format à un autre.
 
 - "s" (standalone) indique de produire un document complet (pas un fragment). Par exemple, en DOCX, cela génère un fichier Word complet.
 
-- "f gfm" est le format d’entrée : GitHub-Flavored Markdown (GFM), donc le fichier source Document.md est interprété avec la syntaxe Markdown utilisée sur GitHub.
+- "f markdown" est le format d’entrée : Markdown Standard, donc le fichier source Document.md est interprété avec la syntaxe Markdown.
 
 - "t docx" est le format de sortie : DOCX (fichier Word).
 
