@@ -31,7 +31,7 @@ Le processus consiste d'abord à préparer l'environnement avec les outils requi
 5.b.  [Comment générer automatiquement une liste de figures ou de tableaux ?](#comment-générer-automatiquement-une-liste-de-figures-ou-de-tableaux)   
 5.c.  [Comment générer une table des matières ?](#comment-générer-une-table-des-matières)   
 5.d.  [Comment adapter sa mise en page ?](#comment-adapter-sa-mise-en-page)   
-5.e.  [Comment adapter la page de garde de son document ?](#comment-adapter-la-page-de-garde-de-son-document) 
+5.e.  [Comment adapter la page de garde de son document ?](#comment-adapter-la-page-de-garde-de-son-document-) 
 
 
 
