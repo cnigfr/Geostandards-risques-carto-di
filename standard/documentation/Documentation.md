@@ -305,7 +305,7 @@ Pandoc-crossref est un filtre pour Pandoc qui ajoute aux documents des fonctions
 
 Concrètement, lorsque vous écrivez dans le document Document.md vos tableaux et figures, après conversion pandoc, cela affiche automatiquement la numérotation comme ceci :  
 
-<img src=".\ressources_documentation\pandoc_crossref.PNG" alt="texte alternatif" width="500" />
+<img src=".\ressources_documentation\pandoc-crossref.PNG" alt="texte alternatif" width="500" />
 
 ! Attention : pour que pandoc-crossref fonctionne normalement, il faut impérativement respecter la syntaxe d'écriture Markdown de vos tableaux et figures comme indiquée dans l'image ci-dessus !
 
