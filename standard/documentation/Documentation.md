@@ -45,7 +45,7 @@ Pandoc est le convertisseur universel de formats de documents.
 
 -> Installez l'outil pandoc-crossref (https://github.com/lierdakil/pandoc-crossref/releases/tag/v0.3.15.0)
 
-Pandoc-crossref est un filtre pour Pandoc qui ajoute aux documents des fonctions de numérotation automatique et de références croisées pour les tables et les figures.
+Pandoc-crossref est un filtre pour Pandoc qui ajoute aux documents des fonctions de numérotation automatique et de références croisées pour les tables et les figures. Il est préférable de le télécharger dans le même dossier que celui de votre pandoc. 
 
 -> Installez l'outil Visual Studio Code (https://code.visualstudio.com/).
 
