@@ -319,7 +319,7 @@ Il suffit d'insérer des balises spéciales dans le document Markdown à l'endro
 
 - Pour la liste des figures :
 
-`\fancytoc`
+`\listoffigures`
 
 - Pour la liste des tableaux : 
 
