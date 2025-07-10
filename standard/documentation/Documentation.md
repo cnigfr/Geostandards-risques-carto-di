@@ -323,7 +323,7 @@ Il suffit d'insérer des balises spéciales dans le document Markdown à l'endro
 
 - Pour la liste des tableaux : 
 
-`\tablist`
+`\listoftables`
 
 
 ### Comment générer une table des matières ? 
