@@ -305,20 +305,6 @@ Concrètement, lorsque vous écrivez dans le document Document.md vos tableaux e
 
 ! Attention : pour que pandoc-crossref fonctionne normalement, il faut impérativement respecter la syntaxe d'écriture Markdown de vos tableaux et figures comme indiquée dans l'image ci-dessus !
 
-##### Références croisées 
-
-`{#fig:mon-ancre}` : indique l'ancre qu'on peut utiliser dans une partie du document pour faire référence directement à la figure avec un lien cliquable. C'est ce qu'on appelle la référence croisée.
-`fig` : type reconnu
-`mon-ancre` : nom de l'ancre
-
-Exemple d'utilisation : `Voir la figure [@fig:mon-ancre].` Visuellement, cela donnera : "Voir la figure mon-ancre".
-
-De même on procède de la même façon pour les tables avec `{#tbl:mon_tableau}`.
-
-
-
-
-
 ##### Génération automatique de listes de figures et de tableaux 
 
 Pandoc-crossref permet également de générer automatiquement une liste de figures et une liste de tableaux avec leur numérotation et leur légende dans le document Markdown.
