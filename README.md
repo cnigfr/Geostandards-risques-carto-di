@@ -1,71 +1,57 @@
-# Modèle de dépôt Github pour les standards CNIG
+# Géostandards Risques - Cartographies de la Directive Inondation _(titre provisoire)_
 
-> [!IMPORTANT]
-> **Attention** : Le modèle de fichier README débute après ce paragraphe. Dans la suite,
->
-> * toutes les consignes en citation, comme cette ligne, doivent être supprimées,
-> * tout ce qui est <mark>_surligné_</mark> doit être remplacé.
->
-> Vous trouverez l'ensemble des consignes et conseils pour utiliser ce modèle de dépôt sur [cette page de la documentation](https://app.gitbook.com/o/w6D6SnLwCXQaMMSzcTvp/s/weZQRU1RV5So9WzNyxlW/~/changes/19/la-fabrique-des-standards/realisation-du-standard/utiliser-le-modele-de-depot-github). 
+Le Groupe de travail pour la refonte des géostandards risques a pour objectif de moderniser les géostandards COVADIS existants liés aux risques en prenant en compte les aspects liés à la diffusion, en cohérence avec les autres standards existants au niveau national et européen pour faciliter l’interopérabilité entre systèmes, la consultation nationale, le croisement de données et le rapportage.
 
----
-<!-- Supprimer les trois tirets précédents (qui insèrent une ligne) -->
+Il oeuvre sous mandat de la Commission des Standards du Conseil National de l'Information Géolocalisée (CNIG). Le mandat du Groupe de Travail peut être consulté [ici](https://cnig.gouv.fr/IMG/documents_wordpress/2021/10/MandatModernisationStandardsRisque-vf.pdf).
 
-# Standard <mark>_Nom_</mark>
+La page dédiée de ce groupe sur le site du CNIG est accessible [ici](https://cnig.gouv.fr/gt-risques-a25378.html).
 
-<!-- Indiquer le nom du standard à la place de <mark>_Nom_</mark>. Le texte entre les balises "<mark>_" et "_</mark>" apparaît en italique surligné et doit être remplacé dans ce modèle -->
+Ce dépôt est le lieu des développements relatifs à la refonte du Standard COVADIS Directive Inondation (DI).
 
-> _Insérer une description du standard et des données concernées en quelques lignes. Ici comme dans la suite, il est recommandé de réutiliser le contenu du mandat du GT ou d'autres documents déjà rédigés. Voici plusieurs exemples pour vous inspirer dans la rédaction :_
->
-> * _[standard des opération d'aménagement](https://github.com/cnigfr/schema-operations-amenagement/)_
-> * _[standard risques](https://github.com/cnigfr/Geostandards-Risques)._
->
-> _Afin de clarifier la lecture de cette description sur le site schema.data.gouv, préciser ici lorsque le standard n'est pas accompagné d'un schéma sur schema.data.gouv:_
->
+Les versions en cours de ce géostandard sont accessibles ici :
+
+- [version en cours de rédaction](./standard/Document.md)
+
+Ce standard s'appuie sur le Géostandard risques - Modèle commun dont les développements se déroulent sur le dépôt [Geostandards Risques](https://github.com/cnigfr/Geostandards-Risques).
+
 > [!TIP]
-> Ce standard CNIG ne possède pas de schéma de données directement accessible sur schema.data.gouv.fr. 
+Ce standard CNIG ne possède pas de schéma de données directement accessible sur schema.data.gouv.fr.
 
-Davantage de documentation peut être trouvée sur le site du CNIG au lien suivant : <mark>_insérer le lien vers la page du GT_</mark>.
+Davantage de documentation peut être trouvée sur le site du CNIG sur la [page suivante](https://cnig.gouv.fr/gt-risques-a25378.html).
 
-> Insérer une (ou plusieurs) image(s) pour illustrer la thématique en remplaçant le logo du CNIG ci-dessous.  
-<!-- Pour remplacer le logo du CNIG, suivre le modèle "![texte alternatif](lien vers l'image) Les images peuvent être chargées sur le dépôt Github dans un dossier image -->
-![logo du CNIG à remplacer par l'image du standard](https://cnig.gouv.fr/IMG/png/cnig2022_geolocalise-petit.png)
+![logo du CNIG](./ressources/images/logo-cnig.png)
+![logo GT Risques](./ressources/images/logo-gt-risques.png)
+![logo MTE](./ressources/images/ministere-de-la-transition-ecologique-et-solidaire_logo.png)
 
 ## Contexte
 
-> _Décrire le contexte dans lequel le schéma a été élaboré. Il peut être utile de renvoyer ici vers la page du GT CNIG où la documentation du standard correspondant peut être trouvée._
+Le contexte d'élaboration de ce standard est décrit dans la partie [Objectif et raison d'être du standard](./standard/Document.md#objectif-et-raison-d%C3%AAtre-du-standard).
 
 ## Cadre juridique
 
-> _Citer les textes liés aux données sur lesquelles porte le schéma. Même lorsque l'utilisation du schéma n'est pas mentionnée dans les textes, il peut être utile de faire référence ici aux lois, décrets, arrêtés portant spécifiquement sur les données, leurs conditions de collecte, de partage, etc. Il n'est pas utile de citer les textes plus généraux (portant sur l'open data par exemple)._
+Le cadre juridique de ce standard est décrit dans la partie [Cadre réglementaire de la Directive Inondation](./standard/Document.md#cadre-réglementaire-directive-inondation).
 
 ## Finalité
 
-> _Les enjeux et objectifs liés à la création du standard doivent être précisés ici._
+La finalité de ce standard est décrite dans la partie [Objectif et raison d'être du standard](./standard/Document.md#objectif-et-raison-d%C3%AAtre-du-standard).
 
 ## Cas d’usage
 
-> _Présenter ici quelques cas d'usage de données conformes au schéma. Ces cas peuvent exister ou être fictifs._
+Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilisation](./standard/Document.md#cas-dutilisation).
 
 ## Organisation du dépôt
 
-* Le dossier [ressources](ressources) contient les documents utiles pour les utilisateurs du standard ;
-* Le dossier [groupe_de_travail_CNIG](groupe_de_travail_CNIG) contient les comptes-rendus de réunions et les documents de suivi du groupe de travail ;
-* Le dossier [standard](standard) contient le standard ainsi que les documents qui lui sont liés ;
-
-> _A supprimer en l'absence de schéma JSON :_
-
-* Le dossier [schéma](schéma) contient le schéma ainsi que les documents qui lui sont liés.
+- Le dossier [ressources](ressources) contient les documents utiles pour les utilisateurs du standard ;
+- Le dossier [groupe_de_travail_CNIG](groupe_de_travail_CNIG) contient les comptes-rendus de réunions et les documents de suivi du groupe de travail ;
+- Le dossier [standard](standard) contient le standard ainsi que les documents qui lui sont liés ;
 
 ## Modalités de production des données
 
-> _Dans le cas où la création du standard interviendrait alors que les données sont déjà produites, documenter ici comment leur production a lieu. Dans le cas contraire, cette partie peut être supprimée._
+Les modalités de production des données PPR sont décrites dans la partie [Cycle de vie des données des données](./standard/Document.md#cycle-de-vie-des-données).
 
 ### Données ouvertes
 
-> _Dans le cas où les données sont publiées en open data, sinon, cette partie peut être supprimée._
-
-Les données relatives à <mark>_la thématique_</mark> sont ouvertes et sont à la disposition de tous. Elles seront publiées sur <https://www.data.gouv.fr>
+Les données Territoire à Risques important d'Inondation (TRI) sont produites et mises à jour tous les 6 ans dans le cadre de la Directive Inondation. Les données du dernier millésime (2020) conformes au précédent Standard COVADIS Directive Inondation sont publiées et disponibles librement sur le site [www.georisques.gouv.fr/](https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020).
 
 ## Informations et participation au groupe de travail
 
@@ -75,30 +61,36 @@ Les données relatives à <mark>_la thématique_</mark> sont ouvertes et sont à
 
 La méthodologie des groupes de travail du CNIG repose sur une diversité d'approches complémentaires :
 
-* Construire **une gouvernance ouverte** à l'ensemble des parties prenantes, afin de susciter l’adhésion et de créer le cadre favorable à la pérennité du dispositif ;
-* Promouvoir et exploiter **les retours d'expériences** afin d'étudier les diversités d'usages et embarquer les acteurs en les positionnant au centre du processus d’alimentation des référentiels géographiques ;
-* Privilégier **l’interopérabilité** entre système d'informations à l’échelle nationale pour favoriser le partage et l’échange de données : éviter les doubles stockages, doubles saisies, etc. ;
-* S'appuyer sur les **processus éprouvés** de [standardisation du CNIG](http://cnig.gouv.fr/les-standards-cnig-a18959.html#Etapes-de-creation-d-un-Standard-CNIG) et de modélisation suivant [schema.data.gouv.fr](https://guides.etalab.gouv.fr/producteurs-schemas/).
+- Construire **une gouvernance ouverte** à l'ensemble des parties prenantes, afin de susciter l’adhésion et de créer le cadre favorable à la pérennité du dispositif ;
+- Promouvoir et exploiter **les retours d'expériences** afin d'étudier les diversités d'usages et embarquer les acteurs en les positionnant au centre du processus d’alimentation des référentiels géographiques ;
+- Privilégier **l’interopérabilité** entre système d'informations à l’échelle nationale pour favoriser le partage et l’échange de données : éviter les doubles stockages, doubles saisies, etc. ;
+- S'appuyer sur les **processus éprouvés** de [standardisation du CNIG](http://cnig.gouv.fr/les-standards-cnig-a18959.html#Etapes-de-creation-d-un-Standard-CNIG) et de modélisation suivant [schema.data.gouv.fr](https://guides.etalab.gouv.fr/producteurs-schemas/).
 L’objectif est d'aboutir à terme à un consensus qui se traduise en un standard et un modèle de donnée commun pour la thématique considérée.
 
 ### Actualisation
 
-> _Préciser ici la phase d'avancement dans laquelle se trouve le standard selon la terminologie de [la Fabrique des standards](https://guides.data.gouv.fr/guides-de-data.gouv.fr/fabrique-des-standards/la-fabrique-des-standards) (rédaction, validation, déploiement, etc.). Il peut être utile de donner des éléments de calendrier comme la date de passage en commission des standards ou devant le conseil plénier._
-> _Indiquer également les évolutions prévues ou prévisibles du standard (en fonction des évolutions réglementaires, des retours des utilisateurs, etc.), ainsi que les évolutions prévues pour les bases de données, logiciels, API, etc. concernées par le standard._
+Les travaux d'élaboration de ce standard sont en phase de cadrage.
 
-Le projet de standard <mark>_thématique_</mark>, puis le standard une fois validé par le CNIG, évoluera en fonction des évolutions réglementaires et de l'expression des besoins de la communauté des utilisateurs.
-
-Les ressources associées et les bases de données correspondantes seront actualisées conformément au standard CNIG <mark>_thématique_</mark>. Les mises à jour de base de données sont effectuées en modifiant le cas échéant les données qui y figurent déjà.
+- Une [consultation sur la mise en oeuvre du standard COVADIS DI](./groupe_de_travail_CNIG/Questionnaire%20refonte/Questionnaire%20sur%20la%20refonte%20du%20standard%20Directive%20Inondation.docx) est en cours auprès des D(R)EALs qui sont en charge de la mise à jour des TRI pour le cycle 3 de la Directive Inondation. Une synthèse des cette consultation sera faite lors de la plénière du Groupe de travail le [7 octobre 2025](https://cnig.gouv.fr/IMG/pdf/2025-10-07-odj-reunion-pleiniere-gt-risques.pdf). Les résultats permettront d'orienter les travaux de la refonte.
 
 ### Comment contribuer
 
-> _Indiquer ici comment contribuer au standard. Par exemple :_
-Vous pouvez contribuer au standard en créant une issue sur cette page (il s'agit d'une fonctionnalité permettant de poser une question, de faire une remarque, une suggestion etc. directement sur github, ce qui en informe automatiquement les responsables du dépôt).
+Vous pouvez contribuer au Groupe de travail en participant aux réunions et aux discussions sur la liste de diffusion ci-dessus.
+
+Vous pouvez également utiliser les outils proposés par github :
+
+- Poser des questions, demandes d'évolutions via les [Issues](https://github.com/cnigfr/Geostandards-risques-ppr/issues)
+
+- Proposer des évolutions / corrections via les [Pull Requests](https://github.com/cnigfr/Geostandards-risques-ppr/pulls)
+
+  Pour plus d'informations sur ce mode de collaboration, vous pouvez vous référer à la [documentation Github](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
 
 ### Nous contacter
 
-Pour contacter le GT CNIG <mark>_thématique_</mark>, écrire à l’adresse cnig[at]cnig.fr.
+Pour être tenu au courant et/ou participer aux échanges des membres du groupe de travail, merci de vous inscrire à la liste de diffusion [geostandards-risques-gt-cnig@framalistes.org](https://framalistes.org/sympa/info/geostandards-risques-gt-cnig). Toutes les communications / annonces sont faites sur cette liste.
+
+Les informations sur les réunions passées et à venir du GT, les consultations et les documents publiés sont aussi diffusées sur le [site du CNIG](https://cnig.gouv.fr/gt-risques-a25378.html).
 
 ### Licence
 
-Les travaux du GT CNIG <mark>_thématique_</mark> sont réalisés sous [Licence Ouverte Etalab 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
+Les travaux du GT CNIG Refonte des géostandards risques sont réalisés sous [Licence Ouverte Etalab 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
