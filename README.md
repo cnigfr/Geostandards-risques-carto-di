@@ -10,7 +10,7 @@ Ce dépôt est le lieu des développements relatifs à la refonte du Standard CO
 
 Les versions en cours de ce géostandard sont accessibles ici :
 
-- [version en cours de rédaction](./standard/Document.md)
+- [version en cours de rédaction](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md)
 
 Ce standard s'appuie sur le Géostandard risques - Modèle commun dont les développements se déroulent sur le dépôt [Geostandards Risques](https://github.com/cnigfr/Geostandards-Risques).
 
@@ -19,25 +19,25 @@ Ce standard CNIG ne possède pas de schéma de données directement accessible s
 
 Davantage de documentation peut être trouvée sur le site du CNIG sur la [page suivante](https://cnig.gouv.fr/gt-risques-a25378.html).
 
-![logo du CNIG](./ressources/images/logo-cnig.png)
-![logo GT Risques](./ressources/images/logo-gt-risques.png)
-![logo MTE](./ressources/images/ministere-de-la-transition-ecologique-et-solidaire_logo.png)
+![logo du CNIG](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/ressources/images/logo-cnig.png)
+![logo GT Risques](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/ressources/images/logo-gt-risques.png)
+![logo MTE](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/ressources/images/ministere-de-la-transition-ecologique-et-solidaire_logo.png)
 
 ## Contexte
 
-Le contexte d'élaboration de ce standard est décrit dans la partie [Objectif et raison d'être du standard](./standard/Document.md#objectif-et-raison-d%C3%AAtre-du-standard).
+Le contexte d'élaboration de ce standard est décrit dans la partie [Objectif et raison d'être du standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#41-objectif-et-raison-dêtre-du-standard).
 
 ## Cadre juridique
 
-Le cadre juridique de ce standard est décrit dans la partie [Cadre réglementaire de la Directive Inondation](./standard/Document.md#cadre-réglementaire-directive-inondation).
+Le cadre juridique de ce standard est décrit dans la partie [Cadre réglementaire](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#442-cadre-réglementaire).
 
 ## Finalité
 
-La finalité de ce standard est décrite dans la partie [Objectif et raison d'être du standard](./standard/Document.md#objectif-et-raison-d%C3%AAtre-du-standard).
+La finalité de ce standard est décrite dans la partie [Objectif et raison d'être du standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#41-objectif-et-raison-dêtre-du-standard).
 
 ## Cas d’usage
 
-Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilisation](./standard/Document.md#cas-dutilisation).
+Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilisation](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#53-cas-dutilisation).
 
 ## Organisation du dépôt
 
@@ -47,7 +47,7 @@ Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilis
 
 ## Modalités de production des données
 
-Les modalités de production des données PPR sont décrites dans la partie [Cycle de vie des données des données](./standard/Document.md#cycle-de-vie-des-données).
+Les modalités de production des données PPR sont décrites dans la partie [Cycle de vie des données](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#8-cycle-de-vie-des-données).
 
 ### Données ouvertes
 
@@ -56,8 +56,6 @@ Les données Territoire à Risques important d'Inondation (TRI) sont produites e
 ## Informations et participation au groupe de travail
 
 ### Méthodologie
-
-> _Cette partie peut être laissée telle quelle. Elle vise à expliquer les modalités d'adoption d'un standard par le CNIG._
 
 La méthodologie des groupes de travail du CNIG repose sur une diversité d'approches complémentaires :
 
@@ -79,9 +77,9 @@ Vous pouvez contribuer au Groupe de travail en participant aux réunions et aux 
 
 Vous pouvez également utiliser les outils proposés par github :
 
-- Poser des questions, demandes d'évolutions via les [Issues](https://github.com/cnigfr/Geostandards-risques-ppr/issues)
+- Poser des questions, demandes d'évolutions via les [Issues](https://github.com/cnigfr/Geostandards-risques-carto-di/issues)
 
-- Proposer des évolutions / corrections via les [Pull Requests](https://github.com/cnigfr/Geostandards-risques-ppr/pulls)
+- Proposer des évolutions / corrections via les [Pull Requests](https://github.com/cnigfr/Geostandards-risques-carto-di/pulls)
 
   Pour plus d'informations sur ce mode de collaboration, vous pouvez vous référer à la [documentation Github](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
 

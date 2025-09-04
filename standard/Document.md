@@ -52,7 +52,7 @@ Ont également participé aux travaux :
 #  4. Présentation du document
  
 
-##  4.1  Objectif et raison d'être du standard
+## 4.1. Objectif et raison d'être du standard
 
 `Le présent document est <...>`
 
@@ -61,12 +61,12 @@ Ont également participé aux travaux :
 `Il se fonde en partie sur un besoin identifié durant <...>`
 
 
-##  4.2  À qui s'adresse ce document ?
+## 4.2. À qui s'adresse ce document ?
 
 `Ce standard s'adresse à <...>.`
 
 
-##  4.3  Comment lire le document
+## 4.3. Comment lire le document
 
 `Le contenu du présent standard est réparti dans X parties et comporte Y annexes.`
 
@@ -84,11 +84,11 @@ Ont également participé aux travaux :
 
 
 
-##  4.4  Références à d'autres normes
+## 4.4.  Références
 
 `<Ici le document s'appuie/nécessite la lecture d'autre normes. Toutes les sous parties sont (optionnelles)>`
 
-  **Références normatives**
+### 4.4.1. Références normatives
 
 Ce document s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l'édition citée compte. Pour les autres, la dernière édition de la norme s'applique.
 
@@ -98,24 +98,23 @@ Normes référencées :
 ● `ISO xxxxx-x, Titre-Partie x: Titre de la partie`
 ● `ISO xxxxx-xx: 20xx, Titre-Partie xx: Titre de la partie`
 
-  **Cadre réglementaire**
+### 4.4.2. Cadre réglementaire
+
 `<Ce document s'inscrit dns le cadre de la loi...>`
 
 `<La mise en oeuvre de ce document est dcrite dans le règlement...>`
 
-  **Standards CNIG**
+### 4.4.3. Standards CNIG
 
 `<Préciser ici les standards ainsi que les notions liées auquel il est fait référence dans le document.>`
 
-  **Autres référentiels**
+### 4.4.4. Autres référentiels
 
 `<Préciser ici les référentiels tiers auxquels le standard se rapporte (comme le Sandre, le Sar, le Caret, etc.). Dans le cas où ces référentiels auraient été mis à jour pour assurer la compatibilité avec ce standard, préciser les modifications apportées et les versions correspondantes.>`
 
+## 4.5 Compréhension du document
 
-
-##  4.5 Compréhension du document
-
-###  4.5.1  Termes spécifiques et définitions `<optionnel>`
+### 4.5.1  Termes spécifiques et définitions `<optionnel>`
 
 |  | |
 |---|---|
@@ -157,7 +156,7 @@ Normes référencées :
 | `<**Nom du rôle 2**>` | `<descriptin du rôle 2>`  |
 
 
-##  5.3  Cas d'utilisation `<optionnel>`
+##  5.3. Cas d'utilisation
 
 `<Si plusieurs cas d'utilisation existent, indiquer ici comment ils s'articulent>`
 
