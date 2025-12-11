@@ -1,4 +1,4 @@
-# Géostandards Risques - Cartographies de la Directive Inondation _(titre provisoire)_
+# Géostandards Risques - Cartographies de la Directive Inondation
 
 Le Groupe de travail pour la refonte des géostandards risques a pour objectif de moderniser les géostandards COVADIS existants liés aux risques en prenant en compte les aspects liés à la diffusion, en cohérence avec les autres standards existants au niveau national et européen pour faciliter l’interopérabilité entre systèmes, la consultation nationale, le croisement de données et le rapportage.
 
@@ -67,9 +67,11 @@ L’objectif est d'aboutir à terme à un consensus qui se traduise en un standa
 
 ### Actualisation
 
-Les travaux d'élaboration de ce standard sont en phase de cadrage.
+Les travaux d'élaboration de ce standard sont en cours à l'occasion d'ateliers de conception.
 
-- Une [consultation sur la mise en oeuvre du standard COVADIS DI](./groupe_de_travail_CNIG/Questionnaire%20refonte/Questionnaire%20sur%20la%20refonte%20du%20standard%20Directive%20Inondation.docx) est en cours auprès des D(R)EALs qui sont en charge de la mise à jour des TRI pour le cycle 3 de la Directive Inondation. Une synthèse des cette consultation sera faite lors de la plénière du Groupe de travail le [7 octobre 2025](https://cnig.gouv.fr/IMG/pdf/2025-10-07-odj-reunion-pleiniere-gt-risques.pdf). Les résultats permettront d'orienter les travaux de la refonte.
+- Premier atelier, le 11 décembre 2025.
+
+- Une [consultation sur la mise en oeuvre du standard COVADIS DI](./groupe_de_travail_CNIG/Questionnaire%20refonte/Questionnaire%20sur%20la%20refonte%20du%20standard%20Directive%20Inondation.docx) a été menée auprès des D(R)EALs qui sont en charge de la mise à jour des TRI pour le cycle 3 de la Directive Inondation. la synthèse des cette consultation a été présentée lors de la plénière du Groupe de travail le [7 octobre 2025](https://cnig.gouv.fr/IMG/pdf/2025-10-07-cr-pleinere-gt-risques-25-0109.pdf).
 
 ### Comment contribuer
 

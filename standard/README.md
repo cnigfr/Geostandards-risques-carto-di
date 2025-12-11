@@ -1,6 +1,6 @@
-# GéoStandards Risques - Cartographies de la Directive Inondation _(titre provisoire)_
+# GéoStandards Risques - Cartographies de la Directive Inondation
 
-Ce répertoire contient les éléments constitutifs du standard définissant le profil applicatif des Géostandards Risques pour la cartographie de la directive inondation.
+Ce répertoire contient les éléments constitutifs du standard définissant le profil applicatif des Géostandards Risques pour les cartographies de la directive inondation.
 
 - Le fichier [Document.md](./Document.md) contient le contenu littéral du document ;
 - le répertoire [ressources/](./ressources) contient les ressources graphiques à inclure dans le document
