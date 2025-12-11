@@ -1,26 +1,43 @@
-#  2. Fiche descriptive
+| | |
+|-|-|
+| ![Logo CNIG](./ressources/logo_cnig.png)| ![Logo DGPR](./ressources/ministere-de-la-transition-ecologique-et-solidaire_logo.png) |
 
+
+ Conseil national de l'information Géolocalisée
+
+
+![Illustration GT Risques](./ressources/logo-gt-risques.png)
+
+
+Géostandards Risques
+Cartographies de la Directive Inondation
+
+Groupe de travail refonte des Géostandards Risques
+
+*Version 0.0.1 - 11 décembre 2025*
+
+
+
+
+#  2. Fiche descriptive
 
 | | |
 |---|---|
-| **Titre** | `<désignation officielle>` |
-| **Sous-titre** | `<(facultatif) sous-titre>` |
-| **Titre alternatif** | `<(facultatif) nom différent de la désignation officielle et sous lequel le standard est connu>` |
-| **ID** | `<(facultatif) identifiant unique persistant pour identifier le contenu (URI)>` |
-| **Version** | `<Version x.x - jj mois aaaa (date de publication)>` |
-| **Résumé** | `<bref résumé du contenu>` |
+| **Titre** | Géostandards Risques |
+| **Sous-titre** | Cartographies de la Directive Inondation |
+| **Version** | *Version 0.0.1 - 11 décembre 2025* |
+| **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux cartographies de la directive inondation. |
 | **Objectif** | `<(facultatif) informations sur les raisons qui motivent le développement du contenu (en particulier si le standard permet de répondre à une obligation réglementaire)>` |
-| **Etendue d'application** | `<étendue des zones géographiques, temporelles ou verticales couvertes par le contenu>` |
+| **Etendue d'application** | Territoires à risque important d'inondation sur les bassins du territoire national français. |
 | **Représentation spatiale** | `<(facultatif) la ou les formes de la représentation spatiale du contenu (Ex : données vectorielle, donnée image, mixte)>` |
 | **Résolution spatiale** | `<(facultatif) facteur fournissant une compréhension générale de la densité des données spatiales/du niveau de référence (Ex : 1/50 000, 1m)>` |
-| **Statut du document** | (`● <mettre le point dans l'étape correspondante`) Projet de standard en cours d'élaboration<br>()Appel à commentaires public organisé par le CNIG<br>() Projet de standard proposé à la commission des Standards du CNIG<br>() Standard validé par la Comission des standards du `<date>` |
+| **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous Licence Ouverte v2.0 (Open Licence) Etalab |
-| **Diffusion** | `<lien vers la page du standard sur le site du CNIG et titre de la page><br><lien vers la page référençant le standard sur schema.data.gouv.fr et la version minimale du schéma compatible>` |
-| **Formats disponibles** | `<liste des formats sous lequel le document est disponible. Ex Word (.doc), Adobe PDF (.pdf)>` |
-| **Restriction** | `<(facultatif) code(s) de classification décrivant les restrictions d'utilisation du contenu>` |
-| **Thèmes** | `<code(s) de thématiques applicables au contenu, à prendre dans le thésaurus GEMET<br>https://www.eionet.europa.eu/gemet/fr/themes/>` |
+| **Diffusion** | ``à venir`` |
+| **Formats disponibles** | [HTML/Markdown](./Document.md) |
+| **Thèmes** | (INSPIRE) "Zones de risque naturel" |
 | **Mots clés** | `<(facultatif) termes formels ou expressions utilisés pour décrire l'objet du contenu>` |
-| **Contact** | `<(facultatif) identification de la ou des personne(s) et organisme(s) associé(s) au standard, et un moyen de communiquer avec eux>`<br>Formulaire de contact du CNIG : https://cnig.gouv.fr/spip.php?page=contact |
+| **Contact** | geostandards-risques-gt-cnig@framalistes.org - Formulaire de contact du CNIG : https://cnig.gouv.fr/spip.php?page=contact |
 | **Informations complémentaires** | `<(facultatif) toute autre information descriptive sur le contenu et nécessaire à la fiche d'information, par exemple les référentiels (CARET, Sandre, Sar, etc.), normes et standards en lien (ceux que le standard remplace, les normes en lien, etc.).<br>Lien vers github>` |
 
 
