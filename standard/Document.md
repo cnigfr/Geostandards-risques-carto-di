@@ -70,11 +70,11 @@ La famille des géostandards risques a pour objectif de standardiser les donnée
 
 Elle est constituée d'un document socle [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières.
 
-Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques d'inondation (TRI) en conformité avec le [cadre réglementaire](#cadre-réglementaire) transposé de la Directive européenne sur les inondations.
+Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le [cadre réglementaire](#cadre-réglementaire) transposé de la Directive européenne sur les inondations.
 
 Ces cartographies doivent servir à l'établissement de plans de gestion des risques d'inondation (PGRI) à l'échelle des grands bassins hydrographiques et l'élaboration des stratégies locales de gestion des risques d'inondation sur ces territoires. Ces éléments font l'objet d'un rapportage par cycles de six ans auprès de la Commission Européenne.
 
-Ce standard s'inscrit dans une démarche générale d'harmonisation des données géographiques relatives au risque inondation. Il vise à faciliter l'entretien et la mise à jour du patrimoine des cartographies des TRI en continu avec une intégration cohérente des données d'aléas et d'enjeux des plans de prévention des risques inondation (PPRI) et une banalisation des opérations du rapportage européen.
+Ce standard s'inscrit dans une démarche générale d'harmonisation des données géographiques relatives au risque inondation. Il vise à faciliter l'entretien et la mise à jour  en continu du patrimoine des cartographies des TRI avec une intégration cohérente des données d'aléas et d'enjeux des plans de prévention des risques d'inondation (PPRI) et une banalisation des opérations du rapportage européen.
 
 Cette harmonisation doit permettre de faciliter le porter à connaissance de l’État dans lequel l'intégration des cartographies des TRI est obligatoire. Plus généralement elle doit participer au développement de la culture du risque auprès du grand public en facilitant la mise à disposition de cette information.
 
@@ -106,40 +106,58 @@ Ce document s'adresse :
 
 ## Références
 
-`<Ici le document s'appuie/nécessite la lecture d'autre normes. Toutes les sous parties sont (optionnelles)>`
+Cette partie cite les références documentaires et réglementaires sur lesquelles s'appuie ce standard.
 
-### Références normatives
+### Références à d'autres documents
 
-Ce document s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l'édition citée compte. Pour les autres, la dernière édition de la norme s'applique.
+Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous (*Liste à compléter*).
 
-Normes référencées :
-
-● `Directives ISO/IEC, Partie 1 - Procédures pour les travaux techniques - Supplément ISO consolidé - Procédures spécifiques à l’ISO, 13eme édition, 2022`
-● `ISO xxxxx-x, Titre-Partie x: Titre de la partie`
-● `ISO xxxxx-xx: 20xx, Titre-Partie xx: Titre de la partie`
+| Acronyme | Titre | Auteur | Année |
+|-|-|-|-|
+| [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
+| [CNIG_RISQUES_PPR:2025](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/Document.md) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | Novembre 2025 |
+| [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques d’inondation par débordement de cours d’eau (hors cours d’eau torrentiels) | DGPR - Cerema | 2021 |
+| [Guide PPRRuis:2004](https://www.ecologie.gouv.fr/sites/default/files/Guide_m%C3%A9thodo_PPR%20Ruissellement_2004.pdf) | Guide Méthodologique PPR Ruissellement | Direction de la Prévention des Pollutions et des Risques (DPPR) | 2004 |
+| [Guide PPRICet:2023](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRicet_10082023.pdf) | Guide Méthodologique PPRi des cours d'eau torrentiels | DGPR | 2023 |
+| [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
+| [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
+| [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 
 ### Cadre réglementaire
 
-`<Ce document s'inscrit dns le cadre de la loi...>`
+La mise en œuvre des cartographies des TRI se fait dans le cadre législatif de la [Directive 2007/60/CE du Parlement Européen et du Conseil du 23 octobre 2007 relative à l’évaluation et à la gestion des risques d’inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000523817). 
 
-`<La mise en oeuvre de ce document est dcrite dans le règlement...>`
+Elle est transposée en France par la [LOI n° 2010-788 du 12 juillet 2010 portant engagement national pour l'environnement (LENE)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000022470434) qui modifie la partie législative du code de l'environnement avec en particulier l'ajout du [chapitre IV relatif à l'évaluation et la gestion des risques d'inondation (Articles L566-1 à L566-13)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) :
 
-### Standards CNIG
+* L'[article L566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561789) traite de la détermination des TRIs.
+* L'[article L566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561783) traite des cartes des surfaces inondables et des cartes de risques d'inondation sur ces territoires.
 
-`<Préciser ici les standards ainsi que les notions liées auquel il est fait référence dans le document.>`
+Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif à l'évaluation et à la gestion des risques d'inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000023654727) modifie le code de l'environnement avec l'ajout du [Chapitre VI relatif à l'évaluation et la gestion des risques d'inondation (Articles R566-1 à R566-18)](https://www.legifrance.gouv.fr/codes/.section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) :
 
-### Autres référentiels
+* L'[article R566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645) traite de la sélection des TRIs.
 
-`<Préciser ici les référentiels tiers auxquels le standard se rapporte (comme le Sandre, le Sar, le Caret, etc.). Dans le cas où ces référentiels auraient été mis à jour pour assurer la compatibilité avec ce standard, préciser les modifications apportées et les versions correspondantes.>`
+* Les articles R566-6 à R566-9 traitent des cartes de surfaces inondables et des cartes des risques d'inondation :
+  * L'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) précise le contenu des cartes de surfaces inondables.
+  * L'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) précise le contenu des cartes de risques d'inondation.
+  * L'[article R566-8](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655653) traite du cas des inondations dues aux eaux souterraines.
+  * L'[article R566-9](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655655) traite de la gouvernance pour l'élaboration de ces cartes.
 
 ## Compréhension du document
 
-### Termes spécifiques et définitions `<optionnel>`
+### Termes spécifiques et définitions
 
-|  | |
-|---|---|
-| `Terme 1` | `Définition du terme 1` | 
-| `Terme 2` | `Définition du terme 2<br>Source : <lien vers la source>` |
+*Liste à compléter*
+
+| Terme | Définition|
+|-|-|
+| Risque | Un risque est la conjugaison d’un aléa (résultant par exemple d’une inondation) et d’enjeux, plus ou moins vulnérables au regard de l’aléa. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).  |
+| Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).|
+| Enjeux | Personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. Cf. [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions). |
+| Vulnérabilité (à l'inondation) | La vulnérabilité d’un enjeu (personne, bien, activité, patrimoine, etc.) à l’inondation peut être définie comme la propension de cet enjeu à être affecté par une inondation. Elle dépend à la fois de l’exposition à l’aléa (et notamment de l’intensité de l’aléa au niveau de l’enjeu) et de la manière dont l’enjeu est adapté à l’inondation. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
+| Inondation | Submersion temporaire par l'eau de terres émergées, quelle qu'en soit l'origine, à l'exclusion des inondations dues aux réseaux de collecte des eaux usées, y compris les réseaux unitaires. Cf. [Article L566-1 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454)
+| Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
+| Préfet (coordinateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). |
+| Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le préfet coordinateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
 
 
 ### Abréviations
@@ -164,14 +182,10 @@ Normes référencées :
 | IGN | Institut national de l'information géographique et forestière |
 | MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
 | OGC | Open Geospatial Consortium |
-| PPRI | Plan de prévention des risques naturels inondation|
+| PPRI | Plan de prévention des risques d'inondation|
 | PGRI | Plan de gestion des risques d'inondation |
 | SIG | Système d'information géographique |
-| SUP | Servitude d'utilité publique |
-| TRI | Territoire à risque (important) d'inondation |
-
-
-
+| TRI | Territoire à risque important d'inondation |
 
 # Contexte d'application
 `<Décrire l'objectif de l'utilisateur du standard. Donner des cas d'utilisation permis par le standard.>`
