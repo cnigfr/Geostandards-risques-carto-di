@@ -19,7 +19,7 @@ Groupe de travail refonte des Géostandards Risques
 
 
 
-#  2. Fiche descriptive
+# Fiche descriptive
 
 | | |
 |---|---|
@@ -28,36 +28,33 @@ Groupe de travail refonte des Géostandards Risques
 | **Version** | *Version 0.0.1 - 11 décembre 2025* |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux cartographies de la directive inondation. |
 | **Objectif** | `<(facultatif) informations sur les raisons qui motivent le développement du contenu (en particulier si le standard permet de répondre à une obligation réglementaire)>` |
-| **Etendue d'application** | Territoires à risque important d'inondation sur les bassins du territoire national français. |
-| **Représentation spatiale** | `<(facultatif) la ou les formes de la représentation spatiale du contenu (Ex : données vectorielle, donnée image, mixte)>` |
-| **Résolution spatiale** | `<(facultatif) facteur fournissant une compréhension générale de la densité des données spatiales/du niveau de référence (Ex : 1/50 000, 1m)>` |
+| **Etendue d'application** | Territoires à risque important d'inondation sur les bassins DCE (Directive Cadre Eau) du territoire national français *et Saint-Pierre et Miquelon (à confirmer)*. |
+| **Représentation spatiale** | Données vecteur |
+| **Résolution spatiale** | L'échelle cible des cartographies de la Directive Inondation est le 1:25000. *Elle peut néanmoins être plus précise lorsqu'elle est produite à partir de zones d'aléas PPR plus résolues*. |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous Licence Ouverte v2.0 (Open Licence) Etalab |
 | **Diffusion** | ``à venir`` |
 | **Formats disponibles** | [HTML/Markdown](./Document.md) |
 | **Thèmes** | (INSPIRE) "Zones de risque naturel" |
-| **Mots clés** | `<(facultatif) termes formels ou expressions utilisés pour décrire l'objet du contenu>` |
+| **Mots clés** | "prévention" ; "risque" ; "aléa" ; "inondation" ; "directive inondation (DI)" ; "territoire à risque d'inondation (TRI)" |
 | **Contact** | geostandards-risques-gt-cnig@framalistes.org - Formulaire de contact du CNIG : https://cnig.gouv.fr/spip.php?page=contact |
-| **Informations complémentaires** | `<(facultatif) toute autre information descriptive sur le contenu et nécessaire à la fiche d'information, par exemple les référentiels (CARET, Sandre, Sar, etc.), normes et standards en lien (ceux que le standard remplace, les normes en lien, etc.).<br>Lien vers github>` |
-
+| **Informations complémentaires** | Ce standard annule et remplace le standard de données [COVADIS Directive Inondation v2.1](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf).  |
 
 # Sommaire
 
 :::toc
 :::
 
+# Préface
 
-#  3. Préface
-
-##  3.1  Historique et suivi du document
+## Historique et suivi du document
 
 | Version | Date | Chapitre modifié | Changement apporté |
 | --- | --- | --- | --- |
+| 0.0.1 | 11/12/2025 | Tous | Initialisation du document et début des travaux |
 | 1.0 | `<mois aaaa>` | - | Publication CNIG |
-| `<x.x>` | `<mois aaaa>` | `<2.3.1>`<br><br>`<2.4>`<br><br>`<A.1.2>` | `<Description succinte du changement 1>`<br><br>`<Description succinte du changement 2>`<br><br>`<Description succinte du changement3>` |
 
-
-##  3.2  Participation à l'écriture
+## Participation à l'écriture
 
 Ce standard a été réalisé sous la coordination du groupe de tavail `<Nom du groupe de travail>` du CNIG, animé par `<Prénom NOM de l'animateur dudit groupe de travail CNIG>`. Sa création a été possible grâce au concours financier de `<noms des principaux financeurs (optionnel)>`. Ce standard a été rédigé par `<Prénom NOM du rédacteur>` (`<organisme du rédacteur>`) avec les contributions majeures de `<Prénom NOM (organisme)>`, `<Prénom NOM (organisme)>` et `<Prénom NOM (organisme)>`. Ce document a été relu par `<Prénom NOM (organisme) (optionnel)>`. Ce document a été validé par `<Organisme>` en complément de son adoption par le CNIG. 
 
@@ -65,25 +62,33 @@ Ont également participé aux travaux :
 
   `<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`
 
+# Présentation du document
 
-#  4. Présentation du document
- 
+## Objectif et raison d'être du standard
 
-## 4.1. Objectif et raison d'être du standard
+La famille des géostandards risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI).
 
-`Le présent document est <...>`
+Elle est constituée d'un document socle [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières.
 
-`Son objectif est de <...>`
+Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques d'inondation (TRI) en conformité avec le [cadre réglementaire](#cadre-réglementaire) transposé de la Directive européenne sur les inondations.
 
-`Il se fonde en partie sur un besoin identifié durant <...>`
+Ces cartographies doivent servir à l'établissement de plans de gestion des risques d'inondation (PGRI) à l'échelle des grands bassins hydrographiques et l'élaboration des stratégies locales de gestion des risques d'inondation sur ces territoires. Ces éléments font l'objet d'un rapportage par cycles de six ans auprès de la Commission Européenne.
 
+Ce standard s'inscrit dans une démarche générale d'harmonisation des données géographiques relatives au risque inondation. Il vise à faciliter l'entretien et la mise à jour du patrimoine des cartographies des TRI en continu avec une intégration cohérente des données d'aléas et d'enjeux des plans de prévention des risques inondation (PPRI) et une banalisation des opérations du rapportage européen.
 
-## 4.2. À qui s'adresse ce document ?
+Cette harmonisation doit permettre de faciliter le porter à connaissance de l’État dans lequel l'intégration des cartographies des TRI est obligatoire. Plus généralement elle doit participer au développement de la culture du risque auprès du grand public en facilitant la mise à disposition de cette information.
 
-`Ce standard s'adresse à <...>.`
+Ce document a vocation à se substituer et rendre obsolète la dernière version du standard de données COVADIS Directive Inondation version 2.1 de juillet 2019.
 
+## À qui s'adresse ce document ?
 
-## 4.3. Comment lire le document
+Ce document s'adresse :
+
+* aux services de l'État ou assimilés, chargés de produire la cartographie des TRI, la maintenir, la diffuser ou la rapporter auprès de le Commission Européenne ;
+
+* aux utilisateurs de ces données de cartographies, amenés à en prendre connaissance, les exploiter : services de l'État, collectivités locales, professionnels, bureaux d'études, ou grand public.
+
+## Comment lire le document
 
 `Le contenu du présent standard est réparti dans X parties et comporte Y annexes.`
 
@@ -99,13 +104,11 @@ Ont également participé aux travaux :
 
 `L'annexe A est informative et spécifie xxx.`
 
-
-
-## 4.4.  Références
+## Références
 
 `<Ici le document s'appuie/nécessite la lecture d'autre normes. Toutes les sous parties sont (optionnelles)>`
 
-### 4.4.1. Références normatives
+### Références normatives
 
 Ce document s’appuie ou nécessite la lecture des normes référencées ci-dessous. Pour les références datées ou versionnées, seule l'édition citée compte. Pour les autres, la dernière édition de la norme s'applique.
 
@@ -115,43 +118,65 @@ Normes référencées :
 ● `ISO xxxxx-x, Titre-Partie x: Titre de la partie`
 ● `ISO xxxxx-xx: 20xx, Titre-Partie xx: Titre de la partie`
 
-### 4.4.2. Cadre réglementaire
+### Cadre réglementaire
 
 `<Ce document s'inscrit dns le cadre de la loi...>`
 
 `<La mise en oeuvre de ce document est dcrite dans le règlement...>`
 
-### 4.4.3. Standards CNIG
+### Standards CNIG
 
 `<Préciser ici les standards ainsi que les notions liées auquel il est fait référence dans le document.>`
 
-### 4.4.4. Autres référentiels
+### Autres référentiels
 
 `<Préciser ici les référentiels tiers auxquels le standard se rapporte (comme le Sandre, le Sar, le Caret, etc.). Dans le cas où ces référentiels auraient été mis à jour pour assurer la compatibilité avec ce standard, préciser les modifications apportées et les versions correspondantes.>`
 
-## 4.5 Compréhension du document
+## Compréhension du document
 
-### 4.5.1  Termes spécifiques et définitions `<optionnel>`
+### Termes spécifiques et définitions `<optionnel>`
 
 |  | |
 |---|---|
 | `Terme 1` | `Définition du terme 1` | 
-| `Terme 2` | `Définition du terme 2<br>Source : <lien vers la source>` | 
+| `Terme 2` | `Définition du terme 2<br>Source : <lien vers la source>` |
 
 
-###  4.5.2  Abréviations `<optionnel>`
-
-|  |  |
-|---|---|
-| `ADM` | `Abréviation du mot` |
-| `ADM2` | `Abréviation du mot 2` |
+### Abréviations
 
 
+| Sigle | Signification |
+|-|-|
+| BRGM | Bureau de recherches géologiques et minières |
+| BRIL | Bureau des risques d'inondation et littoraux (DGPR) |
+| Cerema | Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement |
+| COVADIS | Commission de validation des données pour l'information spatialisée |
+| CNIG | Comité national de l'information géolocalisée |
+| DDT | Direction départementale des territoires  |
+| DDTM | Direction départementale des territoires et de la mer  |
+| DGPR | Direction générale de la prévention des risques |
+| DI | Directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
+| DREAL | Direction régionale de l'environnement, de l'aménagement et du logement |
+| DEAL | Direction de l'environnement, de l'aménagement et du logement |
+| ERP | Établissement recevant du public |
+| GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
+| ICPE | Installation classée pour la protection de l'environnement |
+| IGN | Institut national de l'information géographique et forestière |
+| MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
+| OGC | Open Geospatial Consortium |
+| PPRI | Plan de prévention des risques naturels inondation|
+| PGRI | Plan de gestion des risques d'inondation |
+| SIG | Système d'information géographique |
+| SUP | Servitude d'utilité publique |
+| TRI | Territoire à risque (important) d'inondation |
 
-#  5. Contexte d'application
+
+
+
+# Contexte d'application
 `<Décrire l'objectif de l'utilisateur du standard. Donner des cas d'utilisation permis par le standard.>`
 
-##  5.1  Périmètre d'application
+## Périmètre d'application
 
 `<Préciser ici le périmètre d'application du standard. Certaines exigences du standard peuvent n'être pertinentes que pour un périmètre d'application réduit à préciser ici.>`
 
@@ -159,7 +184,7 @@ Normes référencées :
 `Ce standard est destiné à être utilisé dans le cadre de la réforme DT/DICT.`
 
 
-##  5.2  Les acteurs et rôles concernés `<optionnel>`
+## Les acteurs et rôles concernés `<optionnel>`
 
 `Par leurs missions, les différents intervenants (ou utilisateurs) liés au thème peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.`
 
@@ -173,12 +198,12 @@ Normes référencées :
 | `<**Nom du rôle 2**>` | `<descriptin du rôle 2>`  |
 
 
-##  5.3. Cas d'utilisation
+## Cas d'utilisation
 
 `<Si plusieurs cas d'utilisation existent, indiquer ici comment ils s'articulent>`
 
 
-###  5.3.1.  Cas d'utilisation `<Nom du cas 1>` 
+### Cas d'utilisation `<Nom du cas 1>` 
 
 |  | `<Nom du cas 1>` |
 |---|---|
@@ -192,23 +217,22 @@ Normes référencées :
 `<Description rédigée du scénario d'utilisation>`
 
 
-
-# 6. Contenu et structure de la donnée
+# Contenu et structure de la donnée
 
 `La section relative au contenu et à la structure des données décrit l'intégration du standard <objet du standard>.`
 
-##  6.1.  Modèle conceptuel de données (MCD)
+## Modèle conceptuel de données (MCD)
 
-###  6.1.1.  Conventions de lecture
+### Conventions de lecture
 Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) UML.
 
-###  6.1.2.  Diagrammes
+### Diagrammes
 
 `Exemple : Schéma applicatif UML du Standard PCRS général.`
 
 ![Schéma applicatif UML](./ressources/schema_explicatif_uml_standard_pcrs_general.png)
 
-##  6.2.  Catalogue d'objets
+## Catalogue d'objets
 
 `<Un catalogue d'entités est un référentiel qui fournit la sémantique de tous les types d'entités, avec leurs attributs et leurs dommaines de valeur d'attribut, les types d'association entre les types d'entités et les opérations requises pour décrire la structure des données et leur contenu. Si un schéma d'application est disponible, le catalogue d'entités décrit l'ensemble des éléments qui le composent. De plus, les couvertures peuvent être considérées comme des entités ou bien être spécifiées à l'aide de descritpions de couverture.>`
 
@@ -241,7 +265,7 @@ Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) U
 
 `**CLASSE_2**`
 
-##  6.3.  Description des tyes énumérés
+## Description des tyes énumérés
 
 Outres les valeurs désignées, tous les types énumérés comprennet les valeurs conventionnelles :
 
@@ -249,7 +273,7 @@ Outres les valeurs désignées, tous les types énumérés comprennet les valeur
 
 ● "**autre**".
 
-###  6.3.1.  Listes de valeurs
+### Listes de valeurs
 
 | Type énuméré : `liste_att1-attribut de : CLASSE_1` |  |
 |---|---|
@@ -262,9 +286,9 @@ Outres les valeurs désignées, tous les types énumérés comprennet les valeur
 |       |       |       |
 |       |       |       |
 
-###  6.3.2.  Définitions des valeurs
+### Définitions des valeurs
 
-##  6.4.  Exemple de remplissage des tables
+## Exemple de remplissage des tables
 
 | CLASSE_1 |  | 
 |---|---|
@@ -280,7 +304,7 @@ Outres les valeurs désignées, tous les types énumérés comprennet les valeur
 | att2 |   |
 | att3 |   |
 
-##  6.5.  Systèmes de référence
+## Systèmes de référence
 
 Les dernières évolutions des systèmes de référence mentionnés plus bas sont à trouver sur le site de l'IGN : https://geodesie.ign.fr/
 
@@ -290,12 +314,12 @@ Les dernières évolutions des systèmes de référence mentionnés plus bas son
 | **Système de référence temporel** | `(facultatif)`<br>`_Ex_`<br>`_Calendrier grégorien, UTC_` |
 
 
-# 7. Recommandations pour les données
+# Recommandations pour les données
 
-##  7.1.  Qualité des données
+## Qualité des données
 Cette partie contient les recommandations et exigences de qualité concernant le contenu des données `<de la thématique>` de leur structuration.
 
-###  7.1.1.  Enjeux
+### Enjeux
 Il est important pour les producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).  
 
 L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence.  
@@ -310,7 +334,7 @@ Ces mesures peuvent être :
 
 Les différentes mesures de la qualité des données de `<la thématique>` sont définies ci-dessous et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit (cf [Mesures de qualité complémentaires](bookmark://_heading=h.206ipza)). 
 
-###  7.1.2.  Référence normative
+### Référence normative
 
 La référence internationale est la [norme ISO 19157](https://www.iso.org/fr/standard/32575.html) sur la qualité des données géographiques. 
 
@@ -320,9 +344,9 @@ Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous 
 - la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques)
 - le registre national des mesures pour la qualification des données géographiques sur le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95)
 
-###  7.1.3.  Mesures de la qualité
+### Mesures de la qualité
 
-#####  7.1.3.1.1.  `<Nom de la mesure>`
+##### `<Nom de la mesure>`
 `<Explication/description de la mesure>` 
 
 `<Justification de l’utilité de la mesure et explication claire de sa contrainte (pourquoi est-elle exigée ou recommandée ?)>` 
@@ -333,7 +357,7 @@ Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous 
 
 `Pour approfondir, vous pouvez trouver <Lien vers la fiche du registre Géocatalogue/fiche CEREMA affiliée/fiche métier comme aide à la compréhension>.` 
 
-#####  7.1.3.1.2.  `Exhaustivité (exemple)` 
+##### `Exhaustivité (exemple)` 
 `L’exhaustivité est la présence ou l’absence d’objets, d’attributs ou de relations dans le jeu de données par rapport au nombre total d’objets attendus.` 
 
 `D’une manière générale on s’attend à trouver dans les lots de données la description de l’ensemble des ZAE. Cette mesure est obligatoire car si une zone manque, cela impactera directement la qualité du jeu de données.`  
@@ -348,32 +372,32 @@ Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous 
 
 `Pour plus de précision, le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_txEx) référence cette mesure (URI).`
 
-####  7.1.3.2.  Mesures Recommandées
-####  7.1.3.3.  Mesures Conditionnelles
-###  7.1.4.  Seuils de qualité  
-###  7.1.5.  Seuils exigés
+#### Mesures Recommandées
+#### Mesures Conditionnelles
+### Seuils de qualité  
+### Seuils exigés
 `**Exemple: Seuil pour la mesure de l'exhaustivité**`
 `**Le jeu de données doit respecter un seuil d'exhaustivité de 75%.` 
-###  7.1.6.     Seuils recommandés
-##  7.2.     Règles d'organisation et de codification
-###  7.2.1.     Règles de codification des identifiants
+### Seuils recommandés
+## Règles d'organisation et de codification
+### Règles de codification des identifiants
 **Les règles de codification suivantes doivent être respectées :**  
 
 **Les valeurs vides sont codées “NULL” ou ne sont pas renseignées.** 
 
-#  8. Cycle de vie des données
+# Cycle de vie des données
 Le management de la donnée représente une vision de l’information, non pas comme un produit ex-nihilo, mais comme partie d’un système qui inclut les processus d’acquisition, de validation et d’actualisation de l’information. Cette approche systémique permet de penser la donnée comme ressource, dans son cycle de vie et ses potentielles réutilisations. 
 
-##  8.1.  Acquisition des données
+## Acquisition des données
 `<La section relative à l’acquisition de données vise à fournir des recommandations et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.>` 
 
 `<Description rédigée en texte libre du processus d’acquisition et/ou de production des données>` 
 
-##  8.2.  Validation des données
+## Validation des données
 
 `<Indiquez dans ce paragraphe les moyens éventuellement mis en place pour contrôler vos lots de données (par exemple outils [validata.fr](http://validata.fr)) ou liés aux mesures de qualité précisées dans la partie 7.>` 
 
-##  8.3.  Actualisation des données
+## Actualisation des données
 
 `<Cette section vise à fournir des recommandations, descriptions, principes et/ou critères d’actualisation des données. Cela peut inclure les modes opératoires, la fréquence des modifications et/ou de la mise à jour.>` 
 
@@ -383,28 +407,28 @@ Le management de la donnée représente une vision de l’information, non pas c
 
 `<Décrivez les recommandations liées au versionnage.>` 
 
-#  9. Règles de symbologie
+# Règles de symbologie
 
 `La section relative à la représentation graphique vise à spécifier comment présenter les types d'entités à des fins d'interprétation humaine, généralement à travers à un catalogue de représentations graphiques. Les légendes de cartes sous forme d'images peuvent être considérées comme des spécifications de représentation graphique.` 
 
 `<Le catalogue de représentation graphique est spécifié dans la partie ci-dessous/ est disponible /en annexe/sur ce lien>.` 
 
-##  9.1.  Symbologie 1
+## Symbologie 1
 
 |  |  |
 |---|---|
 | `**ex**` | `Contient` |
 |  |  |
 
-#  10. Diffusion
+# Diffusion
 `<Cette partie vise à fournir des instructions, des exigences, conventions d’échange et/ou des descriptions du format de diffusion des données et des moyens de livraison physique, ou bien des moyens de diffusion de données via des services de téléchargement ou d'affichage.>` 
 
-#  11. Métadonnées
-##  11.1.  Généralités
+# Métadonnées
+## Généralités
 
 Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes (selon la réglementation applicable : INSPIRE, HVD, etc. et les bonnes pratiques en vigueur), afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.  
 
-###  11.1.1.  Références
+### Références
 Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur : 
 
 - le « [Guide de saisie des éléments de métadonnées de données](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf) » `v2.0, 2019`,
@@ -412,12 +436,12 @@ Ces consignes facilitent le catalogage des données et leur moissonnage par des 
 - le [guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE,](https://knowledge-base.inspire.ec.europa.eu/publications/technical-guidance-implementation-inspire-dataset-and-service-metadata-based-isots-191392007_en)
 - [Validateur européen.](https://inspire.ec.europa.eu/validator/home/index.html)
 
-###  11.1.2.  Périmètre INSPIRE
+### Périmètre INSPIRE
 Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. `Les catégories thématiques (“_topic category_”) sont :` 
 `- ...`
   
-##  11.2.  Eléments de métadonnées
-###  11.2.1.  Consignes de nommage du fichier de métadonnées
+## Eléments de métadonnées
+### Consignes de nommage du fichier de métadonnées
 |  |  |
 |---|---|
 | _**Consignes de nommage du fichier**_ (recommandation) | Le fichier de métadonnées est nommé:<br>fr-<SIREN>-thème<date>.xml<br>L’identificateur de la métadonnée pour les données du thème est constitué de deux blocs :
@@ -425,7 +449,7 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 - bloc identifiant la donnée : -`thème`<date>      |
 | Exemple | _Le nom du fichier de métadonnées du thème portant le numéro SIREN 422270515 publiées le 22 avril 2021, prend la forme :_<br><br>_fr-422270515-theme20210422.xml_    |
 
-###  11.2.2.  Identification des données
+### Identification des données
 
 |  |  |
 |---|---|
@@ -495,14 +519,14 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 | Xpath ISO 19115  | identificationInfo[1]/*/spatialRepresentationType |
 | Exigence  | _vector_  |
 
-###  11.2.3.  Classification des données et services géographiques
+### Classification des données et services géographiques
 |  |  |
 |---|---|
 | _**Catégorie thématique**_ (obligatoire)  | Le champ est à remplir avec la valeur suivante : `theme` (traduction de « `...` ») (liste : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory  )  |
 | Xpath ISO 19115  | identificationInfo[1]/*/topicCategory  |
 | Exigence  | `_thème_`  |
 
-###  11.2.4.  Mots-clés
+### Mots-clés
 |  |  |
 |---|---|
 | _**Mots clés obligatoires**_  | Le champ est à remplir avec<br>- la désignation du thème :  `thème`<br>ensuite avec les mots-clés permettant aux systèmes d'informations d'identifier le lot de données :<br>- code SIREN de l’autorité compétente :<br>Mot clé : <code SIREN><br>Nom du thésaurus : Répertoire SIRENE<br>Date de publication : 20aa-mm-jj   |
@@ -517,7 +541,7 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 | Remarque 2 | D’après : http://cnig.gouv.fr/wp-content/uploads/2014/01/Guide-de-saisie-des-%C3%A9l%C3%A9ments-de-m%C3%A9tadonn%C3%A9es-INSPIRE-v1.1-final-light.pdf#page=18 : 
 « Dans le cas de données sous licence ouverte, il convient d’ajouter un mot-clé ‘données ouvertes’. »  |
 
-###  11.2.5.  Situation géographique
+### Situation géographique
 |  |  |
 |---|---|
 | _**Rectangle de délimitation géographique**_ (obligatoire)  | Pour l'ensemble des lots concernés, le rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule. Les coordonnées sont exprimées en WGS84  |
@@ -532,14 +556,14 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 | Code xml  | <gmx:Anchor<br>xlink:href="http://www.opengis.net/def/crs/EPSG/0/2154">EPSG:2154</gmx:Anchor><br>ou :<br><gmx:Anchor<br>xlink:href="http://registre.ign.fr/ign/IGNF/crs/IGNF/RGF93LAMB93">IGNF:RGF93LAMB93</gmx:Anchor>   |  
 | Exemple  | Pour la métropole avec code EPSG : http://www.opengis.net/def/crs/EPSG/0/2154<br>Pour l'outre-mer (La Réunion) avec registre IGN-F :<br>http://registre.ign.fr/ign/IGNF/crs/IGNF/RGR92UTM40S   |
 
-###  11.2.6.  Références temporelles
+### Références temporelles
 |  |  |
 |---|---|
 | _**Dates de référence**_ (obligatoire)  | Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données.<br>Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.  |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date  |
 | Exemple  | _2021-04-22_<br><br>Type de date : _création_ (la première fois) / _révision_ (les fois suivantes)  |
 
-###  11.2.7.     Généalogie et résolution spatiale
+### Généalogie et résolution spatiale
 |  |  |
 |---|---|
 | _**Généalogie**_ (obligatoire)  | Le champ est à remplir avec un texte faisant état de l’historique du traitement et/ou de la qualité générale de la série de données géographiques, on mentionnera les éléments suivants :<br>- le référentiel source de la géométrie<br>- la version du standard de référence<br>- le numéro de version du lot et sa durée de vie.<br>- etc.   |
@@ -552,7 +576,7 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 | Xpath ISO 19115  | identificationInfo[1]/*/spatialResolution/*/equivalentScale/*/denominator  |
 | Exemple  | *5000* (dans le cas d’une échelle 1/5000)   |
 
-###  11.2.8.  Mesures de qualité complémentaires
+### Mesures de qualité complémentaires
 Pour chaque mesure de la qualité (cf. [§Partie Qualité des données](bookmark://_heading=h.kgcv8k)), faire apparaître les champs suivants : 
 
 |  |  |
@@ -567,7 +591,7 @@ Pour chaque mesure de la qualité (cf. [§Partie Qualité des données](bookmark
 | Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/valueType<br>dataQualityInfo/*/report/*/result/*/valueUnit<br>dataQualityInfo/*/report/*/result/*/value   |
 | Exemple  | *Double*<br><br>*percent*<br><br>*85,5*   |
 
-###  11.2.9.  Conformité
+### Conformité
 |  |  |
 |---|---|
 | _**Spécification**_ (obligatoire)  | On indique la conformité au standard CNIG et au `format`<br>Le champ est à remplir avec les éléments suivants :<br>- titre : référence du standard sous la forme : CNIG `thème`<br>- date : date de validation du standard sous la forme AAAA-MM-JJ<br>- type de date : publication<br>- titre : référence du format sous la forme : `format`<br>- date : version du format sous la forme AAAA-MM-JJ<br>- type de date : publication   |
@@ -581,14 +605,14 @@ Pour chaque mesure de la qualité (cf. [§Partie Qualité des données](bookmark
 | Exigence   | true / false / ou champ laissé vide  |
 | Exemple  | *true* |
 
-###  11.2.10.     Contraintes en matière d’accès et d’utilisation 
+### Contraintes en matière d’accès et d’utilisation 
 |  |  |
 |---|---|
 | _**Conditions applicables à l’accès et à l’utilisation**_  | Le champ est à remplir avec les mentions concernant :<br>- les contraintes légales<br>- les contraintes de sécurité<br>- les contraintes d'usage    |
 | Xpath ISO 19115  | Condition d’accès et d’utilisation :<br>identificationInfo[1]/*/resourceConstraints/*/useLimitation<br>Restriction d’accès public :<br>identificationInfo[1]/*/resourceConstraints/*/accessConstraints=’otherRestrictions’ et :<br>identificationInfo[1]/*/resourceConstraints/*/otherConstraints   |
 | Recommandation | Contraintes d'usage : *Licence ouverte v2.0*<br>Contraintes d’accès : *Pas de restriction d’accès public*  |
 
-###  11.2.11.  Organisation responsable de la ressource 
+### Organisation responsable de la ressource 
 |  |  |
 |---|---|
 | _**Organisme responsable de la ressource**_  | Le champ est à remplir avec :<br>- l’organisme propriétaire de la donnée, une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle, en aucun cas nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.<br>- Le rôle de cet organisme : owner (traduction de « propriétaire »)    |
@@ -629,7 +653,7 @@ Métadonnées concernant les métadonnées
 | **Langue**   | (facultatif) Chaque occurrence contient un code pour les langues utilisées dans la livraison<br><br><u>Xpath ISO 19115</u> : LanguageCode   |
 
 
-#  12.  Informations additionnelles `<optionnelle>`
+# Informations additionnelles `<optionnelle>`
 
 
 
