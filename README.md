@@ -25,19 +25,19 @@ Davantage de documentation peut être trouvée sur le site du CNIG sur la [page 
 
 ## Contexte
 
-Le contexte d'élaboration de ce standard est décrit dans la partie [Objectif et raison d'être du standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#41-objectif-et-raison-dêtre-du-standard).
+Le contexte d'élaboration de ce standard est décrit dans la partie [Objectif et raison d'être du standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#objectif-et-raison-dêtre-du-standard).
 
 ## Cadre juridique
 
-Le cadre juridique de ce standard est décrit dans la partie [Cadre réglementaire](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#442-cadre-réglementaire).
+Le cadre juridique de ce standard est décrit dans la partie [Cadre réglementaire](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#cadre-réglementaire).
 
 ## Finalité
 
-La finalité de ce standard est décrite dans la partie [Objectif et raison d'être du standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#41-objectif-et-raison-dêtre-du-standard).
+La finalité de ce standard est décrite dans la partie [Objectif et raison d'être du standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#objectif-et-raison-dêtre-du-standard).
 
 ## Cas d’usage
 
-Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilisation](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#53-cas-dutilisation).
+Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilisation](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#cas-dutilisation).
 
 ## Organisation du dépôt
 
@@ -47,7 +47,7 @@ Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilis
 
 ## Modalités de production des données
 
-Les modalités de production des données PPR sont décrites dans la partie [Cycle de vie des données](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#8-cycle-de-vie-des-données).
+Les modalités de production des données PPR sont décrites dans la partie [Cycle de vie des données](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md#cycle-de-vie-des-données).
 
 ### Données ouvertes
 
