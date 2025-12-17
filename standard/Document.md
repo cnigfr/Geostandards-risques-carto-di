@@ -17,8 +17,6 @@ Groupe de travail refonte des Géostandards Risques
 *Version 0.0.1 - 11 décembre 2025*
 
 
-
-
 # Fiche descriptive
 
 | | |
@@ -56,11 +54,17 @@ Groupe de travail refonte des Géostandards Risques
 
 ## Participation à l'écriture
 
-Ce standard a été réalisé sous la coordination du groupe de tavail `<Nom du groupe de travail>` du CNIG, animé par `<Prénom NOM de l'animateur dudit groupe de travail CNIG>`. Sa création a été possible grâce au concours financier de `<noms des principaux financeurs (optionnel)>`. Ce standard a été rédigé par `<Prénom NOM du rédacteur>` (`<organisme du rédacteur>`) avec les contributions majeures de `<Prénom NOM (organisme)>`, `<Prénom NOM (organisme)>` et `<Prénom NOM (organisme)>`. Ce document a été relu par `<Prénom NOM (organisme) (optionnel)>`. Ce document a été validé par `<Organisme>` en complément de son adoption par le CNIG. 
+Ce standard est le fruit des travaux du groupe de travail CNIG sur la refonte des Géostandards risques. Ce dernier rassemble les acteurs impliqués dans l’élaboration, la gestion et la diffusion des données de prévention des risques relatives à ces standards ainsi que des utilisateurs amenés à exploiter ces données. Il est animé par l’IGN pour le compte de la Direction Générale de la Prévention des Risques (DGPR).
 
-Ont également participé aux travaux :
+Ce standard a été rédigé par Gilles Cébélieu (IGN) avec les contributions majeures et les relectures des membres du Groupe de travail listés ci-dessous.
 
-  `<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`-`<Prénom NOM (organisme)>`
+*(Participation atelier du 11/12/205)*
+
+* Abdelhakim Boulouiz (DREAL Occitanie)
+* Bastien Coignon (DGPR / BRIL)
+* Helene Decourcelle (DREAL ARA)
+* Yann GASOWSKI (Groupe Artelia)
+* Yohann Evain (Cerema)
 
 # Présentation du document
 
@@ -125,7 +129,7 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 ### Cadre réglementaire
 
-La mise en œuvre des cartographies des TRI se fait dans le cadre législatif de la [Directive 2007/60/CE du Parlement Européen et du Conseil du 23 octobre 2007 relative à l’évaluation et à la gestion des risques d’inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000523817). 
+La mise en œuvre des cartographies des TRI se fait dans le cadre législatif de la [Directive 2007/60/CE du Parlement Européen et du Conseil du 23 octobre 2007 relative à l’évaluation et à la gestion des risques d’inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000523817).
 
 Elle est transposée en France par la [LOI n° 2010-788 du 12 juillet 2010 portant engagement national pour l'environnement (LENE)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000022470434) qui modifie la partie législative du code de l'environnement avec en particulier l'ajout du [chapitre IV relatif à l'évaluation et la gestion des risques d'inondation (Articles L566-1 à L566-13)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) :
 
@@ -134,13 +138,13 @@ Elle est transposée en France par la [LOI n° 2010-788 du 12 juillet 2010 porta
 
 Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif à l'évaluation et à la gestion des risques d'inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000023654727) modifie le code de l'environnement avec l'ajout du [Chapitre VI relatif à l'évaluation et la gestion des risques d'inondation (Articles R566-1 à R566-18)](https://www.legifrance.gouv.fr/codes/.section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) :
 
-* L'[article R566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645) traite de la sélection des TRIs.
+* L'[article R566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645) traite de la sélection des TRIs. (*NB arrêté en cours de modification => justification des aléas en +*)
 
 * Les articles R566-6 à R566-9 traitent des cartes de surfaces inondables et des cartes des risques d'inondation :
-  * L'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) précise le contenu des cartes de surfaces inondables.
+  * L'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) précise le contenu des cartes de surfaces inondables. (*NB en cours de modification => correspondance avec l'aléa de référence des PPRI + aléa échéance 100ans en submersion marine*)
   * L'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) précise le contenu des cartes de risques d'inondation.
-  * L'[article R566-8](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655653) traite du cas des inondations dues aux eaux souterraines.
-  * L'[article R566-9](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655655) traite de la gouvernance pour l'élaboration de ces cartes.
+  * L'[article R566-8](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655653) traite du cas des inondations dues aux eaux souterraines. (*NB en cours de modification, lien avec existence PPRI*)
+  * L'[article R566-9](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655655) traite de la gouvernance pour l'élaboration de ces cartes. (*NB en cours de modification : concomitance avec élaboration PPRI*)
 
 ## Compréhension du document
 
@@ -150,18 +154,17 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 
 | Terme | Définition|
 |-|-|
-| Risque | Un risque est la conjugaison d’un aléa (résultant par exemple d’une inondation) et d’enjeux, plus ou moins vulnérables au regard de l’aléa. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).  |
 | Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).|
+| Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Il existe quatorze bassins ou groupements de bassins en France. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
+| District | Synonyme de bassin. |
 | Enjeux | Personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. Cf. [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions). |
-| Vulnérabilité (à l'inondation) | La vulnérabilité d’un enjeu (personne, bien, activité, patrimoine, etc.) à l’inondation peut être définie comme la propension de cet enjeu à être affecté par une inondation. Elle dépend à la fois de l’exposition à l’aléa (et notamment de l’intensité de l’aléa au niveau de l’enjeu) et de la manière dont l’enjeu est adapté à l’inondation. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
 | Inondation | Submersion temporaire par l'eau de terres émergées, quelle qu'en soit l'origine, à l'exclusion des inondations dues aux réseaux de collecte des eaux usées, y compris les réseaux unitaires. Cf. [Article L566-1 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454)
-| Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
 | Préfet (coordinateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). |
+| Risque | Un risque est la conjugaison d’un aléa (résultant par exemple d’une inondation) et d’enjeux, plus ou moins vulnérables au regard de l’aléa. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).  |
 | Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le préfet coordinateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
-
+| Vulnérabilité (à l'inondation) | La vulnérabilité d’un enjeu (personne, bien, activité, patrimoine, etc.) à l’inondation peut être définie comme la propension de cet enjeu à être affecté par une inondation. Elle dépend à la fois de l’exposition à l’aléa (et notamment de l’intensité de l’aléa au niveau de l’enjeu) et de la manière dont l’enjeu est adapté à l’inondation. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
 
 ### Abréviations
-
 
 | Sigle | Signification |
 |-|-|
@@ -170,6 +173,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | Cerema | Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement |
 | COVADIS | Commission de validation des données pour l'information spatialisée |
 | CNIG | Comité national de l'information géolocalisée |
+| DCE | Directive 2000/60/CE du Parlement européen et du Conseil du 23 octobre 2000 établissant un cadre pour une politique communautaire dans le domaine de l'eau (Directive cadre sur l'eau). |
 | DDT | Direction départementale des territoires  |
 | DDTM | Direction départementale des territoires et de la mer  |
 | DGPR | Direction générale de la prévention des risques |
@@ -192,11 +196,22 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 
 ## Périmètre d'application
 
-`<Préciser ici le périmètre d'application du standard. Certaines exigences du standard peuvent n'être pertinentes que pour un périmètre d'application réduit à préciser ici.>`
+Ce standard est applicable à tous les TRI arrêtés sur l'ensemble des bassins ou groupement de bassins du territoire français délimités par l'[Arrêté du 16 mai 2005](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258952) :
 
-`Ex : Ce standard s'applique à toutes les collectivités dispodant d'un document d'urbanisme.`
-`Ce standard est destiné à être utilisé dans le cadre de la réforme DT/DICT.`
-
+* L'Escaut, la Somme et les cours d'eau côtiers de la Manche et de la mer du Nord ;
+* La Meuse ;
+* La Sambre ;
+* Le Rhin ;
+* La Seine et les cours d'eau côtiers normands ;
+* La Loire, les cours d'eau côtiers vendéens et bretons ;
+* Le Rhône et les cours d'eau côtiers méditerranéens ;
+* L'Adour, la Garonne, la Dordogne, la Charente et les cours d'eau côtiers charentais et aquitains ;
+* Les cours d'eau de la Corse ;
+* Les cours d'eau de la Guadeloupe ;
+* Les fleuves et cours d'eau côtiers de la Guyane ;
+* Les cours d'eau de la Martinique ;
+* Les cours d'eau de la Réunion ;
+* Les cours d'eau de Mayotte.
 
 ## Les acteurs et rôles concernés `<optionnel>`
 
