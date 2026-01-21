@@ -25,7 +25,7 @@ Groupe de travail refonte des Géostandards Risques
 | **Sous-titre** | Cartographies de la Directive Inondation |
 | **Version** | *Version 0.0.1 - 11 décembre 2025* |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux cartographies de la directive inondation. |
-| **Objectif** | `<(facultatif) informations sur les raisons qui motivent le développement du contenu (en particulier si le standard permet de répondre à une obligation réglementaire)>` |
+| **Objectif** | Ce document à pour objectif de décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le cadre réglementaire transposé de la Directive européenne sur les inondations. |
 | **Etendue d'application** | Territoires à risque important d'inondation sur les bassins DCE (Directive Cadre Eau) du territoire national français *et Saint-Pierre et Miquelon (à confirmer)*. |
 | **Représentation spatiale** | Données vecteur |
 | **Résolution spatiale** | L'échelle cible des cartographies de la Directive Inondation est le 1:25000. *Elle peut néanmoins être plus précise lorsqu'elle est produite à partir de zones d'aléas PPR plus résolues*. |
@@ -126,6 +126,8 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
+| [EauFrance](https://www.eaufrance.fr/) | Le service public d’information sur l’eau et les milieux aquatiques | OFB | En continu |
+| [Référentiel Technique Sandre](https://www.sandre.eaufrance.fr/v2/) | Référentiel  technique Sandre pour le système d'information sur l'eau (SIE) |  OFB, Sandre | En continu |
 
 ### Cadre réglementaire
 
@@ -184,11 +186,13 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
 | ICPE | Installation classée pour la protection de l'environnement |
 | IGN | Institut national de l'information géographique et forestière |
-| MTECT | Ministère de la transition écologique et de la cohésion des territoires  |
+| MTECT | Ministère de la transition écologique et de la cohésion des territoires |
+| OFB | Office français de la biodiversité |
 | OGC | Open Geospatial Consortium |
-| PPRI | Plan de prévention des risques d'inondation|
+| PPRI | Plan de prévention des risques d'inondation |
 | PGRI | Plan de gestion des risques d'inondation |
 | SIG | Système d'information géographique |
+| Sandre | Service d'administration nationale des données et référentiels sur l'eau |
 | TRI | Territoire à risque important d'inondation |
 
 # Contexte d'application
@@ -244,7 +248,6 @@ Ce standard est applicable à tous les TRI arrêtés sur l'ensemble des bassins 
 
 `<Diagramme UML du cas d'utilisation 1>`
 `<Description rédigée du scénario d'utilisation>`
-
 
 # Contenu et structure de la donnée
 
