@@ -78,7 +78,7 @@ Elle est constituée d'un document socle [CNIG_RISQUES_COMMUN:2024](https://gith
 
 Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le [cadre réglementaire](#cadre-réglementaire) transposé de la Directive européenne sur les inondations.
 
-Ces cartographies doivent servir à l'établissement de plans de gestion des risques d'inondation (PGRI) à l'échelle des grands bassins hydrographiques et l'élaboration des stratégies locales de gestion des risques d'inondation sur ces territoires. Ces éléments font l'objet d'un rapportage par cycles de six ans auprès de la Commission Européenne.
+Ces cartographies doivent servir à l'établissement de plans de gestion des risques d'inondation (PGRI) à l'échelle des grands bassins hydrographiques et l'élaboration des stratégies locales de gestion des risques d'inondation (SLGRI) sur ces territoires. Ces éléments font l'objet d'un rapportage par cycles de six ans auprès de la Commission Européenne.
 
 Ce standard s'inscrit dans une démarche générale d'harmonisation des données géographiques relatives au risque inondation. Il vise à faciliter l'entretien et la mise à jour  en continu du patrimoine des cartographies des TRI avec une intégration cohérente des données d'aléas et d'enjeux des plans de prévention des risques d'inondation (PPRI) et une banalisation des opérations du rapportage européen.
 
@@ -160,7 +160,8 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 |-|-|
 | Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).|
 | Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Il existe quatorze bassins ou groupements de bassins en France. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
-| District | Synonyme de bassin dans le cadre de la DCE. |
+| District | Synonyme de bassin dans le cadre de la DCE. _(TBD : préciser la définition alternative de District à ne pas utiliser)_ |
+| DREAL de bassin | Direction régionale de l'environnement, de l'aménagement et du logement (DREAL) qui se voit confier le rôle de délégué de bassin à l'échelle d'un grand bassin hydrographique au service du préfet coordinateur de bassin. En outre mer, ce rôle est assuré par les Directions de l'environnement, de l'aménagement et du logement (DEAL) des bassins ultramrins.|
 | Enjeux | Personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. Cf. [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions). |
 | Inondation | Submersion temporaire par l'eau de terres émergées, quelle qu'en soit l'origine, à l'exclusion des inondations dues aux réseaux de collecte des eaux usées, y compris les réseaux unitaires. Cf. [Article L566-1 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454)
 | Préfet (coordinateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
@@ -172,6 +173,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 
 | Sigle | Signification |
 |-|-|
+| APSFR | Area of Potential Significant Flood Risk (*Territoires à risques importants d'inondation*) |
 | BRGM | Bureau de recherches géologiques et minières |
 | BRIL | Bureau des risques d'inondation et littoraux (DGPR) |
 | Cerema | Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement |
@@ -184,8 +186,11 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | DI | Directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
 | DREAL | Direction régionale de l'environnement, de l'aménagement et du logement |
 | DEAL | Direction de l'environnement, de l'aménagement et du logement |
+| EEA | European Environment Agency (Agence européenne pour l'environement) |
 | ERP | Établissement recevant du public |
+| FHRM | Flood Hazard and Risk Maps (*Cartes des surfaces inondables et des risques d'inondation*) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
+| GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
 | ICPE | Installation classée pour la protection de l'environnement |
 | IGN | Institut national de l'information géographique et forestière |
 | MTECT | Ministère de la transition écologique et de la cohésion des territoires |
@@ -195,61 +200,110 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | PGRI | Plan de gestion des risques d'inondation |
 | SIG | Système d'information géographique |
 | Sandre | Service d'administration nationale des données et référentiels sur l'eau |
+| SLGRI | Stratégie locale de gestion des risques d'inondation |
 | TRI | Territoire à risque important d'inondation |
 
 # Contexte d'application
-`<Décrire l'objectif de l'utilisateur du standard. Donner des cas d'utilisation permis par le standard.>`
 
 ## Périmètre d'application
 
-Ce standard est applicable à tous les TRI arrêtés sur l'ensemble des bassins ou groupement de bassins du territoire français délimités par l'[Arrêté du 16 mai 2005](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258952) :
+Ce standard est applicable à tous les TRI arrêtés sur l'ensemble des bassins ou groupement de bassins du territoire français délimités par l'[Arrêté du 16 mai 2005](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258952) (les codes entre parenthèses sont les identifiants des bassins dans le système européen) :
 
-* L'Escaut, la Somme et les cours d'eau côtiers de la Manche et de la mer du Nord ;
-* La Meuse ;
-* La Sambre ;
-* Le Rhin ;
-* La Seine et les cours d'eau côtiers normands ;
-* La Loire, les cours d'eau côtiers vendéens et bretons ;
-* Le Rhône et les cours d'eau côtiers méditerranéens ;
-* L'Adour, la Garonne, la Dordogne, la Charente et les cours d'eau côtiers charentais et aquitains ;
-* Les cours d'eau de la Corse ;
-* Les cours d'eau de la Guadeloupe ;
-* Les fleuves et cours d'eau côtiers de la Guyane ;
-* Les cours d'eau de la Martinique ;
-* Les cours d'eau de la Réunion ;
-* Les cours d'eau de Mayotte.
+* L'Escaut, la Somme et les cours d'eau côtiers de la Manche et de la mer du Nord (FRA);
+* La Meuse (FRB1);
+* La Sambre (FRB2);
+* Le Rhin (FRC);
+* La Seine et les cours d'eau côtiers normands (FRH);
+* La Loire, les cours d'eau côtiers vendéens et bretons (FRG);
+* Le Rhône et les cours d'eau côtiers méditerranéens (FRD);
+* L'Adour, la Garonne, la Dordogne, la Charente et les cours d'eau côtiers charentais et aquitains (FRF);
+* Les cours d'eau de la Corse (FRE);
+* Les cours d'eau de la Guadeloupe (FRI);
+* Les fleuves et cours d'eau côtiers de la Guyane (FRK) ;
+* Les cours d'eau de la Martinique (FRJ);
+* Les cours d'eau de la Réunion (FRL);
+* Les cours d'eau de Mayotte (FRM).
 
-## Les acteurs et rôles concernés `<optionnel>`
+Les cartes ci-dessous représentent le découpage de ces bessins.
 
-`Par leurs missions, les différents intervenants (ou utilisateurs) liés au thème peuvent être amenés à se reconnaître dans plusieurs rôles distincts. Ces rôles décrivent les besoins et les capacités de l'acteur.`
+![Bassins du territoire métropolitain et Corse](./ressources/TBD1){#fig:bassins-metropole}
 
-`Ces rôles peuvent sot décrit dans le schéma et le tableau ci-dessous.`
+![Bassins des territoires d'outre mer](./ressources/TBD2){#fig:bassins-drom}
 
-`<Schéma illustrant le parcours des données standardisées et le rôle des acteurs concernés. Ce parcours peut suivre l'un des exemples suivant : producteur/utilisateur/initiateur/serveur/receveur/facilitateur,             ou producteur/utilisateur/initiateur/diffuseur/facilitateur>`
+## Les acteurs et rôles concernés
+
+Le tableau suivant présente les différents acteurs regroupés par rôles principaux dans la mise en oeuvre, la publication, le rapportage et l'exploitation des cartographies de la directive inondation.
 
 | Rôles | Caractéristiques |
-|---|---|
-| `<**Nom du rôle 1**>` | `<description du rôle 1>` |
-| `<**Nom du rôle 2**>` | `<descriptin du rôle 2>`  |
-
+| - | - |
+| Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en oeuvre sous l'autorité du **Préfet coordinateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
+| Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
+| Diffuseur | La diffusion des cartographies de la directive inondation est assurée par les **D(R)EALs de bassin** sur leurs sites internet et au niveau national par la **DGPR** sur le site [Géorisques](www.georisques.gouv.fr) opéré par le **BRGM**. Elle est aussi assurée au niveau européen sur le site [WISE Freshwater](https://water.europa.eu/freshwater) opéré par l'**EEA** pour le compte de la **Commission européenne**. |
+| Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information acquéreur locataire (IAL), des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en oeuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
 
 ## Cas d'utilisation
 
-`<Si plusieurs cas d'utilisation existent, indiquer ici comment ils s'articulent>`
+Les cas d'utilisation illustrés ci-après impliquent l'utilisation ou la connaissance de ce standard dans la production, la publication, le rapportage et l'exploitation des cartographies de la directive inondation. Les acteurs qui y figurent peuvent être :
+
+* des personnes ou entités effectivement à la manœuvre dans les actions ;
+* des systèmes en place permettant la réalisation de ces actions.
+
+### Cas d'utilisation `Elaborer les cartographies de la directive inondation`
+
+Le cas d'utilisation "Elaborer les cartographies de la Directive Inondation" décrit les étapes de mise en oeuvre ou de révision des cartographies de la directive inondation ainsi les acteurs majeurs et systèmes impliqués. Les étapes présentées ne sont pas toutes concernées au même niveau par le périmètre du ce standard.
+
+| Action du cas d'utilisation | Description |
+| - | - |
+| Déclencher l'élaboration des cartographies | Cette action est de la responsabilité du **préfet de bassin**. Elle consiste à arrêter un nouveau territoire (TRI) sur lequel il existe un risque important d'inondation ou à arrêter la mise à jour des cartographies d'un TRI après réexamen par les **D(R)EALs de bassin** ou les **DDT(M)s** concernées. Dans ce dernier cas, la décision de mise à jour peut-être consécutive à la révision d'un plan de prévision des risques inondation (PPRI) ou littoral (PPRL), de nouvelles connaissances sur l'aléa d'inondation (survenue d'un évènement, nouvelles études, ...), le changement de périmètre du TRI (par exemple du fait d'une fusion de communes) ou la prise en compte d'une nouvelle source d'aléa (cours d'eau). |
+| Produire les données métiers | Cette action est menée sous la responsabilité du **prefet de bassin** par les **D(R)EALs de bassin**. Elle consiste à établir les informations metiers sur les aléas et les enjeux pour produire les cartographies. Elle est mise en oeuvre par les services techniques compétents :  **Service central Vigicrues**, **Services de prévision des crues(SPC)**, **Services risques en DDT(M)** ou **Bureaux d'études**. Selon les types d'aléa, certains **opérateurs d'Etat** (BRGM, Cerema) peuvent aussi être sollicités. |
+| Produire les données SIG | Cette étape consiste à produire les données numériques des cartographies en conformité avec ce standard (y compris la validation), ainsi que les données de rapportage au niveau européen. Il peut s'agir d'une sous-étape de la précédente si les données ont été directement produites selon le formalisme du standard. Les acteurs impliqués sont globalement les mêmes que lors de l'étape précédente. D'autres opérateurs (IGN) peuvent être sollicités pour la validation des données relativement au standard. |
+| Produire les cartes | Cette action menée par les **D(R)EALs de bassin** consiste à établir les cartes objets des [articles R566-6 à R566-9 du code de l'environnement](#cadre-réglementaire) à partir des données SIG aux formats papier ou pdf qui seront arrêtées par le préfet de bassin et mises à disposition du public. |
+| Arrêter les cartes | Cette action est réalisée par le **préfet de bassin** qui valide les cartes produites. |
+
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+
+![Cas d'utilisation : Elaborer les cartographies de la DI](./ressources/UC-Elaborer-carto-DI.png){#fig:elab-carto-di-img}
+
+### Cas d'utilisation `Rapporter les cartographies de la directive inondation`
+
+Le cas d'utilisation "Rapporter les cartographies de la directive inondation" est un cas d'utilisation particulièr à la directive inondation qui vise à rendre compte à la Commission Européenne de l'application par la France de la Directive inondation. Le rapportage des cartographies s'inscrit dans un ensemble plus large de rapportages relatifs à cette Directive qui se répète régulièrement sur des cycles de 6 ans (à la date de rédaction de ce document, le 3ieme cycle de rapportage est en cours). Il s'agit ici faire remonter les informations particulières de ces cartographies dans le modèle harmonisé européen des "Flood Hazard and Risk Maps (FHRM)". Certaines informations décrites dans ce standard, comme les périmètres des TRI, peuvent aussi être utilisées pour le rapportage des "Area of Potential Significant Flood Risk (APSFR)".
+
+| Action du cas d'utilisation | Description |
+| - | - |
+| Initier le rapportage | Le démarrage et les modalités de rapportage relatifs à un cycle sont initiés par la **Commission européenne** et signifiés aux états membres (à la **DGPR** dans le cas de la France). Des guides de rapportage sont fournis et le portail et les outils permettant de l'effectuer sont mis à disposition des états membres. |
+| Produire les données de rapportage | Sous la responsabilité de la **DGPR**, les données de rapportage sont rassemblées par les **D(R)EALs** de bassin à partir des données produites pour les cartographies de la Directive Inondation et mises au format harmonisé européen. Des opérateurs de l'état ou d'autres sous-traitants peuvent être sollicités pour assister la DGPR  dans la mise en forme des données de rapportage. |
+| Effectuer le rapportage | Cette action est effectuée par la DGPR sur le portail le portail **Eionet** opéré par l'**agence européenne de l'environement (EEA)** pour la commission européenne. Ce portail permet aussi de valider les données rapportées afin de pouvoir les reprendre si elles ne respectent pas les critères de validation. |
+| Valider le rapportage | Cette dernière étape est effectuée par la commission européenne, une fois le rapportage effectué par les états membres. |
+
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+
+![Cas d'utilisation : Rapporter les cartographies de la DI](./ressources/UC-Rapporter-carto-DI.png){#fig:rapport-carto-di-img}
 
 
-### Cas d'utilisation `<Nom du cas 1>` 
+### Cas d'utilisation `Publier les cartographies de la directive inondation`
 
-|  | `<Nom du cas 1>` |
+Le cas d'utilisation "Publier les cartographies de la directive inondation" concerne la mise à disposition de ces cartographies par les diffuseurs pour les utilisateurs. Cette mise à disposition se fait sous différentes formes sur différents médias. 
+
+| Action du cas d'utilisation | Description |
 |---|---|
-| **Objectif** | `<(facultatif) Brève description de l'objectif à atteindre en réalisant le cas d'utilisation 1>` |
-| **Déclencheur** | `<(facultatif) Evènement spécifique menant à l'exécution de ce cas d'utilisation 1>`  |
-| **Précondition** | `<(facultatif) Description du statut requis pour lancer l'exécution du scénario d'utilisation>`  |
-| **Postcondition** | `<(facultatif) Description du statut après exécution réussie du scénario d'utilisation>`  |
+| Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon à ce quelles soient exploitables par des systèmes avals. Elle est mise en oeuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
+| Publier les atlas des cartes | Cette action vise à rendre accessibles les cartes arrêtées par le préfet dans un format "imprimable" (PDF). Elle est effectuée par les **D(R)EALs de bassin** sur leurs sites internet. |
+| Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage vie son sytème **WISE Freshwater** (Freshwater information system for europe). |
 
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
 
-`<Diagramme UML du cas d'utilisation 1>`
-`<Description rédigée du scénario d'utilisation>`
+![Cas d'utilisation : Publier les cartographies de la DI](./ressources/UC-Publier-carto-DI.png){#fig:publi-carto-di-img}
+
+### Cas d'utilisation `Exploiter les cartographies de la directive inondation`
+
+Le cas d'utilisation "exploiter les cartographies de la Directive Inondation" bla bla bla
+
+| Action du cas d'utilisation | Description |
+|---|---|
+| xxxx | bla bla bla bla  |
+
+La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+
 
 # Contenu et structure de la donnée
 
