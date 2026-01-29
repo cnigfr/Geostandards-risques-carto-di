@@ -227,9 +227,7 @@ Ce standard est applicable à tous les TRIs arrêtés sur l'ensemble des bassins
 
 Les cartes ci-dessous issues du ["Flood Risk Areas Viewer"](https://discomap.eea.europa.eu/floodsviewer/) du site Wise Freshwater de la commission européenne représentent le découpage de ces bassins ainsi que les emprises des TRIs à la date de rédaction de ce document.
 
-| | | |
-| - | - | - |
-| ![Bassins des territoires d'outre mer ouest](./ressources/Uom-FRI-FRJ-FRK.png){#fig:bassins-drom-ouest} | ![Bassins du territoire métropolitain et Corse](./ressources/Uom-FRA-FRH.png){#fig:bassins-metropole} | ![Bassins des territoires d'outre mer est](./ressources/Uom-FRM-FRL.png){#fig:bassins-drom-est} |
+![Bassins du territoire national](./ressources/Uom-APSFR.png){#fig:bassins-metropole}
 
 (© EuroGeographics pour les limites administratives)
 
