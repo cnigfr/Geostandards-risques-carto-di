@@ -208,7 +208,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 
 ## Périmètre d'application
 
-Ce standard est applicable à tous les TRI arrêtés sur l'ensemble des bassins ou groupement de bassins du territoire français délimités par l'[Arrêté du 16 mai 2005](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258952) (les codes entre parenthèses sont les identifiants des bassins dans le système européen) :
+Ce standard est applicable à tous les TRIs arrêtés sur l'ensemble des bassins ou groupement de bassins du territoire français délimités par l'[Arrêté du 16 mai 2005](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258952) (les codes entre parenthèses sont les identifiants des bassins dans le système européen) :
 
 * L'Escaut, la Somme et les cours d'eau côtiers de la Manche et de la mer du Nord (FRA);
 * La Meuse (FRB1);
@@ -225,11 +225,13 @@ Ce standard est applicable à tous les TRI arrêtés sur l'ensemble des bassins 
 * Les cours d'eau de la Réunion (FRL);
 * Les cours d'eau de Mayotte (FRM).
 
-Les cartes ci-dessous représentent le découpage de ces bessins.
+Les cartes ci-dessous issues du ["Flood Risk Areas Viewer"](https://discomap.eea.europa.eu/floodsviewer/) du site Wise Freshwater de la commission européenne représentent le découpage de ces bassins ainsi que les emprises des TRIs à la date de rédaction de ce document.
 
-![Bassins du territoire métropolitain et Corse](./ressources/TBD1){#fig:bassins-metropole}
+| | | |
+| - | - | - |
+| ![Bassins des territoires d'outre mer ouest](./ressources/Uom-FRI-FRJ-FRK.png){#fig:bassins-drom-ouest} | ![Bassins du territoire métropolitain et Corse](./ressources/Uom-FRA-FRH.png){#fig:bassins-metropole} | ![Bassins des territoires d'outre mer est](./ressources/Uom-FRM-FRL.png){#fig:bassins-drom-est} |
 
-![Bassins des territoires d'outre mer](./ressources/TBD2){#fig:bassins-drom}
+(© EuroGeographics pour les limites administratives)
 
 ## Les acteurs et rôles concernés
 
