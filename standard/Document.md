@@ -187,6 +187,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | DREAL | Direction régionale de l'environnement, de l'aménagement et du logement |
 | DEAL | Direction de l'environnement, de l'aménagement et du logement |
 | EEA | European Environment Agency (Agence européenne pour l'environement) |
+| ERRIAL | Etat des risques pour l'information des acquéreurs et des locataires |
 | ERP | Établissement recevant du public |
 | FHRM | Flood Hazard and Risk Maps (*Cartes des surfaces inondables et des risques d'inondation*) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
@@ -239,7 +240,7 @@ Le tableau suivant présente les différents acteurs regroupés par rôles princ
 | Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en oeuvre sous l'autorité du **Préfet coordinateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
 | Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
 | Diffuseur | La diffusion des cartographies de la directive inondation est assurée par les **D(R)EALs de bassin** sur leurs sites internet et au niveau national par la **DGPR** sur le site [Géorisques](www.georisques.gouv.fr) opéré par le **BRGM**. Elle est aussi assurée au niveau européen sur le site [WISE Freshwater](https://water.europa.eu/freshwater) opéré par l'**EEA** pour le compte de la **Commission européenne**. |
-| Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information acquéreur locataire (IAL), des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en oeuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
+| Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information des acquéreurs et des locataires, des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en oeuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
 
 ## Cas d'utilisation
 
@@ -260,49 +261,53 @@ Le cas d'utilisation "Elaborer les cartographies de la Directive Inondation" dé
 | Produire les cartes | Cette action menée par les **D(R)EALs de bassin** consiste à établir les cartes objets des [articles R566-6 à R566-9 du code de l'environnement](#cadre-réglementaire) à partir des données SIG aux formats papier ou pdf qui seront arrêtées par le préfet de bassin et mises à disposition du public. |
 | Arrêter les cartes | Cette action est réalisée par le **préfet de bassin** qui valide les cartes produites. |
 
-La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
 ![Cas d'utilisation : Elaborer les cartographies de la DI](./ressources/UC-Elaborer-carto-DI.png){#fig:elab-carto-di-img}
 
 ### Cas d'utilisation `Rapporter les cartographies de la directive inondation`
 
-Le cas d'utilisation "Rapporter les cartographies de la directive inondation" est un cas d'utilisation particulièr à la directive inondation qui vise à rendre compte à la Commission Européenne de l'application par la France de la Directive inondation. Le rapportage des cartographies s'inscrit dans un ensemble plus large de rapportages relatifs à cette Directive qui se répète régulièrement sur des cycles de 6 ans (à la date de rédaction de ce document, le 3ieme cycle de rapportage est en cours). Il s'agit ici faire remonter les informations particulières de ces cartographies dans le modèle harmonisé européen des "Flood Hazard and Risk Maps (FHRM)". Certaines informations décrites dans ce standard, comme les périmètres des TRI, peuvent aussi être utilisées pour le rapportage des "Area of Potential Significant Flood Risk (APSFR)".
+Le cas d'utilisation "Rapporter les cartographies de la directive inondation" est un cas d'utilisation particulier à la directive inondation qui vise à rendre compte à la Commission européenne de l'application par la France de la Directive inondation. Le rapportage des cartographies s'inscrit dans un ensemble plus large de rapportages relatifs à cette Directive qui se répète régulièrement sur des cycles de 6 ans (à la date de rédaction de ce document, le 3ieme cycle de rapportage est en cours). Il s'agit ici faire remonter les informations particulières de ces cartographies dans le modèle harmonisé européen des "Flood Hazard and Risk Maps (FHRM)". Certaines informations décrites dans ce standard, comme les périmètres des TRI, sont aussi être utilisées pour le rapportage des "Area of Potential Significant Flood Risk (APSFR)".
 
 | Action du cas d'utilisation | Description |
 | - | - |
 | Initier le rapportage | Le démarrage et les modalités de rapportage relatifs à un cycle sont initiés par la **Commission européenne** et signifiés aux états membres (à la **DGPR** dans le cas de la France). Des guides de rapportage sont fournis et le portail et les outils permettant de l'effectuer sont mis à disposition des états membres. |
 | Produire les données de rapportage | Sous la responsabilité de la **DGPR**, les données de rapportage sont rassemblées par les **D(R)EALs** de bassin à partir des données produites pour les cartographies de la Directive Inondation et mises au format harmonisé européen. Des opérateurs de l'état ou d'autres sous-traitants peuvent être sollicités pour assister la DGPR  dans la mise en forme des données de rapportage. |
-| Effectuer le rapportage | Cette action est effectuée par la DGPR sur le portail le portail **Eionet** opéré par l'**agence européenne de l'environement (EEA)** pour la commission européenne. Ce portail permet aussi de valider les données rapportées afin de pouvoir les reprendre si elles ne respectent pas les critères de validation. |
-| Valider le rapportage | Cette dernière étape est effectuée par la commission européenne, une fois le rapportage effectué par les états membres. |
+| Effectuer le rapportage | Cette action est effectuée par la DGPR avec l'assistance possible d'un opérateur d'état (IGN) sur le portail **Reportnet** opéré par l'**agence européenne de l'environement (EEA)** pour la commission européenne.  Le portail inclut un validateur qui autorise ou non la publication des données rapportées. Ce validateur contrôle la forme des données rapportées (respect des types de champ, valeurs autorisées, etc.). |
+| Valider le rapportage | Cette dernière étape est effectuée par la Commission européenne, une fois le rapportage effectué par les états membres. Il s’agit de contrôler et valider les données sur le fond (notamment la présence de références documentaires pertinentes). Un rapport issu de ce contrôle est envoyé à chaque Etat membre. |
 
-La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
 ![Cas d'utilisation : Rapporter les cartographies de la DI](./ressources/UC-Rapporter-carto-DI.png){#fig:rapport-carto-di-img}
 
-
 ### Cas d'utilisation `Publier les cartographies de la directive inondation`
 
-Le cas d'utilisation "Publier les cartographies de la directive inondation" concerne la mise à disposition de ces cartographies par les diffuseurs pour les utilisateurs. Cette mise à disposition se fait sous différentes formes sur différents médias. 
+Le cas d'utilisation "Publier les cartographies de la directive inondation" concerne la mise à disposition de ces cartographies par les diffuseurs pour les utilisateurs. Cette mise à disposition se fait sous différentes formes sur différents médias.
 
 | Action du cas d'utilisation | Description |
-|---|---|
+| - | - |
 | Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon à ce quelles soient exploitables par des systèmes avals. Elle est mise en oeuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
 | Publier les atlas des cartes | Cette action vise à rendre accessibles les cartes arrêtées par le préfet dans un format "imprimable" (PDF). Elle est effectuée par les **D(R)EALs de bassin** sur leurs sites internet. |
 | Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage vie son sytème **WISE Freshwater** (Freshwater information system for europe). |
 
-La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
 ![Cas d'utilisation : Publier les cartographies de la DI](./ressources/UC-Publier-carto-DI.png){#fig:publi-carto-di-img}
 
 ### Cas d'utilisation `Exploiter les cartographies de la directive inondation`
 
-Le cas d'utilisation "exploiter les cartographies de la Directive Inondation" bla bla bla
+Le cas d'utilisation "exploiter les cartographies de la Directive Inondation" illustre de façon non exhaustive des utilisations connues et possibles des données de la directive inondation issues de ce standard en lien avec la manière dont elles sont publiées.
 
 | Action du cas d'utilisation | Description |
-|---|---|
-| xxxx | bla bla bla bla  |
+| - | - |
+| Mettre en oeuvre la GEMAPI | La gestion des milieux aquatiques et la prévention des inondations (GEMAPI) est une compétence confiée aux **intercommunalités** (métropoles, communautés urbaines, communautés d’agglomération, communautés de communes) pour la prévention du risque inondation, notamment pour l'entretien des cours d'eau, la défense contre les inondations et contre la mer. Les informations des cartographies de la Directive inondation participent à cette mise en oeuvre. |
+| Elaborer la PGRI et les SLGRI | L'élaboration sous responsabilité des **préfets de bassin** des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et leurs déclinaisons en stratégies locales de gestion du risque inondation (SLGRI) font parties des actions transposées de la directive inondation et s'appuient sur les données de cartographies de la directive inondation. |
+| Porter à connaissance sur le risque inondation | Les cartographies de la directive inondation font parties des éléments sur le risque inondation portés à connaissance (PaC) par l'**Etat**, via ses services régionaux ou départementaux auprès des **collectivité locales**. |
+| Informer les citoyens | L'information des citoyens sur le risque inondation s'appuie sur données des cartographies de la directive inondation, notamment via des cartographies interactives (par exemple sur le site [Georisques](https://www.georisques.gouv.fr/cartes-interactives#/)) ou lors de l'établissement de l'état des risques acquéreurs-locataires (ERRIAL) pour les transactions immobilières. |
 
-La figure suivante illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles.
+Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
+
+![Cas d'utilisation : Exploiter les cartographies de la DI](./ressources/UC-Exploiter-carto-DI.png){#fig:exploit-carto-di-img}
 
 
 # Contenu et structure de la donnée
