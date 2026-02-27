@@ -225,7 +225,7 @@ Ce standard est applicable à tous les TRIs arrêtés sur l'ensemble des bassins
 * Les cours d'eau de la Réunion (FRL);
 * Les cours d'eau de Mayotte (FRM).
 
-Les cartes ci-dessous issues du ["Flood Risk Areas Viewer"](https://discomap.eea.europa.eu/floodsviewer/) du site Wise Freshwater de la commission européenne représentent le découpage de ces bassins ainsi que les emprises des TRIs à la date de rédaction de ce document.
+Les cartes ci-dessous issues du ["Flood Risk Areas Viewer"](https://discomap.eea.europa.eu/floodsviewer/) du site Wise Freshwater de la commission européenne représentent le découpage de ces bassins ainsi que les périmètres des TRIs à la date de rédaction de ce document.
 
 ![Bassins du territoire national](./ressources/Uom-APSFR.png){#fig:bassins-metropole}
 
@@ -309,21 +309,48 @@ Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les i
 
 ![Cas d'utilisation : Exploiter les cartographies de la DI](./ressources/UC-Exploiter-carto-DI.png){#fig:exploit-carto-di-img}
 
-
 # Contenu et structure de la donnée
 
-`La section relative au contenu et à la structure des données décrit l'intégration du standard <objet du standard>.`
+Cette section définit les concepts relatifs aux cartographies de la Directive Inondation. Ceux-ci s'appuient sur ceux du modèle de données commun défini dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun) en les spécialisant le cas échéant.
 
 ## Modèle conceptuel de données (MCD)
 
 ### Conventions de lecture
+
 Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) UML.
 
-### Diagrammes
+### Diagramme général
 
-`Exemple : Schéma applicatif UML du Standard PCRS général.`
+Le diagramme UML suivant représente le modèle de données complet des classes impliquées dans les cartographies de la Directive Inondation. Pour plus de lisibilité, les énumérations et les types de données ne sont pas représentés sur ce diagramme. Ces éléments seront représentés dans les diagrammes spécifiques par thématique qui suivent.
 
-![Schéma applicatif UML](./ressources/schema_explicatif_uml_standard_pcrs_general.png)
+![Schéma UML général](./ressources/TBD.png)
+{#fig:uml-general-img}
+
+### Procédure TRI et cartes
+
+Le diagramme UML suivant représente les classes décrivant les territoires à risques important d'inondation (TRI), leur lien avec le système GASPAR et leurs cartographies.
+
+![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png)
+{#fig:uml-tri-cartes-img}
+
+### Surfaces inondables
+
+Le diagramme UML suivant représente les classes décrivant les surfaces inondables et les éléments permettant des les caractériser pouvant être représentés sur les cartes de surfaces inondables.
+
+![Schéma UML Procédure et cartes](./ressources/UML-Surfaces-Inondables-Carto-DI.png)
+{#fig:uml-surfaces-inondables-img}
+
+### Ouvrages protecteurs
+
+Le diagramme UML suivant représente les classes décrivant les ouvrages protecteurs, les zones de sur aléa qu'ils engendrent et les zones protégées pouvant être représentés sur les cartes de surfaces inondables et les cartes de risques.
+
+![Schéma UML Procédure et cartes](./ressources/UML-Ouvrages-protecteurs-Carto-DI.png)
+{#fig:uml-surfaces-inondables-img}
+
+### Représentation des enjeux
+
+TBD
+
 
 ## Catalogue d'objets
 
