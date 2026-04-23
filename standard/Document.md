@@ -345,11 +345,19 @@ Le diagramme UML suivant représente les classes décrivant les surfaces inondab
 Le diagramme UML suivant représente les classes décrivant les ouvrages protecteurs, les zones de sur aléa qu'ils engendrent et les zones protégées pouvant être représentés sur les cartes de surfaces inondables et les cartes de risques.
 
 ![Schéma UML Procédure et cartes](./ressources/UML-Ouvrages-protecteurs-Carto-DI.png)
-{#fig:uml-surfaces-inondables-img}
+{#fig:uml-ouvrages-protecteurs-img}
 
 ### Représentation des enjeux
 
-TBD
+Le diagramme UML suivant représente les classes décrivant les enjeux et leur intégration dans les cartes de risques.
+
+![Schéma UML Enjeux](./ressources/UML-Enjeux-Carto-DI.png)
+{#fig:uml-enjeux-img}
+
+Les enjeux représentés sur les cartes de risques sont les suivants :
+
+* Les [enjeux rapportés au TRI]() en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte de risque ;
+* Les objets de la classe [Enjeu]() héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI]()).
 
 
 ## Catalogue d'objets
@@ -544,6 +552,7 @@ Le management de la donnée représente une vision de l’information, non pas c
 `<Cette partie vise à fournir des instructions, des exigences, conventions d’échange et/ou des descriptions du format de diffusion des données et des moyens de livraison physique, ou bien des moyens de diffusion de données via des services de téléchargement ou d'affichage.>` 
 
 # Métadonnées
+
 ## Généralités
 
 Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes (selon la réglementation applicable : INSPIRE, HVD, etc. et les bonnes pratiques en vigueur), afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.  
@@ -561,12 +570,11 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 `- ...`
   
 ## Eléments de métadonnées
+
 ### Consignes de nommage du fichier de métadonnées
 |  |  |
 |---|---|
-| _**Consignes de nommage du fichier**_ (recommandation) | Le fichier de métadonnées est nommé:<br>fr-<SIREN>-thème<date>.xml<br>L’identificateur de la métadonnée pour les données du thème est constitué de deux blocs :
-- bloc identifiant `le producteur / gestionnaire /autorité` : fr-<SIREN>
-- bloc identifiant la donnée : -`thème`<date>      |
+| _**Consignes de nommage du fichier**_ (recommandation) | Le fichier de métadonnées est nommé:<br>fr-<SIREN>-thème<date>.xml<br>L’identificateur de la métadonnée pour les données du thème est constitué de deux blocs : (1) bloc identifiant `le producteur / gestionnaire /autorité` : fr-<SIREN> (2) bloc identifiant la donnée : -`thème`<date>      |
 | Exemple | _Le nom du fichier de métadonnées du thème portant le numéro SIREN 422270515 publiées le 22 avril 2021, prend la forme :_<br><br>_fr-422270515-theme20210422.xml_    |
 
 ### Identification des données
