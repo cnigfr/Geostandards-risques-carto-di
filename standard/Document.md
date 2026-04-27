@@ -317,7 +317,7 @@ Cette section définit les concepts relatifs aux cartographies de la Directive I
 
 ### Conventions de lecture
 
-Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) UML.
+Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) UML. La définition détaillée de chacune des classes est précisée dans la partie [Catalogue d'objets](#catalogue-dobjets).
 
 ### Diagramme général
 
@@ -328,26 +328,60 @@ Le diagramme UML suivant représente le modèle de données complet des classes 
 
 ### Procédure TRI et cartes
 
-Le diagramme UML suivant représente les classes décrivant les territoires à risques important d'inondation (TRI), leur lien avec le système GASPAR et leurs cartographies.
+Le diagramme UML suivant représente les classes décrivant les [territoires à risques important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri), leur lien avec le système GASPAR et [leurs cartographies](#cartographie-tri).
 
 ![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png)
 {#fig:uml-tri-cartes-img}
 
+La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](TBD identification des TRI), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
+La [référence internet](#référence-internet) qui lui est associée correspond soit à sa publication sur la plateforme nationale, soit sur la plateforme régionale (DREAL de Bassin), telle que spécifiée à l'aide de l'énumération [TypeReferenceTRI](#typereferencetri).
 
-### Surfaces inondables
+A chaque TRI sont associés des [cartographies TRI](#cartographie-tri), [arrêtées](#typeetatproceduretri) par le préfet de bassin sur lesquelles seront représentées les différents éléments décrits dans les parties suivantes :
+
+* les [cartes de surfaces inondables](#carte-des-surfaces-inondables) décrites pas l'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) du code de l'environnement, correspondant à des [probabilités d'aléa](#typeprobabilitealea) ;
+* les [cartes de risque d'inondation](#carte-de-risques-inondation) décrites pas l'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement.
+
+### Surfaces inondables et caractérisations d'aléas
 
 Le diagramme UML suivant représente les classes décrivant les surfaces inondables et les éléments permettant des les caractériser pouvant être représentés sur les cartes de surfaces inondables.
 
-![Schéma UML Procédure et cartes](./ressources/UML-Surfaces-Inondables-Carto-DI.png)
+![Schéma UML Surfaces inondables et aléas](./ressources/UML-Surfaces-Inondables-Carto-DI.png)
 {#fig:uml-surfaces-inondables-img}
 
-### Ouvrages protecteurs
+Les [surfaces inondables](#surface-inondable) sont les zones d'aléas issues des différents types de [risques d'inondation](#typealeacartodi) relatifs à la directive inondation. Elles correspondent à des [probabilités d'aléa type](#typeprobabilitealea) portées par le champs occurrence. Le ou les cours d'eaux qui sont à l'origine de ces surfaces peuvent être décrites à l'aide de la classe [OrigineRisque](#origine-du-risque) définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
-Le diagramme UML suivant représente les classes décrivant les ouvrages protecteurs, les zones de sur aléa qu'ils engendrent et les zones protégées pouvant être représentés sur les cartes de surfaces inondables et les cartes de risques.
+**Exigence :** Dans le cadre de la directive inondation, les cartes de surfaces inondables doivent être établies à minima pour représenter un des [aléas de moyenne probabilité](#typeprobabilitealea).
+
+**Exigence :** Pour la réprésentation des **aléas de moyenne probabilité**, les surfaces inondables correspondent aux zones d'aléas des PPRN correspondants, lorsqu'ils existent :
+
+* **zone d'aléa de référence** pour les aléas de submersion marine et débordement de cours d'eau ;
+* **zone d'aléa à échéance 100 ans** pour l'aléa submersion marine avec prise en compte du changement climatique à échéance 100.
+
+Les éléments de caractérisation d'aléas suivants peuvent être reportés sur les cartes de surfaces inondables :
+
+* [zones iso classes de hauteur](#zone-iso-classe-hauteur) réparties en [palliers de hauteur d'eau types](#typeclassehauteureau);
+* [lignes iso cote](#ligne-iso-cote) ;
+* [zones iso classe vitesse](#zone-iso-classe-vitesse), réparties en [classes de vitesses type](#typevitesseecoulement) ;
+* [points remarquables cote vitesse débit](#point-remarquable-cote-vitesse-débit) ;
+* [zone iso classe débit](#zone-iso-classe-débit).
+
+**Exigence :** Une carte de surfaces inondables doit comprendre à minima les zones iso classe de hauteur ou les lignes isocotes ayant permis de calculer les surfaces inondables correspondantes.
+
+Les surfaces inondables sont aussi représentées sur les [cartes de risque d'inondation](#carte-de-risques-inondation).
+
+### Ouvrages protecteurs et zones associées
+
+Le diagramme UML suivant représente les classes décrivant les [ouvrages protecteurs](#ouvrage-protecteur), les [zones de sur aléa](#zone-de-sur-aléa) qu'ils engendrent et les [zones protégées](#zone-protégée) pouvant être représentés sur les cartes de surfaces inondables et les cartes de risques.
 
 ![Schéma UML Procédure et cartes](./ressources/UML-Ouvrages-protecteurs-Carto-DI.png)
 {#fig:uml-ouvrages-protecteurs-img}
+
+La liste possible des types d'[ouvrages protecteurs](#ouvrage-protecteur) définis dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md) est limitée ici aux [types d'ouvrages en lien avec le risque inondation](#typeouvrageprotecteur).
+
+Les [zones de suraléa](#zone-de-sur-aléa) de type [Bande de précaution](#typesuralea) correspondent à la zone de suraléa engendrée en cas de rupture de l'ouvrage de protection.
+
+**Exigence :** Il n'y a pas de zone protégée contre les aléas de faible probabilité.
 
 ### Représentation des enjeux
 
@@ -358,8 +392,8 @@ Le diagramme UML suivant représente les classes décrivant les enjeux et leur i
 
 Les enjeux représentés sur les cartes de risques sont les suivants :
 
-* Les [enjeux rapportés au TRI]() en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte de risque ;
-* Les objets de la classe [Enjeu]() héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI]()).
+* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte de risque ;
+* Les objets de la classe [Enjeu](#enjeu) héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI](#nomenclature-enjeux-carto-di)).
 
 
 ## Catalogue d'objets
@@ -386,7 +420,9 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 
 ### Surface inondable
 
-### Zone iso cote
+### Origine du risque
+
+### Ligne iso cote
 
 ### Zone iso classe hauteur
 
@@ -439,6 +475,8 @@ Outres les valeurs désignées, tous les types énumérés comprennent les valeu
 ### TypeEtatProcedureTRI
 
 ### TypeProbabiliteAlea
+
+### TypeAleaCartoDI
 
 ### TypeVitesseEcoulement
 
