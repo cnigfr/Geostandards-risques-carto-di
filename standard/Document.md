@@ -333,6 +333,8 @@ Le diagramme UML suivant représente les classes décrivant les territoires à r
 ![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png)
 {#fig:uml-tri-cartes-img}
 
+
+
 ### Surfaces inondables
 
 Le diagramme UML suivant représente les classes décrivant les surfaces inondables et les éléments permettant des les caractériser pouvant être représentés sur les cartes de surfaces inondables.
@@ -372,7 +374,38 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 
 ![Aide à la lecture du standard](./ressources/aide_lecture_standard.PNG)
 
-  `**CLASSE_1**`
+### Territoire à risque important d'inondation (TRI)
+
+### Cartographie TRI
+
+### Carte des surfaces inondables
+
+### Carte de risques inondation
+
+### Référence Internet
+
+### Surface inondable
+
+### Zone iso cote
+
+### Zone iso classe hauteur
+
+### Zone iso classe vitesse
+
+### Zone iso classe débit
+
+### Point remarquable cote vitesse débit
+
+### Ouvrage protecteur
+
+### Zone protégée
+
+### Zone de sur-aléa
+
+### Enjeu
+
+### Enjeux rapportés TRI
+
 
 |  |  |
 |---|---|
@@ -395,11 +428,29 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 
 ## Description des tyes énumérés
 
-Outres les valeurs désignées, tous les types énumérés comprennet les valeurs conventionnelles :
+Outres les valeurs désignées, tous les types énumérés comprennent les valeurs conventionnelles :
 
 ● "**Non renseigné**" pour exprimer : "inconnu, non renseigné, ou information non disponible",
 
 ● "**autre**".
+
+### TypeReferenceTRI
+
+### TypeEtatProcedureTRI
+
+### TypeProbabiliteAlea
+
+### TypeVitesseEcoulement
+
+### TypeClasseHauteurEau
+
+### TypeOuvrageprotecteur
+
+### TypeRefExterneOuvrage
+
+### TypeSurAlea
+
+### Nomenclature Enjeux Carto DI
 
 ### Listes de valeurs
 
