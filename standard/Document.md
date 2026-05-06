@@ -398,7 +398,32 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 
 ## Catalogue d'objets
 
-![Aide à la lecture du standard](./ressources/aide_lecture_standard.PNG)
+### Aide à la lecture du catalogue :
+
+Le standard présente deux niveaux de collecte des informations :
+
+1) Les attributs obligatoirement présents dont le renseignement est obligatoire sauf mention contraire. Ils sont désignés en gras.
+2) Les attributs obligatoirement présents mais dont la saisie est facultative. Ils portent la mention "valeur vide autorisée".
+
+Sauf mention explicite « valeur vide autorisée », le remplissage des attributs est  obligatoire.
+
+Conventions de lecture :
+
+Les attributs sont typés selon les types généraux suivants (colonne "Type") :
+
+* `identifiant` dont les règles d'encodage sont précisées dans le paragraphe [Règles de codification des identifiants](#règles-de-codification-des-identifiants) ; 
+* chaîne de caractères `CharacterString` ; 
+* `date` pour les valeurs temporelles (y compris avec heures) ; 
+* `entier` pour les valeurs numériques entières ; 
+* `réel` pour les valeurs numériques flottantes ;
+* `booléen` ; 
+* `url` pour les adresses internet ;
+* valeurs énumérées précisées dans la partie [Description des types énumérés](#description-des-tyes-énumérés) ;
+
+Les règles de codage particulière et les éventuelles restrictions sur les domaines de valeurs sont précisés dans la partie "Contraintes". 
+
+[A confirmer] Le séparateur utilisé pour les champs à valeurs multiples est le caractère pipe : |
+Les attributs pointant vers des référentiels externes (dits attributs pivots) sont indiqués comme étant des clés étrangères et leur nom est souligné.
 
 ### Territoire à risque important d'inondation (TRI)
 
@@ -430,6 +455,27 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 
 
 ### Cartographie TRI
+
+|  |  |
+|---|---|
+| **Classe d'objet** | `**Cartographie TRI**` |
+| **Définition** | Cette classe porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) |
+| **Regroupement (facultatif)** |   |
+| **Modélisation géométrique** | La géométrie d’un TRI résulte de l’agrégation géométrique des communes qui le composent.  |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+|---|---|---|---|---|---|
+| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identifiaction des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
+| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
+| **`codeProcedure`** | identifiant GASPAR du TRI  | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
+| `libelleProcedure` | Libellé de la procédure dans GASPAR  | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
+| **`typeProcedure`** | Type de procédure dans GASPAR  | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
+| **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
+| **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | `valeur obligatoire` | `26/11/2012` |
+
 
 ### Carte des surfaces inondables
 
@@ -562,7 +608,7 @@ L’objectif est que le producteur puisse certifier la précision de la donnée 
 
 Cette qualité peut être estimée, par exemple par des pourcentages de fiabilité ou des textes explicatifs : ils mesurent alors la qualité de la donnée.  
 
-Ces mesures peuvent être : 
+Ces mesures peuvent être :
 
 ● Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans [le registre national des mesures pour la qualification des données géographiques](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95). 
 
