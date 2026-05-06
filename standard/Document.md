@@ -333,7 +333,7 @@ Le diagramme UML suivant représente les classes décrivant les [territoires à 
 ![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png)
 {#fig:uml-tri-cartes-img}
 
-La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](TBD identification des TRI), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
+La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](#TBD identification des TRI), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
 La [référence internet](#référence-internet) qui lui est associée correspond soit à sa publication sur la plateforme nationale, soit sur la plateforme régionale (DREAL de Bassin), telle que spécifiée à l'aide de l'énumération [TypeReferenceTRI](#typereferencetri).
 
@@ -398,17 +398,36 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 
 ## Catalogue d'objets
 
-`<Un catalogue d'entités est un référentiel qui fournit la sémantique de tous les types d'entités, avec leurs attributs et leurs dommaines de valeur d'attribut, les types d'association entre les types d'entités et les opérations requises pour décrire la structure des données et leur contenu. Si un schéma d'application est disponible, le catalogue d'entités décrit l'ensemble des éléments qui le composent. De plus, les couvertures peuvent être considérées comme des entités ou bien être spécifiées à l'aide de descritpions de couverture.>`
-
-`Exemples de catalogues d'objet :`
-
-● `Ontologie des unités administratives de l'IGN :`
-  `https://data.ign.fr/def/geofla/20210218.htm`<br>● `Description du type "Person" dans l'ontologie de Schema.org :`
-  `https://schema.org/Person`
-
 ![Aide à la lecture du standard](./ressources/aide_lecture_standard.PNG)
 
 ### Territoire à risque important d'inondation (TRI)
+
+|  |  |
+|---|---|
+| **Classe d'objet** | `**Territoire à risque important d'inondation (TRI)**` |
+| **Définition** | Les objets de cette classe représentent les territoires à risques important d'inondation, tels que déterminés sur la base de l'évaluation préliminaire des risques d'inondation (EPRI) et de la stratégie nationale (cf. [Article L566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561789) du code de l'environnement). Ils sont représentés géométriquement par leur périmètre et les caractéristiques permettant de faire le lien avec la procédure GASPAR associée et le rapportage européen. |
+| **Regroupement (facultatif)** |   |
+| **Modélisation géométrique** | La géométrie d’un TRI résulte de l’agrégation géométrique des communes qui le composent.  |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+|---|---|---|---|---|---|
+| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identifiaction des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
+| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
+| **`codeProcedure`** | identifiant GASPAR du TRI  | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
+| `libelleProcedure` | Libellé de la procédure dans GASPAR  | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
+| **`typeProcedure`** | Type de procédure dans GASPAR  | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
+| **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
+| **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | `valeur obligatoire` | `26/11/2012` |
+
+#### Associations de la classe TRI
+
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+|-|-|-|-|
+| est décrit par | Relation sémantique permettant d'associer un TRI à une référence internet (celle de diffusion de ses cartographies) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) | [Reference internet](#référence-internet)(1) |
+
 
 ### Cartographie TRI
 
@@ -594,11 +613,20 @@ Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous 
 ### Seuils de qualité  
 ### Seuils exigés
 `**Exemple: Seuil pour la mesure de l'exhaustivité**`
-`**Le jeu de données doit respecter un seuil d'exhaustivité de 75%.` 
+`**Le jeu de données doit respecter un seuil d'exhaustivité de 75%.`
+
 ### Seuils recommandés
+
 ## Règles d'organisation et de codification
+
+### Identification des TRI
+
+Les identifiants de TRI bla bla bla...
+
 ### Règles de codification des identifiants
+
 **Les règles de codification suivantes doivent être respectées :**  
+
 
 **Les valeurs vides sont codées “NULL” ou ne sont pas renseignées.** 
 
