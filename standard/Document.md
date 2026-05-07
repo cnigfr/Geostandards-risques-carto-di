@@ -333,7 +333,7 @@ Le diagramme UML suivant représente les classes décrivant les [territoires à 
 ![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png)
 {#fig:uml-tri-cartes-img}
 
-La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](#TBD identification des TRI), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
+La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](#identification-des-tri), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
 La [référence internet](#référence-internet) qui lui est associée correspond soit à sa publication sur la plateforme nationale, soit sur la plateforme régionale (DREAL de Bassin), telle que spécifiée à l'aide de l'énumération [TypeReferenceTRI](#typereferencetri).
 
@@ -395,17 +395,16 @@ Les enjeux représentés sur les cartes de risques sont les suivants :
 * Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte de risque ;
 * Les objets de la classe [Enjeu](#enjeu) héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI](#nomenclature-enjeux-carto-di)).
 
-
 ## Catalogue d'objets
 
-### Aide à la lecture du catalogue :
+### Aide à la lecture du catalogue
 
 Le standard présente deux niveaux de collecte des informations :
 
 1) Les attributs obligatoirement présents dont le renseignement est obligatoire sauf mention contraire. Ils sont désignés en gras.
 2) Les attributs obligatoirement présents mais dont la saisie est facultative. Ils portent la mention "valeur vide autorisée".
 
-Sauf mention explicite « valeur vide autorisée », le remplissage des attributs est  obligatoire.
+Sauf mention explicite « valeur vide autorisée », le remplissage des attributs est obligatoire.
 
 Conventions de lecture :
 
@@ -418,12 +417,12 @@ Les attributs sont typés selon les types généraux suivants (colonne "Type") :
 * `réel` pour les valeurs numériques flottantes ;
 * `booléen` ; 
 * `url` pour les adresses internet ;
-* valeurs énumérées précisées dans la partie [Description des types énumérés](#description-des-tyes-énumérés) ;
+* valeurs énumérées précisées dans la partie [Description des types énumérés](#description-des-types-énumérés) ;
 
-Les règles de codage particulière et les éventuelles restrictions sur les domaines de valeurs sont précisés dans la partie "Contraintes". 
+Les règles de codage particulière et les éventuelles restrictions sur les domaines de valeurs sont précisés dans la partie "Contraintes". Les types correspondant au format de livraison seront précisés dans la partie [Diffusion](#diffusion).
 
-[A confirmer] Le séparateur utilisé pour les champs à valeurs multiples est le caractère pipe : |
-Les attributs pointant vers des référentiels externes (dits attributs pivots) sont indiqués comme étant des clés étrangères et leur nom est souligné.
+_[A confirmer] Le séparateur utilisé pour les champs à valeurs multiples est le caractère pipe : \|
+Les attributs pointant vers des référentiels externes (dits attributs pivots) sont indiqués comme étant des clés étrangères et leur nom est souligné._
 
 ### Territoire à risque important d'inondation (TRI)
 
@@ -435,17 +434,17 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 | **Modélisation géométrique** | La géométrie d’un TRI résulte de l’agrégation géométrique des communes qui le composent.  |
 | **Primitive graphique** | Polygon |
 
-#### Attributs de la classe
+#### Attributs de la classe TRI
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
 | **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identifiaction des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
-| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
+| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | Valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
 | **`codeProcedure`** | identifiant GASPAR du TRI  | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
 | `libelleProcedure` | Libellé de la procédure dans GASPAR  | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
 | **`typeProcedure`** | Type de procédure dans GASPAR  | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
 | **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
-| **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | `valeur obligatoire` | `26/11/2012` |
+| **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | Valeur obligatoire | `26/11/2012` |
 
 #### Associations de la classe TRI
 
@@ -453,35 +452,92 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 |-|-|-|-|
 | est décrit par | Relation sémantique permettant d'associer un TRI à une référence internet (celle de diffusion de ses cartographies) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) | [Reference internet](#référence-internet)(1) |
 
-
 ### Cartographie TRI
 
 |  |  |
 |---|---|
 | **Classe d'objet** | `**Cartographie TRI**` |
-| **Définition** | Cette classe porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) |
+| **Définition** | Cette classe abstraite porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) prévues par l'article [L566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561783) du code de l'environnement. |
 | **Regroupement (facultatif)** |   |
-| **Modélisation géométrique** | La géométrie d’un TRI résulte de l’agrégation géométrique des communes qui le composent.  |
+| **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe Cartographie TRI
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+|---|---|---|---|---|---|
+| **`identifiant`** | Identifiant de la carte | 1 | `identifiant` | Clé primaire | `CSI_0001` |
+| **`identifiantTRI`** | Identifiant du TRI associé à la carte | 1 | `identifiant` | Clé étrangère | `FRG_TRI_TOURS` |
+| **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur obligatoire fixée à `Arrêté` | `Arrêté` |
+| **`dateEtat`** | Date de l'arrêté de la carte par le Préfet de bassin | 1 | `date` | valeur obligatoire | `18/12/2013` |
+
+#### Associations de la classe Cartographie TRI
+
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+|-|-|-|-|
+| représente | Relation sémantique permettant d'associer une carte à un TRI. Cette relation est matérialisée par l'attribut identifiantTRI de la table Cartographie-TRI. | [Cartographie TRI](#cartographie-tri)(1-*) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) |
+
+### Carte des surfaces inondables
+
+|  |  |
+|---|---|
+| **Classe d'objet** | `**Carte des surfaces inondables**` |
+| **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) en indiquant la probabilité d'aléa pour laquelle elle est établie. |
+| **Regroupement (facultatif)** |   |
+| **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
 
 #### Attributs de la classe
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
-| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identifiaction des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
-| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
-| **`codeProcedure`** | identifiant GASPAR du TRI  | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
-| `libelleProcedure` | Libellé de la procédure dans GASPAR  | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
-| **`typeProcedure`** | Type de procédure dans GASPAR  | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
-| **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
-| **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | `valeur obligatoire` | `26/11/2012` |
+| **`occurrence`** | Probabilité de survenue de l'aléa inondation selon la caractérisation définie par [TypeProbabiliteAlea](#typeprobabilitealea) | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
 
+Les autres attributs sont ceux de la classe [Cartographie TRI](#attributs-de-la-classe-cartographie-tri)
 
-### Carte des surfaces inondables
+#### Associations de la classe carte des surfaces inondables
+
+Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
 ### Carte de risques inondation
 
+|  |  |
+|---|---|
+| **Classe d'objet** | `**Carte de risque inondation**` |
+| **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) pour l'établissement des cartes de risques d'inondation. Elle comporte les mêmes propriétés. |
+| **Regroupement (facultatif)** |   |
+| **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe
+
+Cf. attributs de la classe [Cartographie TRI](#attributs-de-la-classe-cartographie-tri)
+
+#### Associations de la classe carte des surfaces inondables
+
+Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
+
 ### Référence Internet
+
+|  |  |
+|---|---|
+| **Classe d'objet** | `**Reference Internet**` |
+| **Définition** | Cette classe permet de décrire les ressources en ligne associées au TRI.  |
+| **Regroupement** | Une seule référence peut être associée et correspond à celle renseignée pour le rapportage européen. Il s'agit de la plateforme nationale de diffusion des TRI, ou, à défaut celle de la plateforme régionale de bassin. |
+| **Modélisation géométrique** | Cette classe n'a pas de géométrie associée. |
+
+#### Attributs de la classe Reference Internet
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+|---|---|---|---|---|---|
+| **`adresse`** | URL d'accès à la ressource internet. Faisant office de clé primaire pour la classe. | 1 | `url` | Clé primaire | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
+| `nomRessource` | Nom de la ressource internet (titre du site, de la page). | 0..1 | `CharacterString` | Valeur vide autorisée | `Georisques : Zonages Inondation - Rapportage 2020` |
+| `description` | Description de la ressource internet  | 0..1 | `CharacterString` | Valeur vide autorisée | `Page de téléchargement des TRI du rapportage 2020` |
+| **`typeReference`** | Type de de référence internet selon la classification déterminée par [TypeReferenceTRI](#typereferencetri) | 1 | [TypeReferenceTRI](#typereferencetri) | Valeur à prendre parmi celles de [TypeReferenceTRI](#typereferencetri) | `Plateforme nationale` |
+
+#### Associations de la classe Reference Internet
+
+Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 
 ### Surface inondable
 
@@ -508,26 +564,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 ### Enjeux rapportés TRI
 
 
-|  |  |
-|---|---|
-| **Classe d'objet** | `**CLASSE_1**` |
-| **Définition** |   |
-| **Regroupement (facultatif)** | `<Les objets pouvant appartenir à la classe (par exemple : les objets dont la superficie est inférieure à 25m2 sont exclus)>`  |
-| **Modélisation géométrique** |   |
-| **Primitive graphique** |   |
-
-| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
-|---|---|---|---|---|---|
-| `**classe_1_id**` | `identifiant de` | cf. codif. id §xxx  | `identifiant` | `clé primaire` |  |
-| `**ban_id**` | `identifiant de l'adresse dans la BAN (Base Adresse Nationale)`  |  | `identifiant` | `clé étrangère` |  |
-| `**att1**` |   |  | `entier` | `valeur obligatoire` |  |
-| `**att2**` |   | `liste_att2` | `varchar` | `valeur obligatoire` |  |
-| `**att3**` |   |  | `réel` | `valeur vide autorisée` |  |
-
-
-`**CLASSE_2**`
-
-## Description des tyes énumérés
+## Description des types énumérés
 
 Outres les valeurs désignées, tous les types énumérés comprennent les valeurs conventionnelles :
 
