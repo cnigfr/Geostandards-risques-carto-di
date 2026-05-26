@@ -192,6 +192,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | FHRM | Flood Hazard and Risk Maps (*Cartes des surfaces inondables et des risques d'inondation*) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
 | GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
+| GUNEnv | Guichet Unique Numérique de l'environnement |
 | ICPE | Installation classée pour la protection de l'environnement |
 | IGN | Institut national de l'information géographique et forestière |
 | MTECT | Ministère de la transition écologique et de la cohésion des territoires |
@@ -201,6 +202,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | PGRI | Plan de gestion des risques d'inondation |
 | SIG | Système d'information géographique |
 | Sandre | Service d'administration nationale des données et référentiels sur l'eau |
+| SIOUH | Système d’Information des Ouvrages Hydrauliques |
 | SLGRI | Stratégie locale de gestion des risques d'inondation |
 | TRI | Territoire à risque important d'inondation |
 
@@ -645,9 +647,11 @@ __Note__ : les acronymes IGN utilisés dans ce tableau sont les identifiants des
 # Recommandations pour les données
 
 ## Qualité des données
-Cette partie contient les recommandations et exigences de qualité concernant le contenu des données `<de la thématique>` de leur structuration.
+
+Cette partie contient les recommandations et exigences de qualité concernant le contenu des données des cartographies de la Directive Inondation et de leur structuration.
 
 ### Enjeux
+
 Il est important pour les producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).  
 
 L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence.  
@@ -660,54 +664,165 @@ Ces mesures peuvent être :
 
 ● Métiers : Il existe déjà en interne de la thématique des processus de production ou de gestion et ils peuvent être réutilisés pour mesurer la qualité des données de cette thématique.
 
-Les différentes mesures de la qualité des données de `<la thématique>` sont définies ci-dessous et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit (cf [Mesures de qualité complémentaires](bookmark://_heading=h.206ipza)). 
+Les différentes mesures de la qualité des données des cartographies de la Directive Inondation sont définies ci-dessous et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit (cf [Mesures de qualité complémentaires](bookmark://_heading=h.206ipza)). 
 
 ### Référence normative
 
-La référence internationale est la [norme ISO 19157](https://www.iso.org/fr/standard/32575.html) sur la qualité des données géographiques. 
+La référence internationale est la [norme ISO 19157](https://www.iso.org/fr/standard/32575.html) sur la qualité des données géographiques.
 
 Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous référer aux documents nationaux :  
 
-- les travaux du [groupe de travail CNIG sur la qualité des données géographiques](https://cnig.gouv.fr/ressource-quadogeo-a23521.html)
-- la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques)
-- le registre national des mesures pour la qualification des données géographiques sur le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95)
+* les travaux du [groupe de travail CNIG sur la qualité des données géographiques](https://cnig.gouv.fr/ressource-quadogeo-a23521.html)
 
-### Mesures de la qualité
+* la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques)
 
-##### `<Nom de la mesure>`
-`<Explication/description de la mesure>` 
+* le registre national des mesures pour la qualification des données géographiques sur le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95)
 
-`<Justification de l’utilité de la mesure et explication claire de sa contrainte (pourquoi est-elle exigée ou recommandée ?)>` 
+### Éléments de qualité
 
-`<Comment effectuer/évaluer/calculer la mesure>` 
+Ce qui suit décrit les objectifs de qualité visés pour les données des cartographies de la Directive Inondation avec pour chacun d'eux, la mesure correspondante à reporter dans les métadonnées lorsque l'élément de qualité a été évalué, ou, dans certains cas, l'élément de métadonnées qui porte directement cette information.
 
-`<Exemple concret et le plus clair possible, en lien avec la thématique>`
+#### Dimensions géométriques
 
-`Pour approfondir, vous pouvez trouver <Lien vers la fiche du registre Géocatalogue/fiche CEREMA affiliée/fiche métier comme aide à la compréhension>.` 
+Les composantes géométriques des données des cartographies de la Directive Inondation sont levées en 2 dimensions.
 
-##### `Exhaustivité (exemple)` 
-`L’exhaustivité est la présence ou l’absence d’objets, d’attributs ou de relations dans le jeu de données par rapport au nombre total d’objets attendus.` 
+#### Référentiels de numérisation
 
-`D’une manière générale on s’attend à trouver dans les lots de données la description de l’ensemble des ZAE. Cette mesure est obligatoire car si une zone manque, cela impactera directement la qualité du jeu de données.`  
+Les cartographies de la Directive Inpndation sont généralement élaborés à partir des référentiels de données suivants :
 
-`Le calcul correspond globalement à:`
+* SCAN 25, carte IGN au 1 :25 000
+* BD Ortho IGN
+* BD Topo IGN
+* BD Topage (référentiel hydrographique)
+* SIOUH (Système d’Information des Ouvrages Hydrauliques)
+* Guichet Unique Numérique de l'environnement (GUNEnv)
+* Plans de Préventions des Risques Inondation
+* (Liste à compléter...)
 
-`1-(Nombre d'objets en décalage/Nombre d'objetsattendus)`
+**Élément de mesure ou de métadonnées :**
 
-`Le calcul précis et son explication sont détaillés dans la [fiche CEREMA « Critère d’exhaustivité ».](https://www.cerema.fr/fr/centre-ressources/boutique/qualifier-donnees-geographiques)` 
+Le(s) référentiel(s) utilisé(s) doi(ven)t être mentionné(s) à l'aide de l'élément [Généalogie](#généalogie) des métadonnées qui est aussi décrit dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_genealogie).
 
-`Par exemple, le jeu de données ZAE devrait contenir 47 objets. Dans notre exemple, il comprend 50 objets : 5 sont en excédents, 2 sont manquants. Il y a donc 7 objets en décalage avec le nombre d’objets attendus. Le taux d’exhaustivité est alors égal à : 1 – (7/’47) soit : 85 %.` 
+#### Précision géométrique
 
-`Pour plus de précision, le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_txEx) référence cette mesure (URI).`
+La précision géométrique visée pour le positionnement planimétrique des Cartographies de la Directive Inondation est de l'ordre du mètre.
 
-#### Mesures Recommandées
-#### Mesures Conditionnelles
-### Seuils de qualité  
-### Seuils exigés
-`**Exemple: Seuil pour la mesure de l'exhaustivité**`
-`**Le jeu de données doit respecter un seuil d'exhaustivité de 75%.`
+**Éléments de mesure ou de métadonnées :**
 
-### Seuils recommandés
+La précision géométrique peut être relatée dans les métadonnées à l'aide de la mesure d'[erreur horizontale relative](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_ErrHorizontaleRelative) décrite dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo).
+
+#### Validité des géométries
+
+Afin de pouvoir être exploitées correctement par les systèmes informatiques avals que ce soit pour diffusion ou en utilisation directe dans un SIG, les géométries des cartographies de la Directive Inondation doivent respecter les règles standard dérivées des normes  [OGC:SimpleFeature-1 1.2.1](https://portal.ogc.org/files/?artifact_id=25355) et [OGC:SimpleFeature-2 (SQL Option) 1.2.1](https://portal.ogc.org/files/?artifact_id=25354). Ce sont les modèles de géométrie communément adoptés par les SIG, et par des systèmes de bases de données géographiques tels que PostGIS.
+
+Concrètement, il s'agit d'éviter les saisies de géométries qui ne seraient pas conformes avec la façon dont elles sont définies. Les sources d’invalidité concernent principalement les polygones, géométries complexes qui définissent des aires et requièrent une bonne structuration. Ce sont les suivantes :
+
+* les polygones non fermés ;
+
+* les polygones de surface nulle (polygones plats) ;
+
+* les nœuds trop proches ou dupliqués ;
+
+* Les arcs pendants ;
+
+![Arcs pendants](./ressources/geom-arcs-pendants.png)
+
+* Les contours qui s'intersectent (polygones en papillon) ;
+
+![Polygones papillons](./ressources/geom-papillons.png)
+
+* Les contours qui se touchent eux-mêmes ou les contours d’un même polygone qui se touchent entre eux sauf en tangence en un point unique.
+
+![Polygones contours touchent](./ressources/geom-contours-touchent.png)
+
+Note : Les méthodes de détection et de correction de ces invalidités sont bien connues et implémentées. Elles sont documentées dans des ouvrages tels que le [Guide CPII : jeux de données SIG – vérification et correction des géométries](https://www.geoinformations.developpement-durable.gouv.fr/fichier/pdf/verification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf?arg=177834719&cle=830634f7888fc808498f0c41704664611af04021&file=pdf%252Fverification_et_correction_de_geometrie_v3_0_cle5fcd75.pdf).
+
+**Éléments de mesure ou de métadonnées :**
+
+Les invalidités de géométries peuvent être relatées de manière statistique dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+
+* [Nombre de micro-surfaces non valides](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbMicroSurfErr) ;
+
+* [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr) ;
+
+* [Nombre d’erreurs d’auto-intersections non valides](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbBoucle).
+
+#### Complexité des géométries
+
+La complexité des géométries doit être maitrisée, notamment dans le domaine du risque inondation où certaines surfaces d'aléas générées à partir de données d'observation très résolues peuvent devenir inexploitables par les outils informatiques du fait de leurs volumes.
+
+Pour contrôler cela, ce standard reprend, comme le géostandard Plan de Prévention des Risques (PPR), les indicateurs définis dans le cadre de la validation des Servitudes d'Utilité Publiques (SUP) du Géoportail de l'Urbanisme et des seuils à ne pas dépasser pour une géométrie de type multi-polygone pour chacun de ces indicateurs :
+
+Indicateur | Seuil d'avertissement | Seuil de rejet |
+|-|-|-|
+| Nombre de sommets | > 50 000 | > 200 000 |
+| Nombre de points par périmètre | > 1 point tous les 10m | > 10 points tous les 10m |
+| Nombre d'anneaux | > 500 | > 1 000 |
+| Nombre de parties | > 500 | > 1 000 |
+
+D'autres indicateurs sont aussi repris du géostandard PPR pour éviter les micro-géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
+
+| Indicateur | Seuil d'avertissement | Seuil de rejet |
+| - | - | - |
+| Longueur d'un linéaire | < 5m | < 1m |
+| Aire d'un polygone | < 100m2 | < 25m² (carré d'1mm de côté sur un plan au 1:5000) |
+
+**Exigence**
+Une géométrie dont l'indicateur dépasse le seuil de rejet sera considérée comme non valide au regard de ce standard.
+
+**Élément de mesure ou de métadonnées :**
+
+Il n'existe pas de définition de ces mesures dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo). On pourra cependant les relater dans les métadonnées avec les intitulés suivants :
+
+* "Nombre de géométries dépassant le seuil d'avertissement"
+
+* "Nombre de géométries dépassant le seul de rejet"
+
+Ou, plus dans le détail des indicateurs (laissé à l'appréciation du producteur de données) :
+
+* "Nombre de géométries dont le nombre de sommets dépasse le seuil d'avertissement"
+* etc.
+
+#### Cohérence topologique
+
+Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet des cartographies de la Directive Inondation :
+
+***Surfaces inondables et zones iso classes de hauteur**
+
+Les zones d’iso classes de hauteur et de débit respectent une topologie de graphe. C’est-à-dire qu’elles constituent une partition de la surface inondable concernée et les zones voisines ont des périmètres qui partagent la même géométrie (sans recouvrement, ni lacune).
+
+**Inclusion des surfaces selon les probabilités d'aléas**
+
+Pour un même type d’inondation, la surface inondable de l’aléa de forte probabilité (événement fréquent) doit être incluse dans la surface inondable de l’aléa de moyenne probabilité qui doit être incluse dans la surface de l’aléa de faible probabilité (événement extrême).
+
+**Ouvrages de protection**
+
+A compléter...
+
+**Élément de mesure ou de métadonnées :**
+
+Les invalidités topologiques relatives aux règles énoncées ci-dessus peuvent être relatées de manière statistique dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
+
+* [Nombre d’erreurs de chevauchement](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nbChevauchErr) ;
+
+#### Conformité au standard
+
+La conformité des données de cartographie de la Directive Inondation au présent standard est un objectif en soi. Il conviendra d'indiquer dans les métadonnées l'évaluation de cette conformité.
+
+**Élément de mesure ou de métadonnées :**
+
+Les éléments de métadonnées [relatifs à la conformité](#eléments-de-métadonnées-relatifs-à-la-conformité) permettent d'indiquer de manière globale si les données sont conformes, non conformes ou si la conformité n'a pas été évaluée.
+
+Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) permet de mentionner des éléments de conformité statistiques plus précis à l'aide des mesures suivantes :
+
+* [Non-conformité aux règles du schéma conceptuel](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_nonConfConceptuelle) ;
+
+* [Taux de conformité au domaine de valeurs](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_txConfDomVal) ;
+
+* [Taux de valeurs d’attributs correctes](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxValAttOk) ;
+
+* [Taux d’erreur de formatage](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxErrFormat) ;
+
 
 ## Règles d'organisation et de codification
 
