@@ -625,13 +625,22 @@ Outres les valeurs désignées, tous les types énumérés comprennent les valeu
 
 ## Systèmes de référence
 
-Les dernières évolutions des systèmes de référence mentionnés plus bas sont à trouver sur le site de l'IGN : https://geodesie.ign.fr/
+Les clauses du [modèle commun](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#systèmes-de-référence) s'appliquent aux cartographies de la Directive Inondation avec les restrictions et précisions énoncées ci-après.
 
-| `Nom du périmètre d'application 1` |  |
-|---|---|
-| **Système de référence spatial** | `_Ex_`<br>`_Plan: EPSG:3006(SWEREF 99 TM)_`<br>`_Hauteur : EPSG:5613(RH 2000)_` |
-| **Système de référence temporel** | `(facultatif)`<br>`_Ex_`<br>`_Calendrier grégorien, UTC_` |
+## Systèmes de référence spatiaux
 
+Le tableau suivant présente les systèmes de référence légaux à utiliser pour les cartographies de la Directive Inondation dans la mesure où les données décrites ne comprennent pas de composant verticale et leur précision planimétrique ne nécessite pas, sur le territoire métropolitain, l'utilisation des projections coniques conformes 9 zones.
+
+__Note__ : les acronymes IGN utilisés dans ce tableau sont les identifiants des systèmes de référence dans le [registre IGN-F](https://geodesie.ign.fr/index.php?page=documentation#titre3). Une colonne a été rajoutée pour indiquer l'identifiant de la projection correspondant dans le [registre EPSG](https://epsg.org/home.html).
+
+
+| Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN)| Code EPSG |
+|-|-|-|-|-|
+| France métropolitaine | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (RGF93LAMB93) | EPSG:2154 |
+| Guadeloupe, Martinique | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (RGAF09UTM20) | EPSG:5490 |
+| Guyane | Réseau géodésique français de Guyane 1995 (RGFG95) | ITRS | Universal transverse Mercator fuseau 22 nord (RGFG95UTM22) | EPSG:2972 |
+| La Réunion | Réseau géodésique de La Réunion 1992 (RGR92) | ITRS | Universal transverse Mercator fuseau 40 sud (RGR92UTM40S) | EPSG:2975 |
+| Mayotte | Repère de référence géodésique de Mayotte 2023 (RGM23) | ITRS | Universal transverse Mercator fuseau 38 sud (RGM23UTM38S) | EPSG:10674 |
 
 # Recommandations pour les données
 
