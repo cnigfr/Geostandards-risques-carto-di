@@ -67,6 +67,7 @@ Ce standard a été rédigé par Gilles Cébélieu (IGN) avec les contributions 
 * Yohann Evain (Cerema)
 * Maxime Pujeaut (DREAL Occitanie)
 * Nicolas Boudesseul (DREAL Pays de la Loire)
+* Manuel Collongues (Cerema)
 
 # Présentation du document
 
@@ -412,19 +413,19 @@ Conventions de lecture :
 
 Les attributs sont typés selon les types généraux suivants (colonne "Type") :
 
-* `identifiant` dont les règles d'encodage sont précisées dans le paragraphe [Règles de codification des identifiants](#règles-de-codification-des-identifiants) ; 
-* chaîne de caractères `CharacterString` ; 
-* `date` pour les valeurs temporelles (y compris avec heures) ; 
-* `entier` pour les valeurs numériques entières ; 
+* `identifiant` dont les règles d'encodage sont précisées dans le paragraphe [Règles de codification des identifiants](#règles-de-codification-des-identifiants) ;
+* chaîne de caractères `CharacterString` ;
+* `date` pour les valeurs temporelles (y compris avec heures) ;
+* `entier` pour les valeurs numériques entières ;
 * `réel` pour les valeurs numériques flottantes ;
-* `booléen` ; 
+* `booléen` ;
 * `url` pour les adresses internet ;
 * valeurs énumérées précisées dans la partie [Description des types énumérés](#description-des-types-énumérés) ;
 
 Les règles de codage particulière et les éventuelles restrictions sur les domaines de valeurs sont précisés dans la partie "Contraintes". Les types correspondant au format de livraison seront précisés dans la partie [Diffusion](#diffusion).
 
 _[A confirmer] Le séparateur utilisé pour les champs à valeurs multiples est le caractère pipe : \|
-Les attributs pointant vers des référentiels externes (dits attributs pivots) sont indiqués comme étant des clés étrangères et leur nom est souligné._
+Les attributs pointant vers des référentiels externes (dits attributs pivots) sont indiqués comme étant des clés étrangères et leur nom est souligné.
 
 ### Territoire à risque important d'inondation (TRI)
 
@@ -440,11 +441,11 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
-| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identifiaction des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
+| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identification des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
 | `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | Valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
-| **`codeProcedure`** | identifiant GASPAR du TRI  | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
-| `libelleProcedure` | Libellé de la procédure dans GASPAR  | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
-| **`typeProcedure`** | Type de procédure dans GASPAR  | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
+| **`codeProcedure`** | identifiant GASPAR du TRI | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
+| `libelleProcedure` | Libellé de la procédure dans GASPAR | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
+| **`typeProcedure`** | Type de procédure dans GASPAR | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
 | **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
 | **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | Valeur obligatoire | `26/11/2012` |
 
@@ -459,7 +460,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 |  |  |
 |---|---|
 | **Classe d'objet** | `**Cartographie TRI**` |
-| **Définition** | Cette classe abstraite porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) prévues par l'article [L566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561783) du code de l'environnement. |
+| **Définition** | Cette classe abstraite porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) prévues respectivement par les articles [R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) et [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
@@ -468,8 +469,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
-| **`identifiant`** | Identifiant de la carte | 1 | `identifiant` | Clé primaire | `CSI_0001` |
-| **`identifiantTRI`** | Identifiant du TRI associé à la carte | 1 | `identifiant` | Clé étrangère | `FRG_TRI_TOURS` |
+| **`identifiant`** | Identifiant de la carte sous la forme `CSI_[numéro]` où `[numéro]` est un numéro unique indenté à droite. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `CSI_0001` |
 | **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur obligatoire fixée à `Arrêté` | `Arrêté` |
 | **`dateEtat`** | Date de l'arrêté de la carte par le Préfet de bassin | 1 | `date` | valeur obligatoire | `18/12/2013` |
 
@@ -477,14 +477,14 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
 |-|-|-|-|
-| représente | Relation sémantique permettant d'associer une carte à un TRI. Cette relation est matérialisée par l'attribut identifiantTRI de la table Cartographie-TRI. | [Cartographie TRI](#cartographie-tri)(1-*) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) |
+| représente | Relation sémantique permettant d'associer une carte à un TRI. | [Cartographie TRI](#cartographie-tri)(1-*) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) |
 
 ### Carte des surfaces inondables
 
 |  |  |
 |---|---|
 | **Classe d'objet** | `**Carte des surfaces inondables**` |
-| **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) en indiquant la probabilité d'aléa pour laquelle elle est établie. |
+| **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) en indiquant la probabilité d'aléa pour laquelle elle est établie. Elle permet de décrire la carte des surfaces inondables décrite par l'article [R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) du code de l'environnement. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
@@ -506,7 +506,7 @@ Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cart
 |  |  |
 |---|---|
 | **Classe d'objet** | `**Carte de risque inondation**` |
-| **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) pour l'établissement des cartes de risques d'inondation. Elle comporte les mêmes propriétés. |
+| **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) pour l'établissement des cartes de risques d'inondation telles que décrites par l'article [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. Elle comporte les mêmes propriétés. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
@@ -534,7 +534,7 @@ Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cart
 |---|---|---|---|---|---|
 | **`adresse`** | URL d'accès à la ressource internet. Faisant office de clé primaire pour la classe. | 1 | `url` | Clé primaire | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
 | `nomRessource` | Nom de la ressource internet (titre du site, de la page). | 0..1 | `CharacterString` | Valeur vide autorisée | `Georisques : Zonages Inondation - Rapportage 2020` |
-| `description` | Description de la ressource internet  | 0..1 | `CharacterString` | Valeur vide autorisée | `Page de téléchargement des TRI du rapportage 2020` |
+| `description` | Description de la ressource internet | 0..1 | `CharacterString` | Valeur vide autorisée | `Page de téléchargement des TRI du rapportage 2020` |
 | **`typeReference`** | Type de de référence internet selon la classification déterminée par [TypeReferenceTRI](#typereferencetri) | 1 | [TypeReferenceTRI](#typereferencetri) | Valeur à prendre parmi celles de [TypeReferenceTRI](#typereferencetri) | `Plateforme nationale` |
 
 #### Associations de la classe Reference Internet
@@ -542,6 +542,38 @@ Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cart
 Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 
 ### Surface inondable
+
+|  |  |
+|---|---|
+| **Classe d'objet** | `**Surface inondable**` |
+| **Définition** | Les objets de cette classe représentent les zones qui seront inondées en fonction d'une probabilité d'aléa et d'un type d'inondation. |
+| **Modélisation géométrique** | La géométrie d’une surface inondable résulte de l’agrégation géométrique des [zones iso classe hauteur](#zone-iso-classe-hauteur) correspondantes à la même probabilité d'aléa et du même type d'inondation (à l'exclusion des zones iso classes hauteur "émergées") ou déterminées par des [lignes iso cote](#ligne-iso-cote) correspondantes. |
+| **Primitive graphique** | Polygon |
+
+
+#### Attributs de la classe Surface inondable
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+|---|---|---|---|---|---|
+| **`idZoneAlea`** | Identifiant de la surface inondable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `SIN_0001` |
+| **`typeAlea`** | Type d'aléa inondation engendreant la surface; selon la codification GASPAR | 1 | `CharacterString` | Valeur à prendre parmi les valeurs de [TypeAleaCartoDI](#typealeacartodi) selon la nomenclature GASPAR | `112` |
+| **`occurrence`** | Probabilité de survenue de l'aléa inondation associée à la surface selon la caractérisation définie par [TypeProbabiliteAlea](#typeprobabilitealea) | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
+| **`dateCalcul`** | Date de calcul de la surface | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| `description` | Description de la surface inondable. Champ hérité du modèle commun. | 0..1 | `CharacterString` | Valeur facultative | ... |
+| `niveauAlea` | Champ hérité du modèle commun. Niveau d'aléa à renseigner lorsque la surface inondable correspond à la zone d'aléa d'un PPRI | 0..1 | [TypeNiveauAlea](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/Document.md#enumeration-typeniveaualea) | Valeur à prendre parmi les valeurs de niveau d'aléa définies dans le standard PPR |  `Fort` |
+
+#### Associations de la classe Surface inondable
+
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+|-|-|-|-|
+| est représenté sur | Relation sémantique permettant de rattacher la surface inondable à la carte de risques inondation où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
+| est représenté sur | Relation sémantique permettant de rattacher la surface inondable à la carte de surfaces inondables où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| compose | Une surface inondable est composée par une agrégation de zones iso classes de hauteur | [Surface inondable](#surface-inondable)(1) | [Zone iso classe hauteur](#zone-iso-classe-hauteur)(0..*) |
+| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de lignes iso côte | [Surface inondable](#surface-inondable)(1) | [Ligne iso cote](#ligne-iso-cote)(0..*) |
+| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de zones iso classe vitesse | [Surface inondable](#surface-inondable)(1) | [Zone iso classe vitesse](#zone-iso-classe-vitesse)(0..*) |
+| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de points remarquables côte, vitesse, débit | [Surface inondable](#surface-inondable)(1) | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit)(0..*) |
+| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de zones iso classe débit | [Surface inondable](#surface-inondable)(1) | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) |
+
 
 ### Origine du risque
 
@@ -576,9 +608,32 @@ Outres les valeurs désignées, tous les types énumérés comprennent les valeu
 
 ### TypeReferenceTRI
 
+Le tableau suivant liste les valeurs possibles permettant de caractériser les références internet associées à un TRI.
+
+| Libellé | Définition |
+|-|-|
+| Plateforme nationale | Plateforme nationale de diffusion des cartographies des TRI |
+| Plateforme régionale | Site internet de la DREAL de bassin où sont accessibles les cartographies du TRI concerné |
+
 ### TypeEtatProcedureTRI
 
+Les valeurs possibles pour l'état associé à un TRI ou ses cartographies se limitent à la valeur `Arrêté` correspondant à l'arrêté de création du TRI ou celui des cartes par le Préfet de bassin.
+
 ### TypeProbabiliteAlea
+
+Le tableau suivant liste les valeurs possibles permettant de caractériser les différents probabilités d'aléa représentables sur les cartographies des TRI.
+
+| Libellé | Définition |
+|-|-|
+| Aléa de forte probabilité | (également dénommé événement fréquent) Événement provoquant les premiers dommages conséquents, commençant à un temps de retour de 10 ans et dans la limite d'une période de retour de l’ordre de 30 ans. |
+| Aléa de forte probabilité avec prise en compte du changement climatique à court terme | (également dénommé événement fréquent avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
+| Aléa de forte probabilité avec prise en compte du changement climatique à échéance 100 ans | (également dénommé événement fréquent avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
+| Aléa de moyenne probabilité | (également dénommé événement moyen) Événement ayant une période de retour comprise entre 100 et 300 ans, qui correspond dans la plupart à l’aléa de référence du PPRi, s’il existe. Si un événement historique de référence n’est pas utilisé, un événement de type centennal est recherché. |
+| Aléa de moyenne probabilité avec prise en compte du changement climatique à court terme | (également dénommé événement moyen avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. |
+| Aléa de moyenne probabilité avec prise en compte du changement climatique à échéance 100 ans | (également dénommé événement moyen avec changement climatique) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. Correspond à l'aléa échéance 100 ans du PPRI, s'il existe, pour l'aléa submersion marine. |
+| Aléa de faible probabilité | (également dénommé événement extrême) Phénomène d'inondation exceptionnel inondant toute la surface de la plaine alluviale fonctionnelle (lit majeur) ou de la plaine littorale fonctionnelle pouvant être estimé comme un maximum à prendre en compte pour la gestion d’un territoire (hors aménagements spécifiques : centrales nucléaires, grands barrages), et pour lequel les éventuels systèmes de protection mis en place ne sont plus efficaces. A titre indicatif, une période de retour d'au moins 1000 ans est recherchée. |
+| Aléa de faible probabilité avec prise en compte du changement climatique à court terme | (également dénommé événement extrême avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement extrême qui est l’événement choisi de faible probabilité. |
+| Aléa de faible probabilité avec prise en compte du changement climatique à échéance 100 ans | (également dénommé événement extrême avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement extrême qui est l’événement choisi de faible probabilité. |
 
 ### TypeAleaCartoDI
 
@@ -609,21 +664,6 @@ Outres les valeurs désignées, tous les types énumérés comprennent les valeu
 
 ### Définitions des valeurs
 
-## Exemple de remplissage des tables
-
-| CLASSE_1 |  | 
-|---|---|
-| classe_1_id |  |
-| att1 |   |
-| att2 |   |
-| att3 |   |
-
-| CLASSE_2 |  | 
-|---|---|
-| classe_2_id |  |
-| att1 |   |
-| att2 |   |
-| att3 |   |
 
 ## Systèmes de référence
 
