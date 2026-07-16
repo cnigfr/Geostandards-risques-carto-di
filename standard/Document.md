@@ -431,7 +431,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 |  |  |
 |---|---|
-| **Classe d'objet** | `**Territoire à risque important d'inondation (TRI)**` |
+| **Classe d'objet** | **`Territoire à risque important d'inondation (TRI)`** |
 | **Définition** | Les objets de cette classe représentent les territoires à risques important d'inondation, tels que déterminés sur la base de l'évaluation préliminaire des risques d'inondation (EPRI) et de la stratégie nationale (cf. [Article L566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561789) du code de l'environnement). Ils sont représentés géométriquement par leur périmètre et les caractéristiques permettant de faire le lien avec la procédure GASPAR associée et le rapportage européen. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie d’un TRI résulte de l’agrégation géométrique des communes qui le composent.  |
@@ -453,13 +453,13 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
 |-|-|-|-|
-| est décrit par | Relation sémantique permettant d'associer un TRI à une référence internet (celle de diffusion de ses cartographies) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) | [Reference internet](#référence-internet)(1) |
+| `est décrit par` | Relation sémantique permettant d'associer un TRI à une référence internet (celle de diffusion de ses cartographies) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) | [Reference internet](#référence-internet)(1) |
 
 ### Cartographie TRI
 
 |  |  |
 |---|---|
-| **Classe d'objet** | `**Cartographie TRI**` |
+| **Classe d'objet** | **`Cartographie TRI`** |
 | **Définition** | Cette classe abstraite porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) prévues respectivement par les articles [R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) et [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
@@ -477,13 +477,13 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
 |-|-|-|-|
-| représente | Relation sémantique permettant d'associer une carte à un TRI. | [Cartographie TRI](#cartographie-tri)(1-*) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) |
+| `représente` | Relation sémantique permettant d'associer une carte à un TRI. | [Cartographie TRI](#cartographie-tri)(1-*) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) |
 
 ### Carte des surfaces inondables
 
 |  |  |
 |---|---|
-| **Classe d'objet** | `**Carte des surfaces inondables**` |
+| **Classe d'objet** | **`Carte des surfaces inondables`** |
 | **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) en indiquant la probabilité d'aléa pour laquelle elle est établie. Elle permet de décrire la carte des surfaces inondables décrite par l'article [R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) du code de l'environnement. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
@@ -499,31 +499,44 @@ Les autres attributs sont ceux de la classe [Cartographie TRI](#attributs-de-la-
 
 #### Associations de la classe carte des surfaces inondables
 
-Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+|-|-|-|-|
+| `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte de surfaces inondables où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher une ligne iso cote à la carte des surfaces inondables où elle peut être représentée | [Ligne iso côte](#ligne-iso-cote)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe de hauteur à la carte des surfaces inondables où elle doit être représentée | [Zone iso classe hauteur](#zone-iso-classe-hauteur)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(1..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe vitesse à la carte des surfaces inondables où elle peut être représentée | [Zone iso classe vitesse](#zone-iso-classe-vitesse)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un point remarquable cote vistesse débit à la carte des surfaces inondables où il peut être représentée | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe débit à la carte des surfaces inondables où elle peut être représentée | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+
+Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
 ### Carte de risques inondation
 
-|  |  |
-|---|---|
-| **Classe d'objet** | `**Carte de risque inondation**` |
+| | |
+| - | - |
+| **Classe d'objet** | **`Carte de risque inondation`** |
 | **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) pour l'établissement des cartes de risques d'inondation telles que décrites par l'article [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. Elle comporte les mêmes propriétés. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
 
-#### Attributs de la classe
+#### Attributs de la classe de risques inondation
 
 Cf. attributs de la classe [Cartographie TRI](#attributs-de-la-classe-cartographie-tri)
 
-#### Associations de la classe carte des surfaces inondables
+#### Associations de la classe carte de risques inondation
 
-Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+| - | - | - | - |
+| `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte de risques inondation où elle doit être représentée. | [Surface inondable](#surface-inondable)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
+
+Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
 ### Référence Internet
 
-|  |  |
-|---|---|
-| **Classe d'objet** | `**Reference Internet**` |
+| | |
+| - | - |
+| **Classe d'objet** | **`Reference Internet`** |
 | **Définition** | Cette classe permet de décrire les ressources en ligne associées au TRI.  |
 | **Regroupement** | Une seule référence peut être associée et correspond à celle renseignée pour le rapportage européen. Il s'agit de la plateforme nationale de diffusion des TRI, ou, à défaut celle de la plateforme régionale de bassin. |
 | **Modélisation géométrique** | Cette classe n'a pas de géométrie associée. |
@@ -531,7 +544,7 @@ Cf. [associations de la classe Cartographie TRI](#associations-de-la-classe-cart
 #### Attributs de la classe Reference Internet
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
-|---|---|---|---|---|---|
+| - | - | - | - | - | - |
 | **`adresse`** | URL d'accès à la ressource internet. Faisant office de clé primaire pour la classe. | 1 | `url` | Clé primaire | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
 | `nomRessource` | Nom de la ressource internet (titre du site, de la page). | 0..1 | `CharacterString` | Valeur vide autorisée | `Georisques : Zonages Inondation - Rapportage 2020` |
 | `description` | Description de la ressource internet | 0..1 | `CharacterString` | Valeur vide autorisée | `Page de téléchargement des TRI du rapportage 2020` |
@@ -543,18 +556,17 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 
 ### Surface inondable
 
-|  |  |
-|---|---|
-| **Classe d'objet** | `**Surface inondable**` |
+| | |
+| - | - |
+| **Classe d'objet** | **`Surface inondable`** |
 | **Définition** | Les objets de cette classe représentent les zones qui seront inondées en fonction d'une probabilité d'aléa et d'un type d'inondation. |
 | **Modélisation géométrique** | La géométrie d’une surface inondable résulte de l’agrégation géométrique des [zones iso classe hauteur](#zone-iso-classe-hauteur) correspondantes à la même probabilité d'aléa et du même type d'inondation (à l'exclusion des zones iso classes hauteur "émergées") ou déterminées par des [lignes iso cote](#ligne-iso-cote) correspondantes. |
 | **Primitive graphique** | Polygon |
 
-
 #### Attributs de la classe Surface inondable
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
-|---|---|---|---|---|---|
+| - | - | - | - | - | - |
 | **`idZoneAlea`** | Identifiant de la surface inondable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `SIN_0001` |
 | **`typeAlea`** | Type d'aléa inondation engendreant la surface; selon la codification GASPAR | 1 | `CharacterString` | Valeur à prendre parmi les valeurs de [TypeAleaCartoDI](#typealeacartodi) selon la nomenclature GASPAR | `112` |
 | **`occurrence`** | Probabilité de survenue de l'aléa inondation associée à la surface selon la caractérisation définie par [TypeProbabiliteAlea](#typeprobabilitealea) | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
@@ -564,28 +576,148 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 
 #### Associations de la classe Surface inondable
 
-| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
-|-|-|-|-|
-| est représenté sur | Relation sémantique permettant de rattacher la surface inondable à la carte de risques inondation où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
-| est représenté sur | Relation sémantique permettant de rattacher la surface inondable à la carte de surfaces inondables où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
-| compose | Une surface inondable est composée par une agrégation de zones iso classes de hauteur | [Surface inondable](#surface-inondable)(1) | [Zone iso classe hauteur](#zone-iso-classe-hauteur)(0..*) |
-| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de lignes iso côte | [Surface inondable](#surface-inondable)(1) | [Ligne iso cote](#ligne-iso-cote)(0..*) |
-| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de zones iso classe vitesse | [Surface inondable](#surface-inondable)(1) | [Zone iso classe vitesse](#zone-iso-classe-vitesse)(0..*) |
-| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de points remarquables côte, vitesse, débit | [Surface inondable](#surface-inondable)(1) | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit)(0..*) |
-| est caractérisé par | Une surface inondable peut être caractérisée par un ensemble de zones iso classe débit | [Surface inondable](#surface-inondable)(1) | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) |
+| Nom de l'association | Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+| - | - | - | - |
+| `compose` | Une surface inondable est composée par une agrégation de zones iso classes de hauteur | [Surface inondable](#surface-inondable)(1) | [Zone iso classe hauteur](#zone-iso-classe-hauteur)(0..*) |
+| `est caractérisé par` | Une surface inondable peut être caractérisée par un ensemble de lignes iso côte | [Surface inondable](#surface-inondable)(1) | [Ligne iso cote](#ligne-iso-cote)(0..*) |
+| `est caractérisé par` | Une surface inondable peut être caractérisée par un ensemble de zones iso classe vitesse | [Surface inondable](#surface-inondable)(1) | [Zone iso classe vitesse](#zone-iso-classe-vitesse)(0..*) |
+| `est caractérisé par` | Une surface inondable peut être caractérisée par un ensemble de points remarquables côte, vitesse, débit | [Surface inondable](#surface-inondable)(1) | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit)(0..*) |
+| `est caractérisé par` | Une surface inondable peut être caractérisée par un ensemble de zones iso classe débit | [Surface inondable](#surface-inondable)(1) | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) |
+| `est généré par` | Une surface inondable peut être générée par une ou plusieurs origines de rique | [Surface inondable](#surface-inondable)(0..*) | [Origine du risque](#origine-du-risque)(0..*) |
 
+Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation)
 
 ### Origine du risque
 
+| | |
+| - | - |
+| **Classe d'objet** | **`Origine du risque`** |
+| **Définition** | Cette classe issue du [modèle commun](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#classe-dobjets-originerisque) permet de faire référence aux objets à l'origine du risque inondation, typiquement un cours d'eau. Ces objets sont spécifiés dans des référentiels externes et n'ont pas vocation à être rédéfinis dans le cadre des cartographies de la directive inondation. On ne reprend ici que le nom et une éventuelle géométrie. |
+| **Modélisation géométrique** | La modélisation géométrique dépend du référentiel choisi. |
+| **Primitive graphique** | Selon les référentiels : Polygon, Line, Point |
+
+#### Attributs de la classe Origine du risque
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| `idOrigineRisque` | Identifiant unique de l'objet origine du risque | 1..1 | `identifiant` | Deux objets de la classe OrigineRisque ne peuvent avoir la même valeur |   |
+| `nom` | Nom de l'objet origine du risque | 1..1 | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `La Loire` |
+| `idRefExterne` | Identifiant de l'objet dans le référentiel externe d'où il est extrait | 0..1 | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. |  |
+| `refExterne` | Référentiel externe d'où est extrait l'objet. | 0..1 | CharacterString | Saisie Libre | `BD Topage` |
+| `nom` | Nom de l'objet origine du risque | 1..1 | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `La Loire` |
+
+#### Associations de la classe Origine du risque
+
+Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe zone iso classe hauteur](#associations-de-la-classe-zone-iso-classe-hauteur).
+
 ### Ligne iso cote
+
+| | |
+| - | - |
+| **Classe d'objet** | **`Ligne iso cote`** |
+| **Définition** | Les lignes d’iso cote sont les courbes de niveaux représentant les altitudes atteintes par les eaux lors d’une inondation. |
+| **Modélisation géométrique** | A l’instar des courbes de niveau altimétrique, la ligne d’iso-cote a pour géométrie le résultat d’une interpolation reliant l’ensemble des points où la surface de l’inondation atteint la même altitude. La valeur de cette altitude est donnée par l’attribut cote. |
+| **Primitive graphique** | Line |
+
+#### Attributs de la classe Ligne iso cote
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de la ligne iso cote. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `LIC_0001` |
+| `cote` | Altitude de la surface de l’eau | 1..1 | `réel` | Valeur vide interdite, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250,5` |
+| **`dateCalcul`** | Date de calcul de la ligne iso cote | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+
+#### Associations de la classe Ligne iso cote
+
+Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables).
 
 ### Zone iso classe hauteur
 
+| | |
+| - | - |
+| **Classe d'objet** | **`Zone iso classe hauteur`** |
+| **Définition** | Zone pour laquelle un aléa d’un certain type selon une certaine probabilités d'occurrence provoque une montée d’eau dont la hauteur se situe dans une plage de valeurs fixe. Une zone d’iso classe de hauteur est une zone pour laquelle l’ensemble des hauteurs d’eau se situent dans une même plage de hauteurs. Une zone d’iso classe de hauteur est caractérisée par son extension spatiale et son palier de hauteur d'eau caractérisé par l'énumération [TypeClasseHauteurEau](#typeclassehauteureau). |
+| **Modélisation géométrique** | Les zones d’iso classe de hauteur forment une partition de la surface inondable : tout point de la surface inondable est recouvert par une et une seule zone d’iso classe de hauteur (à l'exception de celles décrivant des zones émergées). |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe Zone iso classe hauteur
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+|---|---|---|---|---|---|
+| **`identifiant`** | Identifiant de la zone iso classe de hauteur. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCH_0001` |
+| `palierHauteur` | Palier de hauteur d'eau | 1..1 | [TypeClasseHauteurEau](#typeclassehauteureau) | Valeur obligatoire à prendre parmi les valeurs de [TypeClasseHauteurEau](#typeclassehauteureau) | `Inférieur à 0,5m` |
+
+#### Associations de la classe Zone iso classe hauteur
+
+Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables).
+
 ### Zone iso classe vitesse
+
+| | |
+| - | - |
+| **Classe d'objet** | **`Zone iso classe vitesse`** |
+| **Définition** | Les zones iso classe vitesse sont des zones sur lesquelles on dispose d'une estimation qualitative (selon l'énumération [TypeVitesseEcoulement](#typevitesseecoulement)) de la vitesse d'écoulement dans le cas d'une inondation d'un certain type pour une probabilité d'occurence donnée. |
+| **Modélisation géométrique** | Les zones iso classe vitesse sont représentées par des surfaces auxquelles une vitesse moyenne est appliquée. Cette classe d'objet regroupe en une seule classe les zones d'écoulement et les points champs vitesse de l'ancien standard COVADIS. |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe Zone iso classe vitesse
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de la zone iso classe vitesse. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCV_0001` |
+| `vitesseQualitative` | Classe de vitesse d'écoulement | 1..1 | `réel` | Saisie obligatoire à prendre parmi les valeurs de [TypeVitesseEcoulement](#typevitesseecoulement) | `Ecoulement faible` |
+| **`dateCalcul`** | Date de calcul de la zone iso classe vitesse | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+
+#### Associations de la Zone iso classe vitesse
+
+Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables).
 
 ### Zone iso classe débit
 
+| | |
+| - | - |
+| **Classe d'objet** | **`Zone iso classe débit`** |
+| **Définition** | Dans le cas d’inondation par ruissellement, une zone d’iso classe de débit est une zone d’écoulement des eaux à l’intérieur de laquelle le débit linéique se situe dans une même plage de valeurs. Les surfaces d’inondation par ruissellement sont généralement mieux caractérisées par le débit linéique qui s’exprime en mètre-carré par seconde (m²/s) ou mètre-cube par seconde (m³/s) par mètre linéaire (la charge hydraulique peut également être envisagée). Le paramètre de débit linéique est plus pertinent que la hauteur ou la vitesse dans les cas de ruissellement. |
+| **Modélisation géométrique** | |
+| **Primitive graphique** | Polygon |
+
+#### Attributs de la classe Zone iso classe débit
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de la zone iso classe débit. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCD_0001` |
+| `debitLineiqueMin` | Seuil inférieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 1..1 | `réel` | Saisie obligatoire, exprimée en m2/s, ne peut être négative. | `0.2` |
+| `debitLineiqueMax` | Seuil supérieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 0..1 | `réel` | Saisie facultative exprimée en m2/s. Si cette valeur n’est pas renseignée, la plage de débit correspond à la plage des débits maximaux (supérieur à un débit donné). Par exemple, la plage des « débits supérieurs ou égaux à 0.2 m²/s (vitesse de 1 m/s pour une hauteur de 20 cm)» se traduit par un seuil inférieur de la plage de débit (avec dans le cas de l’exemple la valeur « 0.2 ») et un seuil supérieur laissé vide. | `0.4` |
+| **`dateCalcul`** | Date de calcul de la zone iso classe débit | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+
+#### Associations de la Zone iso classe débit
+
+Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables).
+
 ### Point remarquable cote vitesse débit
+
+| | |
+| - | - |
+| **Classe d'objet** | **`Point remarquable cote vitesse débit`** |
+| **Définition** | Un point remarquable de cote, de vitesse ou de débit est un point isolé (et non un semis de points) pour lequel une information précise de la cote atteinte par les eaux, de la vitesse d’écoulement ou du débit linéique dans le cas d’une inondation est connue. Ils ne se substituent pas aux paramètres hauteurs, vitesses, débit linéique tels que décrits par les autres classes, mais apportent une information ponctuelle complémentaire. |
+| **Modélisation géométrique** | Le point est localisé à l’endroit où la cote, la vitesse ou le débit a été mesuré. |
+| **Primitive graphique** | Point |
+
+#### Attributs de la classe Point remarquable cote vitesse débit
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant du point remarquable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `PRE_0001` |
+| `cote` | Altitude de la surface de l’eau lors de l'inondation | 0..1 | `réel` | Saisie facultative, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250.5` |
+| `vitesse` | Vitesse d’écoulement de l’eau dans le cas d’une
+inondation. | 0..1 | `réel` | Saisie facultative, exprimée en m/s. | `0.2` |
+| `debitLineique` | Débit linéique d'écoulement dans le cas d’une inondation par ruissellement. | 0..1 | `réel` | Saisie facultative, exprimée en m2/s, ne peut être négative. | `0.2` |
+| `azimuth` | Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre. | 0..1 | `réel` | Saisie facultative, exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `0.2` |
+| **`dateCalcul`** | Date de calcul du point remarquable. | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+
+#### Associations de la Point remarquable cote vitesse débit
+
+Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables).
 
 ### Ouvrage protecteur
 
@@ -596,7 +728,6 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 ### Enjeu
 
 ### Enjeux rapportés TRI
-
 
 ## Description des types énumérés
 
@@ -611,7 +742,7 @@ Outres les valeurs désignées, tous les types énumérés comprennent les valeu
 Le tableau suivant liste les valeurs possibles permettant de caractériser les références internet associées à un TRI.
 
 | Libellé | Définition |
-|-|-|
+| - | - |
 | Plateforme nationale | Plateforme nationale de diffusion des cartographies des TRI |
 | Plateforme régionale | Site internet de la DREAL de bassin où sont accessibles les cartographies du TRI concerné |
 
@@ -624,22 +755,51 @@ Les valeurs possibles pour l'état associé à un TRI ou ses cartographies se li
 Le tableau suivant liste les valeurs possibles permettant de caractériser les différents probabilités d'aléa représentables sur les cartographies des TRI.
 
 | Libellé | Définition |
-|-|-|
-| Aléa de forte probabilité | (également dénommé événement fréquent) Événement provoquant les premiers dommages conséquents, commençant à un temps de retour de 10 ans et dans la limite d'une période de retour de l’ordre de 30 ans. |
-| Aléa de forte probabilité avec prise en compte du changement climatique à court terme | (également dénommé événement fréquent avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
-| Aléa de forte probabilité avec prise en compte du changement climatique à échéance 100 ans | (également dénommé événement fréquent avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
-| Aléa de moyenne probabilité | (également dénommé événement moyen) Événement ayant une période de retour comprise entre 100 et 300 ans, qui correspond dans la plupart à l’aléa de référence du PPRi, s’il existe. Si un événement historique de référence n’est pas utilisé, un événement de type centennal est recherché. |
-| Aléa de moyenne probabilité avec prise en compte du changement climatique à court terme | (également dénommé événement moyen avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. |
-| Aléa de moyenne probabilité avec prise en compte du changement climatique à échéance 100 ans | (également dénommé événement moyen avec changement climatique) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. Correspond à l'aléa échéance 100 ans du PPRI, s'il existe, pour l'aléa submersion marine. |
-| Aléa de faible probabilité | (également dénommé événement extrême) Phénomène d'inondation exceptionnel inondant toute la surface de la plaine alluviale fonctionnelle (lit majeur) ou de la plaine littorale fonctionnelle pouvant être estimé comme un maximum à prendre en compte pour la gestion d’un territoire (hors aménagements spécifiques : centrales nucléaires, grands barrages), et pour lequel les éventuels systèmes de protection mis en place ne sont plus efficaces. A titre indicatif, une période de retour d'au moins 1000 ans est recherchée. |
-| Aléa de faible probabilité avec prise en compte du changement climatique à court terme | (également dénommé événement extrême avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement extrême qui est l’événement choisi de faible probabilité. |
-| Aléa de faible probabilité avec prise en compte du changement climatique à échéance 100 ans | (également dénommé événement extrême avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement extrême qui est l’événement choisi de faible probabilité. |
+| - | - |
+| `Aléa de forte probabilité` | (également dénommé événement fréquent) Événement provoquant les premiers dommages conséquents, commençant à un temps de retour de 10 ans et dans la limite d'une période de retour de l’ordre de 30 ans. |
+| `Aléa de forte probabilité avec prise en compte du changement climatique à court terme` | (également dénommé événement fréquent avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
+| `Aléa de forte probabilité avec prise en compte du changement climatique à échéance 100 ans` | (également dénommé événement fréquent avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
+| `Aléa de moyenne probabilité` | (également dénommé événement moyen) Événement ayant une période de retour comprise entre 100 et 300 ans, qui correspond dans la plupart à l’aléa de référence du PPRi, s’il existe. Si un événement historique de référence n’est pas utilisé, un événement de type centennal est recherché. |
+| `Aléa de moyenne probabilité avec prise en compte du changement climatique à court terme` | (également dénommé événement moyen avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. |
+| `Aléa de moyenne probabilité avec prise en compte du changement climatique à échéance 100 ans` | (également dénommé événement moyen avec changement climatique) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. Correspond à l'aléa échéance 100 ans du PPRI, s'il existe, pour l'aléa submersion marine. |
+| `Aléa de faible probabilité` | (également dénommé événement extrême) Phénomène d'inondation exceptionnel inondant toute la surface de la plaine alluviale fonctionnelle (lit majeur) ou de la plaine littorale fonctionnelle pouvant être estimé comme un maximum à prendre en compte pour la gestion d’un territoire (hors aménagements spécifiques : centrales nucléaires, grands barrages), et pour lequel les éventuels systèmes de protection mis en place ne sont plus efficaces. A titre indicatif, une période de retour d'au moins 1000 ans est recherchée. |
+| `Aléa de faible probabilité avec prise en compte du changement climatique à court terme` | (également dénommé événement extrême avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement extrême qui est l’événement choisi de faible probabilité. |
+| `Aléa de faible probabilité avec prise en compte du changement climatique à échéance 100 ans` | (également dénommé événement extrême avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement extrême qui est l’événement choisi de faible probabilité. |
 
 ### TypeAleaCartoDI
 
+Le tableau suivant liste les valeurs possibles permettant de caractériser les différents types d'aléas inondation couverts par les cartographies la directive inondation. Il s'agit d'une restriction des valeurs possibles de la nomenclature des aléas définie dans GASPAR et reprise dans le [modèle commun](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typealea).
+
+| Libellé | Code GASPAR |
+| - | - |
+| Risque naturel ; Inondation ; Par une crue à débordement lent de cours d'eau | 112 |
+| *Risque naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau ?* | *113* |
+| Risque naturel ; Inondation ; Par ruissellement et coulée de boue | 114 |
+| *Risque naturel ; Inondation ; Par lave torrentielle (torrent et talweg) ?* | *115* |
+| Risque naturel ; Inondation ; Par remontées de nappes naturelles | 116 |
+| Risque naturel ; Inondation ; Par submersion marine | 117 |
+
 ### TypeVitesseEcoulement
 
+Le tableau suivant liste les valeurs possibles permettant de caractériser les classes qualitatives de vitesse d'écoulement. Ces classes de valeurs sont cohérentes avec celles utilisées dans le [Guide PPRI:2024, p.71](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) pour l'estimation de la dynamique liée à la combinaison de la vitesse d’écoulement de l’eau et de la vitesse de montée des eaux.
+
+| Libellé | Définition |
+| - | - |
+| `écoulement faible` | L’écoulement a une vitesse faible lorsque l’ordre de grandeur de cette vitesse est estimé inférieur à 0,2 mètre/s. Cette zone d’écoulement faible est aussi qualifiée de zone de stockage. |
+| `écoulement modéré` | L’écoulement a une vitesse modérée lorsque l’ordre de grandeur de cette vitesse est estimé supérieur à 0,2 mètre/s et inférieur à 0,5 mètre/s. |
+| `écoulement fort` | L’écoulement a une vitesse forte lorsque l’ordre de grandeur de cette vitesse est estimé supérieur à 0,5 mètre/s. |
+
 ### TypeClasseHauteurEau
+
+Le tableau suivant liste les valeurs possibles permettant de caractériser les paliers de hauteur d'eau pour les [zones iso classe hauteur](#zone-iso-classe-hauteur). Les paliers proposés sont cohérents avec ceux utilisés dans le [Guide PPRI:2024, p.71](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) pour l'estimation du niveau d'aléa.
+
+| Libellé | Définition |
+| - | - |
+| `Zone émergée` | Cette valeur spécifique permet, lorsque cela a un sens, notamment pour des conséquences réglementaires, d'identifier des zones émergées au sein (topologiquement parlant) d'une surface inondable pour une probabilité d'occurence donnée. Cette classe de hauteur d'eau **n'est pas prise en compte** pour le calcul de la surface inondable lors de l'agrégation des classes de hauteur d'eau.  |
+| `Inférieur à 0,5m` | Ces hauteurs correspondent au seuil de hauteurs d'eau "extrèmement faibles". |
+| `Entre 0,5m et 1m` | Hauteurs d'eau comprises entre 0,5m et 1m (qualifié de "inférieur à 1m" dans le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf)) |
+| `Entre 1m et 2m` | Hauteurs d'eau comprises entre 1m et 2m |
+| `Supérieur à 2m` | Hauteurs d'eau supérieures à 2m |
 
 ### TypeOuvrageprotecteur
 
@@ -700,7 +860,7 @@ Cette qualité peut être estimée, par exemple par des pourcentages de fiabilit
 
 Ces mesures peuvent être :
 
-● Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans [le registre national des mesures pour la qualification des données géographiques](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95). 
+● Objectivables : Elles peuvent être transverses et communes à différents standards. Elles sont référencées par leur URls, disponibles dans [le registre national des mesures pour la qualification des données géographiques](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95).
 
 ● Métiers : Il existe déjà en interne de la thématique des processus de production ou de gestion et ils peuvent être réutilisés pour mesurer la qualité des données de cette thématique.
 
