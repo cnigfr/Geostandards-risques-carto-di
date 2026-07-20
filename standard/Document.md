@@ -507,6 +507,8 @@ Les autres attributs sont ceux de la classe [Cartographie TRI](#attributs-de-la-
 | `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe vitesse à la carte des surfaces inondables où elle peut être représentée | [Zone iso classe vitesse](#zone-iso-classe-vitesse)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher un point remarquable cote vistesse débit à la carte des surfaces inondables où il peut être représentée | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe débit à la carte des surfaces inondables où elle peut être représentée | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte de surfaces inondables où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+
 
 Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
@@ -529,6 +531,7 @@ Cf. attributs de la classe [Cartographie TRI](#attributs-de-la-classe-cartograph
 | Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
 | - | - | - | - |
 | `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte de risques inondation où elle doit être représentée. | [Surface inondable](#surface-inondable)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte de risques inondation où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
 
 Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
@@ -721,6 +724,38 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 
 ### Ouvrage protecteur
 
+| | |
+| - | - |
+| **Classe d'objet** | **`Ouvrage protecteur`** |
+| **Définition** | Cette classe spécialise la classe d'objets "Ouvrage protecteur" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les ouvrages ayant une influence vis à vis de l'aléa inondation avec une fonction ou non de protection. La plupart de ces ouvrages sont définis et référencés dans des référentiels externes tels que le Référentiel des Obstacles à l'Ecoulement (ROE) ou le Système d’Information des Ouvrages Hydrauliques (SIOUH). Les objets de cette classe permettent d'y faire référence en en reprenant la géométrie, le nommant et en indiquant la fonction et le niveau de protection. |
+| **Modélisation géométrique** | |
+| **Primitive graphique** | Line |
+
+#### Attributs de la classe Ouvrage protecteur
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de l'ouvrage protecteur au sein du jeu de données. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `OUV_0001` |
+| `idRefExterne` | Identifiant de l'objet dans le référentiel externe d'où il est extrait | 0..1 | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. |  |
+| `refExterne` | Référentiel externe d'où est extrait l'objet. | 1..1 | [TypeRefExterneOuvrage](#typerefexterneouvrage) | Saisie obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage) | `SIOUH II` |
+| `refExterneAutre` | Nom du référentiel externe s'il ne fait pas partie de ceux prévus dans l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage) | 0..1 | CharacterString | Saisie libre. Obligatoire si la valeur de `refExterne` vaut `Autre` | `BD Topo` |
+| `nom` | Nom de l'ouvrage protecteur | 1..1 | `CharacterString` | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `Barage de Serre-Ponçon` |
+| `typeOuvrageProtecteur` | Caractérisation de l"ouvrage selon sa fonction. | 1..1 | [TypeOuvrageProtecteur](#typeouvrageprotecteur) | Saisie Obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeOuvrageProtecteur](#typeouvrageprotecteur) | `Aménagement hydraulique` |
+| `roleProtection` | Indique si l'ouvrage a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement dont l'occurrence est précisée par le champ "occurrence". | 0..1 |`booléen` | `false` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `true` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal à la probabilité de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | `true` |
+| `occurrence` | Probabilité d'aléa contre laquelle protège l'ouvrage. | 0..1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Saisie facultative. Valeurs à prendre parmi les valeurs de [TypeProbabiliteAlea](#typeprobabilitealea). | `Aléa de forte probabilité` |
+
+#### Associations de la classe Ouvrage protecteur
+
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+| - | - | - | - |
+| `engendre` | Relation sémantique permettant de rattacher une zone protégée à un ouvrage protecteur | [Zone protégée](#zone-protégée)(0..*) | [Ouvrage protecteur](#ouvrage-protecteur)(1) |
+| `engendre` | Relation sémantique permettant de rattacher une zone de sur-aléa à un ouvrage protecteur qui la génère | [Zone de sur-aléa](#zone-de-sur-aléa)(0..*) | [Ouvrage protecteur](#ouvrage-protecteur)(0..1) |
+
+
+Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+
+
+
 ### Zone protégée
 
 ### Zone de sur-aléa
@@ -773,9 +808,9 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les d
 | Libellé | Code GASPAR |
 | - | - |
 | Risque naturel ; Inondation ; Par une crue à débordement lent de cours d'eau | 112 |
-| *Risque naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau ?* | *113* |
+| Risque naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau | 113 |
 | Risque naturel ; Inondation ; Par ruissellement et coulée de boue | 114 |
-| *Risque naturel ; Inondation ; Par lave torrentielle (torrent et talweg) ?* | *115* |
+| Risque naturel ; Inondation ; Par lave torrentielle (torrent et talweg) | 115 |
 | Risque naturel ; Inondation ; Par remontées de nappes naturelles | 116 |
 | Risque naturel ; Inondation ; Par submersion marine | 117 |
 
@@ -888,7 +923,7 @@ Les composantes géométriques des données des cartographies de la Directive In
 
 #### Référentiels de numérisation
 
-Les cartographies de la Directive Inpndation sont généralement élaborés à partir des référentiels de données suivants :
+Les cartographies de la Directive Inondation sont généralement élaborés à partir des référentiels de données suivants :
 
 * SCAN 25, carte IGN au 1 :25 000
 * BD Ortho IGN
