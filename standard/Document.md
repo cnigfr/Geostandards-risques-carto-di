@@ -739,9 +739,9 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | `idRefExterne` | Identifiant de l'objet dans le référentiel externe d'où il est extrait | 0..1 | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. |  |
 | `refExterne` | Référentiel externe d'où est extrait l'objet. | 1..1 | [TypeRefExterneOuvrage](#typerefexterneouvrage) | Saisie obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage) | `SIOUH II` |
 | `refExterneAutre` | Nom du référentiel externe s'il ne fait pas partie de ceux prévus dans l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage) | 0..1 | CharacterString | Saisie libre. Obligatoire si la valeur de `refExterne` vaut `Autre` | `BD Topo` |
-| `nom` | Nom de l'ouvrage protecteur | 1..1 | `CharacterString` | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `Barage de Serre-Ponçon` |
+| `nom` | Nom de l'ouvrage protecteur | 1..1 | `CharacterString` | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `Barrage de Serre-Ponçon` |
 | `typeOuvrageProtecteur` | Caractérisation de l"ouvrage selon sa fonction. | 1..1 | [TypeOuvrageProtecteur](#typeouvrageprotecteur) | Saisie Obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeOuvrageProtecteur](#typeouvrageprotecteur) | `Aménagement hydraulique` |
-| `roleProtection` | Indique si l'ouvrage a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement dont l'occurrence est précisée par le champ "occurrence". | 0..1 |`booléen` | `false` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `true` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal à la probabilité de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | `true` |
+| `roleProtection` | Indique si l'ouvrage a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement dont l'occurrence est précisée par le champ "occurrence". | 0..1 | `booléen` | `false` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `true` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal à la probabilité de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | `true` |
 | `occurrence` | Probabilité d'aléa contre laquelle protège l'ouvrage. | 0..1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Saisie facultative. Valeurs à prendre parmi les valeurs de [TypeProbabiliteAlea](#typeprobabilitealea). | `Aléa de forte probabilité` |
 
 #### Associations de la classe Ouvrage protecteur
@@ -751,14 +751,50 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | `engendre` | Relation sémantique permettant de rattacher une zone protégée à un ouvrage protecteur | [Zone protégée](#zone-protégée)(0..*) | [Ouvrage protecteur](#ouvrage-protecteur)(1) |
 | `engendre` | Relation sémantique permettant de rattacher une zone de sur-aléa à un ouvrage protecteur qui la génère | [Zone de sur-aléa](#zone-de-sur-aléa)(0..*) | [Ouvrage protecteur](#ouvrage-protecteur)(0..1) |
 
-
 Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
-
-
 
 ### Zone protégée
 
+| | |
+| - | - |
+| **Classe d'objet** | **`Zone protégée`** |
+| **Définition** | Cette classe spécialise la classe d'objets "Zone protégée" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones protégées par un ouvrage protecteur contre l'aléa inondation correspondant à une certaine probabilité de survenue de l'aléa. |
+| **Modélisation géométrique** | La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection. |
+| **Primitive graphique** | Polygone |
+
+#### Attributs de la classe Zone protégée
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de la zone protégée au sein du jeu de données. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZP_0001` |
+| `description` | Description de la zone protégée | 0..1 | `CharacterString` | Saisie libre | `Zone protégée par la digue xxx` |
+| `occurrence` | Probabilité d'aléa contre laquelle la zone est protégée. | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Saisie obligatoire. Valeurs à prendre parmi les valeurs de [TypeProbabiliteAlea](#typeprobabilitealea). | `Aléa de forte probabilité` |
+| `niveauProtection` | Qualification du niveau de protection de la zone au sens de l'article [R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001213/2019-08-31) du code de l'environnement. | 0..1 | `CharacterString` | Saisie libre | `Hauteur d'eau maximale : 10m` |
+
+#### Associations de la classe Zone protégée
+
+Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-ouvrage-protecteur), [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+
 ### Zone de sur-aléa
+
+| | |
+| - | - |
+| **Classe d'objet** | **`Zone de sur-aléa`** |
+| **Définition** | Cette classe spécialise la classe d'objets "Zone de danger spécifique" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones où le risque est plus important si l'ouvrage protecteur cède que s'il n'avait pas existé. Ces zones correspondent aux bandes de précautions à l'arrière des systèmes d'endiguements. |
+| **Modélisation géométrique** | La géométrie d'une zone de sur aléa doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection. |
+| **Primitive graphique** | Polygone |
+
+#### Attributs de la classe Zone de sur-aléa
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de la zone de sur-aléa au sein du jeu de données. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZSA_0001` |
+| `description` | Description de la zone de sur-aléa | 0..1 | `CharacterString` | Saisie libre | `Bande de précaution à l'arrière de la digue xxx` |
+| `occurrence` | Probabilité d'aléa pour laquelle la zone de sur-aléa est calculée. | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Saisie obligatoire. Valeurs à prendre parmi les valeurs de [TypeProbabiliteAlea](#typeprobabilitealea). | `Aléa de forte probabilité` |
+
+#### Associations de la classe Zone de sur-aléa
+
+Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-ouvrage-protecteur), [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
 
 ### Enjeu
 
