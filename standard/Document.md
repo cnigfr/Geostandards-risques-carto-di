@@ -181,8 +181,8 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | COVADIS | Commission de validation des données pour l'information spatialisée |
 | CNIG | Comité national de l'information géolocalisée |
 | DCE | Directive 2000/60/CE du Parlement européen et du Conseil du 23 octobre 2000 établissant un cadre pour une politique communautaire dans le domaine de l'eau (Directive cadre sur l'eau). |
-| DDT | Direction départementale des territoires  |
-| DDTM | Direction départementale des territoires et de la mer  |
+| DDT(M) | Direction départementale des territoires (et de la mer) |
+| DGFiP | Direction Générale des Finances Publiques |
 | DGPR | Direction générale de la prévention des risques |
 | DI | Directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
 | DREAL | Direction régionale de l'environnement, de l'aménagement et du logement |
@@ -190,22 +190,30 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | EEA | European Environment Agency (Agence européenne pour l'environement) |
 | ERRIAL | Etat des risques pour l'information des acquéreurs et des locataires |
 | ERP | Établissement recevant du public |
+| FINESS | Fichier National des Établissements Sanitaires et Sociaux |
 | FHRM | Flood Hazard and Risk Maps (*Cartes des surfaces inondables et des risques d'inondation*) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
 | GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
 | GUNEnv | Guichet Unique Numérique de l'environnement |
 | ICPE | Installation classée pour la protection de l'environnement |
 | IGN | Institut national de l'information géographique et forestière |
+| INPN | Inventaire national du patrimoine naturel |
+| INSEE | Institut national de la statistique et des études économiques |
+| IRIS (GE) | Ilots Regroupés pour l’Information Statistique (Grande Echelle) |
 | MTECT | Ministère de la transition écologique et de la cohésion des territoires |
 | OFB | Office français de la biodiversité |
+| OSM | OpenStreetMap |
 | OGC | Open Geospatial Consortium |
 | PPRI | Plan de prévention des risques d'inondation |
 | PGRI | Plan de gestion des risques d'inondation |
+| SAE | Statistique Annuelle des Établissements de santé |
+| SIC | Site d'importance communautaire |
 | SIG | Système d'information géographique |
 | Sandre | Service d'administration nationale des données et référentiels sur l'eau |
 | SIOUH | Système d’Information des Ouvrages Hydrauliques |
 | SLGRI | Stratégie locale de gestion des risques d'inondation |
 | TRI | Territoire à risque important d'inondation |
+| ZSC | Zone spéciale de conservation |
 
 # Contexte d'application
 
@@ -883,7 +891,7 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les d
 | | | `Ouvrage appartenant à un système d'endiguement` | Ouvrage de protection contre les inondations appartenant à un système d'endiguement au sens de l'article [R. 562-13 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038160601) (digue, vanne, etc.). |
 | | | `Aménagement hydraulique` | Ouvrage de protection contre les inondations appartenant à un aménagement hydraulique au sens de l'article [R. 562-18 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039001323) (seuils, barrage, etc.). |
 | | | `Autre ouvrage de protection contre les inondations` | Autre ouvrage géré pour sa fonction de protection contre les inondations (géré dans le cadre de la mise en œuvre de la GEMAPI). Il peut notamment s'agir des bassins de stockage trop petits pour être autorisés au titre de la rubrique 3.2.6.0 de la nomenclature définie à l'article [R. 214-1 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048136763). |
-| | `Ouvrage ou installation influencant les ecoulements sans fonction de protection` | | Installation, ouvrage ou remblai faisant obstacle aux écoulements et n'ayant pas de fonction de protection (et en particulier, non intégré dans un système d'endiguement et non géré dans le cadre de la mise en œuvre de la GEMAPI). Il s'agit par exemple de remblais routier, remblais ferroviaires, merlons, plages de dépôt, etc. |
+| | `Ouvrage ou installation influencant les écoulements sans fonction de protection` | | Installation, ouvrage ou remblai faisant obstacle aux écoulements et n'ayant pas de fonction de protection (et en particulier, non intégré dans un système d'endiguement et non géré dans le cadre de la mise en œuvre de la GEMAPI). Il s'agit par exemple de remblais routier, remblais ferroviaires, merlons, plages de dépôt, etc. |
 
 ### TypeRefExterneOuvrage
 
@@ -972,20 +980,40 @@ Ce qui suit décrit les objectifs de qualité visés pour les données des carto
 
 #### Dimensions géométriques
 
-Les composantes géométriques des données des cartographies de la Directive Inondation sont levées en 2 dimensions.
+Les composantes géométriques des données des cartographies de la Directive Inondation sont levées en 2 dimensions. La composante altimétrique, essentielle pour la caractérisation des surfaces inondables, est gérée au niveau attributaire selon les classes concernées.
 
 #### Référentiels de numérisation
 
-Les cartographies de la Directive Inondation sont généralement élaborés à partir des référentiels de données suivants :
+A la date de rédaction de ce standard, les référentiels de données suivants sont généralement utilisés pour l'éléboration des cartographies de la Directive Inondation :
 
-* SCAN 25, carte IGN au 1 :25 000
-* BD Ortho IGN
-* BD Topo IGN
-* BD Topage (référentiel hydrographique)
-* SIOUH (Système d’Information des Ouvrages Hydrauliques)
-* Guichet Unique Numérique de l'environnement (GUNEnv)
-* Plans de Préventions des Risques Inondation
-* (Liste à compléter...)
+* Fond de plan :
+  * [SCAN 25®](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-25) - IGN
+  * [BD Ortho®](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_BD-ORTHO) - IGN
+* Référentiels hydrographique :
+  * [BD Topage®](https://www.data.gouv.fr/datasets/bd-topage-r) (IGN - OFB - Sandre)
+* Zones d'aléas inondation :
+  * Plans de Préventions des Risques Inondation - DGPR
+* Référentiels des ouvrages de protection :
+  * [Référentiel des obstacles à l'écoulement](https://www.sandre.eaufrance.fr/atlas/srv/fre/catalog.search#/metadata/59057026-b40c-4cf9-9e3e-7296e0aa1a78) (ROE) - Sandre - utilisé sur les premiers cycles de la DI
+  * SIOUH (Système d’Information des Ouvrages Hydrauliques) - DGPR
+* Collecte et calcul des enjeux :
+  * [BD Topo®](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_BD-TOPO) - IGN - classes : aérodrome, bâtiment, commune, département, EPCI, équipement de transport, ERP, poste de transformation, tronçon de route, zone d’activité ou d’intérêt, zone de végétation
+  * [Base Adresse Nationale](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_BAN-PLUS) (BAN PLUS) - IGN
+  * [IRIS...GE](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_IRIS-GE) (Ilots Regroupés pour l’Information Statistique Grande Echelle) - IGN, INSEE
+  * [Fichiers fonciers](https://datafoncier.cerema.fr/fichiers-fonciers) de la DGFiP
+  * [Fichier détail des logements ordinaires](https://www.insee.fr/fr/statistiques/8268903) - INSEE
+  * Base SIRENE - INSEE
+  * [Base de données des Installations classées pour la protection de l'environnement](https://www.georisques.gouv.fr/donnees/bases-de-donnees/installations-industrielles) (ICPE) - DGPR (Géoorisques) 
+  * Base de données des réseaux de collecte et stations de traitement des eaux usées (ROSEAU) - MTE, [Portail sur l'assainissemnt collectif](https://assainissement.developpement-durable.gouv.fr/pages/data/actu.php)
+  * [Fichier National des Établissements Sanitaires et Sociaux](https://finess.esante.gouv.fr/portail) (FINESS) - Ministère de la Santé
+  * [Statistique Annuelle des Établissements de santé](https://www.sae-diffusion.sante.gouv.fr/sae-diffusion/accueil.htm) (base SAE) - Ministère de la Santé
+  * [Fichier des établissements d’enseignement des premier et second degrés (publics et privés)](https://data.education.gouv.fr/pages/accueil) - Ministère de l'éducation nationale
+  * Données libres sur les campings - OSM
+  * [Données sur les campings classés](https://www.data.gouv.fr/organizations/atout-france-agence-de-developpement-touristique-de-la-france/datasets) - Agence de développement touristique de la France (Atout France)
+  * Données rapportées au titre de la Directive Cadre dur l'Eau (DCE) :
+    * [Liste des baignades](https://www.data.gouv.fr/datasets/donnees-de-rapportage-de-la-saison-balneaire-1) - Ministère de la santé
+    * Sites d'importance communautaires (SIC) - INPN
+    * Zones spéciales de conservation (ZSC) - INPN
 
 **Élément de mesure ou de métadonnées :**
 
