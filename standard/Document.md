@@ -382,7 +382,7 @@ Le diagramme UML suivant représente les classes décrivant les [ouvrages protec
 
 La liste possible des types d'[ouvrages protecteurs](#ouvrage-protecteur) définis dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md) est limitée ici aux [types d'ouvrages en lien avec le risque inondation](#typeouvrageprotecteur).
 
-Les [zones de suraléa](#zone-de-sur-aléa) de type [Bande de précaution](#typesuralea) correspondent à la zone de suraléa engendrée en cas de rupture de l'ouvrage de protection.
+Les [zones de suraléa](#zone-de-sur-aléa) sont les bandes de précautions à l'arrière des ouvrages protecteurs correspondent à la zone de suraléa engendrée en cas de rupture de l'ouvrage de protection.
 
 **Exigence :** Il n'y a pas de zone protégée contre les aléas de faible probabilité.
 
@@ -874,9 +874,26 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les p
 
 ### TypeOuvrageprotecteur
 
+Le tableau suivant liste les valeurs possibles permettant de caractériser les différents types d'ouvrages protecteurs pris en compte dans le cadre des cartographies la directive inondation. Il s'agit d'une restriction des valeurs possibles de la typologie de ces ouvrages définie dans le [modèle commun](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typeouvrageprotecteur).  Les valeurs proposées ont une organisation hiérarchique qui permet de classer plus ou moins finement la fonction l'ouvrage.
+
+| Libellé | | | Définition |
+| - | - | - | - |
+| `Ouvrage ou installation pouvant influencer les inondations` | | | Ouvrage ou installation pouvant faire obstacle aux écoulements d'une inondation, ou de manière générale, les influencer. |
+| | `Ouvrage de protection contre les inondations` | | Ouvrage de protection contre les inondations, c'est à dire conçu et géré pour protéger un secteur contre les inondations. |
+| | | `Ouvrage appartenant à un système d'endiguement` | Ouvrage de protection contre les inondations appartenant à un système d'endiguement au sens de l'article [R. 562-13 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038160601) (digue, vanne, etc.). |
+| | | `Aménagement hydraulique` | Ouvrage de protection contre les inondations appartenant à un aménagement hydraulique au sens de l'article [R. 562-18 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039001323) (seuils, barrage, etc.). |
+| | | `Autre ouvrage de protection contre les inondations` | Autre ouvrage géré pour sa fonction de protection contre les inondations (géré dans le cadre de la mise en œuvre de la GEMAPI). Il peut notamment s'agir des bassins de stockage trop petits pour être autorisés au titre de la rubrique 3.2.6.0 de la nomenclature définie à l'article [R. 214-1 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048136763). |
+| | `Ouvrage ou installation influencant les ecoulements sans fonction de protection` | | Installation, ouvrage ou remblai faisant obstacle aux écoulements et n'ayant pas de fonction de protection (et en particulier, non intégré dans un système d'endiguement et non géré dans le cadre de la mise en œuvre de la GEMAPI). Il s'agit par exemple de remblais routier, remblais ferroviaires, merlons, plages de dépôt, etc. |
+
 ### TypeRefExterneOuvrage
 
-### TypeSurAlea
+Le tableau suivant liste les valeurs possibles permettant de caractériser le référentiel dont est issu l'ouvrage protecteur. Il s'agit d'une restriction des valeurs possibles pour ces référentiels définie dans le [modèle commun](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#enumeration-typerefexterneouvrage).
+
+| Libellé | Description |
+| - | - |
+| `ROE` | Référentiel des obstacles à l'écoulement - Thème : Ouvrages - Dernière version applicable version 1.2 - 2014 |
+| `SIOUH II` | Système d'Information des Ouvrages Hydrauliques II |
+| `Autre` | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
 
 ### Nomenclature Enjeux Carto DI
 
