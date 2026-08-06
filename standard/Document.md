@@ -58,12 +58,9 @@ Ce standard est le fruit des travaux du groupe de travail CNIG sur la refonte de
 
 Ce standard a été rédigé par Gilles Cébélieu (IGN) avec les contributions majeures et les relectures des membres du Groupe de travail listés ci-dessous.
 
-*(Participations ateliers des 11/12/2025 et 22/01/2026)*
-
 * Abdelhakim Boulouiz (DREAL Occitanie)
 * Bastien Coignon (DGPR / BRIL)
 * Helene Decourcelle (DREAL Auvergne Rhone Alpes)
-* Yann GASOWSKI (Groupe Artelia)
 * Yohann Evain (Cerema)
 * Maxime Pujeaut (DREAL Occitanie)
 * Nicolas Boudesseul (DREAL Pays de la Loire)
@@ -196,6 +193,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
 | GUNEnv | Guichet Unique Numérique de l'environnement |
 | ICPE | Installation classée pour la protection de l'environnement |
+| IED | Industrial Emissions Directive |
 | IGN | Institut national de l'information géographique et forestière |
 | INPN | Inventaire national du patrimoine naturel |
 | INSEE | Institut national de la statistique et des études économiques |
@@ -540,6 +538,8 @@ Cf. attributs de la classe [Cartographie TRI](#attributs-de-la-classe-cartograph
 | - | - | - | - |
 | `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte de risques inondation où elle doit être représentée. | [Surface inondable](#surface-inondable)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte de risques inondation où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un enjeu à la carte de risques inondation où il doit être représentée. | [Enjeu](#enjeu)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
+| `sont représentés sur` | Relation sémantique permettant de rattacher des enjeux rapportés à la carte de risques inondation où ils doivent être représentés. | [Enjeux rapportés](#enjeux-rapportés-tri)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(1) |
 
 Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
@@ -806,15 +806,52 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 
 ### Enjeu
 
+| | |
+| - | - |
+| **Classe d'objet** | **`Enjeu`** |
+| **Définition** | Cette classe spécialise la classe d'objets "Enjeu" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les biens, activités, éléments de patrimoine culturel ou environnemental, menacés par l'aléa inondation ou susceptibles d'être affectés et endommagés par celui-ci. Il peut notamment s'agir d'établissements, infrastructures et installations sensibles dont la réalisation de l'aléa peut aggraver ou compliquer la gestion de crise. |
+| **Regroupement** | Cette classe regroupe l'ensemble des enjeux devant être collectés et représentés sur les cartes de risque inondation : patrimoniaux, économiques, sensibles ou utiles à la gestion de crise, installations relevant de la directive IED (Industrial Emissions Directive), stations de traitement des eaux usées et zones protégées de la DCE. Leur distinction se fait selon la [nomenclature des enjeux](#nomenclature-enjeux-carto-di) via le champ [TypeEnjeu](#typeenjeu) |
+| **Modélisation géométrique** | La modélisation géométrique des enjeux dépend de celle des référentiels dont ils sont issus. |
+| **Primitive graphique** | Point, Ligne ou Polygone |
+
+#### Attributs de la classe Enjeu
+
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`identifiant`** | Identifiant de l'enjeu' au sein du jeu de données. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ENJ_001` |
+| `nomEnjeu` | Nom de l'enjeu. | 1 | `CharacterString` | Saisie obligatoire | `Musée` |
+| `idRefExterne` | identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. | 0..1 | CharacterString | Saisie libre. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
+| `refExterne` | Référentiel externe d'où est extrait l'enjeu, lorsque c'est le cas. | 0..1 | CharacterString | Saisie libre. | `BD Topo` |
+| `typeEnjeu` | Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. | 1 | [TypeEnjeu](#typeenjeu) | Saisie obligatoire. | `NomenclatureEnjeuCartoDI` : `Enjeu patrimonial` |
+| `dateEnjeu` | Date de collecte de l'enjeu. | Date | 0..1 | Saisie facultative | `20/12/2024` |
+
+#### Associations de la classe Enjeu
+
+Cf. [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+
 ### Enjeux rapportés TRI
 
-## Description des types énumérés
+| | |
+| - | - |
+| **Classe d'objet** | **`Enjeux rapportés TRI`** |
+| **Définition** | Cette classe, uniquement attributaire, permet de rassembler des données quantitatives sur les nombres d'emplois et d'habitants affectés par le risque inondation en fonction des probabilités de survenue de l'inondation. |
+| **Modélisation géométrique** | Cette classe n'a pas de géométrie associée. |
+| **Primitive graphique** | La représentation des enjeux rapportés se fait sous forme de cartouche sur la carte de risques inondations |
 
-Outres les valeurs désignées, tous les types énumérés comprennent les valeurs conventionnelles :
+#### Attributs de la classe Enjeux rapportés TRI
 
-● "**Non renseigné**" pour exprimer : "inconnu, non renseigné, ou information non disponible",
+| Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
+| - | - | - | - | - | - |
+| **`occurrence`** | Probabilité de survenue de l'aléa inondation pour laquelle les chiffres sont rapportés sur la carte | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
+| `nbHabitantsPermanents` | Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. | `entier` | 1 | Saisie obligatoire | `500` |
+| `nbHabitantsSaisonniers` | Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | `entier` | 0..1 | Saisie libre | `500` |
+| `nbEmplois` | Nombre indicatif d'emplois affectés pour la probabilité de survenue de l'aléa. | `entier` | 1 | Saisie obligatoire | `500` |
 
-● "**autre**".
+#### Associations de la classe Enjeu rapportés
+
+Cf. [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+
+## Description des types de données et énumérés
 
 ### TypeReferenceTRI
 
@@ -874,7 +911,7 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les p
 
 | Libellé | Définition |
 | - | - |
-| `Zone émergée` | Cette valeur spécifique permet, lorsque cela a un sens, notamment pour des conséquences réglementaires, d'identifier des zones émergées au sein (topologiquement parlant) d'une surface inondable pour une probabilité d'occurence donnée. Cette classe de hauteur d'eau **n'est pas prise en compte** pour le calcul de la surface inondable lors de l'agrégation des classes de hauteur d'eau.  |
+| `Zone émergée` | Cette valeur spécifique permet, lorsque cela a un sens, notamment pour des conséquences réglementaires, d'identifier des zones émergées au sein (topologiquement parlant) d'une surface inondable pour une probabilité d'occurrence donnée. Cette classe de hauteur d'eau **n'est pas prise en compte** pour le calcul de la surface inondable lors de l'agrégation des classes de hauteur d'eau.  |
 | `Inférieur à 0,5m` | Ces hauteurs correspondent au seuil de hauteurs d'eau "extrèmement faibles". |
 | `Entre 0,5m et 1m` | Hauteurs d'eau comprises entre 0,5m et 1m (qualifié de "inférieur à 1m" dans le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf)) |
 | `Entre 1m et 2m` | Hauteurs d'eau comprises entre 1m et 2m |
@@ -902,6 +939,10 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser le r�
 | `ROE` | Référentiel des obstacles à l'écoulement - Thème : Ouvrages - Dernière version applicable version 1.2 - 2014 |
 | `SIOUH II` | Système d'Information des Ouvrages Hydrauliques II |
 | `Autre` | Autre référentiel ne faisant pas partie de la liste des référentiels ci-dessus |
+
+### TypeEnjeu
+
+Le type de données TypeEnjeu défini dans le modèle commun permet de qualifier un type d'enjeu à l'aide d'un nom ("codeEnjeu" : identifiant ou libellé) faisant partie d'une nomenclature particulière identifiée grâce au champ "nomenclatureEnjeu". Dans le cadre des cartographies de la directive inondation, ce type de données est simplifié dans la mesure où on utilise systématiquement la [Nomenclature Enjeux Carto DI](#nomenclature-enjeux-carto-di) définie dans ce document.
 
 ### Nomenclature Enjeux Carto DI
 
@@ -931,9 +972,8 @@ Le tableau suivant présente les systèmes de référence légaux à utiliser po
 
 __Note__ : les acronymes IGN utilisés dans ce tableau sont les identifiants des systèmes de référence dans le [registre IGN-F](https://geodesie.ign.fr/index.php?page=documentation#titre3). Une colonne a été rajoutée pour indiquer l'identifiant de la projection correspondant dans le [registre EPSG](https://epsg.org/home.html).
 
-
-| Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN)| Code EPSG |
-|-|-|-|-|-|
+| Zone géographique | Système géodésique (acronyme IGN) | Système de référence terrestre associé | Projection (acronyme IGN) | Code EPSG |
+| - | - | - | - | - |
 | France métropolitaine | Réseau géodésique français 1993 (RGF93) | ETRS89 | Lambert-93 (RGF93LAMB93) | EPSG:2154 |
 | Guadeloupe, Martinique | Réseau géodésique des Antilles françaises 2009 (RGAF09) | ITRS | Universal transverse Mercator fuseau 20 nord (RGAF09UTM20) | EPSG:5490 |
 | Guyane | Réseau géodésique français de Guyane 1995 (RGFG95) | ITRS | Universal transverse Mercator fuseau 22 nord (RGFG95UTM22) | EPSG:2972 |
@@ -1003,7 +1043,7 @@ A la date de rédaction de ce standard, les référentiels de données suivants 
   * [Fichiers fonciers](https://datafoncier.cerema.fr/fichiers-fonciers) de la DGFiP
   * [Fichier détail des logements ordinaires](https://www.insee.fr/fr/statistiques/8268903) - INSEE
   * Base SIRENE - INSEE
-  * [Base de données des Installations classées pour la protection de l'environnement](https://www.georisques.gouv.fr/donnees/bases-de-donnees/installations-industrielles) (ICPE) - DGPR (Géoorisques) 
+  * [Base de données des Installations classées pour la protection de l'environnement](https://www.georisques.gouv.fr/donnees/bases-de-donnees/installations-industrielles) (ICPE) - DGPR (Géorisques) 
   * Base de données des réseaux de collecte et stations de traitement des eaux usées (ROSEAU) - MTE, [Portail sur l'assainissemnt collectif](https://assainissement.developpement-durable.gouv.fr/pages/data/actu.php)
   * [Fichier National des Établissements Sanitaires et Sociaux](https://finess.esante.gouv.fr/portail) (FINESS) - Ministère de la Santé
   * [Statistique Annuelle des Établissements de santé](https://www.sae-diffusion.sante.gouv.fr/sae-diffusion/accueil.htm) (base SAE) - Ministère de la Santé
@@ -1139,7 +1179,6 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 * [Taux d’erreur de formatage](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_tauxErrFormat) ;
 
-
 ## Règles d'organisation et de codification
 
 ### Identification des TRI
@@ -1150,16 +1189,17 @@ Les identifiants de TRI bla bla bla...
 
 **Les règles de codification suivantes doivent être respectées :**  
 
-
-**Les valeurs vides sont codées “NULL” ou ne sont pas renseignées.** 
+**Les valeurs vides sont codées “NULL” ou ne sont pas renseignées.**
 
 # Cycle de vie des données
-Le management de la donnée représente une vision de l’information, non pas comme un produit ex-nihilo, mais comme partie d’un système qui inclut les processus d’acquisition, de validation et d’actualisation de l’information. Cette approche systémique permet de penser la donnée comme ressource, dans son cycle de vie et ses potentielles réutilisations. 
+
+Le management de la donnée représente une vision de l’information, non pas comme un produit ex-nihilo, mais comme partie d’un système qui inclut les processus d’acquisition, de validation et d’actualisation de l’information. Cette approche systémique permet de penser la donnée comme ressource, dans son cycle de vie et ses potentielles réutilisations.
 
 ## Acquisition des données
-`<La section relative à l’acquisition de données vise à fournir des recommandations et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.>` 
 
-`<Description rédigée en texte libre du processus d’acquisition et/ou de production des données>` 
+`<La section relative à l’acquisition de données vise à fournir des recommandations et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.>`
+
+`<Description rédigée en texte libre du processus d’acquisition et/ou de production des données>`
 
 ## Validation des données
 
