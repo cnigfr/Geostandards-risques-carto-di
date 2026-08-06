@@ -946,6 +946,82 @@ Le type de données TypeEnjeu défini dans le modèle commun permet de qualifier
 
 ### Nomenclature Enjeux Carto DI
 
+La nomenclature des enjeux pour les cartographies de la directive inondation s'appuie de façon cohérente sur la nomenclatrue des enjeux des plans de préventions des risques naturels (PPRN) dont certaines catégories sont affinées pour le besoin de rapportage. Le tableau qui suit expose les catégories de la nomenclature des PPRN utilisées et, le cas échéant ajoutées pour les cartographies de la directive inondation.
+
+#### Catégories des Enjeux incontournables
+
+### Enjeux incontournables
+
+| Code | Chemin | Libellé | Libellé Parent | Définition |
+|-|-|-|-|-|
+| 010000 | /zoneUrba | Zones urbanisées | -  | La définition de ces zones se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. Elles correpondent aux "espaces urbanisés" mentionnés dans le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf)|
+| 010100 | /zoneUrba/centreUrbain | Centres urbains | Zones urbanisées | Au sein des zones urbanisées, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
+| 010200 | /zoneUrba/horsCentreUrbain | Zones urbanisées hors centres urbains | Zones urbanisées | Cette sous-catégorie de zones urbanisées permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
+| 020000 | /zonesNonUrba | Zones non urbanisées | - | Zones se définissant par opposition aux Zones urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
+| 030000 | /espaceSpecifique | Espaces spécifiques au type d’aléa étudié | - | Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes ou support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
+| 030100 | /espaceSpecifique/activite | Espaces spécifiques d'activités | Espaces spécifiques au type d’aléa étudié | Espace d'activités spécifiques particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
+| **030101** | **/espaceSpecifique/activite/portuaireBalneaire** | Ports, zones d’activités portuaires et d’activités balnéaires | Espaces spécifiques d'activités | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires |
+| **030102** | **/espaceSpecifique/activite/campings** | Campings et hôtellerie de plein air | Espaces spécifiques d'activités | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air |
+| **030103** | **/espaceSpecifique/activite/activiteAgricoles** | Zones d'activités agricoles spécifiques | Espaces spécifiques d'activités | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants |
+| 030200 | /espaceSpecifique/limitationAlea | Espaces participants à la limitation des aléas | Espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
+| 030201 | /espaceSpecifique/limitationAlea/expansionCrues | Zones d’expansion des crues | Espaces participants à la limitation des aléas | Zones d’expansion des crues pour les inondations |
+| 030202 | /espaceSpecifique/limitationAlea/atterrisement | Zones d’atterrissement | Espaces participants à la limitation des aléas | Zones d'atterrissement pour les crues torrentielles. |
+| 030203 | /espaceSpecifique/limitationAlea/interfaceHabitatForet | Zones d’interfaces habitat-forêt | Espaces participants à la limitation des aléas | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| 030204 | /espaceSpecifique/limitationAlea/maintienForet | Zones de maintien d’une forêt | Espaces participants à la limitation des aléas | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
+| 040000 | **/projetCollectivite** | **Projets d'aménagement futurs du territoire** | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
+
+### Enjeux complémentaires
+
+| Code | Chemin | Libellé | Libellé Parent | Définition |
+|-|-|-|-|-|
+| 050000 | /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
+| 050100 | /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
+| 050200 | /habitat/collectif | Zone d'habitat collectif |  Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
+| 060100 | /activite | Zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
+| 060101 | **/activite/industrie** | **Zone d'industrie** | Zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
+| 060102 | /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
+| **(+)06010201** | **/activite/service/commerces** | Commerces | Service | Zone de typologie de bâti homogène destinée au Commerces |
+| **(+)06010202** | **/activite/service/tourisme** | Tourisme | Service | Zone de tourisme (campings ?) |
+| 060103 | /activite/artisanat | Artisanat | Zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
+| **(+)060104** | **/activite/carrières** | **Zone de carrières ou gravières** | Zone d'activité | Zone de carrières ou gravières |
+| 070000 | /equipementParticulier | Infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
+| 070100 | /equipementParticulier/sensibleCrise | Etablissements sensibles ou difficilement évacuables | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| **(+)070101** | **/equipementParticulier/sensibleCrise/creche** | Crêche | Etablissements sensibles ou difficilement évacuables | Crêches |
+| **(+)070102** | **/equipementParticulier/sensibleCrise/ecole** | Ecole | Etablissements sensibles ou difficilement évacuables | Ecoles |
+| **(+)070103** | **/equipementParticulier/sensibleCrise/hopital** | Hopital | Etablissements sensibles ou difficilement évacuables | Hôpitaux |
+| **(+)070104** | **/equipementParticulier/sensibleCrise/ehpad** | Ehpad | Etablissements sensibles ou difficilement évacuables | Ehpad ou maisons séniors |
+| **(+)070105** | **/equipementParticulier/sensibleCrise/prison** | Prison | Etablissements sensibles ou difficilement évacuables | Prisons |
+| 070200 | /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Infrastructures et équipements particuliers | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| **(+)070201** | /equipementParticulier/gestionCrise/pompiers | Caserne de pompiers | Equipements stratégiques pour la gestion de crise | Caserne de pompiers |
+| **(+)070202** | /equipementParticulier/gestionCrise/commissariatGendarmerie | Gendarmerie ou commissariat | Equipements stratégiques pour la gestion de crise | Gendarmerie ou commissariat |
+| 070300 | /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| **(+)070301** | **/equipementParticulier/collectifsPublicsOuverts/marie** | Marie | Equipements collectifs de type ERP ou espaces publics ouverts | Maries |
+| **(+)070302** | **/equipementParticulier/collectifsPublicsOuverts/prefecture** | Préfecture | Equipements collectifs de type ERP ou espaces publics ouverts | Préfectures  |
+| **070400** | **/equipementParticulier/campings** | Campings et hôtellerie de plein air | Infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
+| 070500 | /equipementParticulier/transports | Infrastructures de transport | Infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
+| **(+)070501** | **/equipementParticulier/transports/autoroute** | Autoroute ou quasi autoroute | Infrastructures de transport | Autoroutes ou quasi autoroutes |
+| **(+)070502** | **/equipementParticulier/transports/routePrincipale** | Route liaison principale | Infrastructures de transport | Routes liaisons principales |
+| **(+)070503** | **/equipementParticulier/transports/routeRegionale** | Route liaison régionale | Infrastructures de transport | Routes liaisons régionales |
+| **(+)070504** | **/equipementParticulier/transports/voieFerreePrincipale** | Voie ferrée principale | Infrastructures de transport | Voies ferrées principales (dont LGV) |
+| 070600 | /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
+| **(+)070601** | **/equipementParticulier/reseauxSensibles/seveso** | Installation SEVESO | Infrastructures et équipements particuliers | Installation de type SEVESO |
+| **(+)070602** | **/equipementParticulier/reseauxSensibles/nucleaire** | Installation nucléaire de base | Infrastructures et équipements particuliers | Installations nucléaire de base |
+| **(+)070603** | **/equipementParticulier/reseauxSensibles/ied** | Installation de la directive IED | Infrastructures et équipements particuliers | Installations de la directive IED |
+| **(+)070604** | **/equipementParticulier/reseauxSensibles/steu** | Station de traitement des eaux usées | Infrastructures et équipements particuliers | Stations de traitement des eaux usées |
+| **080000** | **/patrimoineEnvironement** | Enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes. |
+| **(+)080200** | **/patrimoineEnvironement/culturel** | Patrimoine culturel | Enjeux patrimoniaux, culturels et environnementaux | Eléments du patrimoine culturel. Typiquement : musées, bâtiments religieux, monuments, vestiges archéologiques, mégalithes, habitations troglodytiques, cimetières. |
+| **(+)080100** | **/patrimoineEnvironement/zpdce** | Zones protégées de la directive cadre eau | Enjeux patrimoniaux, culturels et environnementaux | Typiquement : Baignades (BA), oiseaux (BI) et habitat (HA). |
+| **(+)080101** | **/patrimoineEnvironement/zpdce/baignades** | Baignades |Zones protégées de la directive cadre eau | Baignades |
+| **(+)080102** | **/patrimoineEnvironement/zpdce/sic_zsc** | Sites d'importance communautaire (SIC) et zones spéciales de conservation (ZSC)  | Zones protégées de la directive cadre eau | Zones naturelles désignées par la Commission européenne dans le cadre du réseau Natura 2000. |
+
+
+### Autre enjeu
+
+| Code | Chemin | Libellé | Libellé Parent | Définition | 
+|-|-|-|-|-|
+| 999999 | /autre | Autre | - | Autre enjeu non catégorisé |
+
+
 ### Listes de valeurs
 
 | Type énuméré : `liste_att1-attribut de : CLASSE_1` |  |
