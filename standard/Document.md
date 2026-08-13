@@ -136,7 +136,7 @@ La mise en œuvre des cartographies des TRI se fait dans le cadre législatif de
 Elle est transposée en France par la [LOI n° 2010-788 du 12 juillet 2010 portant engagement national pour l'environnement (LENE)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000022470434) qui modifie la partie législative du code de l'environnement avec en particulier l'ajout du [chapitre IV relatif à l'évaluation et la gestion des risques d'inondation (Articles L566-1 à L566-13)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) :
 
 * L'[article L566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561789) traite de la détermination des TRIs.
-* L'[article L566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561783) traite des cartes des surfaces inondables et des cartes de risques d'inondation sur ces territoires.
+* L'[article L566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051561783) traite des cartes des surfaces inondables et des cartes des risques d'inondation sur ces territoires.
 
 Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif à l'évaluation et à la gestion des risques d'inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000023654727) modifie le code de l'environnement avec l'ajout du [Chapitre VI relatif à l'évaluation et la gestion des risques d'inondation (Articles R566-1 à R566-18)](https://www.legifrance.gouv.fr/codes/.section_lc/LEGITEXT000006074220/LEGISCTA000023655627/#LEGISCTA000023655627) :
 
@@ -349,7 +349,7 @@ La [référence internet](#référence-internet) qui lui est associée correspon
 A chaque TRI sont associés des [cartographies TRI](#cartographie-tri), [arrêtées](#typeetatproceduretri) par le préfet de bassin sur lesquelles seront représentées les différents éléments décrits dans les parties suivantes :
 
 * les [cartes de surfaces inondables](#carte-des-surfaces-inondables) décrites pas l'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) du code de l'environnement, correspondant à des [probabilités d'aléa](#typeprobabilitealea) ;
-* les [cartes de risque d'inondation](#carte-de-risques-inondation) décrites pas l'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement.
+* les [cartes de risque d'inondation](#carte-des-risques-inondation) décrites pas l'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement.
 
 ### Surfaces inondables et caractérisations d'aléas
 
@@ -375,9 +375,9 @@ Les éléments de caractérisation d'aléas suivants peuvent être reportés sur
 * [points remarquables cote vitesse débit](#point-remarquable-cote-vitesse-débit) ;
 * [zone iso classe débit](#zone-iso-classe-débit).
 
-**Exigence :** Une carte de surfaces inondables doit comprendre à minima les zones iso classe de hauteur ou les lignes isocotes ayant permis de calculer les surfaces inondables correspondantes.
+**Exigence :** Une carte des surfaces inondables doit comprendre à minima les zones iso classe de hauteur ou les lignes isocotes ayant permis de calculer les surfaces inondables correspondantes.
 
-Les surfaces inondables sont aussi représentées sur les [cartes de risque d'inondation](#carte-de-risques-inondation).
+Les surfaces inondables sont aussi représentées sur les [cartes de risque d'inondation](#carte-des-risques-inondation).
 
 ### Ouvrages protecteurs et zones associées
 
@@ -401,7 +401,7 @@ Le diagramme UML suivant représente les classes décrivant les enjeux et leur i
 
 Les enjeux représentés sur les cartes de risques sont les suivants :
 
-* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte de risque ;
+* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte des risques d'inondation ;
 * Les objets de la classe [Enjeu](#enjeu) héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI](#nomenclature-enjeux-carto-di)).
 
 ## Catalogue d'objets
@@ -466,7 +466,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 |  |  |
 |---|---|
 | **Classe d'objet** | **`Cartographie TRI`** |
-| **Définition** | Cette classe abstraite porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte de risques inondation](#carte-de-risques-inondation) prévues respectivement par les articles [R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) et [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. |
+| **Définition** | Cette classe abstraite porte les propriétés communes aux deux types de cartographies de la directive inondation [Carte des surfaces inondables](#carte-des-surfaces-inondables) et [Carte des risques inondation](#carte-des-risques-inondation) prévues respectivement par les articles [R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) et [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
@@ -507,39 +507,39 @@ Les autres attributs sont ceux de la classe [Cartographie TRI](#attributs-de-la-
 
 | Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
 |-|-|-|-|
-| `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte de surfaces inondables où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte des surfaces inondables où elle doit être représentée | [Surface inondable](#surface-inondable)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher une ligne iso cote à la carte des surfaces inondables où elle peut être représentée | [Ligne iso côte](#ligne-iso-cote)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe de hauteur à la carte des surfaces inondables où elle doit être représentée | [Zone iso classe hauteur](#zone-iso-classe-hauteur)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(1..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe vitesse à la carte des surfaces inondables où elle peut être représentée | [Zone iso classe vitesse](#zone-iso-classe-vitesse)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher un point remarquable cote vistesse débit à la carte des surfaces inondables où il peut être représentée | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 | `est représenté sur` | Relation sémantique permettant de rattacher une zone iso classe débit à la carte des surfaces inondables où elle peut être représentée | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
-| `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte de surfaces inondables où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte des surfaces inondables où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte des surfaces inondables](#carte-des-surfaces-inondables)(0..*) |
 
 
 Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
-### Carte de risques inondation
+### Carte des risques inondation
 
 | | |
 | - | - |
-| **Classe d'objet** | **`Carte de risque inondation`** |
+| **Classe d'objet** | **`Carte des risques inondation`** |
 | **Définition** | Cette classe spécialise la classe [Cartographie TRI](#cartographie-tri) pour l'établissement des cartes de risques d'inondation telles que décrites par l'article [R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement. Elle comporte les mêmes propriétés. |
 | **Regroupement (facultatif)** |   |
 | **Modélisation géométrique** | La géométrie correspond au rectangle englobant de la carte. |
 | **Primitive graphique** | Polygon |
 
-#### Attributs de la classe de risques inondation
+#### Attributs de la classe des risques inondation
 
 Cf. attributs de la classe [Cartographie TRI](#attributs-de-la-classe-cartographie-tri)
 
-#### Associations de la classe carte de risques inondation
+#### Associations de la classe carte des risques inondation
 
 | Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
 | - | - | - | - |
-| `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte de risques inondation où elle doit être représentée. | [Surface inondable](#surface-inondable)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
-| `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte de risques inondation où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
-| `est représenté sur` | Relation sémantique permettant de rattacher un enjeu à la carte de risques inondation où il doit être représentée. | [Enjeu](#enjeu)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(0..*) |
-| `sont représentés sur` | Relation sémantique permettant de rattacher des enjeux rapportés à la carte de risques inondation où ils doivent être représentés. | [Enjeux rapportés](#enjeux-rapportés-tri)(1..*) | [Carte de risques inondation](#carte-de-risques-inondation)(1) |
+| `est représenté sur` | Relation sémantique permettant de rattacher une surface inondable à la carte des risques inondation où elle doit être représentée. | [Surface inondable](#surface-inondable)(1..*) | [Carte des risques inondation](#carte-des-risques-inondation)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un ouvrage protecteur à la carte des risques inondation où il peut être représenté | [Ouvrage protecteur](#ouvrage-protecteur)(1..*) | [Carte des risques inondation](#carte-des-risques-inondation)(0..*) |
+| `est représenté sur` | Relation sémantique permettant de rattacher un enjeu à la carte des risques inondation où il doit être représentée. | [Enjeu](#enjeu)(1..*) | [Carte des risques inondation](#carte-des-risques-inondation)(0..*) |
+| `sont représentés sur` | Relation sémantique permettant de rattacher des enjeux rapportés à la carte des risques inondation où ils doivent être représentés. | [Enjeux rapportés](#enjeux-rapportés-tri)(1..*) | [Carte des risques inondation](#carte-des-risques-inondation)(1) |
 
 Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-classe-cartographie-tri)
 
@@ -596,7 +596,7 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 | `est caractérisé par` | Une surface inondable peut être caractérisée par un ensemble de zones iso classe débit | [Surface inondable](#surface-inondable)(1) | [Zone iso classe débit](#zone-iso-classe-débit)(0..*) |
 | `est généré par` | Une surface inondable peut être générée par une ou plusieurs origines de rique | [Surface inondable](#surface-inondable)(0..*) | [Origine du risque](#origine-du-risque)(0..*) |
 
-Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation)
+Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation)
 
 ### Origine du risque
 
@@ -759,7 +759,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | `engendre` | Relation sémantique permettant de rattacher une zone protégée à un ouvrage protecteur | [Zone protégée](#zone-protégée)(0..*) | [Ouvrage protecteur](#ouvrage-protecteur)(1) |
 | `engendre` | Relation sémantique permettant de rattacher une zone de sur-aléa à un ouvrage protecteur qui la génère | [Zone de sur-aléa](#zone-de-sur-aléa)(0..*) | [Ouvrage protecteur](#ouvrage-protecteur)(0..1) |
 
-Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+Cf. aussi [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
 
 ### Zone protégée
 
@@ -781,7 +781,7 @@ Cf. aussi [associations de la classe Carte des surfaces inondables](#association
 
 #### Associations de la classe Zone protégée
 
-Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-ouvrage-protecteur), [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-ouvrage-protecteur), [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
 
 ### Zone de sur-aléa
 
@@ -802,7 +802,7 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 
 #### Associations de la classe Zone de sur-aléa
 
-Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-ouvrage-protecteur), [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-ouvrage-protecteur), [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables) et [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
 
 ### Enjeu
 
@@ -827,7 +827,7 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 
 #### Associations de la classe Enjeu
 
-Cf. [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+Cf. [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
 
 ### Enjeux rapportés TRI
 
@@ -836,7 +836,7 @@ Cf. [associations de la classe Carte de risques inondation](#associations-de-la-
 | **Classe d'objet** | **`Enjeux rapportés TRI`** |
 | **Définition** | Cette classe, uniquement attributaire, permet de rassembler des données quantitatives sur les nombres d'emplois et d'habitants affectés par le risque inondation en fonction des probabilités de survenue de l'inondation. |
 | **Modélisation géométrique** | Cette classe n'a pas de géométrie associée. |
-| **Primitive graphique** | La représentation des enjeux rapportés se fait sous forme de cartouche sur la carte de risques inondations |
+| **Primitive graphique** | La représentation des enjeux rapportés se fait sous forme de cartouche sur la carte des risques d'inondation |
 
 #### Attributs de la classe Enjeux rapportés TRI
 
@@ -849,7 +849,7 @@ Cf. [associations de la classe Carte de risques inondation](#associations-de-la-
 
 #### Associations de la classe Enjeu rapportés
 
-Cf. [associations de la classe Carte de risques inondation](#associations-de-la-classe-carte-de-risques-inondation).
+Cf. [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
 
 ## Description des types de données et énumérés
 
@@ -1282,7 +1282,221 @@ Le management de la donnée représente une vision de l’information, non pas c
 |  |  |
 
 # Diffusion
-`<Cette partie vise à fournir des instructions, des exigences, conventions d’échange et/ou des descriptions du format de diffusion des données et des moyens de livraison physique, ou bien des moyens de diffusion de données via des services de téléchargement ou d'affichage.>` 
+
+Cette partie traite de l'implémentation du modèle conceptuel de données décrit [ci-dessus](#modèle-conceptuel-de-données-mcd), notamment le schéma physique qui en est dérivé en vue d'un échange d'un jeu de données associé à un TRI au format standard GeoPackage, mais aussi applicable à la plupart des formats reposant sur des bases de données relationnelles.
+
+Les considérations relatives à la diffusion des données en flux de données sous forme de services ou API Web ne sont pas couvertes par ce document. Ce mode de diffusion pourra néanmoins s'appuyer sur le schéma physique décrit ici.
+
+## Schéma physique et format d'échange
+
+Le format GeoPackage est le format d'échange prescrit par ce standatd pour un jeu de données des cartographies de la directive inondation.
+
+Dans ce qui suit, on sépare la partie [schéma physique](#schéma-physique) qui décrit l'implémentation du modèle conceptuel sous forme de tables relationnelles et les [aspects spécifiques d'implémentation relatifs à l'utilisation du format GeoPackage](#spécificités-du-format-geopackage).
+
+### Schéma physique
+
+#### Choix d'implémentations
+
+_TBD : granularité d'un jeu de données, identifiants stables, minuscules, tirets du 8, nommage des tables, suffixe geom slp, tables d'énumérations, types des colonnes_
+
+#### Tables du standard
+
+_TBD : Liste des tables et obligations d'implémentation_
+
+##### Table `tri_s`
+
+La table `tri` implémente la classe [Territoire à risque important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+##### Table `carte_surfaces_inondables_s`
+
+La table `carte_surfaces_inondables_s` implémente la classe [Carte des surfaces inondables](#carte-des-surfaces-inondables). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `carte_risques_inondation_s`
+
+La table `carte_risques_inondation_s` implémente la classe [Carte des risques inondation](#carte-des-risques-inondation). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `surface_inondable_s`
+
+La table `surface_inondable_s` implémente la classe [Surface inondable](#surface-inondable). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+
+##### Table `zone_iso_classe_hauteur_s`
+
+La table `zone_iso_classe_hauteur_s` implémente la classe [Zone iso classe hauteur](#zone-iso-classe-hauteur). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `zone_iso_classe_vitesse_s`
+
+La table `zone_iso_classe_vitesse_s` implémente la classe [Zone iso classe vitesse](#zone-iso-classe-vitesse). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `zone_iso_classe_debit_s`
+
+La table `zone_iso_classe_debit_s` implémente la classe [](#zone-iso-classe-débit). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `ligne_iso_cote_l`
+
+La table `ligne_iso_cote_l` implémente la classe [](#ligne-iso-cote). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `point_remarquable_cvd_p`
+
+La table `point_remarquable_cvd_p` implémente la classe [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `zone_protegee_s`
+
+La table `zone_protegee_s` implémente la classe [Zone protégée](#zone-protégée). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `ouvrageprotecteur_l`
+
+La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvrage-protecteur). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `zonesuralea_s`
+
+La table `zonesuralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-aléa). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `enjeu_s`
+
+La table `enjeu_s` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie surfacique. Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `enjeu_l`
+
+La table `enjeu_l` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie linéaire. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+##### Table `enjeu_p`
+
+La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie ponctuelle. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table `enjeux_raportes_tri`
+
+La table `enjeux_raportes_tri` implémente la classe [Enjeux rapportés TRI](#enjeux-rapportés-tri). Elle a la structure suivante :
+
+| nom colonne | type | domaine de valeurs, précisions |
+|-|-|-|
+
+
+##### Table de valeurs `typereferencetri`
+
+La table de valeurs `typereferencetri` implémente l'énumération [Typereferencetri](#typereferencetri). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+
+##### Table de valeurs `typeprobabilitealea`
+
+La table de valeurs `typeprobabilitealea` implémente l'énumération [Typeprobabilitealea](#typeprobabilitealea). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+
+##### Table de valeurs `typealeacartodi`
+
+La table de valeurs `typealeacartodi` implémente l'énumération [Typeprobabilitealea](#typealeacartodi). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+
+##### Table de valeurs `typeclassehauteureau`
+
+La table de valeurs `typeclassehauteureau` implémente l'énumération [Typeclassehauteureau](#typeclassehauteureau). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+
+##### Table de valeurs `typevitesseecoulement`
+
+La table de valeurs `typevitesseecoulement` implémente l'énumération [Typevitesseecoulement](#typevitesseecoulement). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+
+
+##### Table d'énumération `typeouvrageprotecteur`
+
+La table de valeurs `typeouvrageprotecteur` implémente l'énumération [Typeouvrageprotecteur](#typeouvrageprotecteur). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+##### Table d'énumération `typerefexterneouvrage`
+
+La table de valeurs `typerefexterneouvrage` implémente l'énumération [Typerefexterneouvrage](#typerefexterneouvrage). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+##### Table d'énumération `typeenjeucartodi`
+
+La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux carto DI](#nomenclature-enjeux-carto-di). Le tableau suivant précise les codes et libellés pour cette table.
+
+| code | libellé |
+|-|-|
+
+
+
+### Spécificités du format GeoPackage
+
+_TBD : tables gpkg_xxx, identifiants fid, metadonnées_
 
 # Métadonnées
 
