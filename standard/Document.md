@@ -449,8 +449,8 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 |---|---|---|---|---|---|
 | **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identification des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
 | `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | Valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
-| **`codeProcedure`** | identifiant GASPAR du TRI | 1 | `CharacterString` | valeur obligatoire | `45DREAL20130002` |
-| `libelleProcedure` | Libellé de la procédure dans GASPAR | 1 | `CharacterString` | valeur vide autorisée | `Tours` |
+| **`codeProcedure`** | identifiant GASPAR du TRI | 1 | `CharacterString` | Saisie obligatoire | `45DREAL20130002` |
+| `libelleProcedure` | Libellé de la procédure dans GASPAR | 0..1 | `CharacterString` | Valeur vide autorisée | `Tours` |
 | **`typeProcedure`** | Type de procédure dans GASPAR | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
 | **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
 | **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | Valeur obligatoire | `26/11/2012` |
@@ -475,7 +475,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
-| **`identifiant`** | Identifiant de la carte sous la forme `CSI_[numéro]` où `[numéro]` est un numéro unique indenté à droite. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `CSI_0001` |
+| **`identifiant`** | Identifiant de la carte sous la forme `XXX_[numéro]` selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `CSI_0001` ou `CRI_0001`|
 | **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur obligatoire fixée à `Arrêté` | `Arrêté` |
 | **`dateEtat`** | Date de l'arrêté de la carte par le Préfet de bassin | 1 | `date` | valeur obligatoire | `18/12/2013` |
 
@@ -1305,49 +1305,85 @@ _TBD : Liste des tables et obligations d'implémentation_
 
 ##### Table `tri_s`
 
-La table `tri` implémente la classe [Territoire à risque important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri). Elle a la structure suivante :
+La table `tri` implémente la classe [Territoire à risque important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri) jointe à la classe [Référence Internet](#référence-internet). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_tri`** | TEXT | Clé primaire, Saisie obligatoire selon les règles spécifiées dans la partie [Identification des TRI](#identification-des-tri) | `FRG_TRI_TOURS` |
+| `nom` | TEXT | Valeur vide autorisée. Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
+| **`id_procedure`** | `TEXT` | Saisie obligatoire | `45DREAL20130002` |
+| `lib_procedure` | `TEXT` | Valeur vide autorisée | `Tours` |
+| **`date_procedure`** | `DATE` | Date de l'arrêté de première création du TRI. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| `url_ref`| `TEXT` | URL de la référence internet associée au TRI pour le rapportage. Saisie obligatoire. | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
+| `type_ref` | `TEXT` | Type de référence internet. Saisie obligatoire, valeur à prendre parmi les codes de la [table des valeurs typereferencetri](#table-de-valeurs-typereferencetri) | `national` |
+| `geom` | `MULTIPOLYGON` | Périmètre du TRI. | |
+
+Note : Les champs du modèle `typeProcedure` et `typeEtatProcedure` à valeurs fixes, uniques `Territoires à risques d'inondation` et `Arrêté` n'ont pas été repris pour l'implémentation car inutiles.
 
 ##### Table `carte_surfaces_inondables_s`
 
 La table `carte_surfaces_inondables_s` implémente la classe [Carte des surfaces inondables](#carte-des-surfaces-inondables). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_csi`** | `TEXT` | Clé primaire. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `CSI_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`date_carte`** | `DATE` | Date de l'arrêté de la carte par le Préfet de bassin. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2013-12-18` |
+| **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation représenté par la carte. Valeur obligatoire à prendre parmi les codes associés aux valeurs de [TypeProbabiliteAlea](#table-de-valeurs-typeprobabilitealea) | `02Moy` |
+| `geom` | `POLYGON` | Polygone des limites de la carte. | |
 
+Note : Le champ du modèle `typeEtatProcedure` à valeur fixe, unique `Arrêté` n'a pas été repris pour l'implémentation car inutile.
 
 ##### Table `carte_risques_inondation_s`
 
 La table `carte_risques_inondation_s` implémente la classe [Carte des risques inondation](#carte-des-risques-inondation). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_cri`** | `TEXT` | Clé primaire. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `CRI_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`date_carte`** | `DATE` | Date de l'arrêté de la carte par le Préfet de bassin. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2013-12-18` |
+| `geom` | `POLYGON` | Polygone des limites de la carte. | |
 
+Note : Le champ du modèle `typeEtatProcedure` à valeur fixe, unique `Arrêté` n'a pas été repris pour l'implémentation car inutile.
 
 ##### Table `surface_inondable_s`
 
 La table `surface_inondable_s` implémente la classe [Surface inondable](#surface-inondable). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_sin`** | `TEXT` | Clé primaire. Identifiant de la surface inondable. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `SIN_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`type_alea`** | `TEXT` | Type d'aléa inondation engendreant la surface, selon la codification GASPAR. Saisie obligatoire à faire parmi les valeurs de code de la table [typealeacartodi](#table-de-valeurs-typealeacartodi). | `112` |
+| **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation associée à la surface. Valeur obligatoire à prendre parmi les valeurs de code de la table[typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `02Moy` |
+| **`date_calcul`** | `DATE` | Date de calcul de la surface. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| `description` | `TEXT` | Description de la surface inondable. Saisie facultative | |
+| `geom` | `POLYGON` | Polygone de la surface inondable | |
 
-
+Note : Le lien entre une surface inondable et la carte des surfaces inondables n'est pas repris dans l'implémentation. Il est implicite pour un TRI donné. La sélection des surfaces inondables composant une carte des surfaces inondables se fait par le biais du champs `occurrence`.
 
 ##### Table `zone_iso_classe_hauteur_s`
 
 La table `zone_iso_classe_hauteur_s` implémente la classe [Zone iso classe hauteur](#zone-iso-classe-hauteur). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_zch`** | `TEXT` | Clé primaire. Identifiant de la zone iso classe de hauteur. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ZCH_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). | `SIN_0001` |
+| **`palier_hauteur`** | `TEXT` | Palier de hauteur d'eau. Valeur obligatoire à prendre parmi les valeurs de code de la table [typeclassehauteureau](#table-de-valeurs-typeclassehauteureau) | `inf0.5` |
+| `geom` | `POLYGON` | Polygone de la zone | |
 
+Note : Le lien entre une zone de iso hauteur et la carte des surfaces inondables n'est pas repris dans l'implémentation. Il est implicite pour un TRI donné. La sélection des zones de iso hauteur représentées sur une carte des surfaces inondables peut se faire par le biais du champs `occurrence`.
+
+_NB : origine risque sous forme de table ou simplement attribut d'autre classes ?_
 
 ##### Table `zone_iso_classe_vitesse_s`
 
 La table `zone_iso_classe_vitesse_s` implémente la classe [Zone iso classe vitesse](#zone-iso-classe-vitesse). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1355,7 +1391,7 @@ La table `zone_iso_classe_vitesse_s` implémente la classe [Zone iso classe vite
 
 La table `zone_iso_classe_debit_s` implémente la classe [](#zone-iso-classe-débit). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1363,7 +1399,7 @@ La table `zone_iso_classe_debit_s` implémente la classe [](#zone-iso-classe-dé
 
 La table `ligne_iso_cote_l` implémente la classe [](#ligne-iso-cote). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1371,7 +1407,7 @@ La table `ligne_iso_cote_l` implémente la classe [](#ligne-iso-cote). Elle a la
 
 La table `point_remarquable_cvd_p` implémente la classe [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1379,7 +1415,7 @@ La table `point_remarquable_cvd_p` implémente la classe [Point remarquable cote
 
 La table `zone_protegee_s` implémente la classe [Zone protégée](#zone-protégée). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1387,7 +1423,7 @@ La table `zone_protegee_s` implémente la classe [Zone protégée](#zone-protég
 
 La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvrage-protecteur). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1395,7 +1431,7 @@ La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvra
 
 La table `zonesuralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-aléa). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1403,7 +1439,7 @@ La table `zonesuralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-
 
 La table `enjeu_s` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie surfacique. Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1411,14 +1447,14 @@ La table `enjeu_s` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant u
 
 La table `enjeu_l` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie linéaire. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 ##### Table `enjeu_p`
 
 La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie ponctuelle. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
@@ -1426,7 +1462,7 @@ La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant u
 
 La table `enjeux_raportes_tri` implémente la classe [Enjeux rapportés TRI](#enjeux-rapportés-tri). Elle a la structure suivante :
 
-| nom colonne | type | domaine de valeurs, précisions |
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
 |-|-|-|
 
 
