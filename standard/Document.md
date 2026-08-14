@@ -636,7 +636,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant de la ligne iso cote. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `LIC_0001` |
 | `cote` | Altitude de la surface de l’eau | 1..1 | `réel` | Valeur vide interdite, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250,5` |
-| **`dateCalcul`** | Date de calcul de la ligne iso cote | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| `dateCalcul` | Date de calcul de la ligne iso cote | 0..1 | `date` | Valeur facultative | `26/11/2012` |
 
 #### Associations de la classe Ligne iso cote
 
@@ -676,8 +676,8 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant de la zone iso classe vitesse. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCV_0001` |
-| `vitesseQualitative` | Classe de vitesse d'écoulement | 1..1 | `réel` | Saisie obligatoire à prendre parmi les valeurs de [TypeVitesseEcoulement](#typevitesseecoulement) | `Ecoulement faible` |
-| **`dateCalcul`** | Date de calcul de la zone iso classe vitesse | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| **`vitesseQualitative`** | Classe de vitesse d'écoulement | 1 | [TypeVitesseEcoulement](#typevitesseecoulement) | Saisie obligatoire à prendre parmi les valeurs de [TypeVitesseEcoulement](#typevitesseecoulement) | `Ecoulement faible` |
+| `dateCalcul` | Date de calcul de la zone iso classe vitesse | 0..1 | `date` | Valeur facultative | `26/11/2012` |
 
 #### Associations de la Zone iso classe vitesse
 
@@ -697,9 +697,9 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant de la zone iso classe débit. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCD_0001` |
-| `debitLineiqueMin` | Seuil inférieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 1..1 | `réel` | Saisie obligatoire, exprimée en m2/s, ne peut être négative. | `0.2` |
+| **`debitLineiqueMin`** | Seuil inférieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 1..1 | `réel` | Saisie obligatoire, exprimée en m2/s, ne peut être négative. | `0.2` |
 | `debitLineiqueMax` | Seuil supérieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 0..1 | `réel` | Saisie facultative exprimée en m2/s. Si cette valeur n’est pas renseignée, la plage de débit correspond à la plage des débits maximaux (supérieur à un débit donné). Par exemple, la plage des « débits supérieurs ou égaux à 0.2 m²/s (vitesse de 1 m/s pour une hauteur de 20 cm)» se traduit par un seuil inférieur de la plage de débit (avec dans le cas de l’exemple la valeur « 0.2 ») et un seuil supérieur laissé vide. | `0.4` |
-| **`dateCalcul`** | Date de calcul de la zone iso classe débit | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| `dateCalcul` | Date de calcul de la zone iso classe débit | 0..1 | `date` | Valeur facultative | `26/11/2012` |
 
 #### Associations de la Zone iso classe débit
 
@@ -720,11 +720,10 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant du point remarquable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `PRE_0001` |
 | `cote` | Altitude de la surface de l’eau lors de l'inondation | 0..1 | `réel` | Saisie facultative, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250.5` |
-| `vitesse` | Vitesse d’écoulement de l’eau dans le cas d’une
-inondation. | 0..1 | `réel` | Saisie facultative, exprimée en m/s. | `0.2` |
+| `vitesse` | Vitesse d’écoulement de l’eau dans le cas d’une inondation. | 0..1 | `réel` | Saisie facultative, exprimée en m/s. | `2` |
 | `debitLineique` | Débit linéique d'écoulement dans le cas d’une inondation par ruissellement. | 0..1 | `réel` | Saisie facultative, exprimée en m2/s, ne peut être négative. | `0.2` |
-| `azimuth` | Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre. | 0..1 | `réel` | Saisie facultative, exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `0.2` |
-| **`dateCalcul`** | Date de calcul du point remarquable. | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| `azimuth` | Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre. | 0..1 | `réel` | Saisie facultative, exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `90.0` |
+| `dateCalcul` | Date de calcul du point remarquable. | 0..1 | `date` | Valeur facultative | `26/11/2012` |
 
 #### Associations de la Point remarquable cote vitesse débit
 
@@ -748,7 +747,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | `refExterne` | Référentiel externe d'où est extrait l'objet. | 1..1 | [TypeRefExterneOuvrage](#typerefexterneouvrage) | Saisie obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage) | `SIOUH II` |
 | `refExterneAutre` | Nom du référentiel externe s'il ne fait pas partie de ceux prévus dans l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage) | 0..1 | CharacterString | Saisie libre. Obligatoire si la valeur de `refExterne` vaut `Autre` | `BD Topo` |
 | `nom` | Nom de l'ouvrage protecteur | 1..1 | `CharacterString` | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `Barrage de Serre-Ponçon` |
-| `typeOuvrageProtecteur` | Caractérisation de l"ouvrage selon sa fonction. | 1..1 | [TypeOuvrageProtecteur](#typeouvrageprotecteur) | Saisie Obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeOuvrageProtecteur](#typeouvrageprotecteur) | `Aménagement hydraulique` |
+| `typeOuvrageProtecteur` | Caractérisation de l"ouvrage selon sa fonction vis à vis de l'aléa. | 1..1 | [TypeOuvrageProtecteur](#typeouvrageprotecteur) | Saisie Obligatoire. Valeurs à prendre parmi celles de l'énumération [TypeOuvrageProtecteur](#typeouvrageprotecteur) | `Aménagement hydraulique` |
 | `roleProtection` | Indique si l'ouvrage a un rôle de protection (c'est à dire s'il a été conçu et est entretenu) pour un évènement dont l'occurrence est précisée par le champ "occurrence". | 0..1 | `booléen` | `false` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `true` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal à la probabilité de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | `true` |
 | `occurrence` | Probabilité d'aléa contre laquelle protège l'ouvrage. | 0..1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Saisie facultative. Valeurs à prendre parmi les valeurs de [TypeProbabiliteAlea](#typeprobabilitealea). | `Aléa de forte probabilité` |
 
@@ -767,6 +766,7 @@ Cf. aussi [associations de la classe Carte des surfaces inondables](#association
 | - | - |
 | **Classe d'objet** | **`Zone protégée`** |
 | **Définition** | Cette classe spécialise la classe d'objets "Zone protégée" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones protégées par un ouvrage protecteur contre l'aléa inondation correspondant à une certaine probabilité de survenue de l'aléa. |
+| **Regroupement** | Cette classe doit permettre de rassembler les Zones soustraites à l'inondation et les zones protégées contre l'inondation décrites dans l'ancien standard COVADIS. |
 | **Modélisation géométrique** | La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection. |
 | **Primitive graphique** | Polygone |
 
@@ -953,7 +953,6 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 | Chemin | Libellé | Définition |
 | - | - | - |
 | /espaceSpecifique/activite/portuaireBalneaire | Ports, zones d’activités portuaires et d’activités balnéaires | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard COVADIS DI, lorsqu'il s'agit de ports. |
-| **/espaceSpecifique/activite/aeroport** | Aéroport | Aéroports ou aérodromes. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard COVADIS DI, lorsqu'il s'agit d'aéroports ou d'aérodromes. |
 | /espaceSpecifique/activite/campings | Campings et hôtellerie de plein air | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Tourisme (camping)" de l'ancien standard COVADIS DI. |
 | /espaceSpecifique/activite/activiteAgricoles | Zones d'activités agricoles spécifiques | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Agriculture" de l'ancien standard COVADIS DI. |
 | /projetCollectivite | Projets d'aménagement futurs du territoire | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Activités futures" de l'ancien standard COVADIS DI. |
@@ -981,6 +980,7 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 | **/equipementParticulier/transports/routePrincipale** | Route liaison principale | Correspond aux infrastructures routières d'[importance 2](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_613) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison principale" de l'ancien standard COVADIS DI. |
 | **/equipementParticulier/transports/routeRegionale** | Route liaison régionale | Routes permettant des liaisons régionales ou départementales. Correspond aux infrastructures routières d'[importance 3](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_614) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison régionale" de l'ancien standard COVADIS DI. |
 | **/equipementParticulier/transports/voieFerreePrincipale** | Voie ferrée principale | Voies ferrées principales dont Lignes à grande vitesses. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Voie ferrée principale" de l'ancien standard COVADIS DI. |
+| **/equipementParticulier/transports/aeroport** | Aéroport | Aéroports ou aérodromes. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard COVADIS DI, lorsqu'il s'agit d'aéroports ou d'aérodromes. |
 | /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu sensible à la gestin de crise" de l'ancien standard COVADIS DI. |
 | **/equipementParticulier/reseauxSensibles/seveso** | Installation SEVESO | Installation de type SEVESO. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "SEVESO" de l'ancien standard COVADIS DI. |
 | **/equipementParticulier/reseauxSensibles/nucleaire** | Installation nucléaire de base | Installations nucléaire de base. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Installation nucléaire de base" de l'ancien standard COVADIS DI. |
@@ -1162,8 +1162,8 @@ La complexité des géométries doit être maitrisée, notamment dans le domaine
 
 Pour contrôler cela, ce standard reprend, comme le géostandard Plan de Prévention des Risques (PPR), les indicateurs définis dans le cadre de la validation des Servitudes d'Utilité Publiques (SUP) du Géoportail de l'Urbanisme et des seuils à ne pas dépasser pour une géométrie de type multi-polygone pour chacun de ces indicateurs :
 
-Indicateur | Seuil d'avertissement | Seuil de rejet |
-|-|-|-|
+| Indicateur | Seuil d'avertissement | Seuil de rejet |
+| - | - | - |
 | Nombre de sommets | > 50 000 | > 200 000 |
 | Nombre de points par périmètre | > 1 point tous les 10m | > 10 points tous les 10m |
 | Nombre d'anneaux | > 500 | > 1 000 |
@@ -1206,7 +1206,8 @@ Pour un même type d’inondation, la surface inondable de l’aléa de forte pr
 
 **Ouvrages de protection**
 
-A compléter...
+_A compléter..._
+_La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection._
 
 **Élément de mesure ou de métadonnées :**
 
@@ -1297,7 +1298,14 @@ Dans ce qui suit, on sépare la partie [schéma physique](#schéma-physique) qui
 
 #### Choix d'implémentations
 
-_TBD : granularité d'un jeu de données, identifiants stables, minuscules, tirets du 8, nommage des tables, suffixe geom slp, tables d'énumérations, types des colonnes_
+_TBD :_ 
+_granularité d'un jeu de données_ 
+_identifiants stables vs autoincrément, minuscules, tirets du 8_ 
+_nommage des tables, suffixe geom slp, tables d'énumérations, types des colonnes_
+_implémentation des relations, de l'origine du risque_
+_séprateur décimal_
+_dates_
+_encodage UTF-8_
 
 #### Tables du standard
 
@@ -1305,7 +1313,7 @@ _TBD : Liste des tables et obligations d'implémentation_
 
 ##### Table `tri_s`
 
-La table `tri` implémente la classe [Territoire à risque important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri) jointe à la classe [Référence Internet](#référence-internet). Elle a la structure suivante :
+La table `tri_s` implémente la classe [Territoire à risque important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri) jointe à la classe [Référence Internet](#référence-internet). Elle a la structure suivante :
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
@@ -1315,7 +1323,7 @@ La table `tri` implémente la classe [Territoire à risque important d'inondatio
 | `lib_procedure` | `TEXT` | Valeur vide autorisée | `Tours` |
 | **`date_procedure`** | `DATE` | Date de l'arrêté de première création du TRI. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `url_ref`| `TEXT` | URL de la référence internet associée au TRI pour le rapportage. Saisie obligatoire. | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
-| `type_ref` | `TEXT` | Type de référence internet. Saisie obligatoire, valeur à prendre parmi les codes de la [table des valeurs typereferencetri](#table-de-valeurs-typereferencetri) | `national` |
+| `type_ref` | `TEXT` | Type de référence internet. Saisie obligatoire, valeur à prendre parmi les codes de la [table des valeurs typereferencetri](#table-de-valeurs-typereferencetri) | `nat` |
 | `geom` | `MULTIPOLYGON` | Périmètre du TRI. | |
 
 Note : Les champs du modèle `typeProcedure` et `typeEtatProcedure` à valeurs fixes, uniques `Territoires à risques d'inondation` et `Arrêté` n'ont pas été repris pour l'implémentation car inutiles.
@@ -1327,9 +1335,9 @@ La table `carte_surfaces_inondables_s` implémente la classe [Carte des surfaces
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
 | **`id_csi`** | `TEXT` | Clé primaire. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `CSI_0001` |
-| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`date_carte`** | `DATE` | Date de l'arrêté de la carte par le Préfet de bassin. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2013-12-18` |
-| **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation représenté par la carte. Valeur obligatoire à prendre parmi les codes associés aux valeurs de [TypeProbabiliteAlea](#table-de-valeurs-typeprobabilitealea) | `02Moy` |
+| **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation représenté par la carte. Valeur obligatoire à prendre parmi les codes associés aux valeurs de [TypeProbabiliteAlea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
 | `geom` | `POLYGON` | Polygone des limites de la carte. | |
 
 Note : Le champ du modèle `typeEtatProcedure` à valeur fixe, unique `Arrêté` n'a pas été repris pour l'implémentation car inutile.
@@ -1341,7 +1349,7 @@ La table `carte_risques_inondation_s` implémente la classe [Carte des risques i
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
 | **`id_cri`** | `TEXT` | Clé primaire. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `CRI_0001` |
-| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`date_carte`** | `DATE` | Date de l'arrêté de la carte par le Préfet de bassin. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2013-12-18` |
 | `geom` | `POLYGON` | Polygone des limites de la carte. | |
 
@@ -1354,14 +1362,20 @@ La table `surface_inondable_s` implémente la classe [Surface inondable](#surfac
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
 | **`id_sin`** | `TEXT` | Clé primaire. Identifiant de la surface inondable. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `SIN_0001` |
-| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`type_alea`** | `TEXT` | Type d'aléa inondation engendreant la surface, selon la codification GASPAR. Saisie obligatoire à faire parmi les valeurs de code de la table [typealeacartodi](#table-de-valeurs-typealeacartodi). | `112` |
-| **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation associée à la surface. Valeur obligatoire à prendre parmi les valeurs de code de la table[typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `02Moy` |
+| **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation associée à la surface. Valeur obligatoire à prendre parmi les valeurs de code de la table[typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
 | **`date_calcul`** | `DATE` | Date de calcul de la surface. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
-| `description` | `TEXT` | Description de la surface inondable. Saisie facultative | |
+| `origine_inond` | `TEXT` | Nom de l'entité (cours d'eau, mer,...) à l'origine du risque inondation et de la surface inondable. Saisie facultative | `La Seine` |
 | `geom` | `POLYGON` | Polygone de la surface inondable | |
 
-Note : Le lien entre une surface inondable et la carte des surfaces inondables n'est pas repris dans l'implémentation. Il est implicite pour un TRI donné. La sélection des surfaces inondables composant une carte des surfaces inondables se fait par le biais du champs `occurrence`.
+Notes :
+
+* Le lien entre une surface inondable et la carte des surfaces inondables n'est pas repris dans l'implémentation. Il est implicite pour un TRI donné. La sélection des surfaces inondables composant une carte des surfaces inondables se fait par le biais du champs `occurrence`.
+
+* Les champs `niveauAlea` et `description` hérités de la classe ZoneAlea du modèle commun n'ont pas été repris dans le schéma physique pour cette table, car inutiles pour les cartographies de la directive inondation.
+
+* Le champ `origine_inond` permet d'implémenter à minima la classe Origine Risque en n'en conservant uniquement le nom. Pour les cartographies de la directive inondation, la représentation de l'origine du risque se fera plutôt via le fond de carte.
 
 ##### Table `zone_iso_classe_hauteur_s`
 
@@ -1370,101 +1384,158 @@ La table `zone_iso_classe_hauteur_s` implémente la classe [Zone iso classe haut
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
 | **`id_zch`** | `TEXT` | Clé primaire. Identifiant de la zone iso classe de hauteur. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ZCH_0001` |
-| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s) | `FRG_TRI_TOURS` |
-| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). | `SIN_0001` |
-| **`palier_hauteur`** | `TEXT` | Palier de hauteur d'eau. Valeur obligatoire à prendre parmi les valeurs de code de la table [typeclassehauteureau](#table-de-valeurs-typeclassehauteureau) | `inf0.5` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable qu'elle permet de caractériser. | `SIN_0001` |
+| **`palier_hauteur`** | `TEXT` | Palier de hauteur d'eau. Valeur obligatoire à prendre parmi les valeurs de code de la table [typeclassehauteureau](#table-de-valeurs-typeclassehauteureau) | `Inf05` |
+| `origine_inond` | `TEXT` | Nom de l'entité (cours d'eau, mer,...) à l'origine du risque inondation, engendrant la zone de hauteur d'eau. Saisie facultative | `La Seine` |
 | `geom` | `POLYGON` | Polygone de la zone | |
 
-Note : Le lien entre une zone de iso hauteur et la carte des surfaces inondables n'est pas repris dans l'implémentation. Il est implicite pour un TRI donné. La sélection des zones de iso hauteur représentées sur une carte des surfaces inondables peut se faire par le biais du champs `occurrence`.
+Notes :
 
-_NB : origine risque sous forme de table ou simplement attribut d'autre classes ?_
+* Le lien entre une zone de iso hauteur et la carte des surfaces inondables n'est pas repris dans l'implémentation. Il est implicite pour un TRI donné. La sélection des zones de iso hauteur représentées sur une carte des surfaces inondables peut se faire par le biais du champs `occurrence`.
+
+* Le champ `origine_inond` permet d'implémenter à minima la classe Origine Risque en n'en conservant uniquement le nom. Pour les cartographies de la directive inondation, la représentation de l'origine du risque se fera plutôt via le fond de carte.
 
 ##### Table `zone_iso_classe_vitesse_s`
 
 La table `zone_iso_classe_vitesse_s` implémente la classe [Zone iso classe vitesse](#zone-iso-classe-vitesse). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_zcv`** |  `TEXT` | Clé primaire. Identifiant de la zone iso classe vitesse à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ZCV_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable qu'elle permet de caractériser. | `SIN_0001` |
+| **`vitesse_quali`** | `TEXT` | Saisie obligatoire à prendre parmi les valeurs de code de la table [TypeVitesseEcoulement](#table-de-valeurs-typevitesseecoulement) | `Fai` |
+| `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| `geom` | `POLYGON` | Polygone de la zone | |
 
 ##### Table `zone_iso_classe_debit_s`
 
-La table `zone_iso_classe_debit_s` implémente la classe [](#zone-iso-classe-débit). Elle a la structure suivante :
+La table `zone_iso_classe_debit_s` implémente la classe [Zone iso classe débit](#zone-iso-classe-débit). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_zcd`** |  `TEXT` | Clé primaire. Identifiant de la zone à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ZCD_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que la zone permet de caractériser. | `SIN_0001` |
+| **`debit_lin_min`** | `FLOAT` | Saisie obligatoire. Seuil inférieur de débit exprimé en m2/s. | `0.2` |
+| `debit_lin_max` | `FLOAT` | Saisie facultative. Seuil supérieur de débit exprimé en m2/s. | `0.4` |
+| `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| `geom` | `POLYGON` | Polygone de la zone | |
 
 ##### Table `ligne_iso_cote_l`
 
-La table `ligne_iso_cote_l` implémente la classe [](#ligne-iso-cote). Elle a la structure suivante :
+La table `ligne_iso_cote_l` implémente la classe [Ligne iso cote](#ligne-iso-cote). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_lic`** |  `TEXT` | Clé primaire. Identifiant de la ligne, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `LIC_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que l'iso côte permet de caractériser. | `SIN_0001` |
+| **`cote`** | `FLOAT` | Saisie obligatoire. Altitude de la surface de l’eau en mètres. | `250.5` |
+| `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| `geom` | `MULTILINESTRING` | Matérialise le traçé de la ligne iso-cote. | |
 
 ##### Table `point_remarquable_cvd_p`
 
 La table `point_remarquable_cvd_p` implémente la classe [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_pre`** |  `TEXT` | Clé primaire. Identifiant du point, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `PRE_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que le point remarquable permet de caractériser. | `SIN_0001` |
+| `cote` | `FLOAT` | Saisie facultative. Altitude de la surface de l’eau lors de l'inondation en ce point, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250.5` |
+| `vitesse` | `FLOAT` | Saisie facultative. Vitesse d’écoulement de l’eau en ce point dans le cas d’une inondation. exprimée en m/s. | `2.0` |
+| `debit_lin` | `FLOAT` | Saisie facultative, Débit linéique d'écoulement en ce point dans le cas d’une inondation par ruissellement. Exprimée en m2/s, ne peut être négative. | `0.2` |
+| `azimuth` | `FLOAT` | Saisie facultative, Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre.exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `85.80` |
+| `geom` | `POINT` | Matérialise la position du point remarquable. | |
 
 ##### Table `zone_protegee_s`
 
 La table `zone_protegee_s` implémente la classe [Zone protégée](#zone-protégée). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_zpr`** |  `TEXT` | Clé primaire. Identifiant de la zone, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ZPR_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| `description` | `TEXT` | Saisie facultative. Description de la zone protégée. | `Zone protégée par la digue xxx` |
+| **`occurrence`** | `TEXT` | Saisie obligatoire. Probabilité d'aléa contre laquelle la zone est protégée. Valeurs à prendre parmi les codes de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea). | `For` |
+| `niveau_protec` | `TEXT` | Saisie facultative. Qualification du niveau de protection de la zone au sens de l'article [R214-119-1](https://www.legifrance.gouv.fr/codes/id/LEGIARTI000039001213/2019-08-31) du code de l'environnement. | `Hauteur d'eau maximale : 10m` |
+| `geom` | `MULTIPOLYGON` | Polygone(s) de la zone protégée. | |
 
 ##### Table `ouvrageprotecteur_l`
 
 La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvrage-protecteur). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_ouv`** |  `TEXT` | Clé primaire. Identifiant de l'ouvrage, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `OUV_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| `nom` | `TEXT` | Saisie facultative (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). Nom de l'ouvrage protecteur. | `Barrage de Serre-Ponçon` |
+| `id_ref_ext` | `TEXT` | Saisie facultative. Identifiant de l'objet dans le référentiel externe d'où il est extrait. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `TBD` |
+| **`ref_externe`** | `TEXT` | Saisie obligatoire. Valeurs à prendre parmi les codes de la table [typerefexterneouvrage](#table-dénumération-typerefexterneouvrage) | `02` |
+| `ref_externe_autre` | `TEXT` | Nom du référentiel externe s'il ne fait pas partie de ceux prévus dans l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage). Saisie facultative. Obligatoire si la valeur de `refExterne` vaut `99` | `BD Topo` |
+| `type_ouv_protec` | `TEXT` | Saisie Obligatoire. Caractérisation de l'ouvrage selon sa fonction vis à vis de l'aléa. Valeurs à prendre parmi celles des codes de la table [typeouvrageprotecteur](#table-dénumération-typeouvrageprotecteur) | `112` |
+| `role_protection` | `BOOLEAN` | `0` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `1` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal à la probabilité de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | `1` |
+| `occurrence` | `TEXT` | Saisie facultative. Probabilité d'aléa contre laquelle protège l'ouvrage. Valeurs à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea). | `Moy` |
+| `geom` | `MULTILINESTRING` | Axe(s) ou limite(s) de l'ouvrage protecteur. | |
 
 ##### Table `zonesuralea_s`
 
 La table `zonesuralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-aléa). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_zsa`** |  `TEXT` | Clé primaire. Identifiant de la zone, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ZSA_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| `description` | `TEXT` | Saisie facultative. Description de la zone de sur-aléa. | `Bande de précaution à l'arrière de la digue xxx` |
+| **`occurrence`** | `TEXT` | Saisie obligatoire. Probabilité d'aléa pour laquelle la zone de sur-aléa est calculée. Valeurs à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea). | `For` |
 
 ##### Table `enjeu_s`
 
 La table `enjeu_s` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie surfacique. Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_enj`** |  `TEXT` | Clé primaire. Identifiant de l'enjeu au sein du jeu de données, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `ENJ_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`nom`** | `TEXT` | Saisie obligatoire. Nom de l'enjeu. | `Musée du Louvre` |
+| `id_ref_externe` | `TEXT` | Saisie facultative. identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
+| `ref_externe` | `TEXT` | Saisie facultative. Référentiel externe d'où est extrait l'enjeu, lorsque c'est le cas. | `BD Topo` |
+| **`type_enjeu`** | `TEXT` | Saisie obligatoire. Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. Valeur à prendre parmi les valeurs de code de la table [typeenjeucartodi](#table-dénumération-typeenjeucartodi)| `030103` |
+| `date_enjeu` | `DATE` | Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". Date de collecte de l'enjeu. | `2024-12-20` |
+| **`geom`** | `MULTIPOLYGON` | Polygone(s) de l'enjeu surfacique. | |
 
+Note : la colonne `type_enjeu` implémente directement le champ `codeEnjeu` du type de données [TypeEnjeu](#typeenjeu) dans la mesure où la valeur du champ `nomenclatureEnjeu` de ce même type est fixée pour désigner la [nomenclature des enjeux Carto DI](#nomenclature-enjeux-carto-di) décrite dans ce standard.
 
 ##### Table `enjeu_l`
 
 La table `enjeu_l` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie linéaire. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`geom`** | `MULTILINESTRING` | traçé(s) de l'enjeu linéaire. | |
 
 ##### Table `enjeu_p`
 
 La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie ponctuelle. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`geom`** | `POINT` | Localisation de l'enjeu ponctuel. | |
 
 ##### Table `enjeux_raportes_tri`
 
 La table `enjeux_raportes_tri` implémente la classe [Enjeux rapportés TRI](#enjeux-rapportés-tri). Elle a la structure suivante :
 
-| Nom colonne | Type SQL | Domaine de valeurs, contraintes |
-|-|-|-|
-
+| Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
+| - | - | - | - |
+| **`id_ert`** |  `TEXT` | Clé primaire. Identifiant de l'enjeu rapporté au sein du jeu de données, à remplir selon les [règles de codification des identifiants] | `ERT_0001` |
+| **`occurrence`** | `TEXT` | Valeur obligatoire à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
+| `nb_hab_perm` | `INTEGER` | Saisie obligatoire. Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. Valeur positive. | `500` |
+| `nb_hab_sais` | `INTEGER` | Saisie facultative. Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | `100` |
+| `nb_emplois` | `INTEGER` | Saisie obligatoire. Nombre indicatif d'emplois affectés pour la probabilité de survenue de l'aléa. | `200` |
 
 ##### Table de valeurs `typereferencetri`
 
@@ -1472,62 +1543,123 @@ La table de valeurs `typereferencetri` implémente l'énumération [Typereferenc
 
 | code | libellé |
 |-|-|
-
+| `Nat` | `Plateforme nationale` | 
+| `Reg` | `Plateforme régionale` | 
 
 ##### Table de valeurs `typeprobabilitealea`
 
 La table de valeurs `typeprobabilitealea` implémente l'énumération [Typeprobabilitealea](#typeprobabilitealea). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
-
+| - | - |
+| `For` | `Aléa de forte probabilité` |
+| `Forcc_ct` | `Aléa de forte probabilité avec prise en compte du changement climatique à court terme` |
+| `Forcc_100` | `Aléa de forte probabilité avec prise en compte du changement climatique à échéance 100 ans` |
+| `Moy` | `Aléa de moyenne probabilité` |
+| `Moycc_ct` | `Aléa de moyenne probabilité avec prise en compte du changement climatique à court terme` |
+| `Moycc_100` | `Aléa de moyenne probabilité avec prise en compte du changement climatique à échéance 100 ans` |
+| `Fai` | `Aléa de faible probabilité` |
+| `Faicc_ct` | `Aléa de faible probabilité avec prise en compte du changement climatique à court terme` |
+| `Faicc_100` | `Aléa de faible probabilité avec prise en compte du changement climatique à échéance 100 ans` |
 
 ##### Table de valeurs `typealeacartodi`
 
 La table de valeurs `typealeacartodi` implémente l'énumération [Typeprobabilitealea](#typealeacartodi). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
-
+| - | - |
+| `112` | `Risque naturel ; Inondation ; Par une crue à débordement lent de cours d'eau` |
+| `113` | `Risque naturel ; Inondation ; Par une crue torrentielle ou à montée rapide de cours d'eau` |
+| `114` | `Risque naturel ; Inondation ; Par ruissellement et coulée de boue` |
+| `115` | `Risque naturel ; Inondation ; Par lave torrentielle (torrent et talweg)` |
+| `116` | `Risque naturel ; Inondation ; Par remontées de nappes naturelles` |
+| `117` | `Risque naturel ; Inondation ; Par submersion marine` |
 
 ##### Table de valeurs `typeclassehauteureau`
 
 La table de valeurs `typeclassehauteureau` implémente l'énumération [Typeclassehauteureau](#typeclassehauteureau). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
-
+| - | - |
+| `Emerg` | `Zone émergée` |
+| `Inf05` | `Inférieur à 0,5m` |
+| `05-1m` | `Entre 0,5m et 1m` |
+| `1m-2m` | `Entre 1m et 2m` |
+| `Sup2m` | `Supérieur à 2m` |
 
 ##### Table de valeurs `typevitesseecoulement`
 
 La table de valeurs `typevitesseecoulement` implémente l'énumération [Typevitesseecoulement](#typevitesseecoulement). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
-
-
+| - | - |
+| `Fai` | `écoulement faible` |
+| `Mod` | `écoulement modéré` |
+| `For` | `écoulement fort` |
 
 ##### Table d'énumération `typeouvrageprotecteur`
 
 La table de valeurs `typeouvrageprotecteur` implémente l'énumération [Typeouvrageprotecteur](#typeouvrageprotecteur). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
+| - | - |
+| `1` | `Ouvrage ou installation pouvant influencer les inondations` |
+| `11` | `Ouvrage de protection contre les inondations` |
+| `111` | `Ouvrage appartenant à un systeme d'endiguement` |
+| `112` | `Amenagement hydraulique` |
+| `119` | `Autre ouvrage de protection contre les inondations` |
+| `12` | `Ouvrage ou installation influencant les ecoulements sans fonction de protection` |
 
 ##### Table d'énumération `typerefexterneouvrage`
 
 La table de valeurs `typerefexterneouvrage` implémente l'énumération [Typerefexterneouvrage](#typerefexterneouvrage). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
+| - | - |
+| `01` | `ROE` |
+| `02` | `SIOUH II` |
+| `99` | `autre` |
 
 ##### Table d'énumération `typeenjeucartodi`
 
 La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux carto DI](#nomenclature-enjeux-carto-di). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
-
+| - | - |
+| `030101` | `Ports, zones d’activités portuaires et d’activités balnéaires` |
+| `030102` | `Campings et hôtellerie de plein air` |
+| `030103` | `Zones d'activités agricoles spécifiques` |
+| `040000` | `Projets d'aménagement futurs du territoire` |
+| `060101` | `Zone d'industrie` |
+| `06010201` | **`Services de type commerces`** |
+| `060104` | **`Zone de carrières ou gravières`** |
+| `070100` | `Etablissements sensibles ou difficilement évacuables` |
+| `070101` | **`Crêche`** |
+| `070102` | **`Ecole`** |
+| `070103` | **`Hopital`** |
+| `070104` | **`Ehpad`** |
+| `070105` | **`Prison`** |
+| `070200` | `Equipements stratégiques pour la gestion de crise` |
+| `070202` | **`Caserne de pompiers`** |
+| `070202` | **`Forces de l'ordre`** |
+| `070300` | `Equipements collectifs de type ERP ou espaces publics ouverts` |
+| `070301` | **`Mairie`** |
+| `070302` | **`Préfecture`** |
+| `070501` | **`Autoroute ou quasi autoroute`** |
+| `070502` | **`Route liaison principale`** |
+| `070503` | **`Route liaison régionale`** |
+| `070504` | **`Voie ferrée principale`** |
+| `070505` | **`Aéroport`** |
+| `070600` | `Réseaux et équipements sensibles` |
+| `070601` | **`Installation SEVESO`** |
+| `070602` | **`Installation nucléaire de base`** |
+| `070603` | **`Installation de la directive IED`** |
+| `070604` | **`Station de traitement des eaux usées`** |
+| `080200` | **`Patrimoine culturel`** |
+| `080300` | **`Zones protégées de la directive cadre eau`** |
+| `080301` | **`Zone de captage d'eau potable`** |
+| `080302` | **`Baignades`** |
+| `080303` | **`Zones Natura 2000`** |
 
 
 ### Spécificités du format GeoPackage
@@ -1541,6 +1673,7 @@ _TBD : tables gpkg_xxx, identifiants fid, metadonnées_
 Chaque jeu de données doit obligatoirement être accompagné de ses métadonnées conformes (selon la réglementation applicable : INSPIRE, HVD, etc. et les bonnes pratiques en vigueur), afin de mettre en évidence les informations essentielles contenues et ainsi permettre la réutilisation des données.  
 
 ### Références
+
 Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur : 
 
 - le « [Guide de saisie des éléments de métadonnées de données](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf) » `v2.0, 2019`,
