@@ -1296,16 +1296,36 @@ Dans ce qui suit, on sépare la partie [schéma physique](#schéma-physique) qui
 
 ### Schéma physique
 
-#### Choix d'implémentations
+#### Choix d'implémentation
 
-_TBD :_ 
-_granularité d'un jeu de données_ 
-_identifiants stables vs autoincrément, minuscules, tirets du 8_ 
-_nommage des tables, suffixe geom slp, tables d'énumérations, types des colonnes_
-_implémentation des relations, de l'origine du risque_
-_séprateur décimal_
-_dates_
-_encodage UTF-8_
+Pour l'implémentation du modèle conceptuel de données de ce standard, les choix d'implémentation suivants ont été faits :
+
+* La **granularité d'un jeu de données** de cartographies de la directive inondation correspond à un TRI.
+
+* **identifiants du schéma physique** : Chaque table possède un champ identifiant (`id_tri`, `id_sin, etc...`) de type `TEXT` jouant le rôle de clef primaire dans le schéma physique. Cela permet de maintenir des identifiants d'objets stables associés à une nomenclature métier particulière, notamment lorsque les objets sont récupérés des anciens jeux de données relatifs à la directive inondation. L'implémentation du schéma au format GeoPackage (mais éventuellement dans d'autres formats tabulaires) nécessite le rajout de champs `fid` ou `id` de type `INTEGER` autoincrémentés et déclarés comme clefs primaires. Les champs de type identifiant doivent alors être déclarés avec les contraintes `UNIQUE` et `NOT NULL`, ce qui permet d'implémenter les liens entre tables via des clefs étrangères référençant ces champs et non ceux rajoutés par les contraintes du format.
+
+* Les **noms de tables et des colonnes** sont intégralement en minuscules et les séparateurs de mots sont des `_` (tirets du 8).
+
+* Une table portant une géométrie ne peut être associées qu'à un seul type de primitive géométrique (Point, Ligne ou Polygone). **Les noms des tables géométriques sont systématiquement suffixés par le type de géométrie à laquelle elle sont associées** : 
+  * `_p` pour les tables de ponctuels (`POINT`)
+  * `_l` pour les tables de linéaires (`LINESTRING` ou `MULTILINESTRING`)
+  * `_s` pour les tables surfaciques (`POLYGON` ou `MULTIPOLYGON`)
+
+* La colonne portant la composante géométrique de ces tables porte le nom `geom`.
+
+* Les **tables d'énumérations** comportent systématiquement une colonne `code` et `libelle`. Les valeurs utilisés par les tables du standard sont celles de la colonne `code` lorsqu'elles reposent sur une table d'énumération.
+
+* Les choix d'**implémentation des associations** entre classe du modèle conceptuel sont les suivants :
+  * Toutes les tables comportent une colonne `id_tri` permettant de relier chaque objet du jeu de données au TRI qu'il représente via sont identifiant.
+  * Les relations entre la table `surface_inondable_s` et les tables héritées des éléments de caractrisation d'aléa est réalisé à l'aide de la colonne `id_sin` dans chacune de ces tables.
+  * Les autres associations sont implicites :
+    * Les cartes des surfaces inondables sont constituées à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_iso_classe_hauteur_s`, `zone_iso_classe_vitesse_s`, `ligne_iso_cote_l`, `zone_iso_classe_debit_s`, `point_remarquable_cvd_p`, `zone_protegee_s`, `ouvrageprotecteur_l` et `zonesuralea_s` sélectionnés à selon la probabilité d'aléa portée par le champ `occurrence` de chacune de ces tables (à l'exception de `tri_s`).
+    * La carte de risque d'inondation est constituée à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_protegee_s`, `ouvrageprotecteur_l`, `zonesuralea_s`, `enjeu_s`, `enjeu_l`, `enjeu_p` et `enjeux_rapportes_tri`.
+    * Les liens entre les ouvrages protecteurs et les zones qu'ils protègent ainsi que les zones de sur-aléa qu'ils engendrent ne sont pas implémentés.
+
+* Le **séparateur décimal** pour les valeurs de type `FLOAT` est le `.`.
+* Les **champs de type `DATE`** sont encodés au format ISO 8601 : "YYYY-MM-DD".
+* Les **champs de type `TEXT`** sont encodés avec le jeu de caractères `UTF-8`
 
 #### Tables du standard
 
