@@ -128,6 +128,7 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 | [EauFrance](https://www.eaufrance.fr/) | Le service public d’information sur l’eau et les milieux aquatiques | OFB | En continu |
 | [Référentiel Technique Sandre](https://www.sandre.eaufrance.fr/v2/) | Référentiel  technique Sandre pour le système d'information sur l'eau (SIE) |  OFB, Sandre | En continu |
+| [GeoPackage](https://www.geopackage.org/spec140/) | OGC® GeoPackage Encoding Standard | Open Geospatial Consortium (OGC) | 2024 |
 
 ### Cadre réglementaire
 
@@ -1302,7 +1303,9 @@ Pour l'implémentation du modèle conceptuel de données de ce standard, les cho
 
 * La **granularité d'un jeu de données** de cartographies de la directive inondation correspond à un TRI.
 
-* **identifiants du schéma physique** : Chaque table possède un champ identifiant (`id_tri`, `id_sin, etc...`) de type `TEXT` jouant le rôle de clef primaire dans le schéma physique. Cela permet de maintenir des identifiants d'objets stables associés à une nomenclature métier particulière, notamment lorsque les objets sont récupérés des anciens jeux de données relatifs à la directive inondation. L'implémentation du schéma au format GeoPackage (mais éventuellement dans d'autres formats tabulaires) nécessite le rajout de champs `fid` ou `id` de type `INTEGER` autoincrémentés et déclarés comme clefs primaires. Les champs de type identifiant doivent alors être déclarés avec les contraintes `UNIQUE` et `NOT NULL`, ce qui permet d'implémenter les liens entre tables via des clefs étrangères référençant ces champs et non ceux rajoutés par les contraintes du format.
+* L'**identifiant d'un jeu de données** est celui du TRI tel que défini dans la partie [Identification des TRI](#identification-des-tri).
+
+* **identifiants du schéma physique** : Chaque table possède un champ identifiant (`id_tri`, `id_sin, etc...`) de type `TEXT` jouant le rôle de clef primaire dans le schéma physique. Cela permet de maintenir des identifiants d'objets stables associés à une nomenclature métier particulière, notamment lorsque les objets sont récupérés des anciens jeux de données relatifs à la directive inondation. L'implémentation du schéma au format GeoPackage (mais éventuellement dans d'autres formats tabulaires) nécessite le rajout de champs spécifiques de type `INTEGER` déclarés comme clefs primaires. Les champs de type identifiant du schéma physique doivent alors être déclarés avec les contraintes `UNIQUE` et `NOT NULL`, ce qui permet d'implémenter les liens entre tables via des clefs étrangères référençant ces champs et non ceux rajoutés par les contraintes du format. Cf. [Gestion des identifiants et clefs primaires dans GeoPackage](#gestion-des-identifiants-et-clef-primaires-dans-geopackage).
 
 * Les **noms de tables et des colonnes** sont intégralement en minuscules et les séparateurs de mots sont des `_` (tirets du 8).
 
@@ -1323,13 +1326,44 @@ Pour l'implémentation du modèle conceptuel de données de ce standard, les cho
     * La carte de risque d'inondation est constituée à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_protegee_s`, `ouvrageprotecteur_l`, `zonesuralea_s`, `enjeu_s`, `enjeu_l`, `enjeu_p` et `enjeux_rapportes_tri`.
     * Les liens entre les ouvrages protecteurs et les zones qu'ils protègent ainsi que les zones de sur-aléa qu'ils engendrent ne sont pas implémentés.
 
-* Le **séparateur décimal** pour les valeurs de type `FLOAT` est le `.`.
+* Le **séparateur décimal** pour les valeurs de type `FLOAT` est le "`.`".
 * Les **champs de type `DATE`** sont encodés au format ISO 8601 : "YYYY-MM-DD".
 * Les **champs de type `TEXT`** sont encodés avec le jeu de caractères `UTF-8`
 
 #### Tables du standard
 
-_TBD : Liste des tables et obligations d'implémentation_
+Le tableau qui suit reprend l'ensemble des tables possibles permettant d'implémenter un jeu de données conforme à ce standard en précisant :
+
+* le caractère obligatoire (**O**), conditionnel (***C***) ou facultatif (F) de la présence de la table dans le jeu de données ;
+* le nom de la table tel que décrit ci-après ;
+* Les références aux entités du modèle conceptuel implémentées par la table.
+
+| Obl. | Nom de la table | Entité(s) du modèle conceptuel implémentée(s) |
+| - | - | - |
+| **O** | **[tri_s](#table-tri_s)** | [Territoire à risque important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri), [Référence Internet](#référence-internet) |
+| **O** | **[carte_surfaces_inondables_s](#table-carte_surfaces_inondables_s)** | [Carte des surfaces inondables](#carte-des-surfaces-inondables) |
+| **O** | **[carte_risques_inondation_s](#table-carte_risques_inondation_s)** | [Carte des risques inondation](#carte-des-risques-inondation) |
+| **O** | **[surface_inondable_s](#table-surface_inondable_s)** | [Surface inondable](#surface-inondable), [OrigineRisque](#origine-du-risque) |
+| _**C**_ | _**[zone_iso_classe_hauteur_s](#table-zone_iso_classe_hauteur_s)**_ | [Zone iso classe hauteur](#zone-iso-classe-hauteur), [OrigineRisque](#origine-du-risque) |
+| _**C**_ | _**[zone_iso_classe_vitesse_s](#table-zone_iso_classe_vitesse_s)**_ | [Zone iso classe vitesse](#zone-iso-classe-vitesse) |
+| F | [zone_iso_classe_debit_s](#table-zone_iso_classe_debit_s) | [Zone iso classe débit](#zone-iso-classe-débit) |
+| F | [ligne_iso_cote_l](#table-ligne_iso_cote_l) | [Ligne iso cote](#ligne-iso-cote) |
+| F | [point_remarquable_cvd_p](#table-point_remarquable_cvd_p) | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit) |
+| F | [zone_protegee_s](#table-zone_protegee_s) | [Zone protégée](#zone-protégée) |
+| F | [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | [Ouvrage protecteur](#ouvrage-protecteur) |
+| F | [zonesuralea_s](#table-zonesuralea_s) | [Zone de sur-aléa](#zone-de-sur-aléa) |
+| _**C**_ | _**[enjeu_s](#table-enjeu_s)**_ | [Enjeu](#enjeu) |
+| ***C*** | ***[enjeu_l](#table-enjeu_l)*** | [Enjeu](#enjeu) |
+| _**C**_ | _**[enjeu_p](#table-enjeu_p)**_ | [Enjeu](#enjeu) |
+| **O** | **[enjeux_raportes_tri](#table-enjeux_raportes_tri)** | [Enjeux rapportés TRI](#enjeux-rapportés-tri) |
+| F | [typereferencetri](#table-de-valeurs-typereferencetri) | [Typereferencetri](#typereferencetri)  |
+| F | [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | [Typeprobabilitealea](#typeprobabilitealea) |
+| F | [typealeacartodi](#table-de-valeurs-typealeacartodi) | [TypeAleaCartoDI](#typealeacartodi) |
+| F | [typeclassehauteureau](#table-de-valeurs-typeclassehauteureau) | [Typeclassehauteureau](#typeclassehauteureau) |
+| F | [typevitesseecoulement](#table-de-valeurs-typevitesseecoulement) | [Typevitesseecoulement](#typevitesseecoulement) |
+| F | [typeouvrageprotecteur](#table-de-valeurs-typeouvrageprotecteur) | [Typeouvrageprotecteur](#typeouvrageprotecteur) |
+| F | [typerefexterneouvrage](#table-de-valeurs-typerefexterneouvrage) | [Typerefexterneouvrage](#typerefexterneouvrage) |
+| F | [typeenjeucartodi](#table-de-valeurs-typeenjeucartodi) | [nomenclature des enjeux carto DI](#nomenclature-enjeux-carto-di) |
 
 ##### Table `tri_s`
 
@@ -1494,9 +1528,9 @@ La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvra
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | `nom` | `TEXT` | Saisie facultative (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). Nom de l'ouvrage protecteur. | `Barrage de Serre-Ponçon` |
 | `id_ref_ext` | `TEXT` | Saisie facultative. Identifiant de l'objet dans le référentiel externe d'où il est extrait. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `TBD` |
-| **`ref_externe`** | `TEXT` | Saisie obligatoire. Valeurs à prendre parmi les codes de la table [typerefexterneouvrage](#table-dénumération-typerefexterneouvrage) | `02` |
+| **`ref_externe`** | `TEXT` | Saisie obligatoire. Valeurs à prendre parmi les codes de la table [typerefexterneouvrage](#table-de-valeurs-typerefexterneouvrage) | `02` |
 | `ref_externe_autre` | `TEXT` | Nom du référentiel externe s'il ne fait pas partie de ceux prévus dans l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage). Saisie facultative. Obligatoire si la valeur de `refExterne` vaut `99` | `BD Topo` |
-| `type_ouv_protec` | `TEXT` | Saisie Obligatoire. Caractérisation de l'ouvrage selon sa fonction vis à vis de l'aléa. Valeurs à prendre parmi celles des codes de la table [typeouvrageprotecteur](#table-dénumération-typeouvrageprotecteur) | `112` |
+| `type_ouv_protec` | `TEXT` | Saisie Obligatoire. Caractérisation de l'ouvrage selon sa fonction vis à vis de l'aléa. Valeurs à prendre parmi celles des codes de la table [typeouvrageprotecteur](#table-de-valeurs-typeouvrageprotecteur) | `112` |
 | `role_protection` | `BOOLEAN` | `0` si l'ouvrage n'est pas conçu et entretenu pour jouer ce rôle de protection (par exemple parce que l'ouvrage peut protéger contre l'aléa dans certaines conditions, mais n'est pas conçu et entretenu pour cela). `1` si l'ouvrage ou l'installation est conçu et entretenu pour se protéger d'un évènement plus important ou égal à la probabilité de survenue de l'aléa dont l'occurrence est alors précisée par le champ "occurrence". | `1` |
 | `occurrence` | `TEXT` | Saisie facultative. Probabilité d'aléa contre laquelle protège l'ouvrage. Valeurs à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea). | `Moy` |
 | `geom` | `MULTILINESTRING` | Axe(s) ou limite(s) de l'ouvrage protecteur. | |
@@ -1523,7 +1557,7 @@ La table `enjeu_s` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant u
 | **`nom`** | `TEXT` | Saisie obligatoire. Nom de l'enjeu. | `Musée du Louvre` |
 | `id_ref_externe` | `TEXT` | Saisie facultative. identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
 | `ref_externe` | `TEXT` | Saisie facultative. Référentiel externe d'où est extrait l'enjeu, lorsque c'est le cas. | `BD Topo` |
-| **`type_enjeu`** | `TEXT` | Saisie obligatoire. Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. Valeur à prendre parmi les valeurs de code de la table [typeenjeucartodi](#table-dénumération-typeenjeucartodi)| `030103` |
+| **`type_enjeu`** | `TEXT` | Saisie obligatoire. Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. Valeur à prendre parmi les valeurs de code de la table [typeenjeucartodi](#table-de-valeurs-typeenjeucartodi)| `030103` |
 | `date_enjeu` | `DATE` | Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". Date de collecte de l'enjeu. | `2024-12-20` |
 | **`geom`** | `MULTIPOLYGON` | Polygone(s) de l'enjeu surfacique. | |
 
@@ -1562,9 +1596,9 @@ La table `enjeux_raportes_tri` implémente la classe [Enjeux rapportés TRI](#en
 La table de valeurs `typereferencetri` implémente l'énumération [Typereferencetri](#typereferencetri). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
-|-|-|
-| `Nat` | `Plateforme nationale` | 
-| `Reg` | `Plateforme régionale` | 
+| - | - |
+| `Nat` | `Plateforme nationale` |
+| `Reg` | `Plateforme régionale` |
 
 ##### Table de valeurs `typeprobabilitealea`
 
@@ -1584,7 +1618,7 @@ La table de valeurs `typeprobabilitealea` implémente l'énumération [Typeproba
 
 ##### Table de valeurs `typealeacartodi`
 
-La table de valeurs `typealeacartodi` implémente l'énumération [Typeprobabilitealea](#typealeacartodi). Le tableau suivant précise les codes et libellés pour cette table.
+La table de valeurs `typealeacartodi` implémente l'énumération [TypeAleaCartoDI](#typealeacartodi). Le tableau suivant précise les codes et libellés pour cette table.
 
 | code | libellé |
 | - | - |
@@ -1617,7 +1651,7 @@ La table de valeurs `typevitesseecoulement` implémente l'énumération [Typevit
 | `Mod` | `écoulement modéré` |
 | `For` | `écoulement fort` |
 
-##### Table d'énumération `typeouvrageprotecteur`
+##### Table de valeurs `typeouvrageprotecteur`
 
 La table de valeurs `typeouvrageprotecteur` implémente l'énumération [Typeouvrageprotecteur](#typeouvrageprotecteur). Le tableau suivant précise les codes et libellés pour cette table.
 
@@ -1630,7 +1664,7 @@ La table de valeurs `typeouvrageprotecteur` implémente l'énumération [Typeouv
 | `119` | `Autre ouvrage de protection contre les inondations` |
 | `12` | `Ouvrage ou installation influencant les ecoulements sans fonction de protection` |
 
-##### Table d'énumération `typerefexterneouvrage`
+##### Table de valeurs `typerefexterneouvrage`
 
 La table de valeurs `typerefexterneouvrage` implémente l'énumération [Typerefexterneouvrage](#typerefexterneouvrage). Le tableau suivant précise les codes et libellés pour cette table.
 
@@ -1640,7 +1674,7 @@ La table de valeurs `typerefexterneouvrage` implémente l'énumération [Typeref
 | `02` | `SIOUH II` |
 | `99` | `autre` |
 
-##### Table d'énumération `typeenjeucartodi`
+##### Table de valeurs `typeenjeucartodi`
 
 La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux carto DI](#nomenclature-enjeux-carto-di). Le tableau suivant précise les codes et libellés pour cette table.
 
@@ -1681,10 +1715,65 @@ La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux c
 | `080302` | **`Baignades`** |
 | `080303` | **`Zones Natura 2000`** |
 
-
 ### Spécificités du format GeoPackage
 
-_TBD : tables gpkg_xxx, identifiants fid, metadonnées_
+#### Généralités sur GeoPackage
+
+GeoPackage est un format standard défini par l'[OGC](https://www.ogc.org/) (Open Geospatial Consortium). C'est un format ouvert, indépendant de toute plateforme et autodescriptif pour échanger de l'information géographique. Il s'appuie sur le format de fichier de base de données [SQLite](https://sqlite.org/fileformat2.html) pour décrire des tables de données et de métadonnées pour lesquelles il définit un ensemble de conventions.
+
+Les données échangées peuvent être de type vecteur, raster ou simplement attributaires (sans géométries) et aussi des extensions qui permettent d'ajouter des fonctionnalités supplémentaires au format de base.
+
+#### Versions de GeoPackage supportées
+
+À la date de rédaction de ce document, la version la plus récente du standard GeoPackage est la 1.4 (2024). Les versions précédentes 1.3.1, 1.3, 1.2.1 et 1.2 sont encore maintenues et reposent toutes sur la version 3 du format SQLite. Elles sont toutes compatibles avec les exigences pour l'utilisation de ce format dans le cadre de ce standard.
+
+**Exigence**
+Les livraisons des données de plan de préventions des risques seront faites au format GeoPackage dans les versions supérieures ou égales à 1.2.
+
+#### Tables intrinsèques au format GeoPackage
+
+Le format GeoPackage définit un certain nombre de tables "système" qui lui permettent d'organiser les données de façon structurée et efficace et dont le caractère obligatoire ou non de leur implémentation dépend du type de données échangées et de l'utilisation qui peut en être faite.
+
+L'implémentation d'un jeu de données conformément à ce standard avec le format GeoPackage nécessitera la présence des tables suivantes définies par le standard [GeoPackage](https://www.geopackage.org/spec140/) :
+
+* [`gpkg_contents`](https://www.geopackage.org/spec140/#_gpkg_contents) : dictionnaire interne des tables du jeu de données ;
+* [`gpkg_geometry_columns`](https://www.geopackage.org/spec140/#_gpkg_geometry_columns) : colonnes et caractéristiques géométriques des tables portant une géométrie ;
+* [`gpkg_spatial_ref_sys`](https://www.geopackage.org/spec140/#_gpkg_spatial_ref_sys) : système de référence de coordonnées ;
+* [`gpkg_metadata`](https://www.geopackage.org/spec140/#_metadata_table) et [`gpkg_metadata_reference`](https://www.geopackage.org/spec140/#_metadata_reference_table) : tables contenant les métadonnées associées au jeu de données ;
+* [`gpkg_extensions`](https://www.geopackage.org/spec140/#_gpkg_extensions) : déclaration de l'extension [`Metadata`](https://www.geopackage.org/spec140/#extension_metadata) de GeoPackage permettant d'utiliser les tables `gpkg_metadata` et `gpkg_metadata_reference`.
+
+#### Gestion des identifiants et clef primaires dans GeoPackage
+
+Le format GeoPackage impose que les tables géométriques (de type `features`) et attributaires (de type `attributes`) aient une colonne clef primaire de type `INTEGER`.
+
+Le présent standard déclare et utilise pour chacune de ses tables une colonne identifiant de type `TEXT` permettant de définir des identifiants métiers et stables pour le jeu de données (`id_tri`, `id_sin`, etc...). Ce sont ces identifiants qui sont aussi utilisés pour lier les objets de ces tables à l'aide de clefs étrangères.
+
+L'implémentation au format GeoPackage fera donc coexister ces deux types d'identifiants pour une même table. Les identifiants exigés par le format GeoPackage ne devront pas être utilisés pour les aspects métiers du jeu de données.
+
+#### Implémentation des métadonnées dans le fichier GeoPackage
+
+Les éléments de métadonnées permettant de décrire une jeu de données conforme à ce standard ainsi que leur encodage en XML sont spécifiés dans la partie suivante [Métadonnées](#métadonnées). On traite ici de l'intégration du document XML métadonnées dans le fichier GeoPackage.
+
+Ce contenu XML des métadonnées est à renseigner par une ligne dans la table `gpkg_metadata` et une ligne dans la table `gpkg_metadata_reference` de la manière suivante :
+
+* Dans la table `gpkg_metadata` :
+
+|`id`|`md_scope`| `md_standard_uri` | `mime_type` | `metadata`|
+| - | - | - | - | - |
+| 1 | `dataset` | `http://www.isotc211.org/2005/gmd` | `text/xml` | *Contenu des métadonnées implémenté en XML spécifié dans le paragrapghe [Métadonnées](#métadonnées)* |
+
+* Dans la table `gpkg_metadata_reference` :
+
+| `reference_scope` | `table_name` | `column_name` | `row_id_value` | `timestamp` | `md_file_id` | `md_parent_id` |
+| - | - | - | - | - | - | - |
+| `geopackage` | `null` | `null` | `null` | *date des métadonnées* | 1 *(identifiant des métadonnées dans la table `gpkg_metadata`)* | `null` |
+
+Par ailleurs les tables `gpkg_metadata` et `gpkg_metadata_reference` doivent être déclarées dans la table `gpkg_extensions` de la manière suivante :
+
+| `table_name` | `column_name` | `extension_name` | `definition` | `scope`
+| - | - | - | - | - |
+| `gpkg_metadata` | NULL | `gpkg_metadata` | `http://www.geopackage.org/spec/#extension_metadata` | `read-write` |
+| `gpkg_metadata_reference` | NULL | `gpkg_metadata` | `http://www.geopackage.org/spec/#extension_metadata` |`read-write` |
 
 # Métadonnées
 
