@@ -1694,7 +1694,7 @@ La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux c
 | `070104` | **`Ehpad`** |
 | `070105` | **`Prison`** |
 | `070200` | `Equipements stratégiques pour la gestion de crise` |
-| `070202` | **`Caserne de pompiers`** |
+| `070201` | **`Caserne de pompiers`** |
 | `070202` | **`Forces de l'ordre`** |
 | `070300` | `Equipements collectifs de type ERP ou espaces publics ouverts` |
 | `070301` | **`Mairie`** |
