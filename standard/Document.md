@@ -1236,13 +1236,50 @@ Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocata
 
 ## Règles d'organisation et de codification
 
-### Identification des TRI
+Afin d'assurer une continuité dans le patrimoine des données des cartographies de la directive inondation élaboré lors des cycles précédents de rapportage, les règles d'identification des TRIs et des objets qui les constituent sont reprises du standard COVADIS DI.
 
-Les identifiants de TRI bla bla bla...
+### Identification des TRIs
+
+L'identifiant d'un TRI est composé selon les mêmes règles que celles du  standard COVADIS DI, à savoir `[Bassin DCE]_TRI_[Nom du TRI]` où :
+
+* `[Bassin DCE]` est le code européen du bassin ou groupement de bassin de la Directive Cadre Eau (DCE) dont la liste est fournie dans la partie "[Périmètre d'application](#périmètre-dapplication)".
+
+* `[Nom du TRI]` est le nom court du TRI, en majuscules (33 caractères maximum).
+
+Par exemple : `FRD_TRI_LYON`
+
+Note : si le TRI est à cheval sur deux bassins, la référence à chacun des deux bassins est à noter, mais la lettre correspondant au bassin pilote est à placer en premier.
+
+Par exemple : `FRGF_TRI_COTESCHARENTAISES`
+
+Le bassin de la Loire (FRG) est pilote mais le TRI se trouve également sur le bassin Adour Garonne (FRF).
 
 ### Règles de codification des identifiants
 
-**Les règles de codification suivantes doivent être respectées :**  
+L'ancien standard COVADIS DI a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractère de ce type : `[code classe]_[numéro automatique]`. où :
+
+* `[code classe]` est un préfixe déterminé en fonction de la classe d'objets concernée ;
+* `[numéro automatique]` est un numéro unique pour l'objet dans la classe, de préférence "aligné à droite", c'est à dire sous la forme `001`, `012`, `125`.
+
+Afin de pouvoir facilement adapter les données conformes à l'ancien standard au nouveau, ces règles sont conservées avec l'utilisation des préfixes suivants en fonction des tables du nouveau standard :
+
+| Nom de la classe | Préfixe(s) : `[code classe]` |
+| - | - |
+| [Carte des surfaces inondables](#carte-des-surfaces-inondables) | `CSI` |
+| [Carte des risques inondation](#carte-des-risques-inondation) | `CRI` |
+| [Surface inondable](#surface-inondable) | `SIN` |
+| [Zone iso classe hauteur](#zone-iso-classe-hauteur) | `ZCH` |
+| [Zone iso classe vitesse](#zone-iso-classe-vitesse) | `ZE` ou `ZCV` |
+| [Zone iso classe débit](#zone-iso-classe-débit) | `ZCD` |
+| [Ligne iso cote](#ligne-iso-cote) | `LIC` |
+| [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit) | `PRE` |
+| [Zone protégée](#zone-protégée) | `ZP`, `ZPP` ou `ZSI` |
+| [Ouvrage protecteur](#ouvrage-protecteur) | `OUV` |
+| [Zone de sur-aléa](#zone-de-sur-aléa) | `ZSA` |
+| [Enjeu](#enjeu)  | `??` |
+| [Enjeux rapportés TRI](#enjeux-rapportés-tri) | `??` |
+
+Nore : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut provenir de plusieurs anciennes classes du standard COVADIS.
 
 **Les valeurs vides sont codées “NULL” ou ne sont pas renseignées.**
 
