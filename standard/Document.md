@@ -118,8 +118,8 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 | Acronyme | Titre | Auteur | Année |
 |-|-|-|-|
-| [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
-| [CNIG_RISQUES_PPR:2025](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/Document.md) | Géostandards Risques - Plans de prévention des risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | Novembre 2025 |
+| [CNIG_RISQUES_COMMUN:2024](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-modele-commun-v1_0.pdf) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
+| [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) | Géostandards Risques - Plans de prévention des risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | Novembre 2025 |
 | [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques d’inondation par débordement de cours d’eau (hors cours d’eau torrentiels) | DGPR - Cerema | 2024 |
 | [Guide PPRRuis:2004](https://www.ecologie.gouv.fr/sites/default/files/Guide_m%C3%A9thodo_PPR%20Ruissellement_2004.pdf) | Guide Méthodologique PPR Ruissellement | Direction de la Prévention des Pollutions et des Risques (DPPR) | 2004 |
 | [Guide PPRICet:2023](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRicet_10082023.pdf) | Guide Méthodologique PPRi des cours d'eau torrentiels | DGPR | 2023 |
@@ -1261,51 +1261,38 @@ L'ancien standard COVADIS DI a établit des règles pour coder les identifiants 
 * `[code classe]` est un préfixe déterminé en fonction de la classe d'objets concernée ;
 * `[numéro automatique]` est un numéro unique pour l'objet dans la classe, de préférence "aligné à droite", c'est à dire sous la forme `001`, `012`, `125`.
 
-Afin de pouvoir facilement adapter les données conformes à l'ancien standard au nouveau, ces règles sont conservées avec l'utilisation des préfixes suivants en fonction des tables du nouveau standard :
+Afin de pouvoir facilement adapter les données conformes à l'ancien standard au nouveau, ces règles sont conservées et adaptées avec l'utilisation des préfixes suivants en fonction des tables du nouveau standard :
 
-| Nom de la classe | Préfixe(s) : `[code classe]` |
+| Table(s) | Préfixe(s) : `[code classe]` |
 | - | - |
-| [Carte des surfaces inondables](#carte-des-surfaces-inondables) | `CSI` |
-| [Carte des risques inondation](#carte-des-risques-inondation) | `CRI` |
-| [Surface inondable](#surface-inondable) | `SIN` |
-| [Zone iso classe hauteur](#zone-iso-classe-hauteur) | `ZCH` |
-| [Zone iso classe vitesse](#zone-iso-classe-vitesse) | `ZE` ou `ZCV` |
-| [Zone iso classe débit](#zone-iso-classe-débit) | `ZCD` |
-| [Ligne iso cote](#ligne-iso-cote) | `LIC` |
-| [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit) | `PRE` |
-| [Zone protégée](#zone-protégée) | `ZP`, `ZPP` ou `ZSI` |
-| [Ouvrage protecteur](#ouvrage-protecteur) | `OUV` |
-| [Zone de sur-aléa](#zone-de-sur-aléa) | `ZSA` |
-| [Enjeu](#enjeu)  | `??` |
-| [Enjeux rapportés TRI](#enjeux-rapportés-tri) | `??` |
+| [carte_surfaces_inondables_s](#table-carte_surfaces_inondables_s) | `CSI` |
+| [carte_risques_inondation_s](#table-carte_risques_inondation_s) | `CRI` |
+| [surface_inondable_s](#table-surface_inondable_s) | `SIN` |
+| [zone_iso_classe_hauteur_s](#table-zone_iso_classe_hauteur_s) | `ZCH` |
+| [zone_iso_classe_vitesse_s](#table-zone_iso_classe_vitesse_s) | `ZCV` ou `ZE` (*) |
+| [zone_iso_classe_debit_s](#table-zone_iso_classe_debit_s) | `ZCD` |
+| [ligne_iso_cote_l](#table-ligne_iso_cote_l) | `LIC` |
+|  [point_remarquable_cvd_p](#table-point_remarquable_cvd_p) | `PRE` ou `PCV` (*) |
+|  [zone_protegee_s](#table-zone_protegee_s) | `ZP`, `ZPP` ou `ZSI` (*) |
+| [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | `OUV` |
+| [zonesuralea_s](#table-zonesuralea_s) | `ZSA` |
+| [enjeu_s](#table-enjeu_s), [enjeu_l](#table-enjeu_l), [enjeu_p](#table-enjeu_p) | `ENJ` (*) |
+| [enjeux_raportes_tri](#table-enjeux_raportes_tri) | `ERT` |
 
-Nore : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut provenir de plusieurs anciennes classes du standard COVADIS.
+Note : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut provenir de plusieurs anciennes classes du standard COVADIS.
 
-**Les valeurs vides sont codées “NULL” ou ne sont pas renseignées.**
+* Le préfixe `ZE` est issu de l'ancienne classe COVADIS "Zone d'écoulement"
+* Le préfixe `PCV` est issu de l'ancienne classe COVADIS "Point champ vitesse"
+* Les préfixes `ZPP` et `ZSI` sont issus des anciennes classes COVADIS 'Zone Physiquement protégée' et "Zone soustraite à l'inondation"
+* Dans l'ancien standard COVADIS, les tables d'enjeux avaient leur propre logique d'identifiants en fonction du type d'enjeu (`code_STEU`, `code_IED`, etc...). Ces identifiants seront désormais plutôt portés par le champ idRefExterne.
 
 # Cycle de vie des données
 
-Le management de la donnée représente une vision de l’information, non pas comme un produit ex-nihilo, mais comme partie d’un système qui inclut les processus d’acquisition, de validation et d’actualisation de l’information. Cette approche systémique permet de penser la donnée comme ressource, dans son cycle de vie et ses potentielles réutilisations.
+Le patrimoine des jeux de données des cartographies de la directive inondation a été constitué initialement pour chaque TRI à l'occasion de la mise en oeuvre de la Directive Inondation.
 
-## Acquisition des données
+Il évolue en fonction des arrêtés des Prefets de bassin selon les éléments déclencheurs décrits dans le cas d'usage [Elaborer les cartographies de la directive inondation](#cas-dutilisation-elaborer-les-cartographies-de-la-directive-inondation).
 
-`<La section relative à l’acquisition de données vise à fournir des recommandations et/ou des descriptions de la saisie et de la production de données. Cela peut inclure des détails relatifs à des méthodes et/ou étapes de traitement spécifiques.>`
-
-`<Description rédigée en texte libre du processus d’acquisition et/ou de production des données>`
-
-## Validation des données
-
-`<Indiquez dans ce paragraphe les moyens éventuellement mis en place pour contrôler vos lots de données (par exemple outils [validata.fr](http://validata.fr)) ou liés aux mesures de qualité précisées dans la partie 7.>` 
-
-## Actualisation des données
-
-`<Cette section vise à fournir des recommandations, descriptions, principes et/ou critères d’actualisation des données. Cela peut inclure les modes opératoires, la fréquence des modifications et/ou de la mise à jour.>` 
-
-`<Décrivez les processus de maintenance recommandés.>`  
-
-`<Décrivez les recommandations de mécanismes de SAV (par exemple signalement d’erreurs, de retours utilisateurs) s’ils sont connus au moment de l’écriture du standard.>` 
-
-`<Décrivez les recommandations liées au versionnage.>` 
+De manière générale, les données constitutives des cartographies de la directive inondation sont élaborées à partir des données du PPR Inondation ou Litoral s'il en existe sur le territoire concerné ou à partir d'études spécifiques si ce n'est pas le cas. La refonte des géostandards risques dont sont issus ce standard et le standard [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) a harmonisé les modèles et les exigences de qualité des données de risques afin de rationaliser leur production et leur entretien.
 
 # Règles de symbologie
 
