@@ -192,6 +192,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | FHRM | Flood Hazard and Risk Maps (*Cartes des surfaces inondables et des risques d'inondation*) |
 | GASPAR | Base nationale de gestion assistée des procédures administratives relatives aux risques |
 | GEMAPI | Gestion des milieux aquatiques et prévention des inondations |
+| GEMET | General Multilingual Environmental Thesaurus | 
 | GUNEnv | Guichet Unique Numérique de l'environnement |
 | ICPE | Installation classée pour la protection de l'environnement |
 | IED | Industrial Emissions Directive |
@@ -1809,114 +1810,115 @@ Chaque jeu de données doit obligatoirement être accompagné de ses métadonné
 
 Ces consignes facilitent le catalogage des données et leur moissonnage par des outils dédiés. Elles s’appuient sur : 
 
-- le « [Guide de saisie des éléments de métadonnées de données](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf) » `v2.0, 2019`,
-- le « [Guide Identificateurs de Ressource Uniques](http://cnig.gouv.fr/IMG/documents_wordpress/2016/02/GuideIRU-corrige-v2.pdf) » `v1.0.1 de février 2016`,
-- le [guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE,](https://knowledge-base.inspire.ec.europa.eu/publications/technical-guidance-implementation-inspire-dataset-and-service-metadata-based-isots-191392007_en)
-- [Validateur européen.](https://inspire.ec.europa.eu/validator/home/index.html)
+* le « [Guide de saisie des éléments de métadonnées de données](http://cnig.gouv.fr/IMG/pdf/guide-de-saisie-des-elements-de-metadonnees-inspire-v2.0-1.pdf) » `v2.0, 2019`,
+* le « [Guide Identificateurs de Ressource Uniques](http://cnig.gouv.fr/IMG/documents_wordpress/2016/02/GuideIRU-corrige-v2.pdf) » `v1.0.1 de février 2016`,
+* le [guide technique européen pour l’implémentation des métadonnées de données et de services INSPIRE,](https://knowledge-base.inspire.ec.europa.eu/publications/technical-guidance-implementation-inspire-dataset-and-service-metadata-based-isots-191392007_en)
 
 ### Périmètre INSPIRE
-Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. `Les catégories thématiques (“_topic category_”) sont :` 
-`- ...`
-  
+
+Les données des cartographies de la directive inondation sont couvertes par la thématique INSPIRE "Zone de risque naturel" et par la catégorie thématique "Information géoscientifique" au sens de la norme ISO 19115 (“_topic category_”).
+ 
 ## Eléments de métadonnées
 
+Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner un jeu de données des cartographies de la directive inondation.
+
+Pour chaque élément de métadonnées il est indiqué :
+
+* son nom ;
+* sa description dans le guide de saisie des métadonnées INSPIRE ;
+* le caractère obligatoire ou non de sa saisie ;
+* la localisation XPath de l'élément dans la structure XML du fichier de métadonnées correspondant implémentant la norme ISO 19115 ;
+* les "valeurs" ou les consignes de saisie des valeurs pour l'élément.
+
 ### Consignes de nommage du fichier de métadonnées
-|  |  |
-|---|---|
-| _**Consignes de nommage du fichier**_ (recommandation) | Le fichier de métadonnées est nommé:<br>fr-<SIREN>-thème<date>.xml<br>L’identificateur de la métadonnée pour les données du thème est constitué de deux blocs : (1) bloc identifiant `le producteur / gestionnaire /autorité` : fr-<SIREN> (2) bloc identifiant la donnée : -`thème`<date>      |
-| Exemple | _Le nom du fichier de métadonnées du thème portant le numéro SIREN 422270515 publiées le 22 avril 2021, prend la forme :_<br><br>_fr-422270515-theme20210422.xml_    |
+
+Le fichier de métadonnées est nommé: `[Identifiant-TRI].xml` Exemple : `FRG_TRI_TOURS.xml`  
 
 ### Identification des données
 
 |  |  |
 |---|---|
-| _**Intitulé de la ressource**_ (obligatoire)  |   L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime.     |
+| _**Intitulé de la ressource**_ (obligatoire) | L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime.     |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/title     |
-| Exemple   | *Données du `thème` de l'agglomération de Bordeaux*     |
+| Consigne de saisie | Utiliser le nom long du TRI (valeur de `nom` de la table `tri_s` )   |
 
 |  |  |
 |---|---|
 | _**Résumé de la ressource**_ (obligatoire)  |    Le résumé doit décrire la ressource de façon compréhensible avec une définition commune et une indication géographique     |
 | Xpath ISO 19115  | identificationInfo[1]/*/abstract     |
 | Exemple   | *Données du `thème` de l'agglomération de Bordeaux. Ce lot est constitué conformément aux prescriptions du standard CNIG `thème` et fourni au `format`. (etc.)*     |
+| Consigne de saisie | `Données relatives au [nom long du TRI] conformes au standard CNIG "Cartographies de la Directive Inondation (version - date).` |
 
 |  |  |
 |---|---|
 | _**Type de la ressource**_ (obligatoire)  |    Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : dataset. Certaines interfaces de saisie proposent « jeu de données ».      |
 | Xpath ISO 19115  | hierarchyLevel      |
-| Exemple   | *dataset*     |
-
-       
+| Consigne de saisie | `dataset` |
 
 |  |  |
 |---|---|
 | _**Localisateur de la ressource**_ (obligatoire)  |   Le localisateur est un lien vers un site permettant de décrire plus finement la ressource mais pouvant également permettre le téléchargement ou l’accès aux données ressources.<br>Le localisateur est de préférence une URL (résolvable). Il peut y avoir plusieurs liens mais au moins un des liens doit être un accès public.       |
 | Xpath ISO 19115  | transferOptions/*/onLine/*/linkage/URL      |
-| Exemple de localisateur décrivant la ressource    | _http://cnig.gouv.fr/?page_id=`12345`_<br><br>_(page du site du CNIG contenant le lien vers le standard CNIG `thème`)_ |
-| Exemple de service de téléchargement |  |
-| Exemple de service de visualisation  |  | 
+| Consigne de saisie | Utiliser la valeur de l'URL de la référence internet associée au TRI pour le rapportage (valeur de `url_ref` de la table `tri_s`) |
 
 |  |  |
-|---|---|
-| _**Identificateur de ressource unique IRU**_ (obligatoire)  |   L’identificateur de ressource unique identifie la ressource elle-même (série de données ou service)        |
+| - | - |
+| _**Identificateur de ressource unique IRU**_ (obligatoire) | L’identificateur de ressource unique identifie la ressource elle-même (série de données ou service) |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/identifier/*/code   |
 | Exigence     | L'IRU doit être conforme aux guides CNIG relatifs à la saisie des éléments de métadonnées INSPIRE :<br>- « Guide de saisie des éléments de métadonnées INSPIRE »<br>- « Guide Identificateurs de Ressource Uniques » |
-| Remarque | Le champ IRU est "répétable" : il est possible de renseigner plusieurs IRU dans une fiche de métadonnées.  |
+| Consigne de saisie | utiliser l'identifant du tri (valeur de `id_tri` de la table `tri_s`) en minuscules précédé de l'URL `https://geostandards.gouv.fr/risques/carto_di/`. Exemple : `https://geostandards.gouv.fr/risques/carto_di/frg_tri_tours` |
 
 |  |  |
 |---|---|
 | _**FileIdentifier**_ (recommandé)  |   Le champ fileIdentifier est utilisé par tous les catalogues de métadonnées (en particulier par le Géocatalogue) comme identifiant de la fiche de métadonnées et est donc requis pour que la métadonnée soit déposée in fine sur le Géocatalogue.<br>Il doit être unique quelque-soit l’outil utilisé pour produire la fiche de métadonnées et peut prendre l’une des deux formes suivantes :<br>- identique aux règles de nommage du fichier de métadonnées (sans l’extension .xml)<br>- UUID aléatoirement généré par certaines plates-formes        |
 | Remarque   | L'IRU est un champ de métadonnées prescrit par Inspire, il identifie la ressource elle-même (série de données ou service).<br>Le fileIdentifier est un champ technique imposé par l'utilisation du protocole CSW, il identifie la fiche de métadonnées dans le catalogue.    |
 | Xpath ISO 19115 | fileIdentifier  |
-| Exemple  1 : Recommandation règle de nommage  | _fr-422270515-`thème`20210422.xml_  |
-| Exemple 2 : UUID   | _FEB67BA6-DFCE-4DAA-4515-70E77CAB4C44_   |
+| Consigne de saisie | utiliser l'identifant du tri (valeur de `id_tri` de la table `tri_s`). Exemple : `FRG_TRI-TOURS` |
 
 |  |  |
 |---|---|
 | _**Langue de la ressource**_ (obligatoire)  |   Le champ est à remplir avec le code à trois lettres de la langue de la ressource.<br>Les documents d'urbanisme en France doivent obligatoirement être rédigés en français, le champ est à remplir avec la valeur : fre<br>Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées INSPIRE, provient de la liste normalisée : http://www.loc.gov/standards/iso639-2/php/code_list.php       |
 | Xpath ISO 19115  | identificationInfo[1]/*/language  |
-| Exigence  | _fre_  |
+| Consigne de saisie | `fre` |
 
 |  |  |
 |---|---|
 | _**Encodage**_ (obligatoire)  | Le champ est à remplir avec les valeurs suivantes :<br>- format d'échange (format de distribution)<br>- version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »    |
 | Xpath ISO 19115  | distributionInfo/*/distributionFormat/*/name<br>distributionInfo/*/distributionFormat/*/version  |
-| Exemple   | `_format_`<br>`_version_` |
+| Consigne de saisie | `GeoPackage`<br>_`version de GPKG`_ |
 
 |  |  |
 |---|---|
 | _**Encodage des caractères**_ (obligatoire)  | Il s’agit de l’encodage des caractères utilisé dans le lot de données |
 | Xpath ISO 19115  | identificationInfo[1]/*/characterSet  |
-| Remarque   | Le format `format` impose l'encodage utf8  |
-| Exigence    | utf8   |
+| Consigne de saisie | `utf8` |
 
 |  |  |
 |---|---|
 | _**Type de représentation géographique**_ (obligatoire)  | Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : vector (traduction de « vecteur »)  |
 | Xpath ISO 19115  | identificationInfo[1]/*/spatialRepresentationType |
-| Exigence  | _vector_  |
+| Consigne de saisie | _`vector`_ |
 
 ### Classification des données et services géographiques
 |  |  |
 |---|---|
-| _**Catégorie thématique**_ (obligatoire)  | Le champ est à remplir avec la valeur suivante : `theme` (traduction de « `...` ») (liste : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory  )  |
+| _**Catégorie thématique**_ (obligatoire)  | Le champ est à remplir avec la valeur suivante : `geoscientificInformation` (Catégorie ISO 19115 correspondante de la thématique INSPIRE : "Zones à risque naturel" dans la liste : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory )  |
 | Xpath ISO 19115  | identificationInfo[1]/*/topicCategory  |
-| Exigence  | `_thème_`  |
+| Consigne de saisie | `geoscientificInformation`  |
 
 ### Mots-clés
 |  |  |
 |---|---|
-| _**Mots clés obligatoires**_  | Le champ est à remplir avec<br>- la désignation du thème :  `thème`<br>ensuite avec les mots-clés permettant aux systèmes d'informations d'identifier le lot de données :<br>- code SIREN de l’autorité compétente :<br>Mot clé : <code SIREN><br>Nom du thésaurus : Répertoire SIRENE<br>Date de publication : 20aa-mm-jj   |
+| _**Mots clés obligatoires**_  | Le champ est à remplir avec la désignation du thème INSPIRE :  `Zones à risque naturel` dans le thésaurus GEMET (General Multilingual Environmental Thesaurus) |
 | Xpath ISO 19115  | identificationInfo[1]/*/descriptiveKeywords/*/keyword<br>identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName   |
-| Exemple  | `_thème_`<br>_422270515_<br>_Répertoire SIRENE_<br>_2021-10-30_   |
+| Consigne de saisie | `Zones à risque naturel`<br>`https://www.eionet.europa.eu/gemet/fr/inspire-themes/`  |
 
 |  |  |
 |---|---|
 | _**Mots clés libres**_  | Ces mots-clés ne doivent pas être saisis ensemble dans un mot-clé unique mais dans des mots-clés séparés |
-| Exigence | données ouvertes |
 | Remarque 1 | un séparateur est inutile, car il y a un mot-clé par balise. |
-| Remarque 2 | D’après : http://cnig.gouv.fr/wp-content/uploads/2014/01/Guide-de-saisie-des-%C3%A9l%C3%A9ments-de-m%C3%A9tadonn%C3%A9es-INSPIRE-v1.1-final-light.pdf#page=18 : 
-« Dans le cas de données sous licence ouverte, il convient d’ajouter un mot-clé ‘données ouvertes’. »  |
+| Remarque 2 | D’après : http://cnig.gouv.fr/wp-content/uploads/2014/01/Guide-de-saisie-des-%C3%A9l%C3%A9ments-de-m%C3%A9tadonn%C3%A9es-INSPIRE-v1.1-final-light.pdf#page=18 : « Dans le cas de données sous licence ouverte, il convient d’ajouter un mot-clé `données ouvertes` »  |
+| Consigne de saisie | `territoire à risque important d'inondation (tri)`, `directive inondation`, `données ouvertes`, ... |
 
 ### Situation géographique
 |  |  |
@@ -1924,37 +1926,40 @@ Les données `de la thématique sont / ne sont` pas référencées par INSPIRE. 
 | _**Rectangle de délimitation géographique**_ (obligatoire)  | Pour l'ensemble des lots concernés, le rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule. Les coordonnées sont exprimées en WGS84  |
 | Xpath ISO 19115  | identificationInfo[1]/*/extent/*/geographicElement/*/westBoundLongitude<br>identificationInfo[1]/*/extent/*/geographicElement/*/eastBoundLongitude<br>identificationInfo[1]/*/extent/*/geographicElement/*/southBoundLatitude<br>>identificationInfo[1]/*/extent/*/geographicElement/*/northBoundLatiTude  |
 | Exemple | _O : -4.24_<br><br>_S : 41.34_<br><br>_E : 10.81_<br><br>_N : 50.79_  |
-| Exigences | Les coordonnées sont exprimées en WGS84<br>On utilise le point comme séparateur décimal, et non la virgule   |
+| Consigne de saisie | Les coordonnées sont exprimées en WGS84<br>On utilise le point comme séparateur décimal, et non la virgule |
 
 |  |  |
 |---|---|
 | _**Référentiel de coordonnées**_ (obligatoire)  | Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec le système de coordonnées des données, avec utilisation du code EPSG ou du registre IGN-F.   |
 | Xpath ISO 19115  | referenceSystemInfo/*/referenceSystemIdentifier/*/code   |
-| Code xml  | <gmx:Anchor<br>xlink:href="http://www.opengis.net/def/crs/EPSG/0/2154">EPSG:2154</gmx:Anchor><br>ou :<br><gmx:Anchor<br>xlink:href="http://registre.ign.fr/ign/IGNF/crs/IGNF/RGF93LAMB93">IGNF:RGF93LAMB93</gmx:Anchor>   |  
-| Exemple  | Pour la métropole avec code EPSG : http://www.opengis.net/def/crs/EPSG/0/2154<br>Pour l'outre-mer (La Réunion) avec registre IGN-F :<br>http://registre.ign.fr/ign/IGNF/crs/IGNF/RGR92UTM40S   |
+| Code xml | <gmx:Anchor<br>xlink:href="http://www.opengis.net/def/crs/EPSG/0/2154">EPSG:2154</gmx:Anchor><br>ou :<br><gmx:Anchor<br>xlink:href="http://registre.ign.fr/ign/IGNF/crs/IGNF/RGF93LAMB93">IGNF:RGF93LAMB93</gmx:Anchor>   |  
+| Exemple  | Pour la métropole avec code EPSG : http://www.opengis.net/def/crs/EPSG/0/2154<br>Pour l'outre-mer (La Réunion) avec registre IGN-F :<br>http://registre.ign.fr/ign/IGNF/crs/IGNF/RGR92UTM40S |
+| Consigne de saisie | Valeur à prendre parmi celles de la partie [Systèmes de référence](#systèmes-de-référence-spatiaux) |
 
 ### Références temporelles
 |  |  |
 |---|---|
 | _**Dates de référence**_ (obligatoire)  | Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données.<br>Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.  |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date  |
-| Exemple  | _2021-04-22_<br><br>Type de date : _création_ (la première fois) / _révision_ (les fois suivantes)  |
+| Exemple | _2021-04-22_<br><br>Type de date : _création_ (la première fois) / _révision_ (les fois suivantes)  |
+| Consigne de saisie | Utiliser la valeur de date la plus récente de `date_carte` des tables `carte_risques_inondation_s` et `carte_surfaces_inondables_s` |
 
 ### Généalogie et résolution spatiale
 |  |  |
 |---|---|
 | _**Généalogie**_ (obligatoire)  | Le champ est à remplir avec un texte faisant état de l’historique du traitement et/ou de la qualité générale de la série de données géographiques, on mentionnera les éléments suivants :<br>- le référentiel source de la géométrie<br>- la version du standard de référence<br>- le numéro de version du lot et sa durée de vie.<br>- etc.   |
 | Xpath ISO 19115  | dataQualityInfo/*/lineage/*/statement<br>Note : L’élément scope>level doit être fixé à « dataset ».   |
-| Exemple  | _Données de `thème` de l'agglomération de Bordeaux. Ce lot de données produit a été numérisé à partir du référentiel géométrique `référentiel`, millésime `millésime` en suivant le processus `processus`, avec les moyens matériels suivants `moyens`_  |
+| Consigne de saisie  | S'appuyer sur la liste des [référentiels de numérisation](#référentiels-de-numérisation) pour indiquer la source des données. |
 
 |  |  |
 |---|---|
 | _**Résolution spatiale**_ (obligatoire)  | Le champ est à remplir avec la valeur entière correspondant au dénominateur de l’échelle.<br>Ce dénominateur est celui de l’échelle du plan de référence pour la production du document numérique ou la plus petite échelle (le plus grand dénominateur) des différents plans ayant servi à la production des documents numériques.   |
 | Xpath ISO 19115  | identificationInfo[1]/*/spatialResolution/*/equivalentScale/*/denominator  |
-| Exemple  | *5000* (dans le cas d’une échelle 1/5000)   |
+| Consigne de saisie  | `25000` (cas général, indiquer un plus petit dénominateur d'échelle si des données d'aléas PPR plus résolues ont été utilisées)   |
 
 ### Mesures de qualité complémentaires
-Pour chaque mesure de la qualité (cf. [§Partie Qualité des données](bookmark://_heading=h.kgcv8k)), faire apparaître les champs suivants : 
+
+Pour chaque mesure de la qualité (cf. [Qualité des données](#éléments-de-qualité)), faire apparaître les champs suivants : 
 
 |  |  |
 |---|---|
@@ -1971,15 +1976,15 @@ Pour chaque mesure de la qualité (cf. [§Partie Qualité des données](bookmark
 ### Conformité
 |  |  |
 |---|---|
-| _**Spécification**_ (obligatoire)  | On indique la conformité au standard CNIG et au `format`<br>Le champ est à remplir avec les éléments suivants :<br>- titre : référence du standard sous la forme : CNIG `thème`<br>- date : date de validation du standard sous la forme AAAA-MM-JJ<br>- type de date : publication<br>- titre : référence du format sous la forme : `format`<br>- date : version du format sous la forme AAAA-MM-JJ<br>- type de date : publication   |
+| _**Spécification**_ (obligatoire)  | On indique la conformité au standard CNIG et au format<br>Le champ est à remplir avec les éléments suivants :<br>- titre : référence du standard sous la forme : `CNIG Cartographies de la Directive Inondation`<br>- date : date de validation du standard sous la forme AAAA-MM-JJ<br>- type de date : publication<br>- titre : référence du format sous la forme : `format`<br>- date : version du format sous la forme AAAA-MM-JJ<br>- type de date : publication   |
 | Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/specification |
-| Exemple  | _CNIG  `thème et version du standard`_<br><br>_2021-12-21_<br><br>_publication_<br><br>_`format`_<br><br>_v2.2_<br><br>_publication_   |
+| Exemple  | `CNIG Cartographies de la Directive Inondation`<br><br>_2027-04-01_<br><br>_publication_<br><br>`GeoPackage`<br><br>_1.4_<br><br>_publication_   |
 
 |  |  |
 |---|---|
 | _**Degré**_  | Il s'agit du degré de conformité des données avec les spécifications.<br>Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non conformité).<br><br>La balise est laissée vide en cas de non évaluation de la conformité.<br><br>Le degré est considéré comme « non évalué » si le champ n’est pas présent.   |
 | Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/pass   |
-| Exigence   | true / false / ou champ laissé vide  |
+| Exigence | true / false / ou champ laissé vide  |
 | Exemple  | *true* |
 
 ### Contraintes en matière d’accès et d’utilisation 
@@ -1987,54 +1992,36 @@ Pour chaque mesure de la qualité (cf. [§Partie Qualité des données](bookmark
 |---|---|
 | _**Conditions applicables à l’accès et à l’utilisation**_  | Le champ est à remplir avec les mentions concernant :<br>- les contraintes légales<br>- les contraintes de sécurité<br>- les contraintes d'usage    |
 | Xpath ISO 19115  | Condition d’accès et d’utilisation :<br>identificationInfo[1]/*/resourceConstraints/*/useLimitation<br>Restriction d’accès public :<br>identificationInfo[1]/*/resourceConstraints/*/accessConstraints=’otherRestrictions’ et :<br>identificationInfo[1]/*/resourceConstraints/*/otherConstraints   |
-| Recommandation | Contraintes d'usage : *Licence ouverte v2.0*<br>Contraintes d’accès : *Pas de restriction d’accès public*  |
+| Consigne de saisie | Contraintes d'usage : *Licence ouverte v2.0*<br>Contraintes d’accès : *Pas de restriction d’accès public*  |
 
 ### Organisation responsable de la ressource 
 |  |  |
 |---|---|
 | _**Organisme responsable de la ressource**_  | Le champ est à remplir avec :<br>- l’organisme propriétaire de la donnée, une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle, en aucun cas nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.<br>- Le rôle de cet organisme : owner (traduction de « propriétaire »)    |
 | Xpath ISO 19115  | identificationInfo[1]/*/pointOfContact/*/organisationName<br>identificationInfo[1]/*/pointOfContact/*/contactInfo/*/address/*/electronicMailAddress<br>identificationInfo[1]/*/pointOfContact/*/role   |
-| Exemple  | *Bordeaux Métropole*  |
-| Exemple  | *https://www.bordeaux-metropole.fr/Metropole/Bordeaux-Metropole-a-votre-service/Contacter-Bordeaux-Metropole*  |
-| Exemple  | *owner*   |
+| Exemple  | *DREAL Occitanie*<br/>  *https://www.occitanie.developpement-durable.gouv.fr/spip.php?page=contact*<br/> *owner* |
 
-Métadonnées concernant les métadonnées 
+### Métadonnées concernant les métadonnées 
 
 |  |  |
 |---|---|
 | _**Point de contact pour la métadonnée**_  | Le champ est à remplir avec le nom de l’organisation :<br>- l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource)<br>- une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle non nominative.A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.<br>- La nature de cette adresse : pointOfcontact (traduction de « Point de contact »)   |
 | Xpath ISO 19115  |contact*/organisationName<br>contact/*/address/*/electronicMailAddress<br>contact/*/role |
-| Exemple   | *Bordeaux Métropole*  |
-| Exemple  | *https://www.bordeaux-metropole.fr/Metropole/Bordeaux-Metropole-a-votre-service/Contacter-Bordeaux-Metropole*  |
-| Exigence    | *pointOfContact*   |
+| Exemple  | *DREAL Occitanie*<br/>  *https://www.occitanie.developpement-durable.gouv.fr/spip.php?page=contact*<br/> *pointOfContact* |
+
 
 |  |  |
 |---|---|
 | _**Date des métadonnées**_  | Date à laquelle l’enregistrement des métadonnées a été fait ou révisé<br>Elle est exprimée sous la forme AAAA-MM-JJ   |
 | Xpath ISO 19115  | dateStamp   |
-| Exemple   | *2021-04-29*   |
+| Exemple | *2021-04-29*   |
+
 
 |  |  |
 |---|---|
 | _**Langue des métadonnées**_  | Langue des métadonnées. Cet élément prend la valeur fre pour « français »   |
 | Xpath ISO 19115  | language |
-| Exemple   | *fre*  |
-
-|  |  |
-|---|---|
-| **Nom du format**  | Contient le nom d'un support de données  |
-| **Encodage**  | contient le nom complet de la norme de codage des caractères utilisée<br><br><u>Xpath ISO 19115</u> : MD_CharacterSetCode  |
-| **Version**   | (facultatif) Contient une chaîne d'identification de version du format de données (date, numéro, etc.)   |
-| **Spécification**   | (facultatif) Contient le nom d'un sous-ensemble, d'un profil ou d'une spécification de produit du format  |
-| **Structure**   | (facultatif) Contient la structure d'un fichier de livraison   |
-| **Langue**   | (facultatif) Chaque occurrence contient un code pour les langues utilisées dans la livraison<br><br><u>Xpath ISO 19115</u> : LanguageCode   |
-
-
-# Informations additionnelles `<optionnelle>`
-
-
-
-
+| Consigne de saisie | `fre`  |
 
 
 
