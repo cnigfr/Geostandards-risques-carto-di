@@ -2019,19 +2019,221 @@ Pour chaque mesure de la qualité (cf. [Qualité des données](#éléments-de-qu
 
 |  |  |
 |---|---|
-| _**Langue des métadonnées**_  | Langue des métadonnées. Cet élément prend la valeur fre pour « français »   |
+| _**Langue des métadonnées**_  | Langue des métadonnées. Cet élément prend la valeur `fre` pour « français »   |
 | Xpath ISO 19115  | language |
 | Consigne de saisie | `fre`  |
 
 
 
-# Annexe A `<optionnelle>``<**Titre de l’annexe** >` 
+# Annexe A - Règles de passage COVADIS DI -> CNIG Cartographies DI` 
 
-`**Normative/Informative**`
+`**Informative**`
 
-**A.1.**  `<**Titre** >` 
+Le tableau suivant indique comment remplir chaque table du présent standard à partir des données des tables de l'ancien standard COVADIS DI qu'il remplace. Ces règles ont pour but de faciliter la migration du patrimoine des données TRI. 
 
-  **A.1.1.**  `<**Titre** >` 
+Pour chaque table, il est indiqué comment remplir la valeur du champ "Nom colonne" à partie de la (ou des) "table(s) COVADIS" et des valeurs du (ou des) champ(s) correspondant(s) ("colonne(s) COVADIS). La colonne "Commentaire" précise des consignes additionnelles de saisie le cas échéant.
+
+## Correspondances table `tri_s`
+
+A un objet de la table `tri_s` correspond un objet de la table COVADIS `N_[prefixTri]_TRI_S_dd` avec les correspondances suivantes.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_tri`** | `N_[prefixTri]_TRI_S_ddd` | `ID_TRI` | |
+| `nom` | `N_[prefixTri]_TRI_S_ddd` | `NOM` | |
+| **`id_procedure`** | -  | - | cf. valeur `CODE PROCEDURE` dans GASPAR |
+| `lib_procedure` | - | - | cf. valeur `LIBELLE PROCEDURE` dans GASPAR |
+| **`date_procedure`** | - | - | cf. valeur `ARRETE_PREF_COORD` dans GASPAR |
+| `url_ref` | - | - | - |
+| `type_ref` | - | - | - | 
+| `geom` | `N_[prefixTri]_TRI_S_ddd` | géométrie de l'objet |  |
+
+## Correspondances table `carte_surfaces_inondables_s`
+
+A un objet de la table `carte_surfaces_inondables_s` correspond un objet de la table COVADIS `N_[prefixTri]_CARTE_INOND_S_ddd` avec les correspondances suivantes.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_csi`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | ID_CARTE |  |
+| **`id_tri`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | ID_TRI |  |
+| **`date_carte`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | `DATAPPRO` |  |
+| **`occurrence`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios) |
+| `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | géométrie de l'objet |  |
+
+
+## Correspondances table `carte_risques_inondation_s`
+
+A un objet de la table `carte_risques_inondation_s` correspond un objet de la table COVADIS `N_[prefixTri]_CARTE_RISQ_S_ddd` avec les correspondances suivantes.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_cri`** | `N_[prefixTri]_CARTE_RISQ_S_ddd`  | `ID_CARTE` |  |
+| **`id_tri`** | `N_[prefixTri]_CARTE_RISQ_S_ddd` | `ID_TRI` |  |
+| **`date_carte`** | `N_[prefixTri]_CARTE_RISQ_S_ddd` | `DATAPPRO` |  |
+| `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | géométrie de l'objet |  |
+
+
+## Correspondances table `surface_inondable_s`
+
+Les objets de la table `surface_inondable_s` sont générés à partir des objets de la table `N_[prefixTri]_INONDABLE_S_ddd` ou des tables `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` si les surfaces ont été réparties sur plusieurs tables en fonction de l'aléa, du scénario ou du cours d'eau.
+
+La contrainte de géométrie en polygones simples de la table `surface_inondable_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_sin`** |  |  | Nouveaux identifiants à générer. |
+| **`id_tri`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `ID_TRI` |  |
+| **`type_alea`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `TYP_INOND` | Cf. [Correspondances de valeurs type aléa - type inondation](#correspondances-type-aléa-et-inondation) |
+| **`occurrence`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios) |
+| **`date_calcul`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| `origine_inond` | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `COURS_DEAU` |  |
+| `geom` | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | géométrie déduite de l'objet  |  |
+
+
+## Correspondances table `zone_iso_classe_hauteur_s`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_zch`** |  |  |
+| **`id_tri`** |  |  |
+| **`id_sin`** |  |  |
+| **`palier_hauteur`** |  |  |
+| `origine_inond` |  |  |
+| `geom` | |  |
+
+
+## Correspondances table `zone_iso_classe_vitesse_s`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_zcv`** |  |  |
+| **`id_tri`** |  |  |
+| **`id_sin`** |  |  |
+| **`vitesse_quali`** |  |  |
+| `geom` |  |  |
+
+## Correspondances table `zone_iso_classe_debit_s`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_zcd`** |  |  |
+| **`id_tri`** |  |  |
+| **`id_sin`** |  |  |
+| **`debit_lin_min`** |  |  |
+| `date_calcul` |  |  |
+| `geom` |  |  |
+
+## Correspondances table `ligne_iso_cote_l`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_lic`** |  |  |
+| **`id_tri`** |  |  |
+| **`id_sin`** |  |  |
+| **`cote`** |  |  |
+| `date_calcul` |  |  |
+| `geom` |  |  |
+
+## Correspondances table `point_remarquable_cvd_p`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_pre`** |  |  |
+| **`id_tri`** |  |  |
+| **`id_sin`** |  |  |
+| `cote` |  |  |
+| `vitesse` |  |  |
+| `debit_lin` |  |  |
+| `azimuth` |  |  |
+| `geom` |  |  |
+
+## Correspondances table `zone_protegee_s`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_zpr`** |  |  |
+| **`id_tri`** |  |  |
+| `description` |  |  |
+| **`occurrence`** |  |  |
+| `niveau_protec` |  |  |
+| `geom` |  |  |
+
+## Correspondances table `ouvrageprotecteur_l`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_ouv`** |  |  |
+| **`id_tri`** |  |  |
+| `nom` |  |  |
+| `id_ref_ext` |  |  |
+| **`ref_externe`** |  |  |
+| `ref_externe_autre` |  |  |
+| `type_ouv_protec` |  |  |
+| `role_protection` |  |  |
+| `occurrence` |  |  |
+| `geom` |  |  |
+
+## Correspondances table `zonesuralea_s`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_zsa`** |  |  |
+| **`id_tri`** |  |  |
+| `description` |  |  |
+| **`occurrence`** |  |  |
+
+## Correspondances tables `enjeu_s`, `enjeu_l` et `enjeu_p`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_enj`** |  |  |
+| **`id_tri`** |  |  |
+| **`nom`** |  |  |
+| `id_ref_externe` |  |  |
+| `ref_externe` |  |  |
+| **`type_enjeu`** |  |  |
+| `date_enjeu` |  |  |
+| **`geom`** |  |  |
+
+## Correspondances table `enjeux_raportes_tri`
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
+| - | - | - |
+| **`id_ert`** |  |  |
+| **`occurrence`** |  |  |
+| `nb_hab_perm` |  |  |
+| `nb_hab_sais` |  |  |
+| `nb_emplois` |  |  |
+
+
+### Correspondances Probabilite aléa et scénarios
+
+Les valeurs de code de [`typeprobabilitealea`](#table-de-valeurs-typeprobabilitealea) correspondent aux valeurs suivantes des codes de scénario COVADIS.
+
+| code `typeprobabilitealea` | code scénario COVADIS |
+| - | - |
+| `For` | `01For` |
+| `Forcc_ct` | `01Forcc_ct` |
+| `Forcc_100` | `01Forcc_100` |
+| `Moy` | `02Moy` |
+| `Moycc_ct` | `03Mcc_ct` |
+| `Moycc_100` | `03Mcc` |
+| `Fai` | `04Fai` |
+| `Faicc_ct` | `04Faicc_ct` |
+| `Faicc_100` | `04Fai_100` |
+
+### Correspondances type aléa et inondation
+
+Les valeurs de code de [`typealeacartodi`](#table-de-valeurs-typealeacartodi) correspondent aux valeurs suivantes des codes de type d'inondation COVADIS.
+
+| code `typealeacartodi` | type inondation COVADIS |
+| - | - |
+| `112` | `01` (débordement de cours d’eau) |
+| `113` |  |
+| `114` | `02` (ruissellement) |
+| `115` |  |
+| `116` | `04` (débordement des eaux souterraines) |
+| `117` | `03` (submersion marine) |
 
 
 
