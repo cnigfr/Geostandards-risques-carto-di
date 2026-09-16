@@ -1570,6 +1570,7 @@ La table `zonesuralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | `description` | `TEXT` | Saisie facultative. Description de la zone de sur-aléa. | `Bande de précaution à l'arrière de la digue xxx` |
 | **`occurrence`** | `TEXT` | Saisie obligatoire. Probabilité d'aléa pour laquelle la zone de sur-aléa est calculée. Valeurs à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea). | `For` |
+| `geom` | `MULTIPOLYGON` | Polygone(s) de la zone. | |
 
 ##### Table `enjeu_s`
 
@@ -2082,118 +2083,159 @@ La contrainte de géométrie en polygones simples de la table `surface_inondable
 | Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_sin`** |  |  | Nouveaux identifiants à générer. |
-| **`id_tri`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `ID_TRI` |  |
-| **`type_alea`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `TYP_INOND` | Cf. [Correspondances de valeurs type aléa - type inondation](#correspondances-type-aléa-et-inondation) |
-| **`occurrence`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios) |
-| **`date_calcul`** | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
-| `origine_inond` | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | `COURS_DEAU` |  |
-| `geom` | `N_[prefixTri]_INONDABLE_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` | géométrie déduite de l'objet  |  |
-
+| **`id_tri`** | `N_[prefixTri]_INONDABLE_S_ddd` | `ID_TRI` |  |
+| **`type_alea`** | `N_[prefixTri]_INONDABLE_S_ddd` | `TYP_INOND` | Cf. [Correspondances de valeurs type aléa - type inondation](#correspondances-type-aléa-et-inondation) |
+| **`occurrence`** | `N_[prefixTri]_INONDABLE_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios) |
+| **`date_calcul`** | `N_[prefixTri]_INONDABLE_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| `origine_inond` | `N_[prefixTri]_INONDABLE_S_ddd` | `COURS_DEAU` |  |
+| `geom` | `N_[prefixTri]_INONDABLE_S_ddd` | géométrie déduite de l'objet  |  |
 
 ## Correspondances table `zone_iso_classe_hauteur_s`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_zch`** |  |  |
-| **`id_tri`** |  |  |
-| **`id_sin`** |  |  |
-| **`palier_hauteur`** |  |  |
-| `origine_inond` |  |  |
-| `geom` | |  |
+Les objets de la table `zone_iso_classe_hauteur_s` sont générés à partir des objets de la table `N_[prefixTri]_ISO_HT_S_ddd` ou des tables `N_[prefixTri]_ISO_HT_[Alea]_[Scenario]_[NomCoursEau]_S_ddd` si les surfaces ont été réparties sur plusieurs tables en fonction de l'aléa, du scénario ou du cours d'eau.
+
+La contrainte de géométrie en polygones simples de la table `zone_iso_classe_hauteur_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_zch`** |  |  | Nouveaux identifiants à générer. |
+| **`id_tri`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_TRI` |  |
+| **`id_sin`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_SIN` | la valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s).|
+| **`palier_hauteur`** | `N_[prefixTri]_ISO_HT_S_ddd` | `HT_MIN` et `HT_MAX` | trouver la [valeur de palier](#typeclassehauteureau) correspondant le mieux à la plage délimitée par les valeurs de `HT_MIN` et `HT_MAX`|
+| `origine_inond` | `N_[prefixTri]_ISO_HT_S_ddd` | `COURS_DEAU` |  |
+| `geom` | `N_[prefixTri]_ISO_HT_S_ddd` | géométrie déduite de l'objet |  |
 
 
 ## Correspondances table `zone_iso_classe_vitesse_s`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_zcv`** |  |  |
-| **`id_tri`** |  |  |
-| **`id_sin`** |  |  |
-| **`vitesse_quali`** |  |  |
-| `geom` |  |  |
+Les objets de la table `zone_iso_classe_vitesse_s` sont générés à partir des objets de la table `N_[prefixTri]_ECOUL_S_ddd`.
+
+La contrainte de géométrie en polygones simples de la table `zone_iso_classe_vitesse_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_zcv`** |  |  | Nouveaux identifiants à générer. |
+| **`id_tri`** | `N_[prefixTri]_ECOUL_S_ddd` | `ID_TRI` |  |
+| **`id_sin`** | `N_[prefixTri]_ECOUL_S_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
+| **`vitesse_quali`** | `N_[prefixTri]_ECOUL_S_ddd` | VITESSE | Les valeurs de [typevitesseecoulement](#table-de-valeurs-typevitesseecoulement) sont les mêmes que celles du standard COVADIS. |
+| `date_calcul` | `N_[prefixTri]_ECOUL_S_ddd` | `DATEENTREE` |  Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul.  |
+| `geom` | `N_[prefixTri]_ECOUL_S_ddd` | Géométrie déduite de l'objet |  |
 
 ## Correspondances table `zone_iso_classe_debit_s`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_zcd`** |  |  |
-| **`id_tri`** |  |  |
-| **`id_sin`** |  |  |
-| **`debit_lin_min`** |  |  |
-| `date_calcul` |  |  |
-| `geom` |  |  |
+Les objets de la table `zone_iso_classe_debit_s` sont générés à partir des objets de la table `N_[prefixTri]_ISO_DEB_S_ddd`.
+
+La contrainte de géométrie en polygones simples de la table `zone_iso_classe_debit_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_zcd`** |  |  | Nouveaux identifiants à générer. |
+| **`id_tri`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `ID_TRI` |  |
+| **`id_sin`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
+| **`debit_lin_min`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `DEBLIN_MIN` |  | 
+| `debit_lin_max` | `N_[prefixTri]_ISO_DEB_S_ddd` | `DEBLIN_MAX` |  | 
+| `date_calcul` | `N_[prefixTri]_ISO_DEB_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| `geom` | `N_[prefixTri]_ISO_DEB_S_ddd` | Géométrie déduite de l'objet |  |
 
 ## Correspondances table `ligne_iso_cote_l`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_lic`** |  |  |
-| **`id_tri`** |  |  |
-| **`id_sin`** |  |  |
-| **`cote`** |  |  |
-| `date_calcul` |  |  |
-| `geom` |  |  |
+Les objets de la table `ligne_iso_cote_l` sont générés à partir des objets de la table `N_[prefixTri]_ISO_COTE_L_ddd` avec une correspondance de un pour un.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_lic`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_LIC` |  |
+| **`id_tri`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_TRI` |  |
+| **`id_sin`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
+| **`cote`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `COTE` |  |
+| `date_calcul` | `N_[prefixTri]_ISO_COTE_L_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| `geom` | `N_[prefixTri]_ISO_COTE_L_ddd` | Géométrie de l'objet. |  |
 
 ## Correspondances table `point_remarquable_cvd_p`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_pre`** |  |  |
-| **`id_tri`** |  |  |
-| **`id_sin`** |  |  |
-| `cote` |  |  |
-| `vitesse` |  |  |
-| `debit_lin` |  |  |
-| `azimuth` |  |  |
-| `geom` |  |  |
+Les objets de la table `point_remarquable_cvd_p` sont générés à partir des objets de la table `N_[prefixTri]_COTE_VIT_DEB_P_ddd` avec une correspondance de un pour un.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_pre`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_POINT` |  |
+| **`id_tri`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_TRI` |  |
+| **`id_sin`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
+| `cote` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `COTE` |  |
+| `vitesse` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `VITESSE` |  |
+| `debit_lin` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `DEBLIN` |  |
+| `azimuth` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `AZIMUTH` |  |
+| `geom` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | Géométrie de l'objet. |  |
 
 ## Correspondances table `zone_protegee_s`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_zpr`** |  |  |
-| **`id_tri`** |  |  |
-| `description` |  |  |
-| **`occurrence`** |  |  |
-| `niveau_protec` |  |  |
-| `geom` |  |  |
+Les objets de la table `zone_protegee_s` sont générés à partir des objets des tables `N_[prefixTri]_SOUST_INOND_S_ddd` et `N_[prefixTri]_ZONE_PROTEG_S_ddd`.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_zpr`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_ZONE` |  |
+| **`id_tri`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_TRI` |  |
+| `description` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| **`occurrence`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `SCENARIO` |  Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
+| `niveau_protec` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| `geom` | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | Géométrie de l'objet. |  |
 
 ## Correspondances table `ouvrageprotecteur_l`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_ouv`** |  |  |
-| **`id_tri`** |  |  |
-| `nom` |  |  |
-| `id_ref_ext` |  |  |
-| **`ref_externe`** |  |  |
-| `ref_externe_autre` |  |  |
-| `type_ouv_protec` |  |  |
-| `role_protection` |  |  |
-| `occurrence` |  |  |
-| `geom` |  |  |
+Les objets de la table `ouvrageprotecteur_l` sont générés à partir des objets de la table `N_[prefixTri]_OUV_PROTEC_L_ddd`.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_ouv`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_OUVRAGE` |  |
+| **`id_tri`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_TRI` |  |
+| `nom` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| `id_ref_ext` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_SIOUH` ou `ID_ROE` |  |
+| **`ref_externe`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_SIOUH` ou `ID_ROE` | `O1` (ROE) si `ID_ROE` est renseigné `02` (SIOUH II) si `ID_SIOUH` est renseigné ; `99` sinon. |
+| `ref_externe_autre` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| `type_ouv_protec` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| `role_protection` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| `occurrence` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `SCENA_RUPT` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
+| `geom` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | Géométrie de l'objet. |  |
 
 ## Correspondances table `zonesuralea_s`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_zsa`** |  |  |
-| **`id_tri`** |  |  |
-| `description` |  |  |
-| **`occurrence`** |  |  |
+Les objets de la table `zonesuralea_s` sont générés à partir des objets de la table `N_[prefixTri]_SURALEA_S_ddd`.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |Commentaire |
+| - | - | - | - |
+| **`id_zsa`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_ZONE` |  |
+| **`id_tri`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_TRI` |  |
+| `description` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| **`occurrence`** | `N_[prefixTri]_SURALEA_S_ddd` | `SCENARIO` |  Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
+| `geom` | `N_[prefixTri]_SURALEA_S_ddd` | Géométrie de l'objet. |  |  |
 
 ## Correspondances tables `enjeu_s`, `enjeu_l` et `enjeu_p`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_enj`** |  |  |
-| **`id_tri`** |  |  |
-| **`nom`** |  |  |
-| `id_ref_externe` |  |  |
-| `ref_externe` |  |  |
-| **`type_enjeu`** |  |  |
-| `date_enjeu` |  |  |
-| **`geom`** |  |  |
+Les objets des tables `enjeu_s`, `enjeu_l` et `enjeu_p` sont générés à partir des objets des tables `N_[prefixTri]_ENJEU_DCE_S_ddd`, `N_[prefixTri]_ENJEU_STEU_P_ddd`, `N_[prefixTri]_ENJEU_IPPC_P_ddd`, `N_[prefixTri]_ENJEU_IED_P_ddd`, `N_[prefixTri]_ENJEU_CRISE_[L|P]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd` et `N_[prefixTri]_ENJEU_PATRIM_[S|P]_ddd`. 
+
+La répartition dans les tables `enjeu_s`, `enjeu_l` et `enjeu_p` dépend de la nature de la géométrie de la table d'enjeu d'origine indiquée par le suffixe : `_S_`, `_L_` ou `_P_`.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_enj`** |  |  | Identifiant à générer |
+| **`id_tri`** | `N_[prefixTri]_TRI_S_ddd` | `ID_TRI` | Il n'y a pas de champ `ID_TRI` dans les tables d'enjeu COVADIS. |
+| **`nom`** | `N_[prefixTri]_ENJEU_DCE_S_ddd` | `EU_CD_PA` | Même valeur que pour `id_ref_externe` |
+| **`nom`** | `N_[prefixTri]_ENJEU_STEU_P_ddd` | `CODE_STEU` | Même valeur que pour `id_ref_externe`  |
+| **`nom`** | `N_[prefixTri]_ENJEU_IPPC_P_ddd`, `N_[prefixTri]_ENJEU_IED_P_ddd` | `NOM` |  |
+| **`nom`** | `N_[prefixTri]_ENJEU_CRISE_[LP]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd`, `N_[prefixTri]_ENJEU_PATRIM_[SP]_ddd` | `NOM_SI_EXT` |  |
+| `id_ref_externe` | `N_[prefixTri]_ENJEU_DCE_S_ddd` | `EU_CD_PA` |  |
+| `id_ref_externe` | `N_[prefixTri]_ENJEU_STEU_P_ddd` | `CODE_STEU` |  |
+| `id_ref_externe` | `N_[prefixTri]_ENJEU_IPPC_P_ddd` | `CODE_IPPC` |  |
+| `id_ref_externe` | `N_[prefixTri]_ENJEU_IED_P_ddd` | `CODE_IED` |  |
+| `id_ref_externe` | `N_[prefixTri]_ENJEU_CRISE_[LP]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd`, `N_[prefixTri]_ENJEU_PATRIM_[SP]_ddd` | `ID_SI_EXT` |  |
+| `ref_externe` |  `N_[prefixTri]_ENJEU_DCE_S_ddd`, `N_[prefixTri]_ENJEU_STEU_P_ddd` |  | valeur `SI Eau`  |
+| `ref_externe` | `N_[prefixTri]_ENJEU_IPPC_P_ddd`, `N_[prefixTri]_ENJEU_IED_P_ddd` |  | Valeur `S3IC`  |
+| `ref_externe` | `N_[prefixTri]_ENJEU_CRISE_[LP]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd`, `N_[prefixTri]_ENJEU_PATRIM_[SP]_ddd` |  | Valeur à déterminer au cas par cas selon le type d'enjeu. |
+| **`type_enjeu`** | _Toutes tables_ |  | Cf. [correspondances nomenclature enjeux et covadis](#correspondances-nomenclature-enjeux-et-covadis)  |
+| `date_enjeu` | _Toutes tables_ | `DATIMPORT` |  |
+| **`geom`** | Géométrie de l'objet. |  |  |
+
+### Correspondances nomenclature des enjeux et COVADIS
+
+
 
 ## Correspondances table `enjeux_raportes_tri`
 
