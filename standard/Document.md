@@ -74,7 +74,7 @@ La famille des géostandards risques a pour objectif de standardiser les donnée
 
 Elle est constituée d'un document socle [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières.
 
-Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_PPR:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le [cadre réglementaire](#cadre-réglementaire) transposé de la Directive européenne sur les inondations.
+Ce document est le profil applicatif qui précise et implémente les concepts communs de [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md) pour décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le [cadre réglementaire](#cadre-réglementaire) transposé de la Directive européenne sur les inondations.
 
 Ces cartographies doivent servir à l'établissement de plans de gestion des risques d'inondation (PGRI) à l'échelle des grands bassins hydrographiques et l'élaboration des stratégies locales de gestion des risques d'inondation (SLGRI) sur ces territoires. Ces éléments font l'objet d'un rapportage par cycles de six ans auprès de la Commission Européenne.
 
@@ -90,23 +90,27 @@ Ce document s'adresse :
 
 * aux services de l'État ou assimilés, chargés de produire la cartographie des TRI, la maintenir, la diffuser ou la rapporter auprès de le Commission Européenne ;
 
-* aux utilisateurs de ces données de cartographies, amenés à en prendre connaissance, les exploiter : services de l'État, collectivités locales, professionnels, bureaux d'études, ou grand public.
+* aux utilisateurs de ces données de cartographies, amenés à en prendre connaissance, les exploiter : services de l'État, collectivités locales, professionnels, bureaux d'études ou grand public.
 
 ## Comment lire le document
 
-`Le contenu du présent standard est réparti dans X parties et comporte Y annexes.`
+Le contenu du présent standard est organisé selon les grandes parties suivantes :
 
-`La partie 1 constitue une préface qui synthétise les informations du standard. Elle permet de retrouver ...`
+* La présente partie [Présentation du document](#présentation-du-document) précise le contexte, le cadre de rédaction et les clés de compréhension de ce document.
 
-`La partie 2 présente une introdutcion au document, permettant de le contextualiser et de le comprendre.`
+* La partie [Contexte d'application](#contexte-dapplication) précise le domaine et les cas d'utilisation où le standard est impliqué et les acteurs concernés.
 
-`La partie 3 est de niveau abstrait. Elle présente les concepts du référentiel et présente des potentiels cas d'utilisation.>`
+* La partie [Contenu et structure de la donnée](#contenu-et-structure-de-la-donnée) présente les concepts abstraits définis dans ce standard, structurés à l'aide de diagrammes UML et d'un catalogue d'objets.
 
-`La partie 4 contient les recommandations, obligations ou permissions liées au standard.>`
+* La partie [Recommandation pour les données](#recommandations-pour-les-données) précise les exigences et recommandations de qualité et d'organisation des données.
 
-`La partie 5 est plus opérationnelle : Elle décrit l'implémentation du standard.>`
+* La partie [Règles de symbologie](#règles-de-symbologie) indique des recommandations de représentation des données sur les cartographies.
 
-`L'annexe A est informative et spécifie xxx.`
+* La partie [Diffusion](#diffusion) définit le schéma physique du modèle permettant l'implémentation et l'échange des données.
+
+* La partie [Métadonnées](#métadonnées) précise les éléments de métadonnées nécessaires pour la description conforme à la directive INSPIRE d'un jeu de données avec des consignes de remplissage de ces éléments.
+
+* L'[Annexe A](#annexe-a---règles-de-passage-covadis-di---cnig-cartographies-di) indique les règles de passage entre les tables de l'ancien standard COVADIS DI et les tables du présent standard.
 
 ## Références
 
@@ -117,13 +121,14 @@ Cette partie cite les références documentaires et réglementaires sur lesquell
 Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous (*Liste à compléter*).
 
 | Acronyme | Titre | Auteur | Année |
-|-|-|-|-|
+| - | - | - | - |
 | [CNIG_RISQUES_COMMUN:2024](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-modele-commun-v1_0.pdf) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
 | [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) | Géostandards Risques - Plans de prévention des risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | Novembre 2025 |
 | [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques d’inondation par débordement de cours d’eau (hors cours d’eau torrentiels) | DGPR - Cerema | 2024 |
 | [Guide PPRRuis:2004](https://www.ecologie.gouv.fr/sites/default/files/Guide_m%C3%A9thodo_PPR%20Ruissellement_2004.pdf) | Guide Méthodologique PPR Ruissellement | Direction de la Prévention des Pollutions et des Risques (DPPR) | 2004 |
 | [Guide PPRICet:2023](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRicet_10082023.pdf) | Guide Méthodologique PPRi des cours d'eau torrentiels | DGPR | 2023 |
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
+| [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) | Standard de données Directive Inondation version 2.1 | COVADIS | 2019 |
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
 | [INSPIRE MTD:2013](https://inspire.ec.europa.eu/sites/default/files/documents/metadata/md_ir_and_iso_20131029.pdf) | INSPIRE Metadata Implementing Rules: Technical Guidelines based on EN ISO 19115 and EN ISO 19119 | European Commission Joint Research Centre | 2013 |
 | [EauFrance](https://www.eaufrance.fr/) | Le service public d’information sur l’eau et les milieux aquatiques | OFB | En continu |
@@ -670,7 +675,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | - | - |
 | **Classe d'objet** | **`Zone iso classe vitesse`** |
 | **Définition** | Les zones iso classe vitesse sont des zones sur lesquelles on dispose d'une estimation qualitative (selon l'énumération [TypeVitesseEcoulement](#typevitesseecoulement)) de la vitesse d'écoulement dans le cas d'une inondation d'un certain type pour une probabilité d'occurence donnée. |
-| **Modélisation géométrique** | Les zones iso classe vitesse sont représentées par des surfaces auxquelles une vitesse moyenne est appliquée. Cette classe d'objet regroupe en une seule classe les zones d'écoulement et les points champs vitesse de l'ancien standard COVADIS. |
+| **Modélisation géométrique** | Les zones iso classe vitesse sont représentées par des surfaces auxquelles une vitesse moyenne est appliquée. Cette classe d'objet regroupe en une seule classe les zones d'écoulement et les points champs vitesse de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **Primitive graphique** | Polygon |
 
 #### Attributs de la classe Zone iso classe vitesse
@@ -768,7 +773,7 @@ Cf. aussi [associations de la classe Carte des surfaces inondables](#association
 | - | - |
 | **Classe d'objet** | **`Zone protégée`** |
 | **Définition** | Cette classe spécialise la classe d'objets "Zone protégée" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones protégées par un ouvrage protecteur contre l'aléa inondation correspondant à une certaine probabilité de survenue de l'aléa. |
-| **Regroupement** | Cette classe doit permettre de rassembler les Zones soustraites à l'inondation et les zones protégées contre l'inondation décrites dans l'ancien standard COVADIS. |
+| **Regroupement** | Cette classe doit permettre de rassembler les Zones soustraites à l'inondation et les zones protégées contre l'inondation décrites dans l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **Modélisation géométrique** | La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection. |
 | **Primitive graphique** | Polygone |
 
@@ -954,42 +959,42 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 
 | Chemin | Libellé | Définition |
 | - | - | - |
-| /espaceSpecifique/activite/portuaireBalneaire | Ports, zones d’activités portuaires et d’activités balnéaires | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard COVADIS DI, lorsqu'il s'agit de ports. |
-| /espaceSpecifique/activite/campings | Campings et hôtellerie de plein air | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Tourisme (camping)" de l'ancien standard COVADIS DI. |
-| /espaceSpecifique/activite/activiteAgricoles | Zones d'activités agricoles spécifiques | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Agriculture" de l'ancien standard COVADIS DI. |
-| /projetCollectivite | Projets d'aménagement futurs du territoire | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Activités futures" de l'ancien standard COVADIS DI. |
+| /espaceSpecifique/activite/portuaireBalneaire | Ports, zones d’activités portuaires et d’activités balnéaires | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), lorsqu'il s'agit de ports. |
+| /espaceSpecifique/activite/campings | Campings et hôtellerie de plein air | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Tourisme (camping)" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| /espaceSpecifique/activite/activiteAgricoles | Zones d'activités agricoles spécifiques | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Agriculture" de l'ancien standard  [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| /projetCollectivite | Projets d'aménagement futurs du territoire | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. Cette catégorie issue de la nomenclature des enjeux PPRN permet de reprendre les enjeux "Activité économique" de type "Activités futures" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 
 ### Catégories des Enjeux complémentaires
 
 | Chemin | Libellé | Définition |
 | - | - | - |
-| /activite/industrie | Zone d'industrie | Zone de typologie de bâti homogène destinée à l'industrie. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Industrie" de l'ancien standard COVADIS DI. |
-| **/activite/service/commerces** | Commerces | Zone de typologie de bâti homogène destinée au Commerce. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Commerce" de l'ancien standard COVADIS DI. |
-| **/activite/carrières** | **Zone de carrières ou gravières** | Zone de carrières ou gravières. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Carrières, gravières" de l'ancien standard COVADIS DI. |
-| /equipementParticulier/sensibleCrise | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie reprise de la nomenclature des enjeux PPRN peut permettre de reprendre les enjeux "Gestion crise" de type "Autres enjeu sensible à la gestion de crise" de l'ancien standard COVADIS DI lorsqu'une catégorie plus fine n'est pas identifiée. |
-| **/equipementParticulier/sensibleCrise/creche** | Crêche | Crêches. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Crêche" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/sensibleCrise/ecole** | Ecole | Ecoles. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Ecole" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/sensibleCrise/hopital** | Hopital | Hôpitaux. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Hôpital" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/sensibleCrise/ehpad** | Ehpad | Ehpad ou résidences séniors. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Maison de retraite" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/sensibleCrise/prison** | Prison | Prisons. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Prison" de l'ancien standard COVADIS DI. |
-| /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu utile à la gestin de crise" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/gestionCrise/pompiers** | Caserne de pompiers | Casernes de pompiers. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Caserne de pompiers" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/gestionCrise/forceDeLOrdre** | Forces de l'ordre | Gendarmeries ou commissariats. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Gendarmerie/commissariat" de l'ancien standard COVADIS DI. |
+| /activite/industrie | Zone d'industrie | Zone de typologie de bâti homogène destinée à l'industrie. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Industrie" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/activite/service/commerces** | Commerces | Zone de typologie de bâti homogène destinée au Commerce. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Commerce" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/activite/carrières** | **Zone de carrières ou gravières** | Zone de carrières ou gravières. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Carrières, gravières" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| /equipementParticulier/sensibleCrise | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie reprise de la nomenclature des enjeux PPRN peut permettre de reprendre les enjeux "Gestion crise" de type "Autres enjeu sensible à la gestion de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) lorsqu'une catégorie plus fine n'est pas identifiée. |
+| **/equipementParticulier/sensibleCrise/creche** | Crêche | Crêches. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Crêche" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/sensibleCrise/ecole** | Ecole | Ecoles. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Ecole" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/sensibleCrise/hopital** | Hopital | Hôpitaux. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Hôpital" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/sensibleCrise/ehpad** | Ehpad | Ehpad ou résidences séniors. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Maison de retraite" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/sensibleCrise/prison** | Prison | Prisons. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Prison" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu utile à la gestin de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/gestionCrise/pompiers** | Caserne de pompiers | Casernes de pompiers. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Caserne de pompiers" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/gestionCrise/forceDeLOrdre** | Forces de l'ordre | Gendarmeries ou commissariats. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Gendarmerie/commissariat" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. |
-| **/equipementParticulier/collectifsPublicsOuverts/marie** | Mairie | Maries. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Mairie" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/collectifsPublicsOuverts/prefecture** | Préfecture | Préfectures. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Préfecture" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/transports/autoroute** | Autoroute ou quasi autoroute | Correspond aux infrastructures routières d'[importance 1](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_612) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Autoroute ou quasi autoroute" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/transports/routePrincipale** | Route liaison principale | Correspond aux infrastructures routières d'[importance 2](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_613) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison principale" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/transports/routeRegionale** | Route liaison régionale | Routes permettant des liaisons régionales ou départementales. Correspond aux infrastructures routières d'[importance 3](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_614) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison régionale" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/transports/voieFerreePrincipale** | Voie ferrée principale | Voies ferrées principales dont Lignes à grande vitesses. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Voie ferrée principale" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/transports/aeroport** | Aéroport | Aéroports ou aérodromes. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard COVADIS DI, lorsqu'il s'agit d'aéroports ou d'aérodromes. |
-| /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu sensible à la gestin de crise" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/reseauxSensibles/seveso** | Installation SEVESO | Installation de type SEVESO. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "SEVESO" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/reseauxSensibles/nucleaire** | Installation nucléaire de base | Installations nucléaire de base. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Installation nucléaire de base" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/reseauxSensibles/ied** | Installation de la directive IED | Installations classées pour la protection de l'environnement (ICPE) polluante entrant dans le cadre de la directive 2010/75/UE IED (Industrial Emission Directive). Cette catégorie permet de reprendre les enjeux "IPPC" et "IED" de l'ancien standard COVADIS DI. |
-| **/equipementParticulier/reseauxSensibles/steu** | Station de traitement des eaux usées | Stations de traitement des eaux usées telles que définies comme ouvrage de dépollution dans le [SIE](https://www.sandre.eaufrance.fr/v2/) du Sandre. Cette catégorie permet de reprendre les enjeux "STEU" de l'ancien standard COVADIS DI. |
-| **/patrimoineEnvironement/culturel** | Patrimoine culturel | Eléments du patrimoine culturel. Typiquement : musées, bâtiments religieux, monuments, vestiges archéologiques, mégalithes, habitations troglodytiques, cimetières. Cette catégorie permet de reprendre les enjeux "patrimoine" de l'ancien Standard COVADIS DI. |
-| **/patrimoineEnvironement/zpdce** | Zones protégées de la directive cadre eau | Cette catégorie permet de reprendre les enjeux "zone protégée DCE" de l'ancien standard COVADIS DI. Les sous catégories suivantes permettent de distinguer : les zones de captage d'eau potable, les zones de baignades et les zones de protection du réseau Natura 2000. |
+| **/equipementParticulier/collectifsPublicsOuverts/marie** | Mairie | Maries. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Mairie" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/collectifsPublicsOuverts/prefecture** | Préfecture | Préfectures. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Préfecture" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/transports/autoroute** | Autoroute ou quasi autoroute | Correspond aux infrastructures routières d'[importance 1](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_612) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Autoroute ou quasi autoroute" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/transports/routePrincipale** | Route liaison principale | Correspond aux infrastructures routières d'[importance 2](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_613) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison principale" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/transports/routeRegionale** | Route liaison régionale | Routes permettant des liaisons régionales ou départementales. Correspond aux infrastructures routières d'[importance 3](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_614) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison régionale" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/transports/voieFerreePrincipale** | Voie ferrée principale | Voies ferrées principales dont Lignes à grande vitesses. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Voie ferrée principale" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/transports/aeroport** | Aéroport | Aéroports ou aérodromes. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), lorsqu'il s'agit d'aéroports ou d'aérodromes. |
+| /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu sensible à la gestin de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/reseauxSensibles/seveso** | Installation SEVESO | Installation de type SEVESO. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "SEVESO" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/reseauxSensibles/nucleaire** | Installation nucléaire de base | Installations nucléaire de base. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Installation nucléaire de base" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/reseauxSensibles/ied** | Installation de la directive IED | Installations classées pour la protection de l'environnement (ICPE) polluante entrant dans le cadre de la directive 2010/75/UE IED (Industrial Emission Directive). Cette catégorie permet de reprendre les enjeux "IPPC" et "IED" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/reseauxSensibles/steu** | Station de traitement des eaux usées | Stations de traitement des eaux usées telles que définies comme ouvrage de dépollution dans le [SIE](https://www.sandre.eaufrance.fr/v2/) du Sandre. Cette catégorie permet de reprendre les enjeux "STEU" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/patrimoineEnvironement/culturel** | Patrimoine culturel | Eléments du patrimoine culturel. Typiquement : musées, bâtiments religieux, monuments, vestiges archéologiques, mégalithes, habitations troglodytiques, cimetières. Cette catégorie permet de reprendre les enjeux "patrimoine" de l'ancien Standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/patrimoineEnvironement/zpdce** | Zones protégées de la directive cadre eau | Cette catégorie permet de reprendre les enjeux "zone protégée DCE" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). Les sous catégories suivantes permettent de distinguer : les zones de captage d'eau potable, les zones de baignades et les zones de protection du réseau Natura 2000. |
 | **/patrimoineEnvironement/zpdce/eaupotable** | Zone de captage d'eau potable | Zones désignées pour le captage d'eau destinée à la consommation humaine en application de l'article 7 de la DCE. |
 | **/patrimoineEnvironement/zpdce/baignades** | Baignades | Zones de masses d'eau désignées en tant qu'eaux de plaisance, y compris les zones désignées en tant qu'eaux de baignade dans le cadre de la directive 2006/7/CE; |
 | **/patrimoineEnvironement/zpdce/natura2000** | Zones Natura 2000 | Zones naturelles désignées par la Commission européenne et transposées au niveau national dans le cadre du réseau Natura 2000. Sites d'importance communautaire (SIC) et zones spéciales de conservation (ZSC). |
@@ -1037,6 +1042,14 @@ __Note__ : les acronymes IGN utilisés dans ce tableau sont les identifiants des
 
 # Recommandations pour les données
 
+## Cycle de vie des données
+
+Le patrimoine des jeux de données des cartographies de la directive inondation a été constitué initialement pour chaque TRI à l'occasion de la mise en oeuvre de la Directive Inondation.
+
+Il évolue en fonction des arrêtés des Prefets de bassin selon les éléments déclencheurs décrits dans le cas d'usage [Elaborer les cartographies de la directive inondation](#cas-dutilisation-elaborer-les-cartographies-de-la-directive-inondation).
+
+De manière générale, les données constitutives des cartographies de la directive inondation sont élaborées à partir des données du PPR Inondation ou Litoral s'il en existe sur le territoire concerné ou à partir d'études spécifiques si ce n'est pas le cas. La refonte des géostandards risques dont sont issus ce standard et le standard [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) a harmonisé les modèles et les exigences de qualité des données de risques afin de rationaliser leur production et leur entretien.
+
 ## Qualité des données
 
 Cette partie contient les recommandations et exigences de qualité concernant le contenu des données des cartographies de la Directive Inondation et de leur structuration.
@@ -1063,11 +1076,11 @@ La référence internationale est la [norme ISO 19157](https://www.iso.org/fr/st
 
 Néanmoins, pour définir au mieux les mesures de la qualité, vous pouvez vous référer aux documents nationaux :  
 
-* les travaux du [groupe de travail CNIG sur la qualité des données géographiques](https://cnig.gouv.fr/ressource-quadogeo-a23521.html)
+* les travaux du [groupe de travail CNIG sur la qualité des données géographiques](https://cnig.gouv.fr/ressource-quadogeo-a23521.html) ;
 
-* la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques)
+* la série de fiches méthodologiques du Cerema : [Qualifier les données géographiques - Un décryptage de la norme ISO 19157](https://www.cerema.fr/fr/actualites/serie-fiches-cerema-qualifier-donnees-geographiques) ;
 
-* le registre national des mesures pour la qualification des données géographiques sur le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95)
+* le registre national des mesures pour la qualification des données géographiques sur le [Géocatalogue](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo/_incertitudeValAttS95).
 
 ### Éléments de qualité
 
@@ -1241,7 +1254,7 @@ Afin d'assurer une continuité dans le patrimoine des données des cartographies
 
 ### Identification des TRIs
 
-L'identifiant d'un TRI est composé selon les mêmes règles que celles du  standard COVADIS DI, à savoir `[Bassin DCE]_TRI_[Nom du TRI]` où :
+L'identifiant d'un TRI est composé selon les mêmes règles que celles du  standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), à savoir `[Bassin DCE]_TRI_[Nom du TRI]` où :
 
 * `[Bassin DCE]` est le code européen du bassin ou groupement de bassin de la Directive Cadre Eau (DCE) dont la liste est fournie dans la partie "[Périmètre d'application](#périmètre-dapplication)".
 
@@ -1257,7 +1270,7 @@ Le bassin de la Loire (FRG) est pilote mais le TRI se trouve également sur le b
 
 ### Règles de codification des identifiants
 
-L'ancien standard COVADIS DI a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractère de ce type : `[code classe]_[numéro automatique]`. où :
+L'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractère de ce type : `[code classe]_[numéro automatique]`. où :
 
 * `[code classe]` est un préfixe déterminé en fonction de la classe d'objets concernée ;
 * `[numéro automatique]` est un numéro unique pour l'objet dans la classe, de préférence "aligné à droite", c'est à dire sous la forme `001`, `012`, `125`.
@@ -1280,20 +1293,12 @@ Afin de pouvoir facilement adapter les données conformes à l'ancien standard a
 | [enjeu_s](#table-enjeu_s), [enjeu_l](#table-enjeu_l), [enjeu_p](#table-enjeu_p) | `ENJ` (*) |
 | [enjeux_raportes_tri](#table-enjeux_raportes_tri) | `ERT` |
 
-Note : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut provenir de plusieurs anciennes classes du standard COVADIS.
+Note : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut provenir de plusieurs anciennes classes du standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf).
 
-* Le préfixe `ZE` est issu de l'ancienne classe COVADIS "Zone d'écoulement"
-* Le préfixe `PCV` est issu de l'ancienne classe COVADIS "Point champ vitesse"
-* Les préfixes `ZPP` et `ZSI` sont issus des anciennes classes COVADIS 'Zone Physiquement protégée' et "Zone soustraite à l'inondation"
-* Dans l'ancien standard COVADIS, les tables d'enjeux avaient leur propre logique d'identifiants en fonction du type d'enjeu (`code_STEU`, `code_IED`, etc...). Ces identifiants seront désormais plutôt portés par le champ idRefExterne.
-
-# Cycle de vie des données
-
-Le patrimoine des jeux de données des cartographies de la directive inondation a été constitué initialement pour chaque TRI à l'occasion de la mise en oeuvre de la Directive Inondation.
-
-Il évolue en fonction des arrêtés des Prefets de bassin selon les éléments déclencheurs décrits dans le cas d'usage [Elaborer les cartographies de la directive inondation](#cas-dutilisation-elaborer-les-cartographies-de-la-directive-inondation).
-
-De manière générale, les données constitutives des cartographies de la directive inondation sont élaborées à partir des données du PPR Inondation ou Litoral s'il en existe sur le territoire concerné ou à partir d'études spécifiques si ce n'est pas le cas. La refonte des géostandards risques dont sont issus ce standard et le standard [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) a harmonisé les modèles et les exigences de qualité des données de risques afin de rationaliser leur production et leur entretien.
+* Le préfixe `ZE` est issu de l'ancienne classe [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) "Zone d'écoulement"
+* Le préfixe `PCV` est issu de l'ancienne classe [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) "Point champ vitesse"
+* Les préfixes `ZPP` et `ZSI` sont issus des anciennes classes [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) 'Zone Physiquement protégée' et "Zone soustraite à l'inondation"
+* Dans l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), les tables d'enjeux avaient leur propre logique d'identifiants en fonction du type d'enjeu (`code_STEU`, `code_IED`, etc...). Ces identifiants seront désormais plutôt portés par le champ idRefExterne.
 
 # Règles de symbologie
 
@@ -2031,7 +2036,7 @@ Pour chaque mesure de la qualité (cf. [Qualité des données](#éléments-de-qu
 
 `**Informative**`
 
-Le tableau suivant indique comment remplir chaque table du présent standard à partir des données des tables de l'ancien standard COVADIS DI qu'il remplace. Ces règles ont pour but de faciliter la migration du patrimoine des données TRI. 
+Le tableau suivant indique comment remplir chaque table du présent standard à partir des données des tables de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) qu'il remplace. Ces règles ont pour but de faciliter la migration du patrimoine des données TRI. 
 
 Pour chaque table, il est indiqué comment remplir la valeur du champ "Nom colonne" à partie de la (ou des) "table(s) COVADIS" et des valeurs du (ou des) champ(s) correspondant(s) ("colonne(s) COVADIS). La colonne "Commentaire" précise des consignes additionnelles de saisie le cas échéant.
 
