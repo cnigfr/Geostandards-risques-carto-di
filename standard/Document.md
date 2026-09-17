@@ -1612,6 +1612,7 @@ La table `enjeux_raportes_tri` implémente la classe [Enjeux rapportés TRI](#en
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
 | **`id_ert`** |  `TEXT` | Clé primaire. Identifiant de l'enjeu rapporté au sein du jeu de données, à remplir selon les [règles de codification des identifiants] | `ERT_0001` |
+| **`id_tri`** |  `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`occurrence`** | `TEXT` | Valeur obligatoire à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
 | `nb_hab_perm` | `INTEGER` | Saisie obligatoire. Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. Valeur positive. | `500` |
 | `nb_hab_sais` | `INTEGER` | Saisie facultative. Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | `100` |
@@ -1818,7 +1819,7 @@ Ces consignes facilitent le catalogage des données et leur moissonnage par des 
 ### Périmètre INSPIRE
 
 Les données des cartographies de la directive inondation sont couvertes par la thématique INSPIRE "Zone de risque naturel" et par la catégorie thématique "Information géoscientifique" au sens de la norme ISO 19115 (“_topic category_”).
- 
+
 ## Eléments de métadonnées
 
 Cette partie précise, en les répartissant par groupes thématiques, les éléments de métadonnées à renseigner pour accompagner un jeu de données des cartographies de la directive inondation.
@@ -1884,9 +1885,9 @@ Le fichier de métadonnées est nommé: `[Identifiant-TRI].xml` Exemple : `FRG_T
 
 |  |  |
 |---|---|
-| _**Encodage**_ (obligatoire)  | Le champ est à remplir avec les valeurs suivantes :<br>- format d'échange (format de distribution)<br>- version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »    |
+| _**Encodage**_ (obligatoire)  | Le champ est à remplir avec les valeurs suivantes :<br/>- format d'échange (format de distribution)<br/>- version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »    |
 | Xpath ISO 19115  | distributionInfo/*/distributionFormat/*/name<br>distributionInfo/*/distributionFormat/*/version  |
-| Consigne de saisie | `GeoPackage`<br>_`version de GPKG`_ |
+| Consigne de saisie | `GeoPackage`<br/>_`version de GPKG`_ |
 
 |  |  |
 |---|---|
@@ -2229,23 +2230,22 @@ La répartition dans les tables `enjeu_s`, `enjeu_l` et `enjeu_p` dépend de la 
 | `ref_externe` |  `N_[prefixTri]_ENJEU_DCE_S_ddd`, `N_[prefixTri]_ENJEU_STEU_P_ddd` |  | valeur `SI Eau`  |
 | `ref_externe` | `N_[prefixTri]_ENJEU_IPPC_P_ddd`, `N_[prefixTri]_ENJEU_IED_P_ddd` |  | Valeur `S3IC`  |
 | `ref_externe` | `N_[prefixTri]_ENJEU_CRISE_[LP]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd`, `N_[prefixTri]_ENJEU_PATRIM_[SP]_ddd` |  | Valeur à déterminer au cas par cas selon le type d'enjeu. |
-| **`type_enjeu`** | _Toutes tables_ |  | Cf. [correspondances nomenclature enjeux et covadis](#correspondances-nomenclature-enjeux-et-covadis)  |
+| **`type_enjeu`** | _Toutes tables_ |  | Cf. [Nomenclature enjeux Carto DI](#nomenclature-enjeux-carto-di) où il est indiqué dans la colonne "Définition", pour chaque catégorie, les enjeux COVADIS correspondants. |
 | `date_enjeu` | _Toutes tables_ | `DATIMPORT` |  |
 | **`geom`** | Géométrie de l'objet. |  |  |
 
-### Correspondances nomenclature des enjeux et COVADIS
-
-
-
 ## Correspondances table `enjeux_raportes_tri`
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |
-| - | - | - |
-| **`id_ert`** |  |  |
-| **`occurrence`** |  |  |
-| `nb_hab_perm` |  |  |
-| `nb_hab_sais` |  |  |
-| `nb_emplois` |  |  |
+Les objets de la table `enjeux_raportes_tri` sont générés à partir des objets de la table `N_[prefixTri]_ENJEU_RAPPORT_ddd` correspondants à la maille de rapportage du TRI (valeur champ `ID` correspondant à l'identifiant du TRI). Les autres mailles de rapportage ne sont pas reprises pour les cartographies de la directive inondation.
+
+| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| - | - | - | - |
+| **`id_ert`** |  |  | Identifiant à générer |
+| **`id_tri`** | `N_[prefixTri]_ENJEU_RAPPORT_ddd` | `ID` | Ne retenir que les objets dont la valeur de `ID` correspond à l'identifiant du TRI.  |
+| **`occurrence`** | `N_[prefixTri]_ENJEU_RAPPORT_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
+| `nb_hab_perm` | `N_[prefixTri]_ENJEU_RAPPORT_ddd` | `HAB_PERM` |  |
+| `nb_hab_sais` |  |  | Pas de champ correspondant dans le standard COVADIS |
+| `nb_emplois` | `N_[prefixTri]_ENJEU_RAPPORT_ddd` | `EMPLOI_MIN`, `EMPLOI_MAX` | Combiner si besoin les valeurs des deux champs en fonction de leur présence dans le jeu de données (seul `EMPLOI_MIN` est obligatoire dans COVADIS). |
 
 
 ### Correspondances Probabilite aléa et scénarios
