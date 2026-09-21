@@ -50,7 +50,7 @@ Version 0.1 - 22 septembre 2026
 | Version | Date | Chapitre modifié | Changement apporté |
 | --- | --- | --- | --- |
 | 0.0.1 | 11/12/2025 | Tous | Initialisation du document et début des travaux |
-| 1.0 | `<mois aaaa>` | - | Publication CNIG |
+| 0.1 | 22/09/2026 | Tous | Version pour relecture par le GT. |
 
 ## Participation à l'écriture
 
@@ -346,8 +346,7 @@ Le diagramme UML suivant représente le modèle de données complet des classes 
 
 Le diagramme UML suivant représente les classes décrivant les [territoires à risques important d'inondation (TRI)](#territoire-à-risque-important-dinondation-tri), leur lien avec le système GASPAR et [leurs cartographies](#cartographie-tri).
 
-![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png)
-{#fig:uml-tri-cartes-img}
+![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png){#fig:uml-tri-cartes-img}
 
 La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](#identification-des-tri), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
@@ -362,8 +361,7 @@ A chaque TRI sont associés des [cartographies TRI](#cartographie-tri), [arrêt�
 
 Le diagramme UML suivant représente les classes décrivant les surfaces inondables et les éléments permettant des les caractériser pouvant être représentés sur les cartes de surfaces inondables.
 
-![Schéma UML Surfaces inondables et aléas](./ressources/UML-Surfaces-Inondables-Carto-DI.png)
-{#fig:uml-surfaces-inondables-img}
+![Schéma UML Surfaces inondables et aléas](./ressources/UML-Surfaces-Inondables-Carto-DI.png){#fig:uml-surfaces-inondables-img}
 
 Les [surfaces inondables](#surface-inondable) sont les zones d'aléas issues des différents types de [risques d'inondation](#typealeacartodi) relatifs à la directive inondation. Elles correspondent à des [probabilités d'aléa type](#typeprobabilitealea) portées par le champs occurrence. Le ou les cours d'eaux qui sont à l'origine de ces surfaces peuvent être décrites à l'aide de la classe [OrigineRisque](#origine-du-risque) définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
@@ -390,8 +388,7 @@ Les surfaces inondables sont aussi représentées sur les [cartes de risque d'in
 
 Le diagramme UML suivant représente les classes décrivant les [ouvrages protecteurs](#ouvrage-protecteur), les [zones de sur aléa](#zone-de-sur-aléa) qu'ils engendrent et les [zones protégées](#zone-protégée) pouvant être représentés sur les cartes de surfaces inondables et les cartes de risques.
 
-![Schéma UML Procédure et cartes](./ressources/UML-Ouvrages-protecteurs-Carto-DI.png)
-{#fig:uml-ouvrages-protecteurs-img}
+![Schéma UML Procédure et cartes](./ressources/UML-Ouvrages-protecteurs-Carto-DI.png){#fig:uml-ouvrages-protecteurs-img}
 
 La liste possible des types d'[ouvrages protecteurs](#ouvrage-protecteur) définis dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md) est limitée ici aux [types d'ouvrages en lien avec le risque inondation](#typeouvrageprotecteur).
 
@@ -403,8 +400,7 @@ Les [zones de suraléa](#zone-de-sur-aléa) sont les bandes de précautions à l
 
 Le diagramme UML suivant représente les classes décrivant les enjeux et leur intégration dans les cartes de risques.
 
-![Schéma UML Enjeux](./ressources/UML-Enjeux-Carto-DI.png)
-{#fig:uml-enjeux-img}
+![Schéma UML Enjeux](./ressources/UML-Enjeux-Carto-DI.png){#fig:uml-enjeux-img}
 
 Les enjeux représentés sur les cartes de risques sont les suivants :
 
