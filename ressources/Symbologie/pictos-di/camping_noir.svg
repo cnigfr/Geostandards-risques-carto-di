@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 149 149" style="enable-background:new 0 0 149 149;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1D1D1B;}
+	.st1{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:5.145;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<path class="st0" d="M74.5,146.6c-39.8,0-71.9-32.3-71.9-71.9S34.7,2.4,74.5,2.4s71.9,32.3,71.9,71.9S114.1,146.6,74.5,146.6"/>
+<g>
+	<g>
+		<path class="st1" d="M100,87.8c0,3.5-3.1,6.3-6.8,6.3s-6.8-2.8-6.8-6.3c0-3.5,3.1-6.3,6.8-6.3S100,84.3,100,87.8z"/>
+		<path class="st1" d="M105,116.7v-7.3c0-5.2-5.2-9.4-11.9-9.4c-6.5,0-11.9,4.2-11.9,9.4v7.3"/>
+		<path class="st1" d="M68.4,81.5c0,4.4-3.8,7.9-8.4,7.9s-8.4-3.5-8.4-7.9s3.8-7.9,8.4-7.9S68.4,77.3,68.4,81.5z"/>
+		<path class="st1" d="M74.7,116.7v-8.6c0-6.5-6.5-11.7-14.5-11.7s-14.5,5.2-14.5,11.7v8.6"/>
+	</g>
+	<polyline class="st2" points="76.4,30.5 74,26.2 22.8,116.7 126.2,116.7 74,26.2 66.8,13.8 	"/>
+</g>
+<line class="st2" x1="80.4" y1="13.8" x2="74" y2="26.3"/>
+</svg>

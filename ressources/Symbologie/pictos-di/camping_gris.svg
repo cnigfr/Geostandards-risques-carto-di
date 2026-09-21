@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 149 149">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+        stroke-width: 4px;
+      }
+
+      .st0, .st1 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st2 {
+        fill: #505151;
+      }
+
+      .st1 {
+        fill: none;
+        stroke-width: 5.14px;
+      }
+    </style>
+  </defs>
+  <path class="st2" d="M74.5,146.6C34.7,146.6,2.6,114.3,2.6,74.7S34.7,2.4,74.5,2.4s71.9,32.3,71.9,71.9-32.3,72.3-71.9,72.3"/>
+  <g>
+    <g>
+      <path class="st0" d="M100,87.8c0,3.5-3.1,6.3-6.8,6.3s-6.8-2.8-6.8-6.3,3.1-6.3,6.8-6.3,6.8,2.8,6.8,6.3Z"/>
+      <path class="st0" d="M105,116.7v-7.3c0-5.2-5.2-9.4-11.9-9.4s-11.9,4.2-11.9,9.4v7.3"/>
+      <path class="st0" d="M68.4,81.5c0,4.4-3.8,7.9-8.4,7.9s-8.4-3.5-8.4-7.9,3.8-7.9,8.4-7.9,8.4,3.7,8.4,7.9Z"/>
+      <path class="st0" d="M74.7,116.7v-8.6c0-6.5-6.5-11.7-14.5-11.7s-14.5,5.2-14.5,11.7v8.6"/>
+    </g>
+    <polyline class="st1" points="76.4 30.5 74 26.2 22.8 116.7 126.2 116.7 74 26.2 66.8 13.8"/>
+  </g>
+  <line class="st1" x1="80.4" y1="13.8" x2="74" y2="26.3"/>
+</svg>

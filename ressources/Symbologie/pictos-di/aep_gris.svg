@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 149 149">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #505151;
+      }
+
+      .st1 {
+        fill: none;
+        stroke-width: 5px;
+      }
+
+      .st1, .st2 {
+        stroke: #505151;
+        stroke-miterlimit: 10;
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle class="st0" cx="74.5" cy="74.5" r="71.6"/>
+  <g>
+    <path class="st2" d="M117.5,48.7l2.8-17.2H28.2l2.5,16"/>
+    <polygon class="st2" points="117.5 48.7 116.1 57.5 104.6 127.7 43.5 127.7 30.7 47.5 28.2 31.5 120.4 31.5 117.5 48.7"/>
+  </g>
+  <line class="st1" x1="33.1" y1="62.7" x2="115.3" y2="62.7"/>
+</svg>

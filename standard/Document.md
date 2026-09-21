@@ -14,7 +14,7 @@ Cartographies de la Directive Inondation
 
 Groupe de travail refonte des Géostandards Risques
 
-*Version 0.0.1 - 11 décembre 2025*
+Version 0.1 - 22 septembre 2026
 
 
 # Fiche descriptive
@@ -23,7 +23,7 @@ Groupe de travail refonte des Géostandards Risques
 |---|---|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Cartographies de la Directive Inondation |
-| **Version** | *Version 0.0.1 - 11 décembre 2025* |
+| **Version** | Version 0.1 - 22 septembre 2026 |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux cartographies de la directive inondation. |
 | **Objectif** | Ce document à pour objectif de décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le cadre réglementaire transposé de la Directive européenne sur les inondations. |
 | **Etendue d'application** | Territoires à risque important d'inondation sur les bassins DCE (Directive Cadre Eau) du territoire national français *et Saint-Pierre et Miquelon (à confirmer)*. |
@@ -104,11 +104,11 @@ Le contenu du présent standard est organisé selon les grandes parties suivante
 
 * La partie [Recommandation pour les données](#recommandations-pour-les-données) précise les exigences et recommandations de qualité et d'organisation des données.
 
-* La partie [Règles de symbologie](#règles-de-symbologie) indique des recommandations de représentation des données sur les cartographies.
-
 * La partie [Diffusion](#diffusion) définit le schéma physique du modèle permettant l'implémentation et l'échange des données.
 
 * La partie [Métadonnées](#métadonnées) précise les éléments de métadonnées nécessaires pour la description conforme à la directive INSPIRE d'un jeu de données avec des consignes de remplissage de ces éléments.
+
+* La partie [Règles de symbologie](#règles-de-symbologie) indique des recommandations de représentation des données sur les cartographies.
 
 * L'[Annexe A](#annexe-a---règles-de-passage-covadis-di---cnig-cartographies-di) indique les règles de passage entre les tables de l'ancien standard COVADIS DI et les tables du présent standard.
 
@@ -399,7 +399,7 @@ Les [zones de suraléa](#zone-de-sur-aléa) sont les bandes de précautions à l
 
 **Exigence :** Il n'y a pas de zone protégée contre les aléas de faible probabilité.
 
-### Représentation des enjeux
+### Modélisation des enjeux
 
 Le diagramme UML suivant représente les classes décrivant les enjeux et leur intégration dans les cartes de risques.
 
@@ -1209,22 +1209,21 @@ Ou, plus dans le détail des indicateurs (laissé à l'appréciation du producte
 
 #### Cohérence topologique
 
-Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet des cartographies de la Directive Inondation :
+Certaines contraintes topologiques peuvent s'appliquer selon les classes d'objet des cartographies de la Directive Inondation.
 
-***Surfaces inondables et zones iso classes de hauteur**
+##### Surfaces inondables et zones iso classes de hauteur
 
 Les zones d’iso classes de hauteur et de débit respectent une topologie de graphe. C’est-à-dire qu’elles constituent une partition de la surface inondable concernée et les zones voisines ont des périmètres qui partagent la même géométrie (sans recouvrement, ni lacune).
 
-**Inclusion des surfaces selon les probabilités d'aléas**
+##### Inclusion des surfaces selon les probabilités d'aléas
 
 Pour un même type d’inondation, la surface inondable de l’aléa de forte probabilité (événement fréquent) doit être incluse dans la surface inondable de l’aléa de moyenne probabilité qui doit être incluse dans la surface de l’aléa de faible probabilité (événement extrême).
 
-**Ouvrages de protection**
+##### Ouvrages de protection
 
-_A compléter..._
-_La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection._
+La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection.
 
-**Élément de mesure ou de métadonnées :**
+##### Élément de mesure ou de métadonnées
 
 Les invalidités topologiques relatives aux règles énoncées ci-dessus peuvent être relatées de manière statistique dans les métadonnées à l'aide des mesures suivantes définies dans le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) :
 
@@ -1234,9 +1233,9 @@ Les invalidités topologiques relatives aux règles énoncées ci-dessus peuvent
 
 La conformité des données de cartographie de la Directive Inondation au présent standard est un objectif en soi. Il conviendra d'indiquer dans les métadonnées l'évaluation de cette conformité.
 
-**Élément de mesure ou de métadonnées :**
+##### Éléments de mesure ou de métadonnées
 
-Les éléments de métadonnées [relatifs à la conformité](#eléments-de-métadonnées-relatifs-à-la-conformité) permettent d'indiquer de manière globale si les données sont conformes, non conformes ou si la conformité n'a pas été évaluée.
+Les éléments de métadonnées [relatifs à la conformité](#conformité) permettent d'indiquer de manière globale si les données sont conformes, non conformes ou si la conformité n'a pas été évaluée.
 
 Par ailleurs le registre national des mesures [REG_MESQGEO](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo) permet de mentionner des éléments de conformité statistiques plus précis à l'aide des mesures suivantes :
 
@@ -1299,19 +1298,6 @@ Note : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut proven
 * Le préfixe `PCV` est issu de l'ancienne classe [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) "Point champ vitesse"
 * Les préfixes `ZPP` et `ZSI` sont issus des anciennes classes [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) 'Zone Physiquement protégée' et "Zone soustraite à l'inondation"
 * Dans l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), les tables d'enjeux avaient leur propre logique d'identifiants en fonction du type d'enjeu (`code_STEU`, `code_IED`, etc...). Ces identifiants seront désormais plutôt portés par le champ idRefExterne.
-
-# Règles de symbologie
-
-`La section relative à la représentation graphique vise à spécifier comment présenter les types d'entités à des fins d'interprétation humaine, généralement à travers à un catalogue de représentations graphiques. Les légendes de cartes sous forme d'images peuvent être considérées comme des spécifications de représentation graphique.` 
-
-`<Le catalogue de représentation graphique est spécifié dans la partie ci-dessous/ est disponible /en annexe/sur ce lien>.` 
-
-## Symbologie 1
-
-|  |  |
-|---|---|
-| `**ex**` | `Contient` |
-|  |  |
 
 # Diffusion
 
@@ -2030,6 +2016,133 @@ Pour chaque mesure de la qualité (cf. [Qualité des données](#éléments-de-qu
 | Xpath ISO 19115  | language |
 | Consigne de saisie | `fre`  |
 
+# Règles de symbologie
+
+ Cette partie présente des règles de symbologie applicables aux données principales du présent standard pour produire les cartes des risques d'inondation et de surfaces inondables.
+
+ Il s'agit de recommandations issues de l'ancienne note de sémiologie de la cartographie Directive inondations et de ses correctifs produits lors des deux premiers cycles de la Directive Inondation ainsi que de certaines pratiques mises en oeuvre par le Cerema dans son plugin AgiRisk dans le cadre du 3ieme cycle.
+
+## Recommandation pour l'empilement des couches
+
+Pour produire les cartographies de la directive inondations, il est recommandé d'empiler les couches d'information dans l'ordre suivant (de l'arrière vers le premier plan) :
+
+1. Fond cartographique (*) ;
+2. Représentation des eaux permanentes : cours d'eau, surfaces marines, ... (*) ;
+3. Zones d'aléas et éléments de caractérisation d'aléas ;
+4. Découpage administratif (*), périmètre du TRI ;
+5. Ouvrages protecteurs et zones associées ;
+6. Enjeux : réseaux de transports ;
+7. Enjeux surfaciques: bâtiments, zones d'activités, etc.. ;
+8. Enjeux pontuels ;
+9. Cartouche des populations impactées.
+
+(*) Données de contexte dont l'implémentation n'est pas prise en charge par ce standard.
+
+## Représentation des emprises des cartes et TRI
+
+L'application des styles suivants est recommandée pour les entités suivantes :
+
+| Table | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| [tri_s](#table-tri_s) | Transparent | Rose : RGB(229,48,117), épaisseur 0,75mm | ![Contour TRI](./ressources/vignettes_symbologie/tri_s_contour_rose.png) |
+| [carte_surfaces_inondables_s](#table-carte_surfaces_inondables_s) | Transparent | Gris : RGB(74, 74, 74), épaisseur 0,56mm | ![Contour carte surfaces inondables](./ressources/vignettes_symbologie/carte_surfaces_inondables_contour_gris.png) |
+| [carte_risques_inondation_s](#table-carte_risques_inondation_s) | Transparent | Gris : RGB(74, 74, 74), épaisseur 0,56mm | ![Contour carte risques inondation](./ressources/vignettes_symbologie/carte_surfaces_inondables_contour_gris.png) |
+
+## Représentation des informations relatives aux aléas
+
+### Représentation des surfaces inondables
+
+L'application des styles suivants est recommandée pour la table [surface_inondable_s](#table-surface_inondable_s) en fonction de la probabilité d'aléa :
+
+| Probabilité d'occurrence | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| forte | Vert foncé : RVB(35,95,35), transparence 30% | Aucun | ![Surface inondable forte](./ressources/vignettes_symbologie/surface_inondable_forte.png) |
+| moyenne | Vert moyen : RVB(80,190,55), transparence 30% | Aucun | ![Surface inondable moyenne](./ressources/vignettes_symbologie/surface_inondable_moyenne.png) |
+| faible | Vert clair : RVB(130,240,160), transparence 30% | Aucun | ![Surface inondable faible](./ressources/vignettes_symbologie/surface_inondable_faible.png) |
+
+La représentation des probabilités d'occurrence avec prise en compte du changement climatique reprennent les mêmes couleurs mais uniquement sous forme de hachures : espacement 1,4 mm, angle 45°.
+
+| Probabilité d'occurrence (CC) | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| forte (CC) | Hachures vert foncé : RVB(35,95,35), espacement 1,4mm, angle 45° | Aucun | ![Surface inondable forte CC](./ressources/vignettes_symbologie/surface_inondable_forte_cc.png) |
+| moyenne (CC) | Hachures vert moyen : RVB(80,190,55), espacement 1,4mm, angle 45° | Aucun | ![Surface inondable moyenne CC](./ressources/vignettes_symbologie/surface_inondable_moyenne_cc.png) |
+| faible (CC) | Hachures vert clair : RVB(130,240,160), espacement 1,4mm, angle 45° | Aucun | ![Surface inondable faible CC](./ressources/vignettes_symbologie/surface_inondable_faible_cc.png) |
+
+### Représentation des éléments de caractérisation d'aléa
+
+#### Représentation des iso classes de hauteurs d'eau
+
+L'application des styles suivants est recommandée pour la table [zone_iso_classe_hauteur_s](#table-zone_iso_classe_hauteur_s) en fonction des paliers de hauteur d'eau :
+
+| Probabilité d'occurrence | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| Zone émergée | Néant | Néant | N.A. |
+| Inférieur à 0,5m | Bleu très clair : RVB(200,241,255), transparence 30% | Aucun | ![Hauteur d'eau 0-0.5m](./ressources/vignettes_symbologie/hauteur_eau_0-05m.png) |
+| Entre 0,5m et 1m | Bleu clair : RVB(162,218,244), transparence 30% | Aucun | ![Hauteur d'eau 0.5-1m](./ressources/vignettes_symbologie/hauteur_eau_05-1m.png) |
+| Entre 1m et 2m | Bleu : RVB(0,146,198), transparence 30% | Aucun | ![Hauteur d'eau 1-2m](./ressources/vignettes_symbologie/hauteur_eau_1-2m.png) |
+| Supérieur à 2m | Bleu foncé : RVB(6,84,155), transparence 30% | Aucun | ![Hauteur d'eau >2m](./ressources/vignettes_symbologie/hauteur_eau_2plus.png) |
+
+#### Représentation des iso classes de vitesse
+
+L'application des styles suivants est recommandée pour la table [zone_iso_classe_vitesse_s](#table-zone_iso_classe_vitesse_s) en fonction des paliers de vitesse d'écoulement :
+
+| Probabilité d'occurrence | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| écoulement faible | Jaune : RVB(255,255,178), transparence 30% | Noir, épaisseur 0,25mm | ![Vitesse écoulement faible](./ressources/vignettes_symbologie/vitesse_ecoulement_faible.png) |
+| écoulement modéré | Orange : RVB(253,141,60), transparence 30% | Noir, épaisseur 0,25mm | ![Vitesse écoulement modéré](./ressources/vignettes_symbologie/vitesse_ecoulement_moderate.png) |
+| écoulement fort | Rouge : RVB(189,0,38), transparence 30% | Noir, épaisseur 0,25mm | ![Vitesse écoulement fort](./ressources/vignettes_symbologie/vitesse_ecoulement_forte.png) |
+
+### Représentation des ouvrages protecteurs et zones associées
+
+L'application des styles suivants est recommandée pour les entités suivantes :
+
+| Entité | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | N.A. | Noir, épaisseur 1,5mm | ![Ouvrage protecteur](./ressources/vignettes_symbologie/ouvrage_protecteur_ligne.png) |
+| [zone_protegee_s](#table-zone_protegee_s) | Hachures turquoises : RVB(11,111,98) en diagonale : 45°, espacement 1,5mm | Aucun | ![Zone protégée](./ressources/vignettes_symbologie/zone_protegee_hachures_turquoise.png) |
+| [zonesuralea_s](#table-zonesuralea_s) | Hachures croisées noires, espacement 1,5mm | Aucun | ![Zone suraléa](./ressources/vignettes_symbologie/zone_suralea_hachures_croisees.png) |
+
+## Représentation des enjeux
+
+### Enjeux surfaciques
+
+L'application des styles suivants est recommandée pour les enjeux surfaciques ([enjeu_s](#table-enjeu_s)) correspondant aux catégories suivantes :
+
+| Catégorie d'enjeu | Style Fond | Style Contour | Aperçu |
+| - | - | - | - |
+| Toutes zones d'activité (industrie, commerces, carrières, agricoles, portuaire/balnéaire, campings) | Aucun | Jaune : RVB(230,230,0), épaisseur 0,75mm | ![Zone activité](./ressources/vignettes_symbologie/zone_activite_contour_jaune.png) |
+| Zones de bâti, bâtiments | Rouge : RVB(245,42,42) | Aucun | ![Zone bâti](./ressources/vignettes_symbologie/zone_bati_remplissage_rouge.png) |
+| Zones protégées de la directive cadre eau | Hachures brunes : RVB(150,104,83) en diagonale 45°, espacement : 5mm | Contour brun RVB(150,104,83) | ![Zone DCE](./ressources/vignettes_symbologie/zone_dce_hachures_contour.png) |
+
+### Enjeux linéaires
+
+L'application des styles suivants est recommandée pour les enjeux linéaires ([enjeu_l](#table-enjeu_l)) correspondant aux catégories suivantes :
+
+| Catégorie d'enjeu | Style Contour | Aperçu |
+| - | - | - |
+| Autoroute ou quasi autoroute | Double trait : contour noir 1,3mm, trait central orange RVB(244,157,84), 0,87mm | ![Autoroute](./ressources/vignettes_symbologie/route_autoroute.png) |
+| Route liaison principale et Route liaison régionale | Double trait : contour noir 1,1 mm, trait central beige RVB(251,230,214), 1mm | ![Liaison principale](./ressources/vignettes_symbologie/route_liaison_principale.png) |
+| Voie ferrée principale | Ligne noire, épaisseur 0,5mm avec marqueurs noirs (lignes) espacés tous les 3mm le long de la ligne | ![Voie ferrée](./ressources/vignettes_symbologie/voie_ferree.png) |
+
+### Enjeux ponctuels
+
+L'application des styles suivants est recommandée pour les enjeux ponctuels ([enjeu_p](#table-enjeu_p)) correspondant aux catégories suivantes. Les pictogrammes issus du plugin AgiRisk du Cerema, sont proposés en versions "noir et blanc" et "gris et blanc". Cette déclinaison pouvant être utilisée pour distinguer les enjeux situés à l'intérieur (noir) ou à l'extérieur (gris) des surfaces inondables :
+
+| Catégorie d'enjeu | picto noir | picto gris |
+| - | - | - |
+| Zone de captage d'eau potable | ![aep](../ressources/Symbologie/pictos-di/aep_noir.svg) | ![aep gris](../ressources/Symbologie/pictos-di/aep_gris.svg) |
+| Equipements stratégiques pour la gestion de crise | ![autre_enjeu_crise](../ressources/Symbologie/pictos-di/autre_enjeu_crise_noir.svg) | ![autre_enjeu_crise gris](../ressources/Symbologie/pictos-di/autre_enjeu_crise_gris.svg) |
+| Campings et hôtellerie de plein air | ![camping](../ressources/Symbologie/pictos-di/camping_noir.svg) | ![camping gris](../ressources/Symbologie/pictos-di/camping_gris.svg) |
+| Ecole | ![ecole](../ressources/Symbologie/pictos-di/ecole_noir.svg) | ![ecole gris](../ressources/Symbologie/pictos-di/ecole_gris.svg) |
+| Installation SEVESO, Installation de la directive IED, Installation nucléaire de base | ![etab_prod_polluant](../ressources/Symbologie/pictos-di/etab_prod_polluant_noir.svg) | ![etab_prod_polluant gris](../ressources/Symbologie/pictos-di/etab_prod_polluant_gris.svg) |
+| Mairie, Préfecture, Caserne de pompiers, Forces de l'ordre | ![etab_utile_crise](../ressources/Symbologie/pictos-di/etab_utile_crise_noir.svg) | ![etab_utile_crise gris](../ressources/Symbologie/pictos-di/etab_utile_crise_gris.svg) |
+| hopital | ![hopital](../ressources/Symbologie/pictos-di/hopital_noir.svg) | ![hopital gris](../ressources/Symbologie/pictos-di/hopital_gris.svg) |
+| Ehpad | ![maison_retraite](../ressources/Symbologie/pictos-di/maison_retraite_noir.svg) | ![maison_retraite gris](../ressources/Symbologie/pictos-di/maison_retraite_gris.svg) |
+| Patrimoine culturel | ![patrim_culturel](../ressources/Symbologie/pictos-di/patrim_culturel_noir.svg) | ![patrim_culturel gris](../ressources/Symbologie/pictos-di/patrim_culturel_gris.svg) |
+| Prison | ![prison](../ressources/Symbologie/pictos-di/prison_noir.svg) | ![prison gris](../ressources/Symbologie/pictos-di/prison_gris.svg) |
+| Station de traitement des eaux usées | ![steu](../ressources/Symbologie/pictos-di/steu_noir.svg) | ![steu gris](../ressources/Symbologie/pictos-di/steu_gris.svg) |
+| Réseaux et équipements sensibles | ![transformateur](../ressources/Symbologie/pictos-di/transformateur_noir.svg) | ![transformateur gris](../ressources/Symbologie/pictos-di/transformateur_gris.svg) |
+
 
 
 # Annexe A - Règles de passage COVADIS DI -> CNIG Cartographies DI` 
@@ -2281,95 +2394,3 @@ Les valeurs de code de [`typealeacartodi`](#table-de-valeurs-typealeacartodi) co
 | `115` |  |
 | `116` | `04` (débordement des eaux souterraines) |
 | `117` | `03` (submersion marine) |
-
-
-
-# Annexe B Nomenclature augmentée des enjeux
-
-TBD : à basculer dans le modèle commun ?
-
-#### Catégories des Enjeux incontournables
-
-| Code | Chemin | Libellé | Libellé Parent | Définition |
-|-|-|-|-|-|
-| 010000 | /zoneUrba | Zones urbanisées | -  | La définition de ces zones se fait par référence à la [circulaire 96-32 du ministère de l'équipement](https://dtrf.cerema.fr/pdf/pj/Dtrf/0000/Dtrf-0000327/TO327.pdf) qui précise que le caractère urbanisé ou non d’un espace doit s’apprécier en fonction de la réalité physique constatée et non en fonction d’un zonage opéré par un plan local d’urbanisme, ce qui conduit à exclure les zones dites urbanisables. Elles correpondent aux "espaces urbanisés" mentionnés dans le [Guide PPRN:2016](https://www.actu-environnement.com/media/pdf/guide-pprn.pdf)|
-| 010100 | /zoneUrba/centreUrbain | Centres urbains | Zones urbanisées | Au sein des zones urbanisées, le centre urbain est une entité particulière qui peut donner lieu à un zonage et une réglementation spécifiques. La définition des centres urbains est faite par référence à la [Circulaire du 24 avril 1996 relative aux dispositions applicables au bâti et ouvrages existants en zones inondables](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000546346) qui indique qu'ils se caractérisent par leur histoire, par une occupation du sol de fait importante, une continuité bâtie et la mixité des usages entre logements, commerces et services. |
-| 010200 | /zoneUrba/horsCentreUrbain | Zones urbanisées hors centres urbains | Zones urbanisées | Cette sous-catégorie de zones urbanisées permet d'identifier en tant que telles les zones urbanisées **en dehors des centres urbains** au sens de l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) |
-| 020000 | /zonesNonUrba | Zones non urbanisées | - | Zones se définissant par opposition aux Zones urbanisés et correspondant aux **zones non urbanisées** évoquées dans l'[article R562-11-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038733757) | 
-| 030000 | /espaceSpecifique | Espaces spécifiques au type d’aléa étudié | - | Espaces naturels, agricoles, forestiers ou autres pouvant jouer un rôle dans la dynamique des phénomènes ou support d'activités spécifiques et particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
-| 030100 | /espaceSpecifique/activite | Espaces spécifiques d'activités | Espaces spécifiques au type d’aléa étudié | Espace d'activités spécifiques particulièrement vulnérables aux aléas étudiés. Les catégories suivantes permettent d'en identifier certains |
-| **030101** | **/espaceSpecifique/activite/portuaireBalneaire** | Ports, zones d’activités portuaires et d’activités balnéaires | Espaces spécifiques d'activités | Enjeu incontournable dans le cadre des PPRLs : les ports, zones d’activités portuaires et d’activités balnéaires |
-| **030102** | **/espaceSpecifique/activite/campings** | Campings et hôtellerie de plein air | Espaces spécifiques d'activités | Enjeu incontournable dans le cadre des PPRLs : campings et hôtellerie de plein air |
-| **030103** | **/espaceSpecifique/activite/activiteAgricoles** | Zones d'activités agricoles spécifiques | Espaces spécifiques d'activités | Activités agricoles identifiées comme enjeux incontournables. Par exemple dans le cadre des PPRLs : les élevages sur prés salés et les marais salants |
-| 030200 | /espaceSpecifique/limitationAlea | Espaces participants à la limitation des aléas | Espaces spécifiques au type d’aléa étudié | Espaces naturels, agricoles ou forestiers pouvant jouer un rôle dans la dynamique des phénomènes. |
-| 030201 | /espaceSpecifique/limitationAlea/expansionCrues | Zones d’expansion des crues | Espaces participants à la limitation des aléas | Zones d’expansion des crues pour les inondations |
-| 030202 | /espaceSpecifique/limitationAlea/atterrisement | Zones d’atterrissement | Espaces participants à la limitation des aléas | Zones d'atterrissement pour les crues torrentielles. |
-| 030203 | /espaceSpecifique/limitationAlea/interfaceHabitatForet | Zones d’interfaces habitat-forêt | Espaces participants à la limitation des aléas | Zones d’interfaces habitat-forêt pour les incendies de forêt ou le maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| 030204 | /espaceSpecifique/limitationAlea/maintienForet | Zones de maintien d’une forêt | Espaces participants à la limitation des aléas | Zone de maintien d’une forêt pour retenir un manteau neigeux ou des chutes de blocs. |
-| 040000 | **/projetCollectivite** | **Projets d'aménagement futurs du territoire** | - | Enjeux incontournables - Les projets d’aménagement doivent être recensés et discutés avec les collectivités, afin de vérifier leur cohérence vis-à-vis de l’exposition possible aux risques. |
-
-### Catégories des Enjeux complémentaires
-
-| Code | Chemin | Libellé | Libellé Parent | Définition |
-|-|-|-|-|-|
-| 050000 | /habitat | Zone d'habitat | -  | Zone de typologie de bâti homogène destinée à l'habitat |
-| 050100 | /habitat/individuel | Zone d'habitat individuel | Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat individuel (pavillons) |
-| 050200 | /habitat/collectif | Zone d'habitat collectif |  Zone d'habitat | Zone de typologie de bâti homogène destinée à l'habitat collectif (immeubles d'habitations)  |
-| 060100 | /activite | Zone d'activité | - | Zone de typologie de bâti homogène destinée à l'activité professionnelle |
-| 060101 | **/activite/industrie** | **Zone d'industrie** | Zone d'activité | Zone de typologie de bâti homogène destinée à l'industrie |
-| 060102 | /activite/service | Service | Zone d'activité | Zone de typologie de bâti homogène destinée au service |
-| **(+)06010201** | **/activite/service/commerces** | Commerces | Service | Zone de typologie de bâti homogène destinée au Commerces |
-| **(+)06010202** | **/activite/service/tourisme** | Tourisme | Service | Zone de tourisme (campings ?) |
-| 060103 | /activite/artisanat | Artisanat | Zone d'activité | Zone de typologie de bâti homogène destinée à l'artisanat |
-| **(+)060104** | **/activite/carrières** | **Zone de carrières ou gravières** | Zone d'activité | Zone de carrières ou gravières |
-| 070000 | /equipementParticulier | Infrastructures et équipements particuliers | - | Eléments faisant l'objet d'une vulnérabilité propre et de prescription spécifique |
-| 070100 | /equipementParticulier/sensibleCrise | Etablissements sensibles ou difficilement évacuables | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| **(+)070101** | **/equipementParticulier/sensibleCrise/creche** | Crêche | Etablissements sensibles ou difficilement évacuables | Crêches |
-| **(+)070102** | **/equipementParticulier/sensibleCrise/ecole** | Ecole | Etablissements sensibles ou difficilement évacuables | Ecoles |
-| **(+)070103** | **/equipementParticulier/sensibleCrise/hopital** | Hopital | Etablissements sensibles ou difficilement évacuables | Hôpitaux |
-| **(+)070104** | **/equipementParticulier/sensibleCrise/ehpad** | Ehpad | Etablissements sensibles ou difficilement évacuables | Ehpad ou maisons séniors |
-| **(+)070105** | **/equipementParticulier/sensibleCrise/prison** | Prison | Etablissements sensibles ou difficilement évacuables | Prisons |
-| 070200 | /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Infrastructures et équipements particuliers | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques...  Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| **(+)070201** | /equipementParticulier/gestionCrise/pompiers | Caserne de pompiers | Equipements stratégiques pour la gestion de crise | Caserne de pompiers |
-| **(+)070202** | /equipementParticulier/gestionCrise/commissariatGendarmerie | Gendarmerie ou commissariat | Equipements stratégiques pour la gestion de crise | Gendarmerie ou commissariat |
-| 070300 | /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Infrastructures et équipements particuliers | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| **(+)070301** | **/equipementParticulier/collectifsPublicsOuverts/marie** | Marie | Equipements collectifs de type ERP ou espaces publics ouverts | Maries |
-| **(+)070302** | **/equipementParticulier/collectifsPublicsOuverts/prefecture** | Préfecture | Equipements collectifs de type ERP ou espaces publics ouverts | Préfectures  |
-| **070400** | **/equipementParticulier/campings** | Campings et hôtellerie de plein air | Infrastructures et équipements particuliers | Campings et hôtellerie de plein air |
-| 070500 | /equipementParticulier/transports | Infrastructures de transport | Infrastructures et équipements particuliers | Infrastructures de transport pouvant assurer l'accès des secours ou l'évacuation des personnes. Cette catégorie peut être affinée à l'aide de la nomenclature COVADIS |
-| **(+)070501** | **/equipementParticulier/transports/autoroute** | Autoroute ou quasi autoroute | Infrastructures de transport | Autoroutes ou quasi autoroutes |
-| **(+)070502** | **/equipementParticulier/transports/routePrincipale** | Route liaison principale | Infrastructures de transport | Routes liaisons principales |
-| **(+)070503** | **/equipementParticulier/transports/routeRegionale** | Route liaison régionale | Infrastructures de transport | Routes liaisons régionales |
-| **(+)070504** | **/equipementParticulier/transports/voieFerreePrincipale** | Voie ferrée principale | Infrastructures de transport | Voies ferrées principales (dont LGV) |
-| 070600 | /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Infrastructures et équipements particuliers | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... |
-| **(+)070601** | **/equipementParticulier/reseauxSensibles/seveso** | Installation SEVESO | Infrastructures et équipements particuliers | Installation de type SEVESO |
-| **(+)070602** | **/equipementParticulier/reseauxSensibles/nucleaire** | Installation nucléaire de base | Infrastructures et équipements particuliers | Installations nucléaire de base |
-| **(+)070603** | **/equipementParticulier/reseauxSensibles/ied** | Installation de la directive IED | Infrastructures et équipements particuliers | Installations de la directive IED |
-| **(+)070604** | **/equipementParticulier/reseauxSensibles/steu** | Station de traitement des eaux usées | Infrastructures et équipements particuliers | Stations de traitement des eaux usées |
-| **080000** | **/patrimoineEnvironement** | Enjeux patrimoniaux, culturels et environnementaux | - | Par exemple des secteurs sauvegardés, des monuments historiques qui sont soumis à des réglementations particulières avec lesquelles il faudra veiller à définir des mesures cohérentes. |
-| **(+)080200** | **/patrimoineEnvironement/culturel** | Patrimoine culturel | Enjeux patrimoniaux, culturels et environnementaux | Eléments du patrimoine culturel. Typiquement : musées, bâtiments religieux, monuments, vestiges archéologiques, mégalithes, habitations troglodytiques, cimetières. |
-| **(+)080100** | **/patrimoineEnvironement/zpdce** | Zones protégées de la directive cadre eau | Enjeux patrimoniaux, culturels et environnementaux | Typiquement : Baignades (BA), oiseaux (BI) et habitat (HA). |
-| **(+)080101** | **/patrimoineEnvironement/zpdce/baignades** | Baignades |Zones protégées de la directive cadre eau | Baignades |
-| **(+)080102** | **/patrimoineEnvironement/zpdce/sic_zsc** | Sites d'importance communautaire (SIC) et zones spéciales de conservation (ZSC)  | Zones protégées de la directive cadre eau | Zones naturelles désignées par la Commission européenne dans le cadre du réseau Natura 2000. |
-
-
-### Autre enjeu
-
-| Code | Chemin | Libellé | Libellé Parent | Définition | 
-|-|-|-|-|-|
-| 999999 | /autre | Autre | - | Autre enjeu non catégorisé |
-
-
-
-
-
-
-# Bibliographie
-
-
-1. **Ressources documentaires** 
-
-**Nom, Prénom. 2011.** *Nom du livre.* s.l. : Editions, 2011. numéro ISBN/ISSN. 
-
-
-2. **Points de contacts additionnels** 
