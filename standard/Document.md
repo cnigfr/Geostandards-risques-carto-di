@@ -337,9 +337,9 @@ Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) U
 
 ### Diagramme général
 
-Le diagramme UML suivant représente le modèle de données complet des classes impliquées dans les cartographies de la Directive Inondation. Pour plus de lisibilité, les énumérations et les types de données ne sont pas représentés sur ce diagramme. Ces éléments seront représentés dans les diagrammes spécifiques par thématique qui suivent.
+Le diagramme UML suivant représente le modèle de données complet des classes impliquées dans les cartographies de la Directive Inondation. Pour plus de lisibilité, les énumérations, les types de données et les attributs des classes ne sont pas représentés sur ce diagramme. Ces éléments seront représentés dans les diagrammes thématiques spécifiques qui suivent.
 
-![Schéma UML général](./ressources/TBD.png)
+![Schéma UML général](./ressources/UML-General-Carto-DI.png)
 {#fig:uml-general-img}
 
 ### Procédure TRI et cartes
@@ -2028,7 +2028,7 @@ Pour produire les cartographies de la directive inondations, il est recommandé 
 4. Découpage administratif (*), périmètre du TRI ;
 5. Ouvrages protecteurs et zones associées ;
 6. Enjeux : réseaux de transports ;
-7. Enjeux surfaciques: bâtiments, zones d'activités, etc.. ;
+7. Enjeux surfaciques: bâtiments (*), zones d'activités, etc.. ;
 8. Enjeux pontuels ;
 9. Cartouche des populations impactées.
 
@@ -2107,7 +2107,7 @@ L'application des styles suivants est recommandée pour les enjeux surfaciques (
 | Catégorie d'enjeu | Style Fond | Style Contour | Aperçu |
 | - | - | - | - |
 | Toutes zones d'activité (industrie, commerces, carrières, agricoles, portuaire/balnéaire, campings) | Aucun | Jaune : RVB(230,230,0), épaisseur 0,75mm | ![Zone activité](./ressources/vignettes_symbologie/zone_activite_contour_jaune.png) |
-| Zones de bâti, bâtiments | Rouge : RVB(245,42,42) | Aucun | ![Zone bâti](./ressources/vignettes_symbologie/zone_bati_remplissage_rouge.png) |
+| Bâtiments | Rouge : RVB(245,42,42) | Aucun | ![Zone bâti](./ressources/vignettes_symbologie/zone_bati_remplissage_rouge.png) |
 | Zones protégées de la directive cadre eau | Hachures brunes : RVB(150,104,83) en diagonale 45°, espacement : 5mm | Contour brun RVB(150,104,83) | ![Zone DCE](./ressources/vignettes_symbologie/zone_dce_hachures_contour.png) |
 
 ### Enjeux linéaires
