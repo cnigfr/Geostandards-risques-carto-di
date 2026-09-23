@@ -67,9 +67,7 @@ L’objectif est d'aboutir à terme à un consensus qui se traduise en un standa
 
 ### Actualisation
 
-Les travaux d'élaboration de ce standard sont en cours à l'occasion d'ateliers de conception.
-
-- Premier atelier, le 11 décembre 2025.
+- La [version 0.1 du Géostandard](./standard/diffusion/Geostandard-Risques-Carto-DI-v0.1.pdf), publiée le 23 septembre 2026, est en cours de relecture par le groupe de travail.
 
 - Une [consultation sur la mise en oeuvre du standard COVADIS DI](./groupe_de_travail_CNIG/Questionnaire%20refonte/Questionnaire%20sur%20la%20refonte%20du%20standard%20Directive%20Inondation.docx) a été menée auprès des D(R)EALs qui sont en charge de la mise à jour des TRI pour le cycle 3 de la Directive Inondation. la synthèse des cette consultation a été présentée lors de la plénière du Groupe de travail le [7 octobre 2025](https://cnig.gouv.fr/IMG/pdf/2025-10-07-cr-pleinere-gt-risques-25-0109.pdf).
 
