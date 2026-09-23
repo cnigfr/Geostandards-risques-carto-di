@@ -14,7 +14,7 @@ Cartographies de la Directive Inondation
 
 Groupe de travail refonte des Géostandards Risques
 
-Version 0.1 - 22 septembre 2026
+Version 0.1 - 23 septembre 2026
 
 
 # Fiche descriptive
@@ -23,10 +23,10 @@ Version 0.1 - 22 septembre 2026
 |---|---|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Cartographies de la Directive Inondation |
-| **Version** | Version 0.1 - 22 septembre 2026 |
+| **Version** | Version 0.1 - 23 septembre 2026 |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux cartographies de la directive inondation. |
-| **Objectif** | Ce document à pour objectif de décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le cadre réglementaire transposé de la Directive européenne sur les inondations. |
-| **Etendue d'application** | Territoires à risque important d'inondation sur les bassins DCE (Directive Cadre Eau) du territoire national français *et Saint-Pierre et Miquelon (à confirmer)*. |
+| **Objectif** | Ce document a pour objectif de décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le cadre réglementaire transposé de la Directive européenne sur les inondations. |
+| **Etendue d'application** | Territoires à risque important d'inondation sur les bassins DCE (Directive Cadre Eau) du territoire national français. |
 | **Représentation spatiale** | Données vecteur |
 | **Résolution spatiale** | L'échelle cible des cartographies de la Directive Inondation est le 1:25000. *Elle peut néanmoins être plus précise lorsqu'elle est produite à partir de zones d'aléas PPR plus résolues*. |
 | **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
@@ -50,7 +50,7 @@ Version 0.1 - 22 septembre 2026
 | Version | Date | Chapitre modifié | Changement apporté |
 | --- | --- | --- | --- |
 | 0.0.1 | 11/12/2025 | Tous | Initialisation du document et début des travaux |
-| 0.1 | 22/09/2026 | Tous | Version pour relecture par le GT. |
+| 0.1 | 23/09/2026 | Tous | Version pour relecture par le GT. |
 
 ## Participation à l'écriture
 
@@ -118,7 +118,7 @@ Cette partie cite les références documentaires et réglementaires sur lesquell
 
 ### Références à d'autres documents
 
-Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous (*Liste à compléter*).
+Ce document s’appuie ou nécessite la lecture des normes et documents référencées ci-dessous.
 
 | Acronyme | Titre | Auteur | Année |
 | - | - | - | - |
@@ -158,19 +158,17 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 
 ### Termes spécifiques et définitions
 
-*Liste à compléter*
-
 | Terme | Définition|
 |-|-|
 | Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).|
 | Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Il existe quatorze bassins ou groupements de bassins en France. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
 | District | Synonyme de bassin dans le cadre de la DCE. _(TBD : préciser la définition alternative de District à ne pas utiliser)_ |
-| DREAL de bassin | Direction régionale de l'environnement, de l'aménagement et du logement (DREAL) qui se voit confier le rôle de délégué de bassin à l'échelle d'un grand bassin hydrographique au service du préfet coordinateur de bassin. En outre mer, ce rôle est assuré par les Directions de l'environnement, de l'aménagement et du logement (DEAL) des bassins ultramrins.|
+| DREAL de bassin | Direction régionale de l'environnement, de l'aménagement et du logement (DREAL) qui se voit confier le rôle de délégué de bassin à l'échelle d'un grand bassin hydrographique au service du Préfet coordinateur de bassin. En outre-mer, ce rôle est assuré par les Directions de l'environnement, de l'aménagement et du logement (DEAL) des bassins ultramarins.|
 | Enjeux | Personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. Cf. [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions). |
 | Inondation | Submersion temporaire par l'eau de terres émergées, quelle qu'en soit l'origine, à l'exclusion des inondations dues aux réseaux de collecte des eaux usées, y compris les réseaux unitaires. Cf. [Article L566-1 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454)
-| Préfet (coordinateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
+| Préfet (coordinateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le Préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
 | Risque | Un risque est la conjugaison d’un aléa (résultant par exemple d’une inondation) et d’enjeux, plus ou moins vulnérables au regard de l’aléa. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
-| Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le préfet coordinateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
+| Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le Préfet coordinateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
 | Vulnérabilité (à l'inondation) | La vulnérabilité d’un enjeu (personne, bien, activité, patrimoine, etc.) à l’inondation peut être définie comme la propension de cet enjeu à être affecté par une inondation. Elle dépend à la fois de l’exposition à l’aléa (et notamment de l’intensité de l’aléa au niveau de l’enjeu) et de la manière dont l’enjeu est adapté à l’inondation. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
 
 ### Abréviations
@@ -249,14 +247,14 @@ Les cartes ci-dessous issues du ["Flood Risk Areas Viewer"](https://discomap.eea
 
 ## Les acteurs et rôles concernés
 
-Le tableau suivant présente les différents acteurs regroupés par rôles principaux dans la mise en oeuvre, la publication, le rapportage et l'exploitation des cartographies de la directive inondation.
+Le tableau suivant présente les différents acteurs regroupés par rôles principaux dans la mise en œuvre, la publication, le rapportage et l'exploitation des cartographies de la directive inondation.
 
 | Rôles | Caractéristiques |
 | - | - |
-| Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en oeuvre sous l'autorité du **Préfet coordinateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
-| Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
+| Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en œuvre sous l'autorité du **Préfet coordinateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
+| Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environnement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
 | Diffuseur | La diffusion des cartographies de la directive inondation est assurée par les **D(R)EALs de bassin** sur leurs sites internet et au niveau national par la **DGPR** sur le site [Géorisques](www.georisques.gouv.fr) opéré par le **BRGM**. Elle est aussi assurée au niveau européen sur le site [WISE Freshwater](https://water.europa.eu/freshwater) opéré par l'**EEA** pour le compte de la **Commission européenne**. |
-| Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information des acquéreurs et des locataires, des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en oeuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
+| Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information des acquéreurs et des locataires, des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en œuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
 
 ## Cas d'utilisation
 
@@ -267,15 +265,15 @@ Les cas d'utilisation illustrés ci-après impliquent l'utilisation ou la connai
 
 ### Cas d'utilisation `Elaborer les cartographies de la directive inondation`
 
-Le cas d'utilisation "Elaborer les cartographies de la Directive Inondation" décrit les étapes de mise en oeuvre ou de révision des cartographies de la directive inondation ainsi les acteurs majeurs et systèmes impliqués. Les étapes présentées ne sont pas toutes concernées au même niveau par le périmètre du ce standard.
+Le cas d'utilisation "Elaborer les cartographies de la Directive Inondation" décrit les étapes de mise en œuvre ou de révision des cartographies de la directive inondation ainsi les acteurs majeurs et systèmes impliqués. Les étapes présentées ne sont pas toutes concernées au même niveau par le périmètre du ce standard.
 
 | Action du cas d'utilisation | Description |
 | - | - |
-| Déclencher l'élaboration des cartographies | Cette action est de la responsabilité du **préfet de bassin**. Elle consiste à arrêter un nouveau territoire (TRI) sur lequel il existe un risque important d'inondation ou à arrêter la mise à jour des cartographies d'un TRI après réexamen par les **D(R)EALs de bassin** ou les **DDT(M)s** concernées. Dans ce dernier cas, la décision de mise à jour peut-être consécutive à la révision d'un plan de prévision des risques inondation (PPRI) ou littoral (PPRL), de nouvelles connaissances sur l'aléa d'inondation (survenue d'un évènement, nouvelles études, ...), le changement de périmètre du TRI (par exemple du fait d'une fusion de communes) ou la prise en compte d'une nouvelle source d'aléa (cours d'eau). |
-| Produire les données métiers | Cette action est menée sous la responsabilité du **prefet de bassin** par les **D(R)EALs de bassin**. Elle consiste à établir les informations metiers sur les aléas et les enjeux pour produire les cartographies. Elle est mise en oeuvre par les services techniques compétents :  **Service central Vigicrues**, **Services de prévision des crues(SPC)**, **Services risques en DDT(M)** ou **Bureaux d'études**. Selon les types d'aléa, certains **opérateurs d'Etat** (BRGM, Cerema) peuvent aussi être sollicités. |
+| Déclencher l'élaboration des cartographies | Cette action est de la responsabilité du **Préfet de bassin**. Elle consiste à arrêter un nouveau territoire (TRI) sur lequel il existe un risque important d'inondation ou à arrêter la mise à jour des cartographies d'un TRI après réexamen par les **D(R)EALs de bassin** ou les **DDT(M)s** concernées. Dans ce dernier cas, la décision de mise à jour peut être consécutive à la révision d'un plan de prévision des risques inondation (PPRI) ou littoral (PPRL), de nouvelles connaissances sur l'aléa d'inondation (survenue d'un évènement, nouvelles études, ...), le changement de périmètre du TRI (par exemple du fait d'une fusion de communes) ou la prise en compte d'une nouvelle source d'aléa (cours d'eau). |
+| Produire les données métiers | Cette action est menée sous la responsabilité du **Préfet de bassin** par les **D(R)EALs de bassin**. Elle consiste à établir les informations metiers sur les aléas et les enjeux pour produire les cartographies. Elle est mise en œuvre par les services techniques compétents :  **Service central Vigicrues**, **Services de prévision des crues (SPC)**, **Services risques en DDT(M)** ou **Bureaux d'études**. Selon les types d'aléa, certains **opérateurs d'Etat** (BRGM, Cerema) peuvent aussi être sollicités. |
 | Produire les données SIG | Cette étape consiste à produire les données numériques des cartographies en conformité avec ce standard (y compris la validation), ainsi que les données de rapportage au niveau européen. Il peut s'agir d'une sous-étape de la précédente si les données ont été directement produites selon le formalisme du standard. Les acteurs impliqués sont globalement les mêmes que lors de l'étape précédente. D'autres opérateurs (IGN) peuvent être sollicités pour la validation des données relativement au standard. |
-| Produire les cartes | Cette action menée par les **D(R)EALs de bassin** consiste à établir les cartes objets des [articles R566-6 à R566-9 du code de l'environnement](#cadre-réglementaire) à partir des données SIG aux formats papier ou pdf qui seront arrêtées par le préfet de bassin et mises à disposition du public. |
-| Arrêter les cartes | Cette action est réalisée par le **préfet de bassin** qui valide les cartes produites. |
+| Produire les cartes | Cette action menée par les **D(R)EALs de bassin** consiste à établir les cartes objets des [articles R566-6 à R566-9 du code de l'environnement](#cadre-réglementaire) à partir des données SIG aux formats papier ou pdf qui seront arrêtées par le Préfet de bassin et mises à disposition du public. |
+| Arrêter les cartes | Cette action est réalisée par le **Préfet de bassin** qui valide les cartes produites. |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
@@ -302,8 +300,8 @@ Le cas d'utilisation "Publier les cartographies de la directive inondation" conc
 
 | Action du cas d'utilisation | Description |
 | - | - |
-| Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon à ce quelles soient exploitables par des systèmes avals. Elle est mise en oeuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
-| Publier les atlas des cartes | Cette action vise à rendre accessibles les cartes arrêtées par le préfet dans un format "imprimable" (PDF). Elle est effectuée par les **D(R)EALs de bassin** sur leurs sites internet. |
+| Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon à ce qu'elles soient exploitables par des systèmes avals. Elle est mise en œuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
+| Publier les atlas des cartes | Cette action vise à rendre accessibles les cartes arrêtées par le Préfet dans un format "imprimable" (PDF). Elle est effectuée par les **D(R)EALs de bassin** sur leurs sites internet. |
 | Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage vie son sytème **WISE Freshwater** (Freshwater information system for europe). |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
@@ -316,7 +314,7 @@ Le cas d'utilisation "exploiter les cartographies de la Directive Inondation" il
 
 | Action du cas d'utilisation | Description |
 | - | - |
-| Mettre en oeuvre la GEMAPI | La gestion des milieux aquatiques et la prévention des inondations (GEMAPI) est une compétence confiée aux **intercommunalités** (métropoles, communautés urbaines, communautés d’agglomération, communautés de communes) pour la prévention du risque inondation, notamment pour l'entretien des cours d'eau, la défense contre les inondations et contre la mer. Les informations des cartographies de la Directive inondation participent à cette mise en oeuvre. |
+| Mettre en œuvre la GEMAPI | La gestion des milieux aquatiques et la prévention des inondations (GEMAPI) est une compétence confiée aux **intercommunalités** (métropoles, communautés urbaines, communautés d’agglomération, communautés de communes) pour la prévention du risque inondation, notamment pour l'entretien des cours d'eau, la défense contre les inondations et contre la mer. Les informations des cartographies de la Directive inondation participent à cette mise en œuvre. |
 | Elaborer la PGRI et les SLGRI | L'élaboration sous responsabilité des **préfets de bassin** des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et leurs déclinaisons en stratégies locales de gestion du risque inondation (SLGRI) font parties des actions transposées de la directive inondation et s'appuient sur les données de cartographies de la directive inondation. |
 | Porter à connaissance sur le risque inondation | Les cartographies de la directive inondation font parties des éléments sur le risque inondation portés à connaissance (PaC) par l'**Etat**, via ses services régionaux ou départementaux auprès des **collectivité locales**. |
 | Informer les citoyens | L'information des citoyens sur le risque inondation s'appuie sur données des cartographies de la directive inondation, notamment via des cartographies interactives (par exemple sur le site [Georisques](https://www.georisques.gouv.fr/cartes-interactives#/)) ou lors de l'établissement de l'état des risques acquéreurs-locataires (ERRIAL) pour les transactions immobilières. |
@@ -339,8 +337,7 @@ Le MCD est traduit sous forme graphique par (ou des) diagramme(s) de classe(s) U
 
 Le diagramme UML suivant représente le modèle de données complet des classes impliquées dans les cartographies de la Directive Inondation. Pour plus de lisibilité, les énumérations, les types de données et les attributs des classes ne sont pas représentés sur ce diagramme. Ces éléments seront représentés dans les diagrammes thématiques spécifiques qui suivent.
 
-![Schéma UML général](./ressources/UML-General-Carto-DI.png)
-{#fig:uml-general-img}
+![Schéma UML général](./ressources/UML-General-Carto-DI.png){#fig:uml-general-img}
 
 ### Procédure TRI et cartes
 
@@ -348,18 +345,18 @@ Le diagramme UML suivant représente les classes décrivant les [territoires à 
 
 ![Schéma UML Procédure et cartes](./ressources/UML-Procedure-Cartes-Carto-DI.png){#fig:uml-tri-cartes-img}
 
-La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](#identification-des-tri), de faire le lien avec la procedure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
+La classe [Territoire à risque important d'inondation(TRI)](#territoire-à-risque-important-dinondation-tri) est la classe centrale du modèle. Elle permet de représenter le TRI [arrêté](#typeetatproceduretri) par le préfét de bassin avec son périmètre, son [identifiant spécifique](#identification-des-tris), de faire le lien avec la procédure qui lui est associée dans le système GASPAR, telle que définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
 La [référence internet](#référence-internet) qui lui est associée correspond soit à sa publication sur la plateforme nationale, soit sur la plateforme régionale (DREAL de Bassin), telle que spécifiée à l'aide de l'énumération [TypeReferenceTRI](#typereferencetri).
 
-A chaque TRI sont associés des [cartographies TRI](#cartographie-tri), [arrêtées](#typeetatproceduretri) par le préfet de bassin sur lesquelles seront représentées les différents éléments décrits dans les parties suivantes :
+A chaque TRI sont associés des [cartographies TRI](#cartographie-tri), [arrêtées](#typeetatproceduretri) par le Préfet de bassin sur lesquelles seront représentées les différents éléments décrits dans les parties suivantes :
 
-* les [cartes de surfaces inondables](#carte-des-surfaces-inondables) décrites pas l'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) du code de l'environnement, correspondant à des [probabilités d'aléa](#typeprobabilitealea) ;
-* les [cartes de risque d'inondation](#carte-des-risques-inondation) décrites pas l'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement.
+* les [cartes de surfaces inondables](#carte-des-surfaces-inondables) décrites par l'[article R566-6](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655649) du code de l'environnement, correspondant à des [probabilités d'aléa](#typeprobabilitealea) ;
+* les [cartes de risque d'inondation](#carte-des-risques-inondation) décrites par l'[article R566-7](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033942220) du code de l'environnement.
 
 ### Surfaces inondables et caractérisations d'aléas
 
-Le diagramme UML suivant représente les classes décrivant les surfaces inondables et les éléments permettant des les caractériser pouvant être représentés sur les cartes de surfaces inondables.
+Le diagramme UML suivant représente les classes décrivant les surfaces inondables et les éléments permettant de les caractériser pouvant être représentés sur les cartes de surfaces inondables.
 
 ![Schéma UML Surfaces inondables et aléas](./ressources/UML-Surfaces-Inondables-Carto-DI.png){#fig:uml-surfaces-inondables-img}
 
@@ -367,20 +364,20 @@ Les [surfaces inondables](#surface-inondable) sont les zones d'aléas issues des
 
 **Exigence :** Dans le cadre de la directive inondation, les cartes de surfaces inondables doivent être établies à minima pour représenter un des [aléas de moyenne probabilité](#typeprobabilitealea).
 
-**Exigence :** Pour la réprésentation des **aléas de moyenne probabilité**, les surfaces inondables correspondent aux zones d'aléas des PPRN correspondants, lorsqu'ils existent :
+**Exigence :** Pour la représentation des **aléas de moyenne probabilité**, les surfaces inondables correspondent aux zones d'aléas des PPRN correspondants, lorsqu'ils existent :
 
 * **zone d'aléa de référence** pour les aléas de submersion marine et débordement de cours d'eau ;
 * **zone d'aléa à échéance 100 ans** pour l'aléa submersion marine avec prise en compte du changement climatique à échéance 100.
 
 Les éléments de caractérisation d'aléas suivants peuvent être reportés sur les cartes de surfaces inondables :
 
-* [zones iso classes de hauteur](#zone-iso-classe-hauteur) réparties en [palliers de hauteur d'eau types](#typeclassehauteureau);
+* [zones iso classes de hauteur](#zone-iso-classe-hauteur) réparties en [paliers de hauteur d'eau types](#typeclassehauteureau);
 * [lignes iso cote](#ligne-iso-cote) ;
 * [zones iso classe vitesse](#zone-iso-classe-vitesse), réparties en [classes de vitesses type](#typevitesseecoulement) ;
 * [points remarquables cote vitesse débit](#point-remarquable-cote-vitesse-débit) ;
 * [zone iso classe débit](#zone-iso-classe-débit).
 
-**Exigence :** Une carte des surfaces inondables doit comprendre à minima les zones iso classe de hauteur ou les lignes isocotes ayant permis de calculer les surfaces inondables correspondantes.
+**Exigence :** Une carte des surfaces inondables doit comprendre à minima les zones iso classe de hauteur ou les lignes iso-cotes ayant permis de calculer les surfaces inondables correspondantes.
 
 Les surfaces inondables sont aussi représentées sur les [cartes de risque d'inondation](#carte-des-risques-inondation).
 
@@ -404,7 +401,7 @@ Le diagramme UML suivant représente les classes décrivant les enjeux et leur i
 
 Les enjeux représentés sur les cartes de risques sont les suivants :
 
-* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation a être mentionnés sous forme de cartouche de la carte des risques d'inondation ;
+* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation à être mentionnés sous forme de cartouche de la carte des risques d'inondation ;
 * Les objets de la classe [Enjeu](#enjeu) héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI](#nomenclature-enjeux-carto-di)).
 
 ## Catalogue d'objets
@@ -431,10 +428,7 @@ Les attributs sont typés selon les types généraux suivants (colonne "Type") :
 * `url` pour les adresses internet ;
 * valeurs énumérées précisées dans la partie [Description des types énumérés](#description-des-types-énumérés) ;
 
-Les règles de codage particulière et les éventuelles restrictions sur les domaines de valeurs sont précisés dans la partie "Contraintes". Les types correspondant au format de livraison seront précisés dans la partie [Diffusion](#diffusion).
-
-_[A confirmer] Le séparateur utilisé pour les champs à valeurs multiples est le caractère pipe : \|
-Les attributs pointant vers des référentiels externes (dits attributs pivots) sont indiqués comme étant des clés étrangères et leur nom est souligné.
+Les règles de codage particulière et les éventuelles restrictions sur les domaines de valeurs sont précisées dans la partie "Contraintes". Les types correspondant au format de livraison seront précisés dans la partie [Diffusion](#diffusion).
 
 ### Territoire à risque important d'inondation (TRI)
 
@@ -450,7 +444,7 @@ Les attributs pointant vers des référentiels externes (dits attributs pivots) 
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
-| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identification des TRI](#identification-des-tri) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
+| **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identification des TRIs](#identification-des-tris) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
 | `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | Valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
 | **`codeProcedure`** | identifiant GASPAR du TRI | 1 | `CharacterString` | Saisie obligatoire | `45DREAL20130002` |
 | `libelleProcedure` | Libellé de la procédure dans GASPAR | 0..1 | `CharacterString` | Valeur vide autorisée | `Tours` |
@@ -582,7 +576,7 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
 | **`idZoneAlea`** | Identifiant de la surface inondable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `SIN_0001` |
-| **`typeAlea`** | Type d'aléa inondation engendreant la surface; selon la codification GASPAR | 1 | `CharacterString` | Valeur à prendre parmi les valeurs de [TypeAleaCartoDI](#typealeacartodi) selon la nomenclature GASPAR | `112` |
+| **`typeAlea`** | Type d'aléa inondation engendrant la surface; selon la codification GASPAR | 1 | `CharacterString` | Valeur à prendre parmi les valeurs de [TypeAleaCartoDI](#typealeacartodi) selon la nomenclature GASPAR | `112` |
 | **`occurrence`** | Probabilité de survenue de l'aléa inondation associée à la surface selon la caractérisation définie par [TypeProbabiliteAlea](#typeprobabilitealea) | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
 | **`dateCalcul`** | Date de calcul de la surface | 0..1 | `date` | Valeur facultative | `26/11/2012` |
 | `description` | Description de la surface inondable. Champ hérité du modèle commun. | 0..1 | `CharacterString` | Valeur facultative | ... |
@@ -670,7 +664,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | | |
 | - | - |
 | **Classe d'objet** | **`Zone iso classe vitesse`** |
-| **Définition** | Les zones iso classe vitesse sont des zones sur lesquelles on dispose d'une estimation qualitative (selon l'énumération [TypeVitesseEcoulement](#typevitesseecoulement)) de la vitesse d'écoulement dans le cas d'une inondation d'un certain type pour une probabilité d'occurence donnée. |
+| **Définition** | Les zones iso classe vitesse sont des zones sur lesquelles on dispose d'une estimation qualitative (selon l'énumération [TypeVitesseEcoulement](#typevitesseecoulement)) de la vitesse d'écoulement dans le cas d'une inondation d'un certain type pour une probabilité d'occurrence donnée. |
 | **Modélisation géométrique** | Les zones iso classe vitesse sont représentées par des surfaces auxquelles une vitesse moyenne est appliquée. Cette classe d'objet regroupe en une seule classe les zones d'écoulement et les points champs vitesse de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **Primitive graphique** | Polygon |
 
@@ -737,7 +731,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | | |
 | - | - |
 | **Classe d'objet** | **`Ouvrage protecteur`** |
-| **Définition** | Cette classe spécialise la classe d'objets "Ouvrage protecteur" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les ouvrages ayant une influence vis à vis de l'aléa inondation avec une fonction ou non de protection. La plupart de ces ouvrages sont définis et référencés dans des référentiels externes tels que le Référentiel des Obstacles à l'Ecoulement (ROE) ou le Système d’Information des Ouvrages Hydrauliques (SIOUH). Les objets de cette classe permettent d'y faire référence en en reprenant la géométrie, le nommant et en indiquant la fonction et le niveau de protection. |
+| **Définition** | Cette classe spécialise la classe d'objets "Ouvrage protecteur" définie dans le modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les ouvrages ayant une influence vis à vis de l'aléa inondation avec une fonction ou non de protection. La plupart de ces ouvrages sont définis et référencés dans des référentiels externes tels que le Référentiel des Obstacles à l'Ecoulement (ROE) ou le Système d’Information des Ouvrages Hydrauliques (SIOUH). Les objets de cette classe permettent d'y faire référence en en reprenant la géométrie, le nommant et en indiquant la fonction et le niveau de protection. |
 | **Modélisation géométrique** | |
 | **Primitive graphique** | Line |
 
@@ -768,7 +762,7 @@ Cf. aussi [associations de la classe Carte des surfaces inondables](#association
 | | |
 | - | - |
 | **Classe d'objet** | **`Zone protégée`** |
-| **Définition** | Cette classe spécialise la classe d'objets "Zone protégée" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones protégées par un ouvrage protecteur contre l'aléa inondation correspondant à une certaine probabilité de survenue de l'aléa. |
+| **Définition** | Cette classe spécialise la classe d'objets "Zone protégée" définie dans le modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones protégées par un ouvrage protecteur contre l'aléa inondation correspondant à une certaine probabilité de survenue de l'aléa. |
 | **Regroupement** | Cette classe doit permettre de rassembler les Zones soustraites à l'inondation et les zones protégées contre l'inondation décrites dans l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **Modélisation géométrique** | La géométrie d'une zone protégée doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection. |
 | **Primitive graphique** | Polygone |
@@ -791,7 +785,7 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 | | |
 | - | - |
 | **Classe d'objet** | **`Zone de sur-aléa`** |
-| **Définition** | Cette classe spécialise la classe d'objets "Zone de danger spécifique" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones où le risque est plus important si l'ouvrage protecteur cède que s'il n'avait pas existé. Ces zones correspondent aux bandes de précautions à l'arrière des systèmes d'endiguements. |
+| **Définition** | Cette classe spécialise la classe d'objets "Zone de danger spécifique" définie dans le modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les zones où le risque est plus important si l'ouvrage protecteur cède que s'il n'avait pas existé. Ces zones correspondent aux bandes de précautions à l'arrière des systèmes d'endiguements. |
 | **Modélisation géométrique** | La géométrie d'une zone de sur aléa doit être cohérente avec celle de l'ouvrage protecteur qui l'engendre. Au mieux en partage de géométrie, à minima sans intersection. |
 | **Primitive graphique** | Polygone |
 
@@ -812,7 +806,7 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 | | |
 | - | - |
 | **Classe d'objet** | **`Enjeu`** |
-| **Définition** | Cette classe spécialise la classe d'objets "Enjeu" définie dans la modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les biens, activités, éléments de patrimoine culturel ou environnemental, menacés par l'aléa inondation ou susceptibles d'être affectés et endommagés par celui-ci. Il peut notamment s'agir d'établissements, infrastructures et installations sensibles dont la réalisation de l'aléa peut aggraver ou compliquer la gestion de crise. |
+| **Définition** | Cette classe spécialise la classe d'objets "Enjeu" définie dans le modèle commun dans le cadre des cartographies de la directive inondation. Elle permet de décrire les biens, activités, éléments de patrimoine culturel ou environnemental, menacés par l'aléa inondation ou susceptibles d'être affectés et endommagés par celui-ci. Il peut notamment s'agir d'établissements, infrastructures et installations sensibles dont la réalisation de l'aléa peut aggraver ou compliquer la gestion de crise. |
 | **Regroupement** | Cette classe regroupe l'ensemble des enjeux devant être collectés et représentés sur les cartes de risque inondation : patrimoniaux, économiques, sensibles ou utiles à la gestion de crise, installations relevant de la directive IED (Industrial Emissions Directive), stations de traitement des eaux usées et zones protégées de la DCE. Leur distinction se fait selon la [nomenclature des enjeux](#nomenclature-enjeux-carto-di) via le champ [TypeEnjeu](#typeenjeu) |
 | **Modélisation géométrique** | La modélisation géométrique des enjeux dépend de celle des référentiels dont ils sont issus. |
 | **Primitive graphique** | Point, Ligne ou Polygone |
@@ -846,9 +840,9 @@ Cf. [associations de la classe Carte des risques inondation](#associations-de-la
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
 | **`occurrence`** | Probabilité de survenue de l'aléa inondation pour laquelle les chiffres sont rapportés sur la carte | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
-| `nbHabitantsPermanents` | Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. | `entier` | 1 | Saisie obligatoire | `500` |
-| `nbHabitantsSaisonniers` | Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | `entier` | 0..1 | Saisie libre | `500` |
-| `nbEmplois` | Nombre indicatif d'emplois affectés pour la probabilité de survenue de l'aléa. | `entier` | 1 | Saisie obligatoire | `500` |
+| `nbHabitantsPermanents` | Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. | 1 | `entier` | Saisie obligatoire | `500` |
+| `nbHabitantsSaisonniers` | Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | 0..1 | `entier` | Saisie libre | `500` |
+| `nbEmplois` | Nombre indicatif d'emplois affectés pour la probabilité de survenue de l'aléa. | 1 | `entier` | Saisie obligatoire | `500` |
 
 #### Associations de la classe Enjeu rapportés
 
@@ -871,7 +865,7 @@ Les valeurs possibles pour l'état associé à un TRI ou ses cartographies se li
 
 ### TypeProbabiliteAlea
 
-Le tableau suivant liste les valeurs possibles permettant de caractériser les différents probabilités d'aléa représentables sur les cartographies des TRI.
+Le tableau suivant liste les valeurs possibles permettant de caractériser les différentes probabilités d'aléa représentables sur les cartographies des TRI.
 
 | Libellé | Définition |
 | - | - |
@@ -915,7 +909,7 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les p
 | Libellé | Définition |
 | - | - |
 | `Zone émergée` | Cette valeur spécifique permet, lorsque cela a un sens, notamment pour des conséquences réglementaires, d'identifier des zones émergées au sein (topologiquement parlant) d'une surface inondable pour une probabilité d'occurrence donnée. Cette classe de hauteur d'eau **n'est pas prise en compte** pour le calcul de la surface inondable lors de l'agrégation des classes de hauteur d'eau.  |
-| `Inférieur à 0,5m` | Ces hauteurs correspondent au seuil de hauteurs d'eau "extrèmement faibles". |
+| `Inférieur à 0,5m` | Ces hauteurs correspondent au seuil de hauteurs d'eau "extrêmement faibles". |
 | `Entre 0,5m et 1m` | Hauteurs d'eau comprises entre 0,5m et 1m (qualifié de "inférieur à 1m" dans le [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf)) |
 | `Entre 1m et 2m` | Hauteurs d'eau comprises entre 1m et 2m |
 | `Supérieur à 2m` | Hauteurs d'eau supérieures à 2m |
@@ -968,12 +962,12 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 | **/activite/service/commerces** | Commerces | Zone de typologie de bâti homogène destinée au Commerce. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Commerce" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/activite/carrières** | **Zone de carrières ou gravières** | Zone de carrières ou gravières. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Carrières, gravières" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | /equipementParticulier/sensibleCrise | Infrastructures et équipements particuliers | Par exemple : crèches, écoles, hôpitaux, maisons de retraite, centres pénitentiaires. Cette catégorie reprise de la nomenclature des enjeux PPRN peut permettre de reprendre les enjeux "Gestion crise" de type "Autres enjeu sensible à la gestion de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) lorsqu'une catégorie plus fine n'est pas identifiée. |
-| **/equipementParticulier/sensibleCrise/creche** | Crêche | Crêches. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Crêche" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/sensibleCrise/creche** | Crèche | Crèches. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Crèche" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/sensibleCrise/ecole** | Ecole | Ecoles. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Ecole" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
-| **/equipementParticulier/sensibleCrise/hopital** | Hopital | Hôpitaux. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Hôpital" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| **/equipementParticulier/sensibleCrise/hopital** | Hôpital | Hôpitaux. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Hôpital" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/sensibleCrise/ehpad** | Ehpad | Ehpad ou résidences séniors. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Maison de retraite" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/sensibleCrise/prison** | Prison | Prisons. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Prison" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
-| /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu utile à la gestin de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| /equipementParticulier/gestionCrise | Equipements stratégiques pour la gestion de crise | Par exemple : PC de crises, centres de secours, ERP pouvant servir d'hébergement, centraux téléphoniques, centrales électriques, gendarmerie, police, services techniques... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu utile à la gestion de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/gestionCrise/pompiers** | Caserne de pompiers | Casernes de pompiers. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Caserne de pompiers" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/gestionCrise/forceDeLOrdre** | Forces de l'ordre | Gendarmeries ou commissariats. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Gendarmerie/commissariat" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | /equipementParticulier/collectifsPublicsOuverts | Equipements collectifs de type ERP ou espaces publics ouverts | Equipements regroupant ponctuellement ou périodiquement en un point donné du territoire un nombre important de personnes. |
@@ -984,7 +978,7 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 | **/equipementParticulier/transports/routeRegionale** | Route liaison régionale | Routes permettant des liaisons régionales ou départementales. Correspond aux infrastructures routières d'[importance 3](http://bdtopoexplorer.ign.fr/troncon_de_route#attribute_value_614) dans la BD Topo. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Route-liaison régionale" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/transports/voieFerreePrincipale** | Voie ferrée principale | Voies ferrées principales dont Lignes à grande vitesses. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Voie ferrée principale" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/transports/aeroport** | Aéroport | Aéroports ou aérodromes. Cette catégorie permet de reprendre les enjeux "Activité économique" de type "Ports et aéroports" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), lorsqu'il s'agit d'aéroports ou d'aérodromes. |
-| /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu sensible à la gestin de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
+| /equipementParticulier/reseauxSensibles | Réseaux et équipements sensibles | Réseaux électriques et téléphoniques aériens, réseaux enterrés d’eau et de gaz, stations de traitement des eaux usées, installations d’alimentation en eau potable... Cette catégorie de la nomenclature des enjeux PPRN peut être utilisée pour classer les enjeux "Gestion crise" de type "Autre enjeu sensible à la gestion de crise" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/reseauxSensibles/seveso** | Installation SEVESO | Installation de type SEVESO. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "SEVESO" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/reseauxSensibles/nucleaire** | Installation nucléaire de base | Installations nucléaire de base. Cette catégorie permet de reprendre les enjeux "Gestion crise" de type "Installation nucléaire de base" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
 | **/equipementParticulier/reseauxSensibles/ied** | Installation de la directive IED | Installations classées pour la protection de l'environnement (ICPE) polluante entrant dans le cadre de la directive 2010/75/UE IED (Industrial Emission Directive). Cette catégorie permet de reprendre les enjeux "IPPC" et "IED" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). |
@@ -1001,28 +995,11 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 |-|-|-|-|-|
 | 999999 | /autre | Autre | - | Autre enjeu non catégorisé |
 
-
-### Listes de valeurs
-
-| Type énuméré : `liste_att1-attribut de : CLASSE_1` |  |
-|---|---|
-| `valeur_1` | `valeur_3` |
-| `valeur_2` | `valeur_4` |
-
-| Type énuméré : `liste_att2-attribut de : CLASSE_1` |  |
-|---|---|
-|       |       |       |
-|       |       |       |
-|       |       |       |
-
-### Définitions des valeurs
-
-
 ## Systèmes de référence
 
 Les clauses du [modèle commun](https://github.com/cnigfr/Geostandards-Risques/blob/main/standards/Geostandards-risques-commun/Document.md#systèmes-de-référence) s'appliquent aux cartographies de la Directive Inondation avec les restrictions et précisions énoncées ci-après.
 
-## Systèmes de référence spatiaux
+### Systèmes de référence spatiaux
 
 Le tableau suivant présente les systèmes de référence légaux à utiliser pour les cartographies de la Directive Inondation dans la mesure où les données décrites ne comprennent pas de composant verticale et leur précision planimétrique ne nécessite pas, sur le territoire métropolitain, l'utilisation des projections coniques conformes 9 zones.
 
@@ -1040,11 +1017,11 @@ __Note__ : les acronymes IGN utilisés dans ce tableau sont les identifiants des
 
 ## Cycle de vie des données
 
-Le patrimoine des jeux de données des cartographies de la directive inondation a été constitué initialement pour chaque TRI à l'occasion de la mise en oeuvre de la Directive Inondation.
+Le patrimoine des jeux de données des cartographies de la directive inondation a été constitué initialement pour chaque TRI à l'occasion de la mise en œuvre de la Directive Inondation.
 
-Il évolue en fonction des arrêtés des Prefets de bassin selon les éléments déclencheurs décrits dans le cas d'usage [Elaborer les cartographies de la directive inondation](#cas-dutilisation-elaborer-les-cartographies-de-la-directive-inondation).
+Il évolue en fonction des arrêtés des Préfets de bassin selon les éléments déclencheurs décrits dans le cas d'usage [Elaborer les cartographies de la directive inondation](#cas-dutilisation-elaborer-les-cartographies-de-la-directive-inondation).
 
-De manière générale, les données constitutives des cartographies de la directive inondation sont élaborées à partir des données du PPR Inondation ou Litoral s'il en existe sur le territoire concerné ou à partir d'études spécifiques si ce n'est pas le cas. La refonte des géostandards risques dont sont issus ce standard et le standard [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) a harmonisé les modèles et les exigences de qualité des données de risques afin de rationaliser leur production et leur entretien.
+De manière générale, les données constitutives des cartographies de la directive inondation sont élaborées à partir des données du PPR Inondation ou Littoral s'il en existe sur le territoire concerné ou à partir d'études spécifiques si ce n'est pas le cas. La refonte des géostandards risques dont sont issus ce standard et le standard [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) a harmonisé les modèles et les exigences de qualité des données de risques afin de rationaliser leur production et leur entretien.
 
 ## Qualité des données
 
@@ -1052,7 +1029,7 @@ Cette partie contient les recommandations et exigences de qualité concernant le
 
 ### Enjeux
 
-Il est important pour les producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité freine la mise à disposition de ressources (le fournisseur ayant peur d’exposer une donnée imparfaite), mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).  
+Il est important pour les producteurs et utilisateurs d’évaluer la capacité des données à pouvoir répondre à leurs attentes et besoins. Cette capacité est souvent dépendante de la qualité des données. La méconnaissance de leur qualité peut freiner la mise à disposition de ressources de peur d’exposer une donnée imparfaite, mais également la réutilisation des données (le ré-utilisateur potentiel n’ayant pas les moyens de vérifier que la ressource dispose d’une qualité suffisante pour l’usage souhaité).  
 
 L’objectif est que le producteur puisse certifier la précision de la donnée afin de pouvoir la publier, puis que l’utilisateur en ait connaissance, qualifie et utilise la donnée en conséquence.  
 
@@ -1064,7 +1041,7 @@ Ces mesures peuvent être :
 
 ● Métiers : Il existe déjà en interne de la thématique des processus de production ou de gestion et ils peuvent être réutilisés pour mesurer la qualité des données de cette thématique.
 
-Les différentes mesures de la qualité des données des cartographies de la Directive Inondation sont définies ci-dessous et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit (cf [Mesures de qualité complémentaires](bookmark://_heading=h.206ipza)). 
+Les différentes mesures de la qualité des données des cartographies de la Directive Inondation sont définies ci-dessous et leurs résultats seront déclarés par les producteurs dans les métadonnées du produit (cf. [Mesures de qualité complémentaires](#mesures-de-qualité-complémentaires)).
 
 ### Référence normative
 
@@ -1088,12 +1065,12 @@ Les composantes géométriques des données des cartographies de la Directive In
 
 #### Référentiels de numérisation
 
-A la date de rédaction de ce standard, les référentiels de données suivants sont généralement utilisés pour l'éléboration des cartographies de la Directive Inondation :
+A la date de rédaction de ce standard, les référentiels de données suivants sont généralement utilisés pour l'élaboration des cartographies de la Directive Inondation :
 
 * Fond de plan :
   * [SCAN 25®](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_SCAN-25) - IGN
   * [BD Ortho®](https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_BD-ORTHO) - IGN
-* Référentiels hydrographique :
+* Référentiels hydrographiques :
   * [BD Topage®](https://www.data.gouv.fr/datasets/bd-topage-r) (IGN - OFB - Sandre)
 * Zones d'aléas inondation :
   * Plans de Préventions des Risques Inondation - DGPR
@@ -1108,7 +1085,7 @@ A la date de rédaction de ce standard, les référentiels de données suivants 
   * [Fichier détail des logements ordinaires](https://www.insee.fr/fr/statistiques/8268903) - INSEE
   * Base SIRENE - INSEE
   * [Base de données des Installations classées pour la protection de l'environnement](https://www.georisques.gouv.fr/donnees/bases-de-donnees/installations-industrielles) (ICPE) - DGPR (Géorisques) 
-  * Base de données des réseaux de collecte et stations de traitement des eaux usées (ROSEAU) - MTE, [Portail sur l'assainissemnt collectif](https://assainissement.developpement-durable.gouv.fr/pages/data/actu.php)
+  * Base de données des réseaux de collecte et stations de traitement des eaux usées (ROSEAU) - MTE, [Portail sur l'assainissement collectif](https://assainissement.developpement-durable.gouv.fr/pages/data/actu.php)
   * [Fichier National des Établissements Sanitaires et Sociaux](https://finess.esante.gouv.fr/portail) (FINESS) - Ministère de la Santé
   * [Statistique Annuelle des Établissements de santé](https://www.sae-diffusion.sante.gouv.fr/sae-diffusion/accueil.htm) (base SAE) - Ministère de la Santé
   * [Fichier des établissements d’enseignement des premier et second degrés (publics et privés)](https://data.education.gouv.fr/pages/accueil) - Ministère de l'éducation nationale
@@ -1171,7 +1148,7 @@ Les invalidités de géométries peuvent être relatées de manière statistique
 
 La complexité des géométries doit être maitrisée, notamment dans le domaine du risque inondation où certaines surfaces d'aléas générées à partir de données d'observation très résolues peuvent devenir inexploitables par les outils informatiques du fait de leurs volumes.
 
-Pour contrôler cela, ce standard reprend, comme le géostandard Plan de Prévention des Risques (PPR), les indicateurs définis dans le cadre de la validation des Servitudes d'Utilité Publiques (SUP) du Géoportail de l'Urbanisme et des seuils à ne pas dépasser pour une géométrie de type multi-polygone pour chacun de ces indicateurs :
+Pour contrôler cela, ce standard reprend, comme le Géostandard Plan de Prévention des Risques (PPR), les indicateurs définis dans le cadre de la validation des Servitudes d'Utilité Publiques (SUP) du Géoportail de l'Urbanisme et des seuils à ne pas dépasser pour une géométrie de type multi-polygone pour chacun de ces indicateurs :
 
 | Indicateur | Seuil d'avertissement | Seuil de rejet |
 | - | - | - |
@@ -1180,7 +1157,7 @@ Pour contrôler cela, ce standard reprend, comme le géostandard Plan de Préven
 | Nombre d'anneaux | > 500 | > 1 000 |
 | Nombre de parties | > 500 | > 1 000 |
 
-D'autres indicateurs sont aussi repris du géostandard PPR pour éviter les micro-géométries qui n'auraient pas de sens au regard de l'échelle de référence des PPR :
+D'autres indicateurs sont aussi repris du géostandard PPR pour éviter les micro-géométries qui n'auraient pas de sens au regard de l'échelle de référence du standard :
 
 | Indicateur | Seuil d'avertissement | Seuil de rejet |
 | - | - | - |
@@ -1249,7 +1226,7 @@ Afin d'assurer une continuité dans le patrimoine des données des cartographies
 
 ### Identification des TRIs
 
-L'identifiant d'un TRI est composé selon les mêmes règles que celles du  standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), à savoir `[Bassin DCE]_TRI_[Nom du TRI]` où :
+L'identifiant d'un TRI est composé selon les mêmes règles que celles du  standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), à savoir `[Bassin DCE]_TRI_[Nom du TRI]`, où :
 
 * `[Bassin DCE]` est le code européen du bassin ou groupement de bassin de la Directive Cadre Eau (DCE) dont la liste est fournie dans la partie "[Périmètre d'application](#périmètre-dapplication)".
 
@@ -1265,7 +1242,7 @@ Le bassin de la Loire (FRG) est pilote mais le TRI se trouve également sur le b
 
 ### Règles de codification des identifiants
 
-L'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractère de ce type : `[code classe]_[numéro automatique]`. où :
+L'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractère de ce type : `[code classe]_[numéro automatique]`, où :
 
 * `[code classe]` est un préfixe déterminé en fonction de la classe d'objets concernée ;
 * `[numéro automatique]` est un numéro unique pour l'objet dans la classe, de préférence "aligné à droite", c'est à dire sous la forme `001`, `012`, `125`.
@@ -1293,7 +1270,7 @@ Note : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut proven
 * Le préfixe `ZE` est issu de l'ancienne classe [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) "Zone d'écoulement"
 * Le préfixe `PCV` est issu de l'ancienne classe [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) "Point champ vitesse"
 * Les préfixes `ZPP` et `ZSI` sont issus des anciennes classes [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) 'Zone Physiquement protégée' et "Zone soustraite à l'inondation"
-* Dans l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), les tables d'enjeux avaient leur propre logique d'identifiants en fonction du type d'enjeu (`code_STEU`, `code_IED`, etc...). Ces identifiants seront désormais plutôt portés par le champ idRefExterne.
+* Dans l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf), les tables d'enjeux avaient leur propre logique d'identifiants en fonction du type d'enjeu (`code_STEU`, `code_IED`, etc...). Ces identifiants seront désormais portés par le champ idRefExterne dans la plupart des cas.
 
 # Diffusion
 
@@ -1303,7 +1280,7 @@ Les considérations relatives à la diffusion des données en flux de données s
 
 ## Schéma physique et format d'échange
 
-Le format GeoPackage est le format d'échange prescrit par ce standatd pour un jeu de données des cartographies de la directive inondation.
+Le format GeoPackage est le format d'échange prescrit par ce standard pour un jeu de données des cartographies de la directive inondation.
 
 Dans ce qui suit, on sépare la partie [schéma physique](#schéma-physique) qui décrit l'implémentation du modèle conceptuel sous forme de tables relationnelles et les [aspects spécifiques d'implémentation relatifs à l'utilisation du format GeoPackage](#spécificités-du-format-geopackage).
 
@@ -1315,30 +1292,33 @@ Pour l'implémentation du modèle conceptuel de données de ce standard, les cho
 
 * La **granularité d'un jeu de données** de cartographies de la directive inondation correspond à un TRI.
 
-* L'**identifiant d'un jeu de données** est celui du TRI tel que défini dans la partie [Identification des TRI](#identification-des-tri).
+* L'**identifiant d'un jeu de données** est celui du TRI tel que défini dans la partie [Identification des TRIs](#identification-des-tris).
 
 * **identifiants du schéma physique** : Chaque table possède un champ identifiant (`id_tri`, `id_sin, etc...`) de type `TEXT` jouant le rôle de clef primaire dans le schéma physique. Cela permet de maintenir des identifiants d'objets stables associés à une nomenclature métier particulière, notamment lorsque les objets sont récupérés des anciens jeux de données relatifs à la directive inondation. L'implémentation du schéma au format GeoPackage (mais éventuellement dans d'autres formats tabulaires) nécessite le rajout de champs spécifiques de type `INTEGER` déclarés comme clefs primaires. Les champs de type identifiant du schéma physique doivent alors être déclarés avec les contraintes `UNIQUE` et `NOT NULL`, ce qui permet d'implémenter les liens entre tables via des clefs étrangères référençant ces champs et non ceux rajoutés par les contraintes du format. Cf. [Gestion des identifiants et clefs primaires dans GeoPackage](#gestion-des-identifiants-et-clef-primaires-dans-geopackage).
 
 * Les **noms de tables et des colonnes** sont intégralement en minuscules et les séparateurs de mots sont des `_` (tirets du 8).
 
-* Une table portant une géométrie ne peut être associées qu'à un seul type de primitive géométrique (Point, Ligne ou Polygone). **Les noms des tables géométriques sont systématiquement suffixés par le type de géométrie à laquelle elle sont associées** : 
+* Une table portant une géométrie ne peut être associées qu'à un seul type de primitive géométrique (Point, Ligne ou Polygone). **Les noms des tables géométriques sont systématiquement suffixés par le type de géométrie à laquelle ellse sont associées** :
+
   * `_p` pour les tables de ponctuels (`POINT`)
   * `_l` pour les tables de linéaires (`LINESTRING` ou `MULTILINESTRING`)
   * `_s` pour les tables surfaciques (`POLYGON` ou `MULTIPOLYGON`)
 
 * La colonne portant la composante géométrique de ces tables porte le nom `geom`.
 
-* Les **tables d'énumérations** comportent systématiquement une colonne `code` et `libelle`. Les valeurs utilisés par les tables du standard sont celles de la colonne `code` lorsqu'elles reposent sur une table d'énumération.
+* Les **tables d'énumérations** comportent systématiquement une colonne `code` et `libelle`. Les valeurs utilisées par les tables du standard sont celles de la colonne `code` lorsqu'elles reposent sur une table d'énumération.
 
 * Les choix d'**implémentation des associations** entre classe du modèle conceptuel sont les suivants :
+
   * Toutes les tables comportent une colonne `id_tri` permettant de relier chaque objet du jeu de données au TRI qu'il représente via sont identifiant.
-  * Les relations entre la table `surface_inondable_s` et les tables héritées des éléments de caractrisation d'aléa est réalisé à l'aide de la colonne `id_sin` dans chacune de ces tables.
+  * Les relations entre la table `surface_inondable_s` et les tables héritées des éléments de caractérisation d'aléa est réalisé à l'aide de la colonne `id_sin` dans chacune de ces tables.
   * Les autres associations sont implicites :
-    * Les cartes des surfaces inondables sont constituées à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_iso_classe_hauteur_s`, `zone_iso_classe_vitesse_s`, `ligne_iso_cote_l`, `zone_iso_classe_debit_s`, `point_remarquable_cvd_p`, `zone_protegee_s`, `ouvrageprotecteur_l` et `zonesuralea_s` sélectionnés à selon la probabilité d'aléa portée par le champ `occurrence` de chacune de ces tables (à l'exception de `tri_s`).
-    * La carte de risque d'inondation est constituée à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_protegee_s`, `ouvrageprotecteur_l`, `zonesuralea_s`, `enjeu_s`, `enjeu_l`, `enjeu_p` et `enjeux_rapportes_tri`.
+
+    * Les cartes des surfaces inondables sont constituées à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_iso_classe_hauteur_s`, `zone_iso_classe_vitesse_s`, `ligne_iso_cote_l`, `zone_iso_classe_debit_s`, `point_remarquable_cvd_p`, `zone_protegee_s`, `ouvrageprotecteur_l` et `zonesuralea_s` sélectionnés selon la probabilité d'aléa portée par le champ `occurrence` de chacune de ces tables (à l'exception de `tri_s`)
+    * La carte de risque d'inondation est constituée à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_protegee_s`, `ouvrageprotecteur_l`, `zonesuralea_s`, `enjeu_s`, `enjeu_l`, `enjeu_p` et `enjeux_rapportes_tri`
     * Les liens entre les ouvrages protecteurs et les zones qu'ils protègent ainsi que les zones de sur-aléa qu'ils engendrent ne sont pas implémentés.
 
-* Le **séparateur décimal** pour les valeurs de type `FLOAT` est le "`.`".
+* Le **séparateur décimal** pour les valeurs de type `FLOAT` est le ".".
 * Les **champs de type `DATE`** sont encodés au format ISO 8601 : "YYYY-MM-DD".
 * Les **champs de type `TEXT`** sont encodés avec le jeu de caractères `UTF-8`
 
@@ -1375,7 +1355,7 @@ Le tableau qui suit reprend l'ensemble des tables possibles permettant d'implém
 | F | [typevitesseecoulement](#table-de-valeurs-typevitesseecoulement) | [Typevitesseecoulement](#typevitesseecoulement) |
 | F | [typeouvrageprotecteur](#table-de-valeurs-typeouvrageprotecteur) | [Typeouvrageprotecteur](#typeouvrageprotecteur) |
 | F | [typerefexterneouvrage](#table-de-valeurs-typerefexterneouvrage) | [Typerefexterneouvrage](#typerefexterneouvrage) |
-| F | [typeenjeucartodi](#table-de-valeurs-typeenjeucartodi) | [nomenclature des enjeux carto DI](#nomenclature-enjeux-carto-di) |
+| F | [typeenjeucartodi](#table-de-valeurs-typeenjeucartodi) | [Nomenclature des enjeux carto DI](#nomenclature-enjeux-carto-di) |
 
 ##### Table `tri_s`
 
@@ -1383,7 +1363,7 @@ La table `tri_s` implémente la classe [Territoire à risque important d'inondat
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
-| **`id_tri`** | TEXT | Clé primaire, Saisie obligatoire selon les règles spécifiées dans la partie [Identification des TRI](#identification-des-tri) | `FRG_TRI_TOURS` |
+| **`id_tri`** | TEXT | Clé primaire, Saisie obligatoire selon les règles spécifiées dans la partie [Identification des TRIs](#identification-des-tris) | `FRG_TRI_TOURS` |
 | `nom` | TEXT | Valeur vide autorisée. Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
 | **`id_procedure`** | `TEXT` | Saisie obligatoire | `45DREAL20130002` |
 | `lib_procedure` | `TEXT` | Valeur vide autorisée | `Tours` |
@@ -1429,7 +1409,7 @@ La table `surface_inondable_s` implémente la classe [Surface inondable](#surfac
 | - | - | - | - |
 | **`id_sin`** | `TEXT` | Clé primaire. Identifiant de la surface inondable. Saisie obligatoire selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `SIN_0001` |
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
-| **`type_alea`** | `TEXT` | Type d'aléa inondation engendreant la surface, selon la codification GASPAR. Saisie obligatoire à faire parmi les valeurs de code de la table [typealeacartodi](#table-de-valeurs-typealeacartodi). | `112` |
+| **`type_alea`** | `TEXT` | Type d'aléa inondation engendrant la surface, selon la codification GASPAR. Saisie obligatoire à faire parmi les valeurs de code de la table [typealeacartodi](#table-de-valeurs-typealeacartodi). | `112` |
 | **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation associée à la surface. Valeur obligatoire à prendre parmi les valeurs de code de la table[typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
 | **`date_calcul`** | `DATE` | Date de calcul de la surface. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `origine_inond` | `TEXT` | Nom de l'entité (cours d'eau, mer,...) à l'origine du risque inondation et de la surface inondable. Saisie facultative | `La Seine` |
@@ -1500,7 +1480,7 @@ La table `ligne_iso_cote_l` implémente la classe [Ligne iso cote](#ligne-iso-co
 | **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que l'iso côte permet de caractériser. | `SIN_0001` |
 | **`cote`** | `FLOAT` | Saisie obligatoire. Altitude de la surface de l’eau en mètres. | `250.5` |
 | `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
-| `geom` | `MULTILINESTRING` | Matérialise le traçé de la ligne iso-cote. | |
+| `geom` | `MULTILINESTRING` | Matérialise le tracé de la ligne iso-cote. | |
 
 ##### Table `point_remarquable_cvd_p`
 
@@ -1513,8 +1493,8 @@ La table `point_remarquable_cvd_p` implémente la classe [Point remarquable cote
 | **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que le point remarquable permet de caractériser. | `SIN_0001` |
 | `cote` | `FLOAT` | Saisie facultative. Altitude de la surface de l’eau lors de l'inondation en ce point, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250.5` |
 | `vitesse` | `FLOAT` | Saisie facultative. Vitesse d’écoulement de l’eau en ce point dans le cas d’une inondation. exprimée en m/s. | `2.0` |
-| `debit_lin` | `FLOAT` | Saisie facultative, Débit linéique d'écoulement en ce point dans le cas d’une inondation par ruissellement. Exprimée en m2/s, ne peut être négative. | `0.2` |
-| `azimuth` | `FLOAT` | Saisie facultative, Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre.exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `85.80` |
+| `debit_lin` | `FLOAT` | Saisie facultative, Débit linéique d'écoulement en ce point dans le cas d’une inondation par ruissellement, exprimé en m2/s, ne peut être négative. | `0.2` |
+| `azimuth` | `FLOAT` | Saisie facultative, Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre, exprimé en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `85.80` |
 | `geom` | `POINT` | Matérialise la position du point remarquable. | |
 
 ##### Table `zone_protegee_s`
@@ -1539,7 +1519,7 @@ La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvra
 | **`id_ouv`** |  `TEXT` | Clé primaire. Identifiant de l'ouvrage, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | `OUV_0001` |
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | `nom` | `TEXT` | Saisie facultative (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). Nom de l'ouvrage protecteur. | `Barrage de Serre-Ponçon` |
-| `id_ref_ext` | `TEXT` | Saisie facultative. Identifiant de l'objet dans le référentiel externe d'où il est extrait. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `TBD` |
+| `id_ref_ext` | `TEXT` | Saisie facultative. Identifiant de l'objet dans le référentiel externe d'où il est extrait. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `CONSSURF0000000262619564` |
 | **`ref_externe`** | `TEXT` | Saisie obligatoire. Valeurs à prendre parmi les codes de la table [typerefexterneouvrage](#table-de-valeurs-typerefexterneouvrage) | `02` |
 | `ref_externe_autre` | `TEXT` | Nom du référentiel externe s'il ne fait pas partie de ceux prévus dans l'énumération [TypeRefExterneOuvrage](#typerefexterneouvrage). Saisie facultative. Obligatoire si la valeur de `refExterne` vaut `99` | `BD Topo` |
 | `type_ouv_protec` | `TEXT` | Saisie Obligatoire. Caractérisation de l'ouvrage selon sa fonction vis à vis de l'aléa. Valeurs à prendre parmi celles des codes de la table [typeouvrageprotecteur](#table-de-valeurs-typeouvrageprotecteur) | `112` |
@@ -1578,15 +1558,15 @@ Note : la colonne `type_enjeu` implémente directement le champ `codeEnjeu` du t
 
 ##### Table `enjeu_l`
 
-La table `enjeu_l` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie linéaire. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
+La table `enjeu_l` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie linéaire. Elle a la même structure la table `enjeu_s` à part pour la colonne `geom` qui a la définition suivante :
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
-| **`geom`** | `MULTILINESTRING` | traçé(s) de l'enjeu linéaire. | |
+| **`geom`** | `MULTILINESTRING` | Tracé(s) de l'enjeu linéaire. | |
 
 ##### Table `enjeu_p`
 
-La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie ponctuelle. Elle a la même structure la table `enjeu_s` a part pour la colonne `geom` qui a la définition suivante :
+La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant une géométrie ponctuelle. Elle a la même structure la table `enjeu_s` à part pour la colonne `geom` qui a la définition suivante :
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
@@ -1673,10 +1653,10 @@ La table de valeurs `typeouvrageprotecteur` implémente l'énumération [Typeouv
 | - | - |
 | `1` | `Ouvrage ou installation pouvant influencer les inondations` |
 | `11` | `Ouvrage de protection contre les inondations` |
-| `111` | `Ouvrage appartenant à un systeme d'endiguement` |
-| `112` | `Amenagement hydraulique` |
+| `111` | `Ouvrage appartenant à un système d'endiguement` |
+| `112` | `Aménagement hydraulique` |
 | `119` | `Autre ouvrage de protection contre les inondations` |
-| `12` | `Ouvrage ou installation influencant les ecoulements sans fonction de protection` |
+| `12` | `Ouvrage ou installation influençant les écoulements sans fonction de protection` |
 
 ##### Table de valeurs `typerefexterneouvrage`
 
@@ -1702,7 +1682,7 @@ La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux c
 | `06010201` | **`Services de type commerces`** |
 | `060104` | **`Zone de carrières ou gravières`** |
 | `070100` | `Etablissements sensibles ou difficilement évacuables` |
-| `070101` | **`Crêche`** |
+| `070101` | **`Crèche`** |
 | `070102` | **`Ecole`** |
 | `070103` | **`Hopital`** |
 | `070104` | **`Ehpad`** |
@@ -1735,7 +1715,7 @@ La table de valeurs `typeenjeucartodi` implémente la [nomenclature des enjeux c
 
 GeoPackage est un format standard défini par l'[OGC](https://www.ogc.org/) (Open Geospatial Consortium). C'est un format ouvert, indépendant de toute plateforme et autodescriptif pour échanger de l'information géographique. Il s'appuie sur le format de fichier de base de données [SQLite](https://sqlite.org/fileformat2.html) pour décrire des tables de données et de métadonnées pour lesquelles il définit un ensemble de conventions.
 
-Les données échangées peuvent être de type vecteur, raster ou simplement attributaires (sans géométries) et aussi des extensions qui permettent d'ajouter des fonctionnalités supplémentaires au format de base.
+Les données échangées peuvent être de type vecteur, raster ou simplement attributaires (sans géométrie) et aussi des extensions qui permettent d'ajouter des fonctionnalités supplémentaires au format de base.
 
 #### Versions de GeoPackage supportées
 
@@ -1766,7 +1746,7 @@ L'implémentation au format GeoPackage fera donc coexister ces deux types d'iden
 
 #### Implémentation des métadonnées dans le fichier GeoPackage
 
-Les éléments de métadonnées permettant de décrire une jeu de données conforme à ce standard ainsi que leur encodage en XML sont spécifiés dans la partie suivante [Métadonnées](#métadonnées). On traite ici de l'intégration du document XML métadonnées dans le fichier GeoPackage.
+Les éléments de métadonnées permettant de décrire un jeu de données conforme à ce standard ainsi que leur encodage en XML sont spécifiés dans la partie suivante [Métadonnées](#métadonnées). On traite ici de l'intégration du document XML implémentant ces métadonnées dans le fichier GeoPackage.
 
 Ce contenu XML des métadonnées est à renseigner par une ligne dans la table `gpkg_metadata` et une ligne dans la table `gpkg_metadata_reference` de la manière suivante :
 
@@ -1826,27 +1806,26 @@ Le fichier de métadonnées est nommé: `[Identifiant-TRI].xml` Exemple : `FRG_T
 ### Identification des données
 
 |  |  |
-|---|---|
+| - | - |
 | _**Intitulé de la ressource**_ (obligatoire) | L’intitulé contient le titre de la donnée avec une indication de la zone géographique. Il ne contient pas de millésime.     |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/title     |
 | Consigne de saisie | Utiliser le nom long du TRI (valeur de `nom` de la table `tri_s` )   |
 
 |  |  |
 |---|---|
-| _**Résumé de la ressource**_ (obligatoire)  |    Le résumé doit décrire la ressource de façon compréhensible avec une définition commune et une indication géographique     |
+| _**Résumé de la ressource**_ (obligatoire)  | Le résumé doit décrire la ressource de façon compréhensible avec une définition commune et une indication géographique     |
 | Xpath ISO 19115  | identificationInfo[1]/*/abstract     |
-| Exemple   | *Données du `thème` de l'agglomération de Bordeaux. Ce lot est constitué conformément aux prescriptions du standard CNIG `thème` et fourni au `format`. (etc.)*     |
 | Consigne de saisie | `Données relatives au [nom long du TRI] conformes au standard CNIG "Cartographies de la Directive Inondation (version - date).` |
 
 |  |  |
 |---|---|
-| _**Type de la ressource**_ (obligatoire)  |    Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : dataset. Certaines interfaces de saisie proposent « jeu de données ».      |
+| _**Type de la ressource**_ (obligatoire) | Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec la valeur : dataset. Certaines interfaces de saisie proposent « jeu de données ».      |
 | Xpath ISO 19115  | hierarchyLevel      |
 | Consigne de saisie | `dataset` |
 
 |  |  |
 |---|---|
-| _**Localisateur de la ressource**_ (obligatoire)  |   Le localisateur est un lien vers un site permettant de décrire plus finement la ressource mais pouvant également permettre le téléchargement ou l’accès aux données ressources.<br>Le localisateur est de préférence une URL (résolvable). Il peut y avoir plusieurs liens mais au moins un des liens doit être un accès public.       |
+| _**Localisateur de la ressource**_ (obligatoire)  | Le localisateur est un lien vers un site permettant de décrire plus finement la ressource mais pouvant également permettre le téléchargement ou l’accès aux données ressources. Le localisateur est de préférence une URL (résolvable). Il peut y avoir plusieurs liens mais au moins un des liens doit être un accès public. |
 | Xpath ISO 19115  | transferOptions/*/onLine/*/linkage/URL      |
 | Consigne de saisie | Utiliser la valeur de l'URL de la référence internet associée au TRI pour le rapportage (valeur de `url_ref` de la table `tri_s`) |
 
@@ -1854,27 +1833,27 @@ Le fichier de métadonnées est nommé: `[Identifiant-TRI].xml` Exemple : `FRG_T
 | - | - |
 | _**Identificateur de ressource unique IRU**_ (obligatoire) | L’identificateur de ressource unique identifie la ressource elle-même (série de données ou service) |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/identifier/*/code   |
-| Exigence     | L'IRU doit être conforme aux guides CNIG relatifs à la saisie des éléments de métadonnées INSPIRE :<br>- « Guide de saisie des éléments de métadonnées INSPIRE »<br>- « Guide Identificateurs de Ressource Uniques » |
+| Exigence     | L'IRU doit être conforme aux guides CNIG relatifs à la saisie des éléments de métadonnées INSPIRE : - « Guide de saisie des éléments de métadonnées INSPIRE » - « Guide Identificateurs de Ressource Uniques » |
 | Consigne de saisie | utiliser l'identifant du tri (valeur de `id_tri` de la table `tri_s`) en minuscules précédé de l'URL `https://geostandards.gouv.fr/risques/carto_di/`. Exemple : `https://geostandards.gouv.fr/risques/carto_di/frg_tri_tours` |
 
 |  |  |
 |---|---|
-| _**FileIdentifier**_ (recommandé)  |   Le champ fileIdentifier est utilisé par tous les catalogues de métadonnées (en particulier par le Géocatalogue) comme identifiant de la fiche de métadonnées et est donc requis pour que la métadonnée soit déposée in fine sur le Géocatalogue.<br>Il doit être unique quelque-soit l’outil utilisé pour produire la fiche de métadonnées et peut prendre l’une des deux formes suivantes :<br>- identique aux règles de nommage du fichier de métadonnées (sans l’extension .xml)<br>- UUID aléatoirement généré par certaines plates-formes        |
-| Remarque   | L'IRU est un champ de métadonnées prescrit par Inspire, il identifie la ressource elle-même (série de données ou service).<br>Le fileIdentifier est un champ technique imposé par l'utilisation du protocole CSW, il identifie la fiche de métadonnées dans le catalogue.    |
-| Xpath ISO 19115 | fileIdentifier  |
-| Consigne de saisie | utiliser l'identifant du tri (valeur de `id_tri` de la table `tri_s`). Exemple : `FRG_TRI-TOURS` |
+| _**FileIdentifier**_ (recommandé)  |   Le champ fileIdentifier est utilisé par tous les catalogues de métadonnées (en particulier par le Géocatalogue) comme identifiant de la fiche de métadonnées et est donc requis pour que la métadonnée soit déposée in fine sur le Géocatalogue. Il doit être unique quelque-soit l’outil utilisé pour produire la fiche de métadonnées et peut prendre l’une des deux formes suivantes : - identique aux règles de nommage du fichier de métadonnées (sans l’extension .xml) - UUID aléatoirement généré par certaines plates-formes        |
+| Remarque   | L'IRU est un champ de métadonnées prescrit par Inspire, il identifie la ressource elle-même (série de données ou service). Le FileIdentifier est un champ technique imposé par l'utilisation du protocole CSW, il identifie la fiche de métadonnées dans le catalogue.    |
+| Xpath ISO 19115 | fileIdentifier |
+| Consigne de saisie | Utiliser l'identifant du tri (valeur de `id_tri` de la table `tri_s`). Exemple : `FRG_TRI-TOURS` |
 
 |  |  |
 |---|---|
-| _**Langue de la ressource**_ (obligatoire)  |   Le champ est à remplir avec le code à trois lettres de la langue de la ressource.<br>Les documents d'urbanisme en France doivent obligatoirement être rédigés en français, le champ est à remplir avec la valeur : fre<br>Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées INSPIRE, provient de la liste normalisée : http://www.loc.gov/standards/iso639-2/php/code_list.php       |
+| _**Langue de la ressource**_ (obligatoire) | Le champ est à remplir avec le code à trois lettres de la langue de la ressource. Le champ est à remplir avec la valeur : fre. Ce code à trois lettres, conforme aux prescriptions de saisie de métadonnées INSPIRE, provient de la liste normalisée : http://www.loc.gov/standards/iso639-2/php/code_list.php       |
 | Xpath ISO 19115  | identificationInfo[1]/*/language  |
 | Consigne de saisie | `fre` |
 
 |  |  |
 |---|---|
 | _**Encodage**_ (obligatoire)  | Le champ est à remplir avec les valeurs suivantes :<br/>- format d'échange (format de distribution)<br/>- version de format. Si le numéro de version n’est pas connu, la valeur par défaut sera « inconnue »    |
-| Xpath ISO 19115  | distributionInfo/*/distributionFormat/*/name<br>distributionInfo/*/distributionFormat/*/version  |
-| Consigne de saisie | `GeoPackage`<br/>_`version de GPKG`_ |
+| Xpath ISO 19115  | distributionInfo/*/distributionFormat/*/name - distributionInfo/*/distributionFormat/*/version  |
+| Consigne de saisie | `GeoPackage` -_`version de GPKG`_ |
 
 |  |  |
 |---|---|
@@ -1889,6 +1868,7 @@ Le fichier de métadonnées est nommé: `[Identifiant-TRI].xml` Exemple : `FRG_T
 | Consigne de saisie | _`vector`_ |
 
 ### Classification des données et services géographiques
+
 |  |  |
 |---|---|
 | _**Catégorie thématique**_ (obligatoire)  | Le champ est à remplir avec la valeur suivante : `geoscientificInformation` (Catégorie ISO 19115 correspondante de la thématique INSPIRE : "Zones à risque naturel" dans la liste : https://inspire.ec.europa.eu/metadata-codelist/TopicCategory )  |
@@ -1896,55 +1876,59 @@ Le fichier de métadonnées est nommé: `[Identifiant-TRI].xml` Exemple : `FRG_T
 | Consigne de saisie | `geoscientificInformation`  |
 
 ### Mots-clés
+
 |  |  |
 |---|---|
 | _**Mots clés obligatoires**_  | Le champ est à remplir avec la désignation du thème INSPIRE :  `Zones à risque naturel` dans le thésaurus GEMET (General Multilingual Environmental Thesaurus) |
-| Xpath ISO 19115  | identificationInfo[1]/*/descriptiveKeywords/*/keyword<br>identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName   |
-| Consigne de saisie | `Zones à risque naturel`<br>`https://www.eionet.europa.eu/gemet/fr/inspire-themes/`  |
+| Xpath ISO 19115  | identificationInfo[1]/*/descriptiveKeywords/*/keyword - identificationInfo[1]/*/descriptiveKeywords/*/thesaurusName   |
+| Consigne de saisie | `Zones à risque naturel` - `https://www.eionet.europa.eu/gemet/fr/inspire-themes/`  |
 
 |  |  |
 |---|---|
 | _**Mots clés libres**_  | Ces mots-clés ne doivent pas être saisis ensemble dans un mot-clé unique mais dans des mots-clés séparés |
-| Remarque 1 | un séparateur est inutile, car il y a un mot-clé par balise. |
-| Remarque 2 | D’après : http://cnig.gouv.fr/wp-content/uploads/2014/01/Guide-de-saisie-des-%C3%A9l%C3%A9ments-de-m%C3%A9tadonn%C3%A9es-INSPIRE-v1.1-final-light.pdf#page=18 : « Dans le cas de données sous licence ouverte, il convient d’ajouter un mot-clé `données ouvertes` »  |
+| Remarque 1 | Un séparateur est inutile, car il y a un mot-clé par balise. |
+| Remarque 2 | D’après [Le guide de saisie des métadonnées INSPIRE](http://cnig.gouv.fr/wp-content/uploads/2014/01/Guide-de-saisie-des-%C3%A9l%C3%A9ments-de-m%C3%A9tadonn%C3%A9es-INSPIRE-v1.1-final-light.pdf#page=18) : « Dans le cas de données sous licence ouverte, il convient d’ajouter un mot-clé `données ouvertes` »  |
 | Consigne de saisie | `territoire à risque important d'inondation (tri)`, `directive inondation`, `données ouvertes`, ... |
 
 ### Situation géographique
+
 |  |  |
 |---|---|
 | _**Rectangle de délimitation géographique**_ (obligatoire)  | Pour l'ensemble des lots concernés, le rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule. Les coordonnées sont exprimées en WGS84  |
-| Xpath ISO 19115  | identificationInfo[1]/*/extent/*/geographicElement/*/westBoundLongitude<br>identificationInfo[1]/*/extent/*/geographicElement/*/eastBoundLongitude<br>identificationInfo[1]/*/extent/*/geographicElement/*/southBoundLatitude<br>>identificationInfo[1]/*/extent/*/geographicElement/*/northBoundLatiTude  |
-| Exemple | _O : -4.24_<br><br>_S : 41.34_<br><br>_E : 10.81_<br><br>_N : 50.79_  |
-| Consigne de saisie | Les coordonnées sont exprimées en WGS84<br>On utilise le point comme séparateur décimal, et non la virgule |
+| Xpath ISO 19115  | identificationInfo[1]/*/extent/*/geographicElement/*/westBoundLongitude - identificationInfo[1]/*/extent/*/geographicElement/*/eastBoundLongitude - identificationInfo[1]/*/extent/*/geographicElement/*/southBoundLatitude - identificationInfo[1]/*/extent/*/geographicElement/*/northBoundLatiTude  |
+| Exemple | _O : -4.24_ - _S : 41.34_ - _E : 10.81_ - _N : 50.79_  |
+| Consigne de saisie | Les coordonnées sont exprimées en WGS84. On utilise le point comme séparateur décimal, et non la virgule |
 
 |  |  |
 |---|---|
-| _**Référentiel de coordonnées**_ (obligatoire)  | Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec le système de coordonnées des données, avec utilisation du code EPSG ou du registre IGN-F.   |
+| _**Référentiel de coordonnées**_ (obligatoire)  | Pour l'ensemble des lots concernés par ces consignes, le champ est à remplir avec le système de coordonnées des données, avec utilisation des registres EPSG ou IGN-F.   |
 | Xpath ISO 19115  | referenceSystemInfo/*/referenceSystemIdentifier/*/code   |
-| Code xml | <gmx:Anchor<br>xlink:href="http://www.opengis.net/def/crs/EPSG/0/2154">EPSG:2154</gmx:Anchor><br>ou :<br><gmx:Anchor<br>xlink:href="http://registre.ign.fr/ign/IGNF/crs/IGNF/RGF93LAMB93">IGNF:RGF93LAMB93</gmx:Anchor>   |  
-| Exemple  | Pour la métropole avec code EPSG : http://www.opengis.net/def/crs/EPSG/0/2154<br>Pour l'outre-mer (La Réunion) avec registre IGN-F :<br>http://registre.ign.fr/ign/IGNF/crs/IGNF/RGR92UTM40S |
+| Code xml | `<gmx:Anchor<br>xlink:href="http://www.opengis.net/def/crs/EPSG/0/2154">EPSG:2154</gmx:Anchor>` ou : `<gmx:Anchor<br>xlink:href="http://registre.ign.fr/ign/IGNF/crs/IGNF/RGF93LAMB93">IGNF:RGF93LAMB93</gmx:Anchor>`   |  
+| Exemple  | Avec le registre EPSG (Métropole): http://www.opengis.net/def/crs/EPSG/0/2154 - Avec le registre IGN-F (La Réunion) : http://registre.ign.fr/ign/IGNF/crs/IGNF/RGR92UTM40S |
 | Consigne de saisie | Valeur à prendre parmi celles de la partie [Systèmes de référence](#systèmes-de-référence-spatiaux) |
 
 ### Références temporelles
+
 |  |  |
 |---|---|
-| _**Dates de référence**_ (obligatoire)  | Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données.<br>Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.  |
+| _**Dates de référence**_ (obligatoire) | Le champ Date est à remplir avec la valeur de la date de dernière actualisation du lot de données. Le champ Type de date est à remplir avec la valeur « création » lors de la première constitution du lot, puis la valeur « révision » pour les versions ultérieures.  |
 | Xpath ISO 19115  | identificationInfo[1]/*/citation/*/date[./*/dateType/*/text()='revision']/*/date  |
-| Exemple | _2021-04-22_<br><br>Type de date : _création_ (la première fois) / _révision_ (les fois suivantes)  |
+| Exemple | _2021-04-22_ - Type de date : _création_ (la première fois) / _révision_ (les fois suivantes)  |
 | Consigne de saisie | Utiliser la valeur de date la plus récente de `date_carte` des tables `carte_risques_inondation_s` et `carte_surfaces_inondables_s` |
 
 ### Généalogie et résolution spatiale
+
 |  |  |
 |---|---|
-| _**Généalogie**_ (obligatoire)  | Le champ est à remplir avec un texte faisant état de l’historique du traitement et/ou de la qualité générale de la série de données géographiques, on mentionnera les éléments suivants :<br>- le référentiel source de la géométrie<br>- la version du standard de référence<br>- le numéro de version du lot et sa durée de vie.<br>- etc.   |
+| _**Généalogie**_ (obligatoire)  | Le champ est à remplir avec un texte faisant état de l’historique du traitement et/ou de la qualité générale de la série de données géographiques, on mentionnera les éléments suivants : - le référentiel source de la géométrie - la version du standard de référence - le numéro de version du lot et sa durée de vie. - etc.   |
 | Xpath ISO 19115  | dataQualityInfo/*/lineage/*/statement<br>Note : L’élément scope>level doit être fixé à « dataset ».   |
 | Consigne de saisie  | S'appuyer sur la liste des [référentiels de numérisation](#référentiels-de-numérisation) pour indiquer la source des données. |
 
 |  |  |
 |---|---|
-| _**Résolution spatiale**_ (obligatoire)  | Le champ est à remplir avec la valeur entière correspondant au dénominateur de l’échelle.<br>Ce dénominateur est celui de l’échelle du plan de référence pour la production du document numérique ou la plus petite échelle (le plus grand dénominateur) des différents plans ayant servi à la production des documents numériques.   |
+| _**Résolution spatiale**_ (obligatoire)  | Le champ est à remplir avec la valeur entière correspondant au dénominateur de l’échelle. Ce dénominateur est celui de l’échelle du plan de référence pour la production du document numérique ou la plus petite échelle (le plus grand dénominateur) des différents plans ayant servi à la production des documents numériques.   |
 | Xpath ISO 19115  | identificationInfo[1]/*/spatialResolution/*/equivalentScale/*/denominator  |
-| Consigne de saisie  | `25000` (cas général, indiquer un plus petit dénominateur d'échelle si des données d'aléas PPR plus résolues ont été utilisées)   |
+| Consigne de saisie  | `25000` (cas général). Indiquer un plus petit dénominateur d'échelle si des données d'aléas PPR plus résolues ont été utilisées.   |
 
 ### Mesures de qualité complémentaires
 
@@ -1958,45 +1942,48 @@ Pour chaque mesure de la qualité (cf. [Qualité des données](#éléments-de-qu
 
 |  |  |
 |---|---|
-| **Résultat**  | Il s'agit du résultat de la mesure qualité effectuée sur le jeu de données.<br>Le champ est à remplir avec les sous éléments suivants :<br>- Type de valeur : Type du résultat (Integer pour un résultat numérique, Double pour un nombre flottant et String pour une chaîne de caractère)<br>- Unité de mesure : Unité de mesure du résultat (Unity pour un nombre sans unités, meter pour un résultat en mètres, percent pour un pourcentage)<br>- Valeur : Valeur du résultat (Par exemple pour un taux d’exhaustivité de 85,5%, la valeur sera 85,5)   |
-| Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/valueType<br>dataQualityInfo/*/report/*/result/*/valueUnit<br>dataQualityInfo/*/report/*/result/*/value   |
-| Exemple  | *Double*<br><br>*percent*<br><br>*85,5*   |
+| **Résultat** | Il s'agit du résultat de la mesure qualité effectuée sur le jeu de données. Le champ est à remplir avec les sous éléments suivants : - Type de valeur : Type du résultat (Integer pour un résultat numérique, Double pour un nombre flottant et String pour une chaîne de caractères) - Unité de mesure : Unité de mesure du résultat (Unity pour un nombre sans unités, meter pour un résultat en mètres, percent pour un pourcentage) - Valeur : Valeur du résultat (Par exemple pour un taux d’exhaustivité de 85,5%, la valeur sera 85,5).   |
+| Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/valueType - dataQualityInfo/*/report/*/result/*/valueUnit - dataQualityInfo/*/report/*/result/*/value |
+| Exemple  | *Double* - *percent* - *85,5*   |
 
 ### Conformité
+
 |  |  |
 |---|---|
-| _**Spécification**_ (obligatoire)  | On indique la conformité au standard CNIG et au format<br>Le champ est à remplir avec les éléments suivants :<br>- titre : référence du standard sous la forme : `CNIG Cartographies de la Directive Inondation`<br>- date : date de validation du standard sous la forme AAAA-MM-JJ<br>- type de date : publication<br>- titre : référence du format sous la forme : `format`<br>- date : version du format sous la forme AAAA-MM-JJ<br>- type de date : publication   |
+| _**Spécification**_ (obligatoire) | On indique la conformité au standard CNIG et au format. Le champ est à remplir avec les éléments suivants : - titre : référence du standard sous la forme : `CNIG Cartographies de la Directive Inondation` - date : date de validation du standard sous la forme AAAA-MM-JJ - type de date : publication - titre : référence du format sous la forme : `format` - date : version du format sous la forme AAAA-MM-JJ - type de date : publication   |
 | Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/specification |
-| Exemple  | `CNIG Cartographies de la Directive Inondation`<br><br>_2027-04-01_<br><br>_publication_<br><br>`GeoPackage`<br><br>_1.4_<br><br>_publication_   |
+| Exemple  | `CNIG Cartographies de la Directive Inondation` - _2027-04-01_ - _publication_ - `GeoPackage` - _2024-02-06_ - _publication_ |
 
 |  |  |
 |---|---|
-| _**Degré**_  | Il s'agit du degré de conformité des données avec les spécifications.<br>Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non conformité).<br><br>La balise est laissée vide en cas de non évaluation de la conformité.<br><br>Le degré est considéré comme « non évalué » si le champ n’est pas présent.   |
-| Xpath ISO 19115  | dataQualityInfo/*/report/*/result/*/pass   |
-| Exigence | true / false / ou champ laissé vide  |
-| Exemple  | *true* |
+| _**Degré**_ | Il s'agit du degré de conformité des données avec les spécifications. Pour l’ensemble des lots concernés par ces consignes, le champ est à remplir avec les valeurs : true (en cas de conformité) / false (en cas de non-conformité). La balise est laissée vide en cas de non-évaluation de la conformité. Le degré est considéré comme « non évalué » si le champ n’est pas présent.   |
+| Xpath ISO 19115 | dataQualityInfo/*/report/*/result/*/pass |
+| Exigence | true / false / ou champ laissé vide |
+| Exemple | *true* |
 
-### Contraintes en matière d’accès et d’utilisation 
-|  |  |
-|---|---|
-| _**Conditions applicables à l’accès et à l’utilisation**_  | Le champ est à remplir avec les mentions concernant :<br>- les contraintes légales<br>- les contraintes de sécurité<br>- les contraintes d'usage    |
-| Xpath ISO 19115  | Condition d’accès et d’utilisation :<br>identificationInfo[1]/*/resourceConstraints/*/useLimitation<br>Restriction d’accès public :<br>identificationInfo[1]/*/resourceConstraints/*/accessConstraints=’otherRestrictions’ et :<br>identificationInfo[1]/*/resourceConstraints/*/otherConstraints   |
-| Consigne de saisie | Contraintes d'usage : *Licence ouverte v2.0*<br>Contraintes d’accès : *Pas de restriction d’accès public*  |
-
-### Organisation responsable de la ressource 
-|  |  |
-|---|---|
-| _**Organisme responsable de la ressource**_  | Le champ est à remplir avec :<br>- l’organisme propriétaire de la donnée, une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle, en aucun cas nominative. A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.<br>- Le rôle de cet organisme : owner (traduction de « propriétaire »)    |
-| Xpath ISO 19115  | identificationInfo[1]/*/pointOfContact/*/organisationName<br>identificationInfo[1]/*/pointOfContact/*/contactInfo/*/address/*/electronicMailAddress<br>identificationInfo[1]/*/pointOfContact/*/role   |
-| Exemple  | *DREAL Occitanie*<br/>  *https://www.occitanie.developpement-durable.gouv.fr/spip.php?page=contact*<br/> *owner* |
-
-### Métadonnées concernant les métadonnées 
+### Contraintes en matière d’accès et d’utilisation
 
 |  |  |
 |---|---|
-| _**Point de contact pour la métadonnée**_  | Le champ est à remplir avec le nom de l’organisation :<br>- l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource)<br>- une adresse mail générique de contact : Il doit s’agir d’une adresse mail institutionnelle non nominative.A défaut d’adresse mail, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée.<br>- La nature de cette adresse : pointOfcontact (traduction de « Point de contact »)   |
-| Xpath ISO 19115  |contact*/organisationName<br>contact/*/address/*/electronicMailAddress<br>contact/*/role |
-| Exemple  | *DREAL Occitanie*<br/>  *https://www.occitanie.developpement-durable.gouv.fr/spip.php?page=contact*<br/> *pointOfContact* |
+| _**Conditions applicables à l’accès et à l’utilisation**_ | Le champ est à remplir avec les mentions concernant : - les contraintes légales - les contraintes de sécurité - les contraintes d'usage |
+| Xpath ISO 19115  | Condition d’accès et d’utilisation : identificationInfo[1]/*/resourceConstraints/*/useLimitation - Restriction d’accès public : identificationInfo[1]/*/resourceConstraints/*/accessConstraints=’otherRestrictions’ et :<br>identificationInfo[1]/*/resourceConstraints/*/otherConstraints   |
+| Consigne de saisie | Contraintes d'usage : *Licence ouverte v2.0* - Contraintes d’accès : *Pas de restriction d’accès public*  |
+
+### Organisation responsable de la ressource
+
+|  |  |
+|---|---|
+| _**Organisme responsable de la ressource**_  | Le champ est à remplir avec : - l’organisme propriétaire de la donnée, une adresse électronique générique de contact : Il doit s’agir d’une adresse électronique institutionnelle, en aucun cas nominative. A défaut d’adresse électronique, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée - le rôle de cet organisme : owner (traduction de « propriétaire ») |
+| Xpath ISO 19115 | identificationInfo[1]/*/pointOfContact/*/organisationName - identificationInfo[1]/*/pointOfContact/*/contactInfo/*/address/*/electronicMailAddress - identificationInfo[1]/*/pointOfContact/*/role  |
+| Exemple  | *DREAL Occitanie* - *https://www.occitanie.developpement-durable.gouv.fr/spip.php?page=contact* - *owner* |
+
+### Métadonnées concernant les métadonnées
+
+|  |  |
+|---|---|
+| _**Point de contact pour la métadonnée**_  | Le champ est à remplir avec le nom de l’organisation : - l’organisme de contact (même s’il est identique à l'organisme responsable de la ressource) - une adresse mél générique de contact : il doit s’agir d’une adresse mél institutionnelle non nominative. A défaut d’adresse mél, indiquer l’URL du formulaire de contact de l’organisme propriétaire de la donnée - la nature de cette adresse : pointOfcontact (traduction de « Point de contact »)   |
+| Xpath ISO 19115  |contact*/organisationName - contact/*/address/*/electronicMailAddress - contact/*/role |
+| Exemple  | *DREAL Occitanie* - *https://www.occitanie.developpement-durable.gouv.fr/spip.php?page=contact* - *pointOfContact* |
 
 
 |  |  |
@@ -2016,7 +2003,7 @@ Pour chaque mesure de la qualité (cf. [Qualité des données](#éléments-de-qu
 
  Cette partie présente des règles de symbologie applicables aux données principales du présent standard pour produire les cartes des risques d'inondation et de surfaces inondables.
 
- Il s'agit de recommandations issues de l'ancienne note de sémiologie de la cartographie Directive inondations et de ses correctifs produits lors des deux premiers cycles de la Directive Inondation ainsi que de certaines pratiques mises en oeuvre par le Cerema dans son plugin AgiRisk dans le cadre du 3ieme cycle.
+ Il s'agit de recommandations issues de l'ancienne note de sémiologie de la cartographie Directive inondations et de ses correctifs produits lors des deux premiers cycles de la Directive Inondation ainsi que de certaines pratiques mises en œuvre par le Cerema dans son plugin AgiRisk dans le cadre du 3ieme cycle.
 
 ## Recommandation pour l'empilement des couches
 
@@ -2028,8 +2015,8 @@ Pour produire les cartographies de la directive inondations, il est recommandé 
 4. Découpage administratif (*), périmètre du TRI ;
 5. Ouvrages protecteurs et zones associées ;
 6. Enjeux : réseaux de transports ;
-7. Enjeux surfaciques: bâtiments (*), zones d'activités, etc.. ;
-8. Enjeux pontuels ;
+7. Enjeux surfaciques : bâtiments (*), zones d'activités, etc.. ;
+8. Enjeux ponctuels ;
 9. Cartouche des populations impactées.
 
 (*) Données de contexte dont l'implémentation n'est pas prise en charge par ce standard.
@@ -2040,9 +2027,9 @@ L'application des styles suivants est recommandée pour les entités suivantes :
 
 | Table | Style Fond | Style Contour | Aperçu |
 | - | - | - | - |
-| [tri_s](#table-tri_s) | Transparent | Rose : RGB(229,48,117), épaisseur 0,75mm | ![Contour TRI](./ressources/vignettes_symbologie/tri_s_contour_rose.png) |
-| [carte_surfaces_inondables_s](#table-carte_surfaces_inondables_s) | Transparent | Gris : RGB(74, 74, 74), épaisseur 0,56mm | ![Contour carte surfaces inondables](./ressources/vignettes_symbologie/carte_surfaces_inondables_contour_gris.png) |
-| [carte_risques_inondation_s](#table-carte_risques_inondation_s) | Transparent | Gris : RGB(74, 74, 74), épaisseur 0,56mm | ![Contour carte risques inondation](./ressources/vignettes_symbologie/carte_surfaces_inondables_contour_gris.png) |
+| [tri_s](#table-tri_s) | Transparent | Rose : RVB(229,48,117), épaisseur 0,75mm | ![Contour TRI](./ressources/vignettes_symbologie/tri_s_contour_rose.png) |
+| [carte_surfaces_inondables_s](#table-carte_surfaces_inondables_s) | Transparent | Gris : RVB(74, 74, 74), épaisseur 0,56mm | ![Contour carte surfaces inondables](./ressources/vignettes_symbologie/carte_surfaces_inondables_contour_gris.png) |
+| [carte_risques_inondation_s](#table-carte_risques_inondation_s) | Transparent | Gris : RVB(74, 74, 74), épaisseur 0,56mm | ![Contour carte risques inondation](./ressources/vignettes_symbologie/carte_surfaces_inondables_contour_gris.png) |
 
 ## Représentation des informations relatives aux aléas
 
@@ -2056,7 +2043,7 @@ L'application des styles suivants est recommandée pour la table [surface_inonda
 | moyenne | Vert moyen : RVB(80,190,55), transparence 30% | Aucun | ![Surface inondable moyenne](./ressources/vignettes_symbologie/surface_inondable_moyenne.png) |
 | faible | Vert clair : RVB(130,240,160), transparence 30% | Aucun | ![Surface inondable faible](./ressources/vignettes_symbologie/surface_inondable_faible.png) |
 
-La représentation des probabilités d'occurrence avec prise en compte du changement climatique reprennent les mêmes couleurs mais uniquement sous forme de hachures : espacement 1,4 mm, angle 45°.
+La représentation des probabilités d'occurrence avec prise en compte du changement climatique reprend les mêmes couleurs et transparences mais uniquement sous forme de hachures : espacement 1,4 mm, angle 45°.
 
 | Probabilité d'occurrence (CC) | Style Fond | Style Contour | Aperçu |
 | - | - | - | - |
@@ -2095,7 +2082,7 @@ L'application des styles suivants est recommandée pour les entités suivantes :
 | Entité | Style Fond | Style Contour | Aperçu |
 | - | - | - | - |
 | [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | N.A. | Noir, épaisseur 1,5mm | ![Ouvrage protecteur](./ressources/vignettes_symbologie/ouvrage_protecteur_ligne.png) |
-| [zone_protegee_s](#table-zone_protegee_s) | Hachures turquoises : RVB(11,111,98) en diagonale : 45°, espacement 1,5mm | Aucun | ![Zone protégée](./ressources/vignettes_symbologie/zone_protegee_hachures_turquoise.png) |
+| [zone_protegee_s](#table-zone_protegee_s) | Hachures turquoise : RVB(11,111,98) en diagonale : 45°, espacement 1,5mm | Aucun | ![Zone protégée](./ressources/vignettes_symbologie/zone_protegee_hachures_turquoise.png) |
 | [zonesuralea_s](#table-zonesuralea_s) | Hachures croisées noires, espacement 1,5mm | Aucun | ![Zone suraléa](./ressources/vignettes_symbologie/zone_suralea_hachures_croisees.png) |
 
 ## Représentation des enjeux
@@ -2116,7 +2103,7 @@ L'application des styles suivants est recommandée pour les enjeux linéaires ([
 
 | Catégorie d'enjeu | Style Contour | Aperçu |
 | - | - | - |
-| Autoroute ou quasi autoroute | Double trait : contour noir 1,3mm, trait central orange RVB(244,157,84), 0,87mm | ![Autoroute](./ressources/vignettes_symbologie/route_autoroute.png) |
+| Autoroute ou quasi-autoroute | Double trait : contour noir 1,3mm, trait central orange RVB(244,157,84), 0,87mm | ![Autoroute](./ressources/vignettes_symbologie/route_autoroute.png) |
 | Route liaison principale et Route liaison régionale | Double trait : contour noir 1,1 mm, trait central beige RVB(251,230,214), 1mm | ![Liaison principale](./ressources/vignettes_symbologie/route_liaison_principale.png) |
 | Voie ferrée principale | Ligne noire, épaisseur 0,5mm avec marqueurs noirs (lignes) espacés tous les 3mm le long de la ligne | ![Voie ferrée](./ressources/vignettes_symbologie/voie_ferree.png) |
 
@@ -2132,7 +2119,7 @@ L'application des styles suivants est recommandée pour les enjeux ponctuels ([e
 | Ecole | ![ecole](../ressources/Symbologie/pictos-di/ecole_noir.svg) | ![ecole gris](../ressources/Symbologie/pictos-di/ecole_gris.svg) |
 | Installation SEVESO, Installation de la directive IED, Installation nucléaire de base | ![etab_prod_polluant](../ressources/Symbologie/pictos-di/etab_prod_polluant_noir.svg) | ![etab_prod_polluant gris](../ressources/Symbologie/pictos-di/etab_prod_polluant_gris.svg) |
 | Mairie, Préfecture, Caserne de pompiers, Forces de l'ordre | ![etab_utile_crise](../ressources/Symbologie/pictos-di/etab_utile_crise_noir.svg) | ![etab_utile_crise gris](../ressources/Symbologie/pictos-di/etab_utile_crise_gris.svg) |
-| hopital | ![hopital](../ressources/Symbologie/pictos-di/hopital_noir.svg) | ![hopital gris](../ressources/Symbologie/pictos-di/hopital_gris.svg) |
+| Hôpital | ![hopital](../ressources/Symbologie/pictos-di/hopital_noir.svg) | ![hopital gris](../ressources/Symbologie/pictos-di/hopital_gris.svg) |
 | Ehpad | ![maison_retraite](../ressources/Symbologie/pictos-di/maison_retraite_noir.svg) | ![maison_retraite gris](../ressources/Symbologie/pictos-di/maison_retraite_gris.svg) |
 | Patrimoine culturel | ![patrim_culturel](../ressources/Symbologie/pictos-di/patrim_culturel_noir.svg) | ![patrim_culturel gris](../ressources/Symbologie/pictos-di/patrim_culturel_gris.svg) |
 | Prison | ![prison](../ressources/Symbologie/pictos-di/prison_noir.svg) | ![prison gris](../ressources/Symbologie/pictos-di/prison_gris.svg) |
@@ -2141,19 +2128,17 @@ L'application des styles suivants est recommandée pour les enjeux ponctuels ([e
 
 
 
-# Annexe A - Règles de passage COVADIS DI -> CNIG Cartographies DI` 
-
-`**Informative**`
+# Annexe A - Règles de passage COVADIS DI -> CNIG Cartographies DI
 
 Le tableau suivant indique comment remplir chaque table du présent standard à partir des données des tables de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) qu'il remplace. Ces règles ont pour but de faciliter la migration du patrimoine des données TRI. 
 
-Pour chaque table, il est indiqué comment remplir la valeur du champ "Nom colonne" à partie de la (ou des) "table(s) COVADIS" et des valeurs du (ou des) champ(s) correspondant(s) ("colonne(s) COVADIS). La colonne "Commentaire" précise des consignes additionnelles de saisie le cas échéant.
+Pour chaque table, il est indiqué comment remplir la valeur du champ "Nom colonne" à partie de la (ou des) "table(s) COVADIS" et des valeurs du (ou des) champ(s) correspondant(s) ("Colonne(s) COVADIS). La colonne "Commentaire" précise des consignes additionnelles de saisie le cas échéant.
 
 ## Correspondances table `tri_s`
 
-A un objet de la table `tri_s` correspond un objet de la table COVADIS `N_[prefixTri]_TRI_S_dd` avec les correspondances suivantes.
+A un objet de la table `tri_s` correspond un objet de la table COVADIS `N_[prefixTri]_TRI_S_dd` avec les correspondances suivantes :
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_tri`** | `N_[prefixTri]_TRI_S_ddd` | `ID_TRI` | |
 | `nom` | `N_[prefixTri]_TRI_S_ddd` | `NOM` | |
@@ -2162,31 +2147,31 @@ A un objet de la table `tri_s` correspond un objet de la table COVADIS `N_[prefi
 | **`date_procedure`** | - | - | cf. valeur `ARRETE_PREF_COORD` dans GASPAR |
 | `url_ref` | - | - | - |
 | `type_ref` | - | - | - | 
-| `geom` | `N_[prefixTri]_TRI_S_ddd` | géométrie de l'objet |  |
+| `geom` | `N_[prefixTri]_TRI_S_ddd` | Géométrie de l'objet |  |
 
 ## Correspondances table `carte_surfaces_inondables_s`
 
-A un objet de la table `carte_surfaces_inondables_s` correspond un objet de la table COVADIS `N_[prefixTri]_CARTE_INOND_S_ddd` avec les correspondances suivantes.
+A un objet de la table `carte_surfaces_inondables_s` correspond un objet de la table COVADIS `N_[prefixTri]_CARTE_INOND_S_ddd` avec les correspondances suivantes :
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_csi`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | ID_CARTE |  |
 | **`id_tri`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | ID_TRI |  |
 | **`date_carte`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | `DATAPPRO` |  |
 | **`occurrence`** | `N_[prefixTri]_CARTE_INOND_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios) |
-| `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | géométrie de l'objet |  |
+| `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | Géométrie de l'objet |  |
 
 
 ## Correspondances table `carte_risques_inondation_s`
 
-A un objet de la table `carte_risques_inondation_s` correspond un objet de la table COVADIS `N_[prefixTri]_CARTE_RISQ_S_ddd` avec les correspondances suivantes.
+A un objet de la table `carte_risques_inondation_s` correspond un objet de la table COVADIS `N_[prefixTri]_CARTE_RISQ_S_ddd` avec les correspondances suivantes :
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_cri`** | `N_[prefixTri]_CARTE_RISQ_S_ddd`  | `ID_CARTE` |  |
 | **`id_tri`** | `N_[prefixTri]_CARTE_RISQ_S_ddd` | `ID_TRI` |  |
 | **`date_carte`** | `N_[prefixTri]_CARTE_RISQ_S_ddd` | `DATAPPRO` |  |
-| `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | géométrie de l'objet |  |
+| `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | Géométrie de l'objet |  |
 
 
 ## Correspondances table `surface_inondable_s`
@@ -2195,7 +2180,7 @@ Les objets de la table `surface_inondable_s` sont générés à partir des objet
 
 La contrainte de géométrie en polygones simples de la table `surface_inondable_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_sin`** |  |  | Nouveaux identifiants à générer. |
 | **`id_tri`** | `N_[prefixTri]_INONDABLE_S_ddd` | `ID_TRI` |  |
@@ -2203,7 +2188,7 @@ La contrainte de géométrie en polygones simples de la table `surface_inondable
 | **`occurrence`** | `N_[prefixTri]_INONDABLE_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios) |
 | **`date_calcul`** | `N_[prefixTri]_INONDABLE_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
 | `origine_inond` | `N_[prefixTri]_INONDABLE_S_ddd` | `COURS_DEAU` |  |
-| `geom` | `N_[prefixTri]_INONDABLE_S_ddd` | géométrie déduite de l'objet  |  |
+| `geom` | `N_[prefixTri]_INONDABLE_S_ddd` | Géométrie déduite de l'objet  |  |
 
 ## Correspondances table `zone_iso_classe_hauteur_s`
 
@@ -2211,14 +2196,14 @@ Les objets de la table `zone_iso_classe_hauteur_s` sont générés à partir des
 
 La contrainte de géométrie en polygones simples de la table `zone_iso_classe_hauteur_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_zch`** |  |  | Nouveaux identifiants à générer. |
 | **`id_tri`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_TRI` |  |
 | **`id_sin`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_SIN` | la valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s).|
 | **`palier_hauteur`** | `N_[prefixTri]_ISO_HT_S_ddd` | `HT_MIN` et `HT_MAX` | trouver la [valeur de palier](#typeclassehauteureau) correspondant le mieux à la plage délimitée par les valeurs de `HT_MIN` et `HT_MAX`|
 | `origine_inond` | `N_[prefixTri]_ISO_HT_S_ddd` | `COURS_DEAU` |  |
-| `geom` | `N_[prefixTri]_ISO_HT_S_ddd` | géométrie déduite de l'objet |  |
+| `geom` | `N_[prefixTri]_ISO_HT_S_ddd` | Géométrie déduite de l'objet |  |
 
 
 ## Correspondances table `zone_iso_classe_vitesse_s`
@@ -2227,7 +2212,7 @@ Les objets de la table `zone_iso_classe_vitesse_s` sont générés à partir des
 
 La contrainte de géométrie en polygones simples de la table `zone_iso_classe_vitesse_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_zcv`** |  |  | Nouveaux identifiants à générer. |
 | **`id_tri`** | `N_[prefixTri]_ECOUL_S_ddd` | `ID_TRI` |  |
@@ -2242,7 +2227,7 @@ Les objets de la table `zone_iso_classe_debit_s` sont générés à partir des o
 
 La contrainte de géométrie en polygones simples de la table `zone_iso_classe_debit_s` peut nécessiter de générer plusieurs objets à partir d'un seul de la table COVADIS.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_zcd`** |  |  | Nouveaux identifiants à générer. |
 | **`id_tri`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `ID_TRI` |  |
@@ -2254,9 +2239,9 @@ La contrainte de géométrie en polygones simples de la table `zone_iso_classe_d
 
 ## Correspondances table `ligne_iso_cote_l`
 
-Les objets de la table `ligne_iso_cote_l` sont générés à partir des objets de la table `N_[prefixTri]_ISO_COTE_L_ddd` avec une correspondance de un pour un.
+Les objets de la table `ligne_iso_cote_l` sont générés à partir des objets de la table `N_[prefixTri]_ISO_COTE_L_ddd` avec une correspondance de un à un.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_lic`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_LIC` |  |
 | **`id_tri`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_TRI` |  |
@@ -2267,9 +2252,9 @@ Les objets de la table `ligne_iso_cote_l` sont générés à partir des objets d
 
 ## Correspondances table `point_remarquable_cvd_p`
 
-Les objets de la table `point_remarquable_cvd_p` sont générés à partir des objets de la table `N_[prefixTri]_COTE_VIT_DEB_P_ddd` avec une correspondance de un pour un.
+Les objets de la table `point_remarquable_cvd_p` sont générés à partir des objets de la table `N_[prefixTri]_COTE_VIT_DEB_P_ddd` avec une correspondance de un à un.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_pre`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_POINT` |  |
 | **`id_tri`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_TRI` |  |
@@ -2284,7 +2269,7 @@ Les objets de la table `point_remarquable_cvd_p` sont générés à partir des o
 
 Les objets de la table `zone_protegee_s` sont générés à partir des objets des tables `N_[prefixTri]_SOUST_INOND_S_ddd` et `N_[prefixTri]_ZONE_PROTEG_S_ddd`.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_zpr`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_ZONE` |  |
 | **`id_tri`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_TRI` |  |
@@ -2297,7 +2282,7 @@ Les objets de la table `zone_protegee_s` sont générés à partir des objets de
 
 Les objets de la table `ouvrageprotecteur_l` sont générés à partir des objets de la table `N_[prefixTri]_OUV_PROTEC_L_ddd`.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_ouv`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_OUVRAGE` |  |
 | **`id_tri`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_TRI` |  |
@@ -2314,7 +2299,7 @@ Les objets de la table `ouvrageprotecteur_l` sont générés à partir des objet
 
 Les objets de la table `zonesuralea_s` sont générés à partir des objets de la table `N_[prefixTri]_SURALEA_S_ddd`.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS |Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS |Commentaire |
 | - | - | - | - |
 | **`id_zsa`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_ZONE` |  |
 | **`id_tri`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_TRI` |  |
@@ -2324,11 +2309,19 @@ Les objets de la table `zonesuralea_s` sont générés à partir des objets de l
 
 ## Correspondances tables `enjeu_s`, `enjeu_l` et `enjeu_p`
 
-Les objets des tables `enjeu_s`, `enjeu_l` et `enjeu_p` sont générés à partir des objets des tables `N_[prefixTri]_ENJEU_DCE_S_ddd`, `N_[prefixTri]_ENJEU_STEU_P_ddd`, `N_[prefixTri]_ENJEU_IPPC_P_ddd`, `N_[prefixTri]_ENJEU_IED_P_ddd`, `N_[prefixTri]_ENJEU_CRISE_[L|P]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd` et `N_[prefixTri]_ENJEU_PATRIM_[S|P]_ddd`. 
+Les objets des tables `enjeu_s`, `enjeu_l` et `enjeu_p` sont générés à partir des objets des tables :
+
+- `N_[prefixTri]_ENJEU_DCE_S_ddd`,
+- `N_[prefixTri]_ENJEU_STEU_P_ddd`, 
+- `N_[prefixTri]_ENJEU_IPPC_P_ddd`, 
+- `N_[prefixTri]_ENJEU_IED_P_ddd`, 
+- `N_[prefixTri]_ENJEU_CRISE_[L|P]_ddd`, 
+- `N_[prefixTri]_ENJEU_ECO_S_ddd` et 
+- `N_[prefixTri]_ENJEU_PATRIM_[S|P]_ddd`. 
 
 La répartition dans les tables `enjeu_s`, `enjeu_l` et `enjeu_p` dépend de la nature de la géométrie de la table d'enjeu d'origine indiquée par le suffixe : `_S_`, `_L_` ou `_P_`.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_enj`** |  |  | Identifiant à générer |
 | **`id_tri`** | `N_[prefixTri]_TRI_S_ddd` | `ID_TRI` | Il n'y a pas de champ `ID_TRI` dans les tables d'enjeu COVADIS. |
@@ -2352,7 +2345,7 @@ La répartition dans les tables `enjeu_s`, `enjeu_l` et `enjeu_p` dépend de la 
 
 Les objets de la table `enjeux_raportes_tri` sont générés à partir des objets de la table `N_[prefixTri]_ENJEU_RAPPORT_ddd` correspondants à la maille de rapportage du TRI (valeur champ `ID` correspondant à l'identifiant du TRI). Les autres mailles de rapportage ne sont pas reprises pour les cartographies de la directive inondation.
 
-| Nom colonne | Table(s) COVADIS | colonne(s) COVADIS | Commentaire |
+| Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
 | **`id_ert`** |  |  | Identifiant à générer |
 | **`id_tri`** | `N_[prefixTri]_ENJEU_RAPPORT_ddd` | `ID` | Ne retenir que les objets dont la valeur de `ID` correspond à l'identifiant du TRI.  |
