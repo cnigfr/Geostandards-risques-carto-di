@@ -41,9 +41,9 @@ Les cas d'usages types de ce standard sont décrits dans la partie [Cas d'utilis
 
 ## Organisation du dépôt
 
-- Le dossier [ressources](ressources) contient les documents utiles pour les utilisateurs du standard ;
-- Le dossier [groupe_de_travail_CNIG](groupe_de_travail_CNIG) contient les comptes-rendus de réunions et les documents de suivi du groupe de travail ;
-- Le dossier [standard](standard) contient le standard ainsi que les documents qui lui sont liés ;
+- Le dossier [ressources](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/ressources) contient les documents utiles pour les utilisateurs du standard ;
+- Le dossier [groupe_de_travail_CNIG](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/groupe_de_travail_CNIG) contient les comptes-rendus de réunions et les documents de suivi du groupe de travail ;
+- Le dossier [standard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard) contient le standard ainsi que les documents qui lui sont liés ;
 
 ## Modalités de production des données
 
@@ -67,9 +67,9 @@ L’objectif est d'aboutir à terme à un consensus qui se traduise en un standa
 
 ### Actualisation
 
-- La [version 0.1 du Géostandard](./standard/diffusion/Geostandard-Risques-Carto-DI-v0.1.pdf), publiée le 23 septembre 2026, est en cours de relecture par le groupe de travail.
+- La [version 0.1 du Géostandard](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/diffusion/Geostandard-Risques-Carto-DI-v0.1.pdf), publiée le 23 septembre 2026, est en cours de relecture par le groupe de travail.
 
-- Une [consultation sur la mise en oeuvre du standard COVADIS DI](./groupe_de_travail_CNIG/Questionnaire%20refonte/Questionnaire%20sur%20la%20refonte%20du%20standard%20Directive%20Inondation.docx) a été menée auprès des D(R)EALs qui sont en charge de la mise à jour des TRI pour le cycle 3 de la Directive Inondation. la synthèse des cette consultation a été présentée lors de la plénière du Groupe de travail le [7 octobre 2025](https://cnig.gouv.fr/IMG/pdf/2025-10-07-cr-pleinere-gt-risques-25-0109.pdf).
+- Une [consultation sur la mise en oeuvre du standard COVADIS DI](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/groupe_de_travail_CNIG/Questionnaire%20refonte/Questionnaire%20sur%20la%20refonte%20du%20standard%20Directive%20Inondation.docx) a été menée auprès des D(R)EALs qui sont en charge de la mise à jour des TRI pour le cycle 3 de la Directive Inondation. la synthèse des cette consultation a été présentée lors de la plénière du Groupe de travail le [7 octobre 2025](https://cnig.gouv.fr/IMG/pdf/2025-10-07-cr-pleinere-gt-risques-25-0109.pdf).
 
 ### Comment contribuer
 
