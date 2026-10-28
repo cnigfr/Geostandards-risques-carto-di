@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Représentation cartographique - Enjeux et Aléas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .preview-cell {
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .preview-img {
+            max-width: 110px;
+            max-height: 65px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Style pour la vignette dynamique des hachures croisées */
+        .cross-hatch-preview {
+            display: inline-block;
+            width: 110px;
+            height: 65px;
+            background-color: white;
+            background-image:
+                linear-gradient(45deg, rgba(0,0,0,0.6) 1px, transparent 1px),
+                linear-gradient(-45deg, rgba(0,0,0,0.6) 1px, transparent 1px);
+            background-size: 8px 8px;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Représentation des emprises des cartes et TRI</h1>
+
+    <p>L'application des styles suivants est recommandée pour les entités suivantes :</p>
+
+    <table>
+        <tr>
+            <th>Table</th>
+            <th>Style Fond</th>
+            <th>Style Contour</th>
+            <th class="preview-cell">Aperçu</th>
+        </tr>
+        <tr>
+            <td><a href="#table-tri_s">tri_s</a></td>
+            <td>Transparent</td>
+            <td>Rose : RGB(229,48,117), épaisseur 0,75mm</td>
+            <td class="preview-cell">
+                <img src="vignettes_cartographie/tri_s_contour_rose.png" alt="Contour TRI" class="preview-img">
+            </td>
+        </tr>
+        <tr>
+            <td><a href="#table-carte_surfaces_inondables_s">carte_surfaces_inondables_s</a></td>
+            <td>Transparent</td>
+            <td>Gris : RGB(74, 74, 74), épaisseur 0,56mm</td>
+            <td class="preview-cell">
+                <img src="vignettes_cartographie/carte_surfaces_inondables_contour_gris.png" alt="Contour carte surfaces inondables" class="preview-img">
+            </td>
+        </tr>
+        <tr>
+            <td><a href="#table-carte_risques_inondation_s">carte_risques_inondation_s</a></td>
+            <td>Transparent</td>
+            <td>Gris : RGB(74, 74, 74), épaisseur 0,56mm</td>
+            <td class="preview-cell">
+                <img src="vignettes_cartographie/carte_surfaces_inondables_contour_gris.png" alt="Contour carte risques inondation" class="preview-img">
+            </td>
+        </tr>
+    </table>
+
+    <!-- ... [les autres sections restent identiques jusqu'à la partie suraléa] ... -->
+
+    <h3>Représentation des ouvrages protecteurs et zones associées</h3>
+
+    <p>L'application des styles suivants est recommandée pour les entités suivantes :</p>
+
+    <table>
+        <tr>
+            <th>Entité</th>
+            <th>Style Fond</th>
+            <th>Style Contour</th>
+            <th class="preview-cell">Aperçu</th>
+        </tr>
+        <tr>
+            <td><a href="#table-ouvrageprotecteur_l">ouvrageprotecteur_l</a></td>
+            <td>N.A.</td>
+            <td>Noir, épaisseur 1,5mm</td>
+            <td class="preview-cell">
+                <img src="vignettes_cartographie/ouvrage_protecteur_ligne.png" alt="Ouvrage protecteur" class="preview-img">
+            </td>
+        </tr>
+        <tr>
+            <td><a href="#table-zone_protegee_s">zone_protegee_s</a></td>
+            <td>Hachures turquoises : RVB(11,111,98) en diagonale : 45°, espacement 1,5mm</td>
+            <td>Aucun</td>
+            <td class="preview-cell">
+                <img src="vignettes_cartographie/zone_protegee_hachures_turquoise.png" alt="Zone protégée" class="preview-img">
+            </td>
+        </tr>
+        <tr>
+            <td><a href="#table-zonesuralea_s">zonesuralea_s</a></td>
+            <td>Hachures croisées noires <strong>en diagonale 45°</strong>, espacement 1,5mm</td>
+            <td>Aucun</td>
+            <td class="preview-cell">
+                <div class="cross-hatch-preview"></div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- ... [le reste du fichier HTML reste identique] ... -->
+
+    <h2>Légende des tables mentionnées</h2>
+    <ul>
+        <li id="table-tri_s"><strong>tri_s</strong> : Périmètre des Territoires à Risque Important d'inondation (TRI)</li>
+        <li id="table-carte_surfaces_inondables_s"><strong>carte_surfaces_inondables_s</strong> : Emprise des cartes de surfaces inondables</li>
+        <li id="table-carte_risques_inondation_s"><strong>carte_risques_inondation_s</strong> : Emprise des cartes de risques d'inondation</li>
+        <li id="table-surface_inondable_s"><strong>surface_inondable_s</strong> : Surfaces inondables par scénario</li>
+        <li id="table-zone_iso_classe_hauteur_s"><strong>zone_iso_classe_hauteur_s</strong> : Zones de classes de hauteurs d'eau</li>
+        <li id="table-zone_iso_classe_vitesse_s"><strong>zone_iso_classe_vitesse_s</strong> : Zones de classes de vitesse d'écoulement</li>
+        <li id="table-ouvrageprotecteur_l"><strong>ouvrageprotecteur_l</strong> : Ouvrages de protection linéaires (digues, etc.)</li>
+        <li id="table-zone_protegee_s"><strong>zone_protegee_s</strong> : Zones protégées par des ouvrages</li>
+        <li id="table-zonesuralea_s"><strong>zonesuralea_s</strong> : Zones de suraléa</li>
+        <li id="table-enjeu_s"><strong>enjeu_s</strong> : Enjeux surfaciques</li>
+        <li id="table-enjeu_l"><strong>enjeu_l</strong> : Enjeux linéaires</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmi:MI_Metadata
+    xmlns:gmi="http://www.isotc211.org/2005/gmi"
+    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.cnig.fr/iso/19139/1.0/gmd.xsd">
+
+    <!-- ============================================= -->
+    <!-- 1. IDENTIFIANT (FR-XXXX-YYYY-CNIG-Risques) -->
+    <!-- ============================================= -->
+    <gmd:fileIdentifier>
+        <gco:CharacterString>FR-69000-2026-CNIG-Risques</gco:CharacterString> <!-- Ex: 69000 = Rhône -->
+    </gmd:fileIdentifier>
+    <gmd:language>
+        <gco:CharacterString>fra</gco:CharacterString>
+    </gmd:language>
+    <gmd:characterSet>
+        <gmd:MD_CharacterSetCode codeListValue="utf8"/>
+    </gmd:characterSet>
+
+    <!-- ============================================= -->
+    <!-- 2. IDENTIFICATION DU JEU DE DONNÉES -->
+    <!-- ============================================= -->
+    <gmd:identificationInfo>
+        <gmd:MD_DataIdentification>
+            <gmd:citation>
+                <gmd:CI_Citation>
+                    <gmd:title>
+                        <gco:CharacterString>
+                            Aléas mouvements de terrain - Commune de Lyon (2026) | Standard CNIG Risques Carto DI
+                        </gco:CharacterString>
+                    </gmd:title>
+                    <gmd:date>
+                        <gmd:CI_Date>
+                            <gmd:date>
+                                <gco:Date>2026-09-09</gco:Date>
+                            </gmd:date>
+                            <gmd:dateType>
+                                <gmd:CI_DateTypeCode codeListValue="creation"/> <!-- ou "publication" -->
+                            </gmd:dateType>
+                        </gmd:CI_Date>
+                    </gmd:date>
+                </gmd:CI_Citation>
+            </gmd:citation>
+            <gmd:abstract>
+                <gco:CharacterString>
+                    Jeu de données des aléas mouvements de terrain sur la commune de Lyon (69), produit selon le standard CNIG Risques Carto DI.
+                    **Méthode** : Photo-interprétation (orthophotos 2025, résolution 20 cm) + validation terrain (2026).
+                    **Précision** : 5 mètres. **Périmètre** : Ensemble du territoire communal.
+                    **Source** : DDT du Rhône, en collaboration avec le BRGM.
+                </gco:CharacterString>
+            </gmd:abstract>
+            <gmd:status>
+                <gmd:MD_ProgressCode codeListValue="completed"/>
+            </gmd:status>
+            <!-- Mots-clés obligatoires -->
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gco:CharacterString>risques naturels</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeListValue="theme"/>
+                    </gmd:type>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <!-- Mots-clés spécifiques aux risques (extension CNIG) -->
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gco:CharacterString>mouvements de terrain</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>glissement</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeListValue="riskType"/> <!-- Extension CNIG -->
+                    </gmd:type>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <!-- Niveau d'aléa (extension CNIG) -->
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gco:CharacterString>aléa moyen</gco:CharacterString> <!-- faible/moyen/fort -->
+                    </gmd:keyword>
+                    <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeListValue="riskLevel"/> <!-- Extension CNIG -->
+                    </gmd:type>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:topicCategory>
+                <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
+            </gmd:topicCategory>
+        </gmd:MD_DataIdentification>
+    </gmd:identificationInfo>
+
+    <!-- ============================================= -->
+    <!-- 3. RESPONSABLE (DDT, BRGM, Collectivité) -->
+    <!-- ============================================= -->
+    <gmd:contact>
+        <gmd:CI_ResponsibleParty>
+            <gmd:organisationName>
+                <gco:CharacterString>DDT du Rhône</gco:CharacterString>
+            </gmd:organisationName>
+            <gmd:contactInfo>
+                <gmd:CI_Contact>
+                    <gmd:address>
+                        <gmd:CI_Address>
+                            <gmd:electronicMailAddress>
+                                <gco:CharacterString>risques@rhone.gouv.fr</gco:CharacterString>
+                            </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                    </gmd:address>
+                </gmd:CI_Contact>
+            </gmd:contactInfo>
+            <gmd:role>
+                <gmd:CI_RoleCode codeListValue="pointOfContact"/>
+            </gmd:role>
+        </gmd:CI_ResponsibleParty>
+    </gmd:contact>
+
+    <!-- ============================================= -->
+    <!-- 4. ÉTENDUE TEMPORELLE (période de validité) -->
+    <!-- ============================================= -->
+    <gmd:identificationInfo>
+        <gmd:MD_DataIdentification>
+            <gmd:extent>
+                <gmd:EX_Extent>
+                    <gmd:temporalElement>
+                        <gmd:EX_TemporalExtent>
+                            <gmd:extent>
+                                <gml:TimePeriod gml:id="tp1">
+                                    <gml:beginPosition>2026-01-01</gml:beginPosition>
+                                    <gml:endPosition>2026-12-31</gml:endPosition>
+                                </gml:TimePeriod>
+                            </gmd:extent>
+                        </gmd:EX_TemporalExtent>
+                    </gmd:temporalElement>
+                </gmd:EX_Extent>
+            </gmd:extent>
+        </gmd:MD_DataIdentification>
+    </gmd:identificationInfo>
+
+    <!-- ============================================= -->
+    <!-- 5. SYSTÈME DE RÉFÉRENCE (EPSG:2154) -->
+    <!-- ============================================= -->
+    <gmd:referenceSystemInfo>
+        <gmd:MD_ReferenceSystem>
+            <gmd:referenceSystemIdentifier>
+                <gmd:RS_Identifier>
+                    <gmd:code>
+                        <gco:CharacterString>EPSG:2154</gco:CharacterString> <!-- RGF93 / Lambert-93 -->
+                    </gmd:code>
+                </gmd:RS_Identifier>
+            </gmd:referenceSystemIdentifier>
+        </gmd:MD_ReferenceSystem>
+    </gmd:referenceSystemInfo>
+
+    <!-- ============================================= -->
+    <!-- 6. CONTRAINTES D'ACCÈS (Licence Ouverte 2.0) -->
+    <!-- ============================================= -->
+    <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+            <gmd:accessConstraints>
+                <gmd:MD_RestrictionCode codeListValue="otherRestrictions"/>
+            </gmd:accessConstraints>
+            <gmd:otherConstraints>
+                <gco:CharacterString>
+                    Licence Ouverte / Open Licence (version 2.0). Réutilisation libre sous réserve de mention de la source (DDT du Rhône - 2026).
+                </gco:CharacterString>
+            </gmd:otherConstraints>
+            <gmd:classification>
+                <gmd:MD_ClassificationCode codeListValue="unclassified"/>
+            </gmd:classification>
+        </gmd:MD_LegalConstraints>
+    </gmd:resourceConstraints>
+
+    <!-- ============================================= -->
+    <!-- 7. DISTRIBUTION (GeoPackage prioritaire) -->
+    <!-- ============================================= -->
+    <gmd:distributionInfo>
+        <gmd:MD_Distribution>
+            <gmd:distributionFormat>
+                <gmd:MD_Format>
+                    <gmd:name>
+                        <gco:CharacterString>GeoPackage</gco:CharacterString> <!-- Format recommandé par le standard -->
+                    </gmd:name>
+                    <gmd:version>
+                        <gco:CharacterString>1.2</gco:CharacterString>
+                    </gmd:version>
+                </gmd:MD_Format>
+            </gmd:distributionFormat>
+            <gmd:transferOptions>
+                <gmd:MD_DigitalTransferOptions>
+                    <gmd:onLine>
+                        <gmd:CI_OnlineResource>
+                            <gmd:linkage>
+                                <gmd:URL>https://www.rhone.gouv.fr/data/aleas_mouvements_terrain_2026.gpkg</gmd:URL>
+                            </gmd:linkage>
+                            <gmd:protocol>
+                                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                            </gmd:protocol>
+                            <gmd:name>
+                                <gco:CharacterString>Téléchargement (GeoPackage)</gco:CharacterString>
+                            </gmd:name>
+                            <gmd:description>
+                                <gco:CharacterString>
+                                    Fichier GeoPackage contenant les aléas mouvements de terrain (couches : aleas_glissements, aleas_eboulements).
+                                </gco:CharacterString>
+                            </gmd:description>
+                        </gmd:CI_OnlineResource>
+                    </gmd:onLine>
+                </gmd:MD_DigitalTransferOptions>
+            </gmd:transferOptions>
+        </gmd:MD_Distribution>
+    </gmd:distributionInfo>
+
+    <!-- ============================================= -->
+    <!-- 8. QUALITÉ DES DONNÉES -->
+    <!-- ============================================= -->
+    <gmd:dataQualityInfo>
+        <gmd:DQ_DataQuality>
+            <gmd:scope>
+                <gmd:DQ_Scope>
+                    <gmd:level>
+                        <gmd:MD_ScopeCode codeListValue="dataset"/>
+                    </gmd:level>
+                </gmd:DQ_Scope>
+            </gmd:scope>
+            <gmd:lineage>
+                <gmd:LI_Lineage>
+                    <gmd:statement>
+                        <gco:CharacterString>
+                            **Méthode** : Photo-interprétation (orthophotos 2025, résolution 20 cm) + validation terrain (expertise BRGM).
+                            **Précision** : 5 mètres (marge d'erreur maximale).
+                            **Conformité** : Standard CNIG Risques Carto DI (version 2026).
+                        </gco:CharacterString>
+                    </gmd:statement>
+                </gmd:LI_Lineage>
+            </gmd:lineage>
+            <!-- Précision spatiale -->
+            <gmd:report>
+                <gmd:DQ_AbsoluteExternalPositionalAccuracy>
+                    <gmd:nameOfMeasure>
+                        <gco:CharacterString>Précision spatiale</gco:CharacterString>
+                    </gmd:nameOfMeasure>
+                    <gmd:measure>
+                        <gco:Record>5</gco:Record> <!-- 5 mètres -->
+                    </gmd:measure>
+                </gmd:DQ_AbsoluteExternalPositionalAccuracy>
+            </gmd:report>
+        </gmd:DQ_DataQuality>
+    </gmd:dataQualityInfo>
+
+    <!-- ============================================= -->
+    <!-- 9. EXTENSIONS SPÉCIFIQUES "RISQUES" (CNIG) -->
+    <!-- ============================================= -->
+    <!-- Typage du risque (obligatoire) -->
+    <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+            <gmd:keyword>
+                <gco:CharacterString>glissement de terrain</gco:CharacterString>
+            </gmd:keyword>
+            <gmd:type>
+                <gmd:MD_KeywordTypeCode codeListValue="riskType"/> <!-- Extension CNIG -->
+            </gmd:type>
+        </gmd:MD_Keywords>
+    </gmd:descriptiveKeywords>
+    <!-- Niveau d'aléa (obligatoire) -->
+    <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+            <gmd:keyword>
+                <gco:CharacterString>moyen</gco:CharacterString> <!-- faible/moyen/fort -->
+            </gmd:keyword>
+            <gmd:type>
+                <gmd:MD_KeywordTypeCode codeListValue="riskLevel"/> <!-- Extension CNIG -->
+            </gmd:type>
+        </gmd:MD_Keywords>
+    </gmd:descriptiveKeywords>
+</gmi:MI_Metadata>

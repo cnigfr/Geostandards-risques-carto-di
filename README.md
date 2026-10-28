@@ -12,9 +12,12 @@ Les versions en cours de ce géostandard sont accessibles ici :
 
 - [version en cours de rédaction](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/Document.md)
 
+- [version 0.1 du 23 septembre 2026](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/master/standard/diffusion/Geostandard-Risques-Carto-DI-v0.1.pdf) soumise à relecture au groupe de travail.
+
 Ce standard s'appuie sur le Géostandard risques - Modèle commun dont les développements se déroulent sur le dépôt [Geostandards Risques](https://github.com/cnigfr/Geostandards-Risques).
 
 > [!TIP]
+
 Ce standard CNIG ne possède pas de schéma de données directement accessible sur schema.data.gouv.fr.
 
 Davantage de documentation peut être trouvée sur le site du CNIG sur la [page suivante](https://cnig.gouv.fr/gt-risques-a25378.html).
