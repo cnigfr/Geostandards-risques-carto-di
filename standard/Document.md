@@ -14,7 +14,7 @@ Cartographies de la Directive Inondation
 
 Groupe de travail refonte des Géostandards Risques
 
-Version 0.1 - 23 septembre 2026
+Version 0.2 - jj mmmm 2026
 
 
 # Fiche descriptive
@@ -23,13 +23,13 @@ Version 0.1 - 23 septembre 2026
 |---|---|
 | **Titre** | Géostandards Risques |
 | **Sous-titre** | Cartographies de la Directive Inondation |
-| **Version** | Version 0.1 - 23 septembre 2026 |
+| **Version** | Version 0.2 - jj mmmm 2026 |
 | **Résumé** | La famille des Géostandards Risques a pour objectif de standardiser les données numériques géographiques relatives aux procédures réglementaires de prévention des risques. Elle a été développée dans le but de moderniser et succéder aux standards COVADIS dédiés à cette thématique tels que les standards Plan de Prévention des Risques (PPR) Naturels, Technologiques et Miniers ou Directive Inondation (DI). Elle est constituée d'un document qui établit les concepts communs à ces géostandards et d'un ensemble de profils applicatifs qui les précisent et les implémentent dans le cas de procédures particulières. Ce document est le profil applicatif dédié aux cartographies de la directive inondation. |
 | **Objectif** | Ce document a pour objectif de décrire l'information géographique et sémantique des cartographies des surfaces inondables et des risques d'inondation sur les territoires à risques important d'inondation (TRI) en conformité avec le cadre réglementaire transposé de la Directive européenne sur les inondations. |
 | **Etendue d'application** | Territoires à risque important d'inondation sur les bassins DCE (Directive Cadre Eau) du territoire national français. |
 | **Représentation spatiale** | Données vecteur |
 | **Résolution spatiale** | L'échelle cible des cartographies de la Directive Inondation est le 1:25000. *Elle peut néanmoins être plus précise lorsqu'elle est produite à partir de zones d'aléas PPR plus résolues*. |
-| **Statut du document** | Projet - ~~Appel à commentaires~~ - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
+| **Statut du document** | ~~Projet~~ - Appel à commentaires - ~~Proposé à la commission des Standards du CNIG~~ - ~~Validé~~ |
 | **Licence** | Le présent document est sous Licence Ouverte v2.0 (Open Licence) Etalab |
 | **Diffusion** | ``à venir`` |
 | **Formats disponibles** | [HTML/Markdown](./Document.md) |
@@ -51,6 +51,7 @@ Version 0.1 - 23 septembre 2026
 | --- | --- | --- | --- |
 | 0.0.1 | 11/12/2025 | Tous | Initialisation du document et début des travaux |
 | 0.1 | 23/09/2026 | Tous | Version pour relecture par le GT. |
+| 0.2 | jj/mm/2026 | TBD | Version ouverte à commentaires publics (en cours de rédaction). |
 
 ## Participation à l'écriture
 
@@ -281,7 +282,7 @@ Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les i
 
 ### Cas d'utilisation `Rapporter les cartographies de la directive inondation`
 
-Le cas d'utilisation "Rapporter les cartographies de la directive inondation" est un cas d'utilisation particulier à la directive inondation qui vise à rendre compte à la Commission européenne de l'application par la France de la Directive inondation. Le rapportage des cartographies s'inscrit dans un ensemble plus large de rapportages relatifs à cette Directive qui se répète régulièrement sur des cycles de 6 ans (à la date de rédaction de ce document, le 3ieme cycle de rapportage est en cours). Il s'agit ici faire remonter les informations particulières de ces cartographies dans le modèle harmonisé européen des "Flood Hazard and Risk Maps (FHRM)". Certaines informations décrites dans ce standard, comme les périmètres des TRI, sont aussi être utilisées pour le rapportage des "Area of Potential Significant Flood Risk (APSFR)".
+Le cas d'utilisation "Rapporter les cartographies de la directive inondation" est un cas d'utilisation particulier à la directive inondation qui vise à rendre compte à la Commission européenne de l'application par la France de la Directive inondation. Le rapportage des cartographies s'inscrit dans un ensemble plus large de rapportages relatifs à cette Directive qui se répète régulièrement sur des cycles de 6 ans (à la date de rédaction de ce document, le 3ieme cycle de rapportage est en cours). Il s'agit ici de faire remonter les informations particulières de ces cartographies dans le modèle harmonisé européen des "Flood Hazard and Risk Maps (FHRM)". Certaines informations décrites dans ce standard, comme les périmètres des TRI, peuvent aussi être utilisées pour le rapportage des "Area of Potential Significant Flood Risk (APSFR)".
 
 | Action du cas d'utilisation | Description |
 | - | - |
@@ -302,7 +303,7 @@ Le cas d'utilisation "Publier les cartographies de la directive inondation" conc
 | - | - |
 | Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon à ce qu'elles soient exploitables par des systèmes avals. Elle est mise en œuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
 | Publier les atlas des cartes | Cette action vise à rendre accessibles les cartes arrêtées par le Préfet dans un format "imprimable" (PDF). Elle est effectuée par les **D(R)EALs de bassin** sur leurs sites internet. |
-| Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage vie son sytème **WISE Freshwater** (Freshwater information system for europe). |
+| Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage via son sytème **WISE Freshwater** (Freshwater information system for europe). |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
@@ -315,9 +316,9 @@ Le cas d'utilisation "exploiter les cartographies de la Directive Inondation" il
 | Action du cas d'utilisation | Description |
 | - | - |
 | Mettre en œuvre la GEMAPI | La gestion des milieux aquatiques et la prévention des inondations (GEMAPI) est une compétence confiée aux **intercommunalités** (métropoles, communautés urbaines, communautés d’agglomération, communautés de communes) pour la prévention du risque inondation, notamment pour l'entretien des cours d'eau, la défense contre les inondations et contre la mer. Les informations des cartographies de la Directive inondation participent à cette mise en œuvre. |
-| Elaborer la PGRI et les SLGRI | L'élaboration sous responsabilité des **préfets de bassin** des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et leurs déclinaisons en stratégies locales de gestion du risque inondation (SLGRI) font parties des actions transposées de la directive inondation et s'appuient sur les données de cartographies de la directive inondation. |
+| Elaborer le PGRI et les SLGRI | L'élaboration sous responsabilité des **préfets de bassin** des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et leurs déclinaisons en stratégies locales de gestion du risque inondation (SLGRI) font parties des actions transposées de la directive inondation et s'appuient sur les données de cartographies de la directive inondation. |
 | Porter à connaissance sur le risque inondation | Les cartographies de la directive inondation font parties des éléments sur le risque inondation portés à connaissance (PaC) par l'**Etat**, via ses services régionaux ou départementaux auprès des **collectivité locales**. |
-| Informer les citoyens | L'information des citoyens sur le risque inondation s'appuie sur données des cartographies de la directive inondation, notamment via des cartographies interactives (par exemple sur le site [Georisques](https://www.georisques.gouv.fr/cartes-interactives#/)) ou lors de l'établissement de l'état des risques acquéreurs-locataires (ERRIAL) pour les transactions immobilières. |
+| Informer les citoyens | L'information des citoyens sur le risque inondation s'appuie sur les données des cartographies de la directive inondation, notamment via des cartographies interactives (par exemple sur le site [Georisques](https://www.georisques.gouv.fr/cartes-interactives#/)) ou lors de l'établissement de l'état des risques acquéreurs-locataires (ERRIAL) pour les transactions immobilières. |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
@@ -722,7 +723,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | `azimuth` | Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre. | 0..1 | `réel` | Saisie facultative, exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `90.0` |
 | `dateCalcul` | Date de calcul du point remarquable. | 0..1 | `date` | Valeur facultative | `26/11/2012` |
 
-#### Associations de la Point remarquable cote vitesse débit
+#### Associations de la classe Point remarquable cote vitesse débit
 
 Cf. [associations de la classe surface inondable](#associations-de-la-classe-surface-inondable) et [associations de la classe Carte des surfaces inondables](#associations-de-la-classe-carte-des-surfaces-inondables).
 
@@ -1242,7 +1243,7 @@ Le bassin de la Loire (FRG) est pilote mais le TRI se trouve également sur le b
 
 ### Règles de codification des identifiants
 
-L'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractère de ce type : `[code classe]_[numéro automatique]`, où :
+L'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) a établit des règles pour coder les identifiants des objets des classes décrites dans le standard sous la forme de chaine de caractères de ce type : `[code classe]_[numéro automatique]`, où :
 
 * `[code classe]` est un préfixe déterminé en fonction de la classe d'objets concernée ;
 * `[numéro automatique]` est un numéro unique pour l'objet dans la classe, de préférence "aligné à droite", c'est à dire sous la forme `001`, `012`, `125`.
@@ -1263,7 +1264,7 @@ Afin de pouvoir facilement adapter les données conformes à l'ancien standard a
 | [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | `OUV` |
 | [zonesuralea_s](#table-zonesuralea_s) | `ZSA` |
 | [enjeu_s](#table-enjeu_s), [enjeu_l](#table-enjeu_l), [enjeu_p](#table-enjeu_p) | `ENJ` (*) |
-| [enjeux_raportes_tri](#table-enjeux_raportes_tri) | `ERT` |
+| [enjeux_rapportes_tri](#table-enjeux_rapportes_tri) | `ERT` |
 
 Note : Lorsque plusieurs préfixes sont indiqués, c'est que l'objet peut provenir de plusieurs anciennes classes du standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf).
 
@@ -1347,7 +1348,7 @@ Le tableau qui suit reprend l'ensemble des tables possibles permettant d'implém
 | _**C**_ | _**[enjeu_s](#table-enjeu_s)**_ | [Enjeu](#enjeu) |
 | ***C*** | ***[enjeu_l](#table-enjeu_l)*** | [Enjeu](#enjeu) |
 | _**C**_ | _**[enjeu_p](#table-enjeu_p)**_ | [Enjeu](#enjeu) |
-| **O** | **[enjeux_raportes_tri](#table-enjeux_raportes_tri)** | [Enjeux rapportés TRI](#enjeux-rapportés-tri) |
+| **O** | **[enjeux_rapportes_tri](#table-enjeux_rapportes_tri)** | [Enjeux rapportés TRI](#enjeux-rapportés-tri) |
 | F | [typereferencetri](#table-de-valeurs-typereferencetri) | [Typereferencetri](#typereferencetri)  |
 | F | [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | [Typeprobabilitealea](#typeprobabilitealea) |
 | F | [typealeacartodi](#table-de-valeurs-typealeacartodi) | [TypeAleaCartoDI](#typealeacartodi) |
@@ -1572,13 +1573,13 @@ La table `enjeu_p` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant u
 | - | - | - | - |
 | **`geom`** | `POINT` | Localisation de l'enjeu ponctuel. | |
 
-##### Table `enjeux_raportes_tri`
+##### Table `enjeux_rapportes_tri`
 
-La table `enjeux_raportes_tri` implémente la classe [Enjeux rapportés TRI](#enjeux-rapportés-tri). Elle a la structure suivante :
+La table `enjeux_rapportes_tri` implémente la classe [Enjeux rapportés TRI](#enjeux-rapportés-tri). Elle a la structure suivante :
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
-| **`id_ert`** |  `TEXT` | Clé primaire. Identifiant de l'enjeu rapporté au sein du jeu de données, à remplir selon les [règles de codification des identifiants] | `ERT_0001` |
+| **`id_ert`** |  `TEXT` | Clé primaire. Identifiant de l'enjeu rapporté au sein du jeu de données, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants) | `ERT_0001` |
 | **`id_tri`** |  `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`occurrence`** | `TEXT` | Valeur obligatoire à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
 | `nb_hab_perm` | `INTEGER` | Saisie obligatoire. Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. Valeur positive. | `500` |
@@ -2341,9 +2342,9 @@ La répartition dans les tables `enjeu_s`, `enjeu_l` et `enjeu_p` dépend de la 
 | `date_enjeu` | _Toutes tables_ | `DATIMPORT` |  |
 | **`geom`** | Géométrie de l'objet. |  |  |
 
-## Correspondances table `enjeux_raportes_tri`
+## Correspondances table `enjeux_rapportes_tri`
 
-Les objets de la table `enjeux_raportes_tri` sont générés à partir des objets de la table `N_[prefixTri]_ENJEU_RAPPORT_ddd` correspondants à la maille de rapportage du TRI (valeur champ `ID` correspondant à l'identifiant du TRI). Les autres mailles de rapportage ne sont pas reprises pour les cartographies de la directive inondation.
+Les objets de la table `enjeux_rapportes_tri` sont générés à partir des objets de la table `N_[prefixTri]_ENJEU_RAPPORT_ddd` correspondants à la maille de rapportage du TRI (valeur champ `ID` correspondant à l'identifiant du TRI). Les autres mailles de rapportage ne sont pas reprises pour les cartographies de la directive inondation.
 
 | Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
