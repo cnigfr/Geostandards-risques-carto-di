@@ -164,12 +164,12 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).|
 | Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Il existe quatorze bassins ou groupements de bassins en France. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
 | District | Synonyme de bassin dans le cadre de la DCE. _(TBD : préciser la définition alternative de District à ne pas utiliser)_ |
-| DREAL de bassin | Direction régionale de l'environnement, de l'aménagement et du logement (DREAL) qui se voit confier le rôle de délégué de bassin à l'échelle d'un grand bassin hydrographique au service du Préfet coordinateur de bassin. En outre-mer, ce rôle est assuré par les Directions de l'environnement, de l'aménagement et du logement (DEAL) des bassins ultramarins.|
+| DREAL de bassin | Direction régionale de l'environnement, de l'aménagement et du logement (DREAL) qui se voit confier le rôle de délégué de bassin à l'échelle d'un grand bassin hydrographique au service du Préfet coordonnateur de bassin. En outre-mer, ce rôle est assuré par les Directions de l'environnement, de l'aménagement et du logement (DEAL) des bassins ultramarins.|
 | Enjeux | Personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. Cf. [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions). |
 | Inondation | Submersion temporaire par l'eau de terres émergées, quelle qu'en soit l'origine, à l'exclusion des inondations dues aux réseaux de collecte des eaux usées, y compris les réseaux unitaires. Cf. [Article L566-1 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454)
-| Préfet (coordinateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le Préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
+| Préfet (coordonnateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le Préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
 | Risque | Un risque est la conjugaison d’un aléa (résultant par exemple d’une inondation) et d’enjeux, plus ou moins vulnérables au regard de l’aléa. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
-| Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le Préfet coordinateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
+| Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le Préfet coordonnateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
 | Vulnérabilité (à l'inondation) | La vulnérabilité d’un enjeu (personne, bien, activité, patrimoine, etc.) à l’inondation peut être définie comme la propension de cet enjeu à être affecté par une inondation. Elle dépend à la fois de l’exposition à l’aléa (et notamment de l’intensité de l’aléa au niveau de l’enjeu) et de la manière dont l’enjeu est adapté à l’inondation. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
 
 ### Abréviations
@@ -252,7 +252,7 @@ Le tableau suivant présente les différents acteurs regroupés par rôles princ
 
 | Rôles | Caractéristiques |
 | - | - |
-| Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en œuvre sous l'autorité du **Préfet coordinateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
+| Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en œuvre sous l'autorité du **Préfet coordonnateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
 | Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environnement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
 | Diffuseur | La diffusion des cartographies de la directive inondation est assurée par les **D(R)EALs de bassin** sur leurs sites internet et au niveau national par la **DGPR** sur le site [Géorisques](www.georisques.gouv.fr) opéré par le **BRGM**. Elle est aussi assurée au niveau européen sur le site [WISE Freshwater](https://water.europa.eu/freshwater) opéré par l'**EEA** pour le compte de la **Commission européenne**. |
 | Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information des acquéreurs et des locataires, des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en œuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
@@ -1262,7 +1262,7 @@ Afin de pouvoir facilement adapter les données conformes à l'ancien standard a
 |  [point_remarquable_cvd_p](#table-point_remarquable_cvd_p) | `PRE` ou `PCV` (*) |
 |  [zone_protegee_s](#table-zone_protegee_s) | `ZP`, `ZPP` ou `ZSI` (*) |
 | [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | `OUV` |
-| [zonesuralea_s](#table-zonesuralea_s) | `ZSA` |
+| [zone_suralea_s](#table-zone_suralea_s) | `ZSA` |
 | [enjeu_s](#table-enjeu_s), [enjeu_l](#table-enjeu_l), [enjeu_p](#table-enjeu_p) | `ENJ` (*) |
 | [enjeux_rapportes_tri](#table-enjeux_rapportes_tri) | `ERT` |
 
@@ -1315,8 +1315,8 @@ Pour l'implémentation du modèle conceptuel de données de ce standard, les cho
   * Les relations entre la table `surface_inondable_s` et les tables héritées des éléments de caractérisation d'aléa est réalisé à l'aide de la colonne `id_sin` dans chacune de ces tables.
   * Les autres associations sont implicites :
 
-    * Les cartes des surfaces inondables sont constituées à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_iso_classe_hauteur_s`, `zone_iso_classe_vitesse_s`, `ligne_iso_cote_l`, `zone_iso_classe_debit_s`, `point_remarquable_cvd_p`, `zone_protegee_s`, `ouvrageprotecteur_l` et `zonesuralea_s` sélectionnés selon la probabilité d'aléa portée par le champ `occurrence` de chacune de ces tables (à l'exception de `tri_s`)
-    * La carte de risque d'inondation est constituée à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_protegee_s`, `ouvrageprotecteur_l`, `zonesuralea_s`, `enjeu_s`, `enjeu_l`, `enjeu_p` et `enjeux_rapportes_tri`
+    * Les cartes des surfaces inondables sont constituées à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_iso_classe_hauteur_s`, `zone_iso_classe_vitesse_s`, `ligne_iso_cote_l`, `zone_iso_classe_debit_s`, `point_remarquable_cvd_p`, `zone_protegee_s`, `ouvrageprotecteur_l` et `zone_suralea_s` sélectionnés selon la probabilité d'aléa portée par le champ `occurrence` de chacune de ces tables (à l'exception de `tri_s`)
+    * La carte de risque d'inondation est constituée à partir de l'ensemble des éléments des tables : `tri_s`, `surface_inondable_s`, `zone_protegee_s`, `ouvrageprotecteur_l`, `zone_suralea_s`, `enjeu_s`, `enjeu_l`, `enjeu_p` et `enjeux_rapportes_tri`
     * Les liens entre les ouvrages protecteurs et les zones qu'ils protègent ainsi que les zones de sur-aléa qu'ils engendrent ne sont pas implémentés.
 
 * Le **séparateur décimal** pour les valeurs de type `FLOAT` est le ".".
@@ -1344,7 +1344,7 @@ Le tableau qui suit reprend l'ensemble des tables possibles permettant d'implém
 | F | [point_remarquable_cvd_p](#table-point_remarquable_cvd_p) | [Point remarquable cote vitesse débit](#point-remarquable-cote-vitesse-débit) |
 | F | [zone_protegee_s](#table-zone_protegee_s) | [Zone protégée](#zone-protégée) |
 | F | [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | [Ouvrage protecteur](#ouvrage-protecteur) |
-| F | [zonesuralea_s](#table-zonesuralea_s) | [Zone de sur-aléa](#zone-de-sur-aléa) |
+| F | [zone_suralea_s](#table-zone_suralea_s) | [Zone de sur-aléa](#zone-de-sur-aléa) |
 | _**C**_ | _**[enjeu_s](#table-enjeu_s)**_ | [Enjeu](#enjeu) |
 | ***C*** | ***[enjeu_l](#table-enjeu_l)*** | [Enjeu](#enjeu) |
 | _**C**_ | _**[enjeu_p](#table-enjeu_p)**_ | [Enjeu](#enjeu) |
@@ -1528,9 +1528,9 @@ La table `ouvrageprotecteur_l` implémente la classe [Ouvrage protecteur](#ouvra
 | `occurrence` | `TEXT` | Saisie facultative. Probabilité d'aléa contre laquelle protège l'ouvrage. Valeurs à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea). | `Moy` |
 | `geom` | `MULTILINESTRING` | Axe(s) ou limite(s) de l'ouvrage protecteur. | |
 
-##### Table `zonesuralea_s`
+##### Table `zone_suralea_s`
 
-La table `zonesuralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-aléa). Elle a la structure suivante :
+La table `zone_suralea_s` implémente la classe [Zone de sur-aléa](#zone-de-sur-aléa). Elle a la structure suivante :
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
@@ -1630,9 +1630,9 @@ La table de valeurs `typeclassehauteureau` implémente l'énumération [Typeclas
 
 | code | libellé |
 | - | - |
-| `Emerg` | `Zone émergée` |
-| `Inf05` | `Inférieur à 0,5m` |
-| `05-1m` | `Entre 0,5m et 1m` |
+| `Emergee` | `Zone émergée` |
+| `Inf0.5m` | `Inférieur à 0,5m` |
+| `0.5m-1m` | `Entre 0,5m et 1m` |
 | `1m-2m` | `Entre 1m et 2m` |
 | `Sup2m` | `Supérieur à 2m` |
 
@@ -2084,7 +2084,7 @@ L'application des styles suivants est recommandée pour les entités suivantes :
 | - | - | - | - |
 | [ouvrageprotecteur_l](#table-ouvrageprotecteur_l) | N.A. | Noir, épaisseur 1,5mm | ![Ouvrage protecteur](./ressources/vignettes_symbologie/ouvrage_protecteur_ligne.png) |
 | [zone_protegee_s](#table-zone_protegee_s) | Hachures turquoise : RVB(11,111,98) en diagonale : 45°, espacement 1,5mm | Aucun | ![Zone protégée](./ressources/vignettes_symbologie/zone_protegee_hachures_turquoise.png) |
-| [zonesuralea_s](#table-zonesuralea_s) | Hachures croisées noires, espacement 1,5mm | Aucun | ![Zone suraléa](./ressources/vignettes_symbologie/zone_suralea_hachures_croisees.png) |
+| [zone_suralea_s](#table-zone_suralea_s) | Hachures croisées noires, espacement 1,5mm | Aucun | ![Zone suraléa](./ressources/vignettes_symbologie/zone_suralea_hachures_croisees.png) |
 
 ## Représentation des enjeux
 
@@ -2296,9 +2296,9 @@ Les objets de la table `ouvrageprotecteur_l` sont générés à partir des objet
 | `occurrence` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `SCENA_RUPT` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
 | `geom` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | Géométrie de l'objet. |  |
 
-## Correspondances table `zonesuralea_s`
+## Correspondances table `zone_suralea_s`
 
-Les objets de la table `zonesuralea_s` sont générés à partir des objets de la table `N_[prefixTri]_SURALEA_S_ddd`.
+Les objets de la table `zone_suralea_s` sont générés à partir des objets de la table `N_[prefixTri]_SURALEA_S_ddd`.
 
 | Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS |Commentaire |
 | - | - | - | - |
