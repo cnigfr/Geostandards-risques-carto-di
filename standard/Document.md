@@ -840,7 +840,7 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant de l'enjeu' au sein du jeu de données. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ENJ_001` |
 | `nomEnjeu` | Nom de l'enjeu. | 1 | `CharacterString` | Saisie obligatoire | `Musée` |
-| `idRefExterne` | identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. | 0..1 | CharacterString | Saisie libre. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
+| `idRefExterne` | identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. | 0..1 | `CharacterString` | Saisie libre. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
 | `refExterne` | Référentiel externe d'où est extrait l'enjeu, lorsque c'est le cas. | 0..1 | CharacterString | Saisie libre. | `BD Topo` |
 | `typeEnjeu` | Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. | 1 | [TypeEnjeu](#typeenjeu) | Saisie obligatoire. | `NomenclatureEnjeuCartoDI` : `Enjeu patrimonial` |
 | **`dateEnjeu`** | Date de collecte de l'enjeu (millésime du référentiel utilisé) | Date | 1 | Saisie obligatoire | `20/12/2024` |
@@ -855,6 +855,7 @@ Cf. [associations de la classe Carte des risques inondation](#associations-de-la
 | - | - |
 | **Classe d'objet** | **`Enjeux rapportés TRI`** |
 | **Définition** | Cette classe, uniquement attributaire, permet de rassembler des données quantitatives sur les nombres d'emplois et d'habitants affectés par le risque inondation en fonction des probabilités de survenue de l'inondation. |
+| **Regroupement** | Les enjeux rapportés via cette classe peuvent être calculés au niveau du TRI complet ou au niveau des communes faisant partie du périmètre du TRI. Dans ce dernier cas, la propriété `codeINSEEcommune` sera renseignée pour indiquer la commune concernée. |
 | **Modélisation géométrique** | Cette classe n'a pas de géométrie associée. |
 | **Primitive graphique** | La représentation des enjeux rapportés se fait sous forme de cartouche sur la carte des risques d'inondation |
 
@@ -863,13 +864,18 @@ Cf. [associations de la classe Carte des risques inondation](#associations-de-la
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
 | **`occurrence`** | Probabilité de survenue de l'aléa inondation pour laquelle les chiffres sont rapportés sur la carte | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
+| `codeINSEEcommune` | code INSEE de la commune sur laquelle les valeurs rapportées sont calculées. | 0..1 | `CharacterString` | Saisie facultative. Lorsque la valeur est nulle, alors les valeurs se rapportent à l'intégralité du TRI. La commune concernée doit faire partie du périmètre du TRI. | `30000` |
 | `nbHabitantsPermanents` | Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. | 1 | `entier` | Saisie obligatoire | `500` |
 | `nbHabitantsSaisonniers` | Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | 0..1 | `entier` | Saisie libre | `500` |
 | `nbEmplois` | Nombre indicatif d'emplois affectés pour la probabilité de survenue de l'aléa. | 1 | `entier` | Saisie obligatoire | `500` |
 
 #### Associations de la classe Enjeu rapportés
 
-Cf. [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
+| Nom de l'association| Définition | Classe de départ (occurrence) | Classe d'arrivée (occurrence) |
+| - | - | - | - |
+| `est calculé pour` | Relation sémantique permettant d'associer des enjeux rapportés à un TRI. | [Enjeux rapportés TRI](#enjeux-rapportés-tri)(1-*) | [Territoire à risque important d'inondation](#territoire-à-risque-important-dinondation-tri)(1) |
+
+Cf. aussi [associations de la classe Carte des risques inondation](#associations-de-la-classe-carte-des-risques-inondation).
 
 ## Description des types de données et énumérés
 
@@ -1609,9 +1615,10 @@ La table `enjeux_rapportes_tri` implémente la classe [Enjeux rapportés TRI](#e
 
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
-| **`id_ert`** |  `TEXT` | Clé primaire. Identifiant de l'enjeu rapporté au sein du jeu de données, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants) | `ERT_0001` |
-| **`id_tri`** |  `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
+| **`id_ert`** | `TEXT` | Clé primaire. Identifiant de l'enjeu rapporté au sein du jeu de données, à remplir selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants) | `ERT_0001` |
+| **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`occurrence`** | `TEXT` | Valeur obligatoire à prendre parmi les valeurs de code de la table [typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
+| `code_insee_comm` | `TEXT` | Valeur facultative. Code INSEE de la commune sur laquelle sont calculées les valeurs le cas échéant. | `30000` |
 | `nb_hab_perm` | `INTEGER` | Saisie obligatoire. Nombre indicatif d'habitants permanents affectés pour la probabilité de survenue de l'aléa. Valeur positive. | `500` |
 | `nb_hab_sais` | `INTEGER` | Saisie facultative. Nombre indicatif d'habitants saisonniers affectés pour la probabilité de survenue de l'aléa. | `100` |
 | `nb_emplois` | `INTEGER` | Saisie obligatoire. Nombre indicatif d'emplois affectés pour la probabilité de survenue de l'aléa. | `200` |
