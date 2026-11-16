@@ -123,11 +123,12 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 | Acronyme | Titre | Auteur | Année |
 | - | - | - | - |
+| [Guide Rapportage DI:20225](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/main/documents/Floods_Directive_3rd_cycle_descriptive_Reporting_Guidance.pdf) | Floods Directive Reporting Guidance - Guidance on the reporting to the Water Information System for Europe in ReportNet3 (3rd cycle of implementation of the Floods Directive) v2.0 | Commission Européenne | 2025 |
 | [CNIG_RISQUES_COMMUN:2024](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-modele-commun-v1_0.pdf) | Géostandards Risques - Modèle commun | Conseil National de l'Information Géolocalisée (CNIG) | 2024 |
 | [CNIG_RISQUES_PPR:2025](https://cnig.gouv.fr/IMG/pdf/geostandards-risques-ppr-v1.0_2.pdf) | Géostandards Risques - Plans de prévention des risques (PPR) | Conseil National de l'Information Géolocalisée (CNIG) | Novembre 2025 |
 | [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf) | Guide méthodologique pour l’élaboration des plans de prévention des risques d’inondation par débordement de cours d’eau (hors cours d’eau torrentiels) | DGPR - Cerema | 2024 |
 | [Guide PPRRuis:2004](https://www.ecologie.gouv.fr/sites/default/files/Guide_m%C3%A9thodo_PPR%20Ruissellement_2004.pdf) | Guide Méthodologique PPR Ruissellement | Direction de la Prévention des Pollutions et des Risques (DPPR) | 2004 |
-| [Guide PPRICet:2023](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRicet_10082023.pdf) | Guide Méthodologique PPRi des cours d'eau torrentiels | DGPR | 2023 |
+| [Guide PPRICet:2023](https://www.ecologie.gouv.fr/sites/default/files/GuidePPRIcet_10082023.pdf) | Guide Méthodologique PPRI des cours d'eau torrentiels | DGPR | 2023 |
 | [Guide PPRL:2014](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_m%C3%A9thodo_PPRL_%202014.pdf) | Guide méthodologique : Plan de prévention des risques littoraux | DGPR / SRNH | 2014 |
 | [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) | Standard de données Directive Inondation version 2.1 | COVADIS | 2019 |
 | [INSPIRE NZ:2013](https://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_NZ_v3.0.pdf) | INSPIRE D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines | European Commission Joint Research Centre | 2013 |
@@ -138,7 +139,7 @@ Ce document s’appuie ou nécessite la lecture des normes et documents référe
 
 ### Cadre réglementaire
 
-La mise en œuvre des cartographies des TRI se fait dans le cadre législatif de la [Directive 2007/60/CE du Parlement Européen et du Conseil du 23 octobre 2007 relative à l’évaluation et à la gestion des risques d’inondation](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000523817).
+La mise en œuvre des cartographies des TRI se fait dans le cadre législatif de la [Directive 2007/60/CE du Parlement Européen et du Conseil du 23 octobre 2007 relative à l’évaluation et à la gestion des risques d’inondation](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32007L0060).
 
 Elle est transposée en France par la [LOI n° 2010-788 du 12 juillet 2010 portant engagement national pour l'environnement (LENE)](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000022470434) qui modifie la partie législative du code de l'environnement avec en particulier l'ajout du [chapitre IV relatif à l'évaluation et la gestion des risques d'inondation (Articles L566-1 à L566-13)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454) :
 
@@ -159,15 +160,15 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 
 ### Termes spécifiques et définitions
 
-| Terme | Définition|
-|-|-|
-| Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf).|
+| Terme | Définition |
+| - | - |
+| Aléa | Phénomène, naturel ou technologique, de nature aléatoire, caractérisé par sa probabilité d’occurrence et son intensité. Pour les inondations hors cours d’eau torrentiels, plusieurs niveaux d’aléa sont distingués en fonction des intensités associées aux principaux paramètres physiques de l’inondation de référence : hauteurs d’eau et dynamiques (vitesses d’écoulement et vitesse de montées des eaux). Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). L’article [R.566-5](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI00002365564) précise que les aléas inondation peuvent avoir pour nature : « débordement de cours d'eau, y compris torrentiel, submersion marine, remontée de nappes ou ruissellement. » |
 | Bassin | Circonscription hydrographique française la plus grande en matière de planification et de gestion de l'eau. Il existe quatorze bassins ou groupements de bassins en France. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/bassin) |
-| District | Synonyme de bassin dans le cadre de la DCE. _(TBD : préciser la définition alternative de District à ne pas utiliser)_ |
+| District | Synonyme de bassin dans le cadre de la DCE. A ne pas confondre avec la notion administrative du terme. |
 | DREAL de bassin | Direction régionale de l'environnement, de l'aménagement et du logement (DREAL) qui se voit confier le rôle de délégué de bassin à l'échelle d'un grand bassin hydrographique au service du Préfet coordonnateur de bassin. En outre-mer, ce rôle est assuré par les Directions de l'environnement, de l'aménagement et du logement (DEAL) des bassins ultramarins.|
 | Enjeux | Personnes, biens, activités, infrastructures, éléments du patrimoine culturel ou environnemental, menacés par un aléa ou susceptibles d’être affectés ou endommagés par celui-ci. Ils sont liés à l’occupation du territoire et à son fonctionnement. Cf. [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md#termes-spécifiques-et-définitions). |
 | Inondation | Submersion temporaire par l'eau de terres émergées, quelle qu'en soit l'origine, à l'exclusion des inondations dues aux réseaux de collecte des eaux usées, y compris les réseaux unitaires. Cf. [Article L566-1 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000022479454/#LEGISCTA000022479454)
-| Préfet (coordonnateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le Préfet coordonnateur de bassin anime et coordonne la politique de l'Etat en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'Etat en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
+| Préfet (coordonnateur) de bassin | Préfet de la région dans laquelle le comité de bassin a son siège. Le Préfet coordonnateur de bassin anime et coordonne la politique de l'État en matière de police et de gestion des ressources en eau afin de réaliser l'unité et la cohérence des actions déconcentrées de l'État en ce domaine dans les régions et départements concernés. Cf. [EauFrance](https://www.eaufrance.fr/glossaire/prefet-coordonnateur-de-bassin). Dans le cadre de ce standard, il arrête la liste des territoires à risque important d'inondation et les cartes des zones inondables et des risques d'inondation relatives à ces territoires. |
 | Risque | Un risque est la conjugaison d’un aléa (résultant par exemple d’une inondation) et d’enjeux, plus ou moins vulnérables au regard de l’aléa. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
 | Territoire à risque important d'inondation | Territoire dans lesquels il existe un risque important d'inondation ayant des conséquences de portée nationale, voire européenne. Ces territoires sont sélectionnés par le Préfet coordonnateur de bassin. Cf. [Article R566-5 du Code de l'environnement](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000023655645). |
 | Vulnérabilité (à l'inondation) | La vulnérabilité d’un enjeu (personne, bien, activité, patrimoine, etc.) à l’inondation peut être définie comme la propension de cet enjeu à être affecté par une inondation. Elle dépend à la fois de l’exposition à l’aléa (et notamment de l’intensité de l’aléa au niveau de l’enjeu) et de la manière dont l’enjeu est adapté à l’inondation. Cf. [Guide PPRI:2024](https://www.ecologie.gouv.fr/sites/default/files/documents/Guide%20PPRI%20debordement%20de%20cours%20d%27eau%202024.pdf). |
@@ -175,8 +176,8 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 ### Abréviations
 
 | Sigle | Signification |
-|-|-|
-| APSFR | Area of Potential Significant Flood Risk (*Territoires à risques importants d'inondation*) |
+| - | - |
+| APSFR | Area of Potential Significant Flood Risk (ou TRI : *Territoires à risques importants d'inondation*) |
 | BRGM | Bureau de recherches géologiques et minières |
 | BRIL | Bureau des risques d'inondation et littoraux (DGPR) |
 | Cerema | Centre d’études et d’expertises sur les risques, l’environnement, la mobilité et l’aménagement |
@@ -189,8 +190,8 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | DI | Directive européenne relative à l’évaluation et à la gestion des risques d’inondation |
 | DREAL | Direction régionale de l'environnement, de l'aménagement et du logement |
 | DEAL | Direction de l'environnement, de l'aménagement et du logement |
-| EEA | European Environment Agency (Agence européenne pour l'environement) |
-| ERRIAL | Etat des risques pour l'information des acquéreurs et des locataires |
+| EEA | European Environment Agency (Agence européenne pour l'environnement) |
+| ERRIAL | État des risques pour l'information des acquéreurs et des locataires |
 | ERP | Établissement recevant du public |
 | FINESS | Fichier National des Établissements Sanitaires et Sociaux |
 | FHRM | Flood Hazard and Risk Maps (*Cartes des surfaces inondables et des risques d'inondation*) |
@@ -208,6 +209,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | OFB | Office français de la biodiversité |
 | OSM | OpenStreetMap |
 | OGC | Open Geospatial Consortium |
+| PAPI | Programme d’actions de prévention des inondations |
 | PPRI | Plan de prévention des risques d'inondation |
 | PGRI | Plan de gestion des risques d'inondation |
 | SAE | Statistique Annuelle des Établissements de santé |
@@ -217,6 +219,7 @@ Pour la partie réglementaire, le [décret n° 2011-227 du 2 mars 2011 relatif �
 | SIOUH | Système d’Information des Ouvrages Hydrauliques |
 | SLGRI | Stratégie locale de gestion des risques d'inondation |
 | TRI | Territoire à risque important d'inondation |
+| ZPS | Zones de protection spéciale |
 | ZSC | Zone spéciale de conservation |
 
 # Contexte d'application
@@ -253,7 +256,7 @@ Le tableau suivant présente les différents acteurs regroupés par rôles princ
 | Rôles | Caractéristiques |
 | - | - |
 | Producteur | La production et la mise à jour des cartographies de la directive inondation est mise en œuvre sous l'autorité du **Préfet coordonnateur de bassin** par les **D(R)EALs de bassin** avec le support des **DDT(M)** et d'opérateurs techniques divers tels que les **services de prévision des crues**, le **service central Vigicrues**, des **bureaux d'études**, le **BRGM**, l'**IGN** ou le **Cerema**.
-| Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environnement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
+| Rapporteur | Le rapportage des cartographies de la directive inondation auprès de la Commission Européenne est effectué par un opérateur d'État (l'IGN dans le cadre du 3ième cycle) pour le compte de la **direction générale de la prévention des risques (DGPR)** sur le portail **Eionet** opéré par l'**agence européenne de l'environnement (EEA)** pour le compte de la **Commission européenne**. Les données rapportées sont rassemblées et remontées par les **D(R)EALs de bassin**. |
 | Diffuseur | La diffusion des cartographies de la directive inondation est assurée par les **D(R)EALs de bassin** sur leurs sites internet et au niveau national par la **DGPR** sur le site [Géorisques](www.georisques.gouv.fr) opéré par le **BRGM**. Elle est aussi assurée au niveau européen sur le site [WISE Freshwater](https://water.europa.eu/freshwater) opéré par l'**EEA** pour le compte de la **Commission européenne**. |
 | Utilisateur | Les utilisateurs des cartographies de la directive inondation sont multiples. Il peut s'agir du **grand public**, par exemple dans le cadre de l'information des acquéreurs et des locataires, des **collectivités locales** pour la gestion des milieux aquatiques et la prévention des inondations (GEMAPI) ou dans le cadre des procédures de "porter à connaissance", l'**État** pour la mise en œuvre des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et de ses déclinaisons locales (SLGRI), des **bureaux d'études**, des **assureurs** pour toute exploitation aval de ces informations de risque, ... |
 
@@ -270,9 +273,9 @@ Le cas d'utilisation "Elaborer les cartographies de la Directive Inondation" dé
 
 | Action du cas d'utilisation | Description |
 | - | - |
-| Déclencher l'élaboration des cartographies | Cette action est de la responsabilité du **Préfet de bassin**. Elle consiste à arrêter un nouveau territoire (TRI) sur lequel il existe un risque important d'inondation ou à arrêter la mise à jour des cartographies d'un TRI après réexamen par les **D(R)EALs de bassin** ou les **DDT(M)s** concernées. Dans ce dernier cas, la décision de mise à jour peut être consécutive à la révision d'un plan de prévision des risques inondation (PPRI) ou littoral (PPRL), de nouvelles connaissances sur l'aléa d'inondation (survenue d'un évènement, nouvelles études, ...), le changement de périmètre du TRI (par exemple du fait d'une fusion de communes) ou la prise en compte d'une nouvelle source d'aléa (cours d'eau). |
-| Produire les données métiers | Cette action est menée sous la responsabilité du **Préfet de bassin** par les **D(R)EALs de bassin**. Elle consiste à établir les informations metiers sur les aléas et les enjeux pour produire les cartographies. Elle est mise en œuvre par les services techniques compétents :  **Service central Vigicrues**, **Services de prévision des crues (SPC)**, **Services risques en DDT(M)** ou **Bureaux d'études**. Selon les types d'aléa, certains **opérateurs d'Etat** (BRGM, Cerema) peuvent aussi être sollicités. |
-| Produire les données SIG | Cette étape consiste à produire les données numériques des cartographies en conformité avec ce standard (y compris la validation), ainsi que les données de rapportage au niveau européen. Il peut s'agir d'une sous-étape de la précédente si les données ont été directement produites selon le formalisme du standard. Les acteurs impliqués sont globalement les mêmes que lors de l'étape précédente. D'autres opérateurs (IGN) peuvent être sollicités pour la validation des données relativement au standard. |
+| Déclencher l'élaboration ou la révision des cartographies | Cette action est de la responsabilité du **Préfet de bassin**. Elle consiste à arrêter un nouveau territoire (TRI) sur lequel il existe un risque important d'inondation ou à arrêter la mise à jour des cartographies d'un TRI après réexamen par les **D(R)EALs de bassin** ou les **DDT(M)s** concernées. Dans ce dernier cas, la décision de mise à jour peut être consécutive à la révision d'un plan de prévision des risques inondation (PPRI) ou littoral (PPRL), de nouvelles connaissances sur l'aléa d'inondation (survenue d'un évènement, nouvelles études, ...), le changement de périmètre du TRI (par exemple du fait d'une fusion de communes) ou la prise en compte d'une nouvelle source d'aléa (cours d'eau). |
+| Produire les données métiers | Cette action est menée sous la responsabilité du **Préfet de bassin** par les **D(R)EALs de bassin**. Elle consiste à établir les informations metiers sur les aléas et les enjeux pour produire les cartographies. Elle est mise en œuvre par les services techniques compétents :  **Service central Vigicrues**, **Services de prévision des crues (SPC)**, **Services risques en DDT(M)** ou **Bureaux d'études**. Selon les types d'aléa, certains **opérateurs d'État** (BRGM, Cerema) peuvent aussi être sollicités. Pour les TRI, il peut s’agir de recycler en tout ou partie des données issues de PPR déjà approuvé ou en cours d’adoption. Dans tous les cas, il est fortement recommandé de mutualiser les travaux PPRI/TRI tant pour des raisons d’économies d’échelle que de garantie d’égalité des données pour un aléa de même fréquence et d’emboitement des évènements étudiés. |
+| Produire les données SIG | Cette étape consiste à produire les données numériques des cartographies en conformité avec ce standard (y compris la validation), ainsi que les données de rapportage au niveau européen. Il peut s'agir d'une sous-étape de la précédente si les données ont été directement produites selon le formalisme du standard. Pour les données de risque, l’utilisation d'un outil commun (Agirisk, développé par le Cerema, dans le cadre du cycle 3) est recommandée pour garantir une approche homogène et réplicable à l’ensemble du territoire et avec d’autres outils de la prévention des inondations (PAPI, PPRI…). Les acteurs impliqués sont globalement les mêmes que lors de l'étape précédente. D'autres opérateurs tels que l'IGN peuvent être sollicités pour la validation des données relativement au standard. Cette action peut avoir lieu à tout moment, la directive fixe une date limite de rapportage pour l’intégration à chacun des cycles. L’enjeu est donc de basculer d’une logique de couverture à une logique de mise à jour au fil de l’eau en fonction des besoins identifiés. |
 | Produire les cartes | Cette action menée par les **D(R)EALs de bassin** consiste à établir les cartes objets des [articles R566-6 à R566-9 du code de l'environnement](#cadre-réglementaire) à partir des données SIG aux formats papier ou pdf qui seront arrêtées par le Préfet de bassin et mises à disposition du public. |
 | Arrêter les cartes | Cette action est réalisée par le **Préfet de bassin** qui valide les cartes produites. |
 
@@ -288,8 +291,8 @@ Le cas d'utilisation "Rapporter les cartographies de la directive inondation" es
 | - | - |
 | Initier le rapportage | Le démarrage et les modalités de rapportage relatifs à un cycle sont initiés par la **Commission européenne** et signifiés aux états membres (à la **DGPR** dans le cas de la France). Des guides de rapportage sont fournis et le portail et les outils permettant de l'effectuer sont mis à disposition des états membres. |
 | Produire les données de rapportage | Sous la responsabilité de la **DGPR**, les données de rapportage sont rassemblées par les **D(R)EALs** de bassin à partir des données produites pour les cartographies de la Directive Inondation et mises au format harmonisé européen. Des opérateurs de l'état ou d'autres sous-traitants peuvent être sollicités pour assister la DGPR  dans la mise en forme des données de rapportage. |
-| Effectuer le rapportage | Cette action est effectuée par la DGPR avec l'assistance possible d'un opérateur d'état (IGN) sur le portail **Reportnet** opéré par l'**agence européenne de l'environement (EEA)** pour la commission européenne.  Le portail inclut un validateur qui autorise ou non la publication des données rapportées. Ce validateur contrôle la forme des données rapportées (respect des types de champ, valeurs autorisées, etc.). |
-| Valider le rapportage | Cette dernière étape est effectuée par la Commission européenne, une fois le rapportage effectué par les états membres. Il s’agit de contrôler et valider les données sur le fond (notamment la présence de références documentaires pertinentes). Un rapport issu de ce contrôle est envoyé à chaque Etat membre. |
+| Effectuer le rapportage | Cette action est effectuée par un opérateur (l’IGN pour le cycle 3) pour le compte de la DGPR sur le portail **Reportnet** opéré par l'**agence européenne de l'environnement (EEA)** pour la commission européenne. Le portail inclut un validateur qui autorise ou non la publication des données rapportées. Ce validateur contrôle la forme des données rapportées (respect des types de champ, valeurs autorisées, etc.). |
+| Valider le rapportage | Cette dernière étape est effectuée par la Commission européenne, une fois le rapportage effectué par les États membres. Il s’agit de contrôler et valider les données sur le fond (notamment la présence de références documentaires pertinentes). Un rapport issu de ce contrôle est envoyé à chaque État membre. |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
@@ -301,9 +304,9 @@ Le cas d'utilisation "Publier les cartographies de la directive inondation" conc
 
 | Action du cas d'utilisation | Description |
 | - | - |
-| Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon à ce qu'elles soient exploitables par des systèmes avals. Elle est mise en œuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
+| Publier les données SIG | Cette opération consiste à rendre disponibles les données SIG conforme à ce standard sur internet via des services de téléchargement ou de visualisation de façon qu'elles soient exploitables par des systèmes avals. Elle est mise en œuvre pour la **DGPR** par les **D(R)EALs de bassin** sur leurs propres sites internet ou sur la plateforme nationale **Georisques** opérée par le **BRGM**. |
 | Publier les atlas des cartes | Cette action vise à rendre accessibles les cartes arrêtées par le Préfet dans un format "imprimable" (PDF). Elle est effectuée par les **D(R)EALs de bassin** sur leurs sites internet. |
-| Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage via son sytème **WISE Freshwater** (Freshwater information system for europe). |
+| Publier les données de rapportage | Cette action est réalisée par la **commission européenne** qui met à disposition des citoyens européens les données de rapportage via son système **WISE Freshwater** (Freshwater information system for Europe). |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
 
@@ -316,8 +319,9 @@ Le cas d'utilisation "exploiter les cartographies de la Directive Inondation" il
 | Action du cas d'utilisation | Description |
 | - | - |
 | Mettre en œuvre la GEMAPI | La gestion des milieux aquatiques et la prévention des inondations (GEMAPI) est une compétence confiée aux **intercommunalités** (métropoles, communautés urbaines, communautés d’agglomération, communautés de communes) pour la prévention du risque inondation, notamment pour l'entretien des cours d'eau, la défense contre les inondations et contre la mer. Les informations des cartographies de la Directive inondation participent à cette mise en œuvre. |
-| Elaborer le PGRI et les SLGRI | L'élaboration sous responsabilité des **préfets de bassin** des plans de gestion des risques d'inondation (PGRI) au niveau des bassins et leurs déclinaisons en stratégies locales de gestion du risque inondation (SLGRI) font parties des actions transposées de la directive inondation et s'appuient sur les données de cartographies de la directive inondation. |
-| Porter à connaissance sur le risque inondation | Les cartographies de la directive inondation font parties des éléments sur le risque inondation portés à connaissance (PaC) par l'**Etat**, via ses services régionaux ou départementaux auprès des **collectivité locales**. |
+| Élaborer les PPRI | Les données produites pour le TRI doivent permettre d'identifier, d'élaborer ou de mettre à jour les cartes des PPRI. |
+| Elaborer le PGRI | L'élaboration sous responsabilité des **préfets de bassin** des plans de gestion des risques d'inondation (PGRI) au niveau des bassins fait partie des actions transposées de la directive inondation et s'appuient sur les données de cartographies de la directive inondation. |
+| Porter à connaissance sur le risque inondation | Les cartographies de la directive inondation font parties des éléments sur le risque inondation portés à connaissance (PaC) par l'**État**, via ses services régionaux ou départementaux auprès des **collectivité locales**. |
 | Informer les citoyens | L'information des citoyens sur le risque inondation s'appuie sur les données des cartographies de la directive inondation, notamment via des cartographies interactives (par exemple sur le site [Georisques](https://www.georisques.gouv.fr/cartes-interactives#/)) ou lors de l'établissement de l'état des risques acquéreurs-locataires (ERRIAL) pour les transactions immobilières. |
 
 Le diagramme UML de cas d'utilisation ci-dessous illustre ces actions avec les interventions correspondantes des acteurs et systèmes principaux impliqués pour chacune d'elles. Les flèches en pointillés entre les acteurs indiquent une relation d'un exécutant pour un donneur d'ordre.
@@ -361,24 +365,37 @@ Le diagramme UML suivant représente les classes décrivant les surfaces inondab
 
 ![Schéma UML Surfaces inondables et aléas](./ressources/UML-Surfaces-Inondables-Carto-DI.png){#fig:uml-surfaces-inondables-img}
 
-Les [surfaces inondables](#surface-inondable) sont les zones d'aléas issues des différents types de [risques d'inondation](#typealeacartodi) relatifs à la directive inondation. Elles correspondent à des [probabilités d'aléa type](#typeprobabilitealea) portées par le champs occurrence. Le ou les cours d'eaux qui sont à l'origine de ces surfaces peuvent être décrites à l'aide de la classe [OrigineRisque](#origine-du-risque) définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
+Les [surfaces inondables](#surface-inondable) sont les zones d'aléas issues des différents types de [risques d'inondation](#typealeacartodi) relatifs à la directive inondation. Elles correspondent à des [probabilités d'aléa type](#typeprobabilitealea) portées par le champ occurrence. Le ou les cours d'eaux qui sont à l'origine de ces surfaces peuvent être décrites à l'aide de la classe [OrigineRisque](#origine-du-risque) définie dans [CNIG_RISQUES_COMMUN:2024](https://github.com/cnigfr/Geostandards-Risques/tree/main/standards/Geostandards-risques-commun/Document.md).
 
-**Exigence :** Dans le cadre de la directive inondation, les cartes de surfaces inondables doivent être établies à minima pour représenter un des [aléas de moyenne probabilité](#typeprobabilitealea).
+**Exigence : Probabilités d'événements devant être cartographiés.**
 
-**Exigence :** Pour la représentation des **aléas de moyenne probabilité**, les surfaces inondables correspondent aux zones d'aléas des PPRN correspondants, lorsqu'ils existent :
+La production des cartes de surfaces inondables doit être réalisée selon les [événements de probalibilités]((#typeprobabilitealea)) suivantes :
 
-* **zone d'aléa de référence** pour les aléas de submersion marine et débordement de cours d'eau ;
-* **zone d'aléa à échéance 100 ans** pour l'aléa submersion marine avec prise en compte du changement climatique à échéance 100.
+| | Cartes françaises (selon [articles R566-6 et R5666-8 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655647/#LEGISCTA000023655647)) | Rapportage européen (selon [Directive Inondation](https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32007L0060)) |
+| - | - | - |
+| Evénement de faible probabilité | Obligatoire | Obligatoire |
+| Evénement de probabilité moyenne | Obligatoire, Optionnel pour l'aléa de remontée de nappes | Obligatoire, Optionnel pour l'aléa de remontée de nappes et zones cotières ayant un niveau de protection adéquat |
+| Evénement de forte probabilité | Obligatoire, Optionnel pour l'aléa de remontée de nappes | Optionnel |
 
-Les éléments de caractérisation d'aléas suivants peuvent être reportés sur les cartes de surfaces inondables :
+**Exigence : Correspondances des surfaces inondables avec les zones d'aléas des PPRI.**
 
-* [zones iso classes de hauteur](#zone-iso-classe-hauteur) réparties en [paliers de hauteur d'eau types](#typeclassehauteureau);
-* [lignes iso cote](#ligne-iso-cote) ;
-* [zones iso classe vitesse](#zone-iso-classe-vitesse), réparties en [classes de vitesses type](#typevitesseecoulement) ;
-* [points remarquables cote vitesse débit](#point-remarquable-cote-vitesse-débit) ;
-* [zone iso classe débit](#zone-iso-classe-débit).
+Pour la représentation des **aléas de probabilité moyenne**, les surfaces inondables correspondent aux zones d'aléas des PPRI correspondants, lorsqu'ils existent :
 
-**Exigence :** Une carte des surfaces inondables doit comprendre à minima les zones iso classe de hauteur ou les lignes iso-cotes ayant permis de calculer les surfaces inondables correspondantes.
+* **zone d'aléa de référence** pour les aléas inondation débordement de cours d'eau ;
+* **zone d'aléa à échéance 100 ans** pour l'aléa submersion marine avec prise en compte du changement climatique à horizon 100 ans.
+
+**Exigence : Contenu des cartes de surfaces inondables.**
+
+Les cartes de surfaces inondables doivent comprendre les éléments suivants :
+
+| | Cartes françaises (selon [articles R566-6 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000023655647/#LEGISCTA000023655647)) | Rapportage européen (selon [Guide Rapportage DI:20225](https://github.com/cnigfr/Geostandards-risques-carto-di/blob/main/documents/Floods_Directive_3rd_cycle_descriptive_Reporting_Guidance.pdf)) |
+| - | - | - |
+| [surfaces inondables](#surface-inondable) | Obligatoire | Obligatoire |
+| [zones iso classes de hauteur](#zone-iso-classe-hauteur) réparties en [paliers de hauteur d'eau types](#typeclassehauteureau) | Obligatoire si [lignes iso cote](#ligne-iso-cote) absentes | [lignes iso cote](#ligne-iso-cote) absentes |
+| [lignes iso cote](#ligne-iso-cote) | Obligatoire si [zones iso classes de hauteur](#zone-iso-classe-hauteur) absentes | Obligatoire si [zones iso classes de hauteur](#zone-iso-classe-hauteur) absentes |
+| [zones iso classe vitesse](#zone-iso-classe-vitesse), réparties en [classes de vitesses type](#typevitesseecoulement) | Optionnel | Optionnel |
+| [points remarquables cote vitesse débit](#point-remarquable-cote-vitesse-débit) | Optionnel | Optionnel |
+| [zone iso classe débit](#zone-iso-classe-débit) | Optionnel | Optionnel |
 
 Les surfaces inondables sont aussi représentées sur les [cartes de risque d'inondation](#carte-des-risques-inondation).
 
@@ -402,7 +419,7 @@ Le diagramme UML suivant représente les classes décrivant les enjeux et leur i
 
 Les enjeux représentés sur les cartes de risques sont les suivants :
 
-* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation à être mentionnés sous forme de cartouche de la carte des risques d'inondation ;
+* Les [enjeux rapportés au TRI](#enjeux-rapportés-tri) en fonction de l'occurrence probable de l'aléa relatent du nombre d'habitants et d'emplois touchés par l'inondation sur le périmètre du TRI. Ils ont vocation à être annexés aux cartes des risques d'inondation sous forme de tableau. Ces informations font aussi partie des informations de rapportage au niveau européen ;
 * Les objets de la classe [Enjeu](#enjeu) héritée du modèle commun, localisés sur la carte dont la classification se fait selon la nomenclature des enjeux PPRN enrichie pour les besoins spécifiques de la directive inondation ([NomenclatureCartoDI](#nomenclature-enjeux-carto-di)).
 
 ## Catalogue d'objets
@@ -446,11 +463,11 @@ Les règles de codage particulière et les éventuelles restrictions sur les dom
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
 | **`identifiantTRI`** | Identifiant du TRI tel qu'utilisé pour le rapportage européen. Les règles de codage de ces identifiants sont spécifiées dans la partie [Identification des TRIs](#identification-des-tris) | 1 | `identifiant` | Clé primaire | `FRG_TRI_TOURS` |
-| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 0..1 | `CharacterString` | Valeur vide autorisée | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
+| `nom` | Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | 1 | `CharacterString` | Obligatoire | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
 | **`codeProcedure`** | identifiant GASPAR du TRI | 1 | `CharacterString` | Saisie obligatoire | `45DREAL20130002` |
-| `libelleProcedure` | Libellé de la procédure dans GASPAR | 0..1 | `CharacterString` | Valeur vide autorisée | `Tours` |
+| `libelleProcedure` | Libellé de la procédure dans GASPAR | 1 | `CharacterString` | Obligatoire | `Tours` |
 | **`typeProcedure`** | Type de procédure dans GASPAR | 1 | `CharacterString` | Valeur fixée à `Territoires à Risques d'Innondation` selon la nomenclature GASPAR | `Territoires à Risques d'Innondation` |
-| **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
+| **`etatProcedure`** | État de la procédure | 1 | `CharacterString` | Valeur fixée à `Arrêté` | `Arrêté` |
 | **`dateEtat`** | Date de l'arrêté de première création du TRI | 1 | `date` | Valeur obligatoire | `26/11/2012` |
 
 #### Associations de la classe TRI
@@ -473,8 +490,8 @@ Les règles de codage particulière et les éventuelles restrictions sur les dom
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 |---|---|---|---|---|---|
-| **`identifiant`** | Identifiant de la carte sous la forme `XXX_[numéro]` selon les [règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `CSI_0001` ou `CRI_0001`|
-| **`etatProcedure`** | Etat de la procédure | 1 | `CharacterString` | Valeur obligatoire fixée à `Arrêté` | `Arrêté` |
+| **`identifiant`** | Identifiant de la carte. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `CSI_0001` ou `CRI_0001`|
+| **`etatProcedure`** | État de la procédure | 1 | `CharacterString` | Valeur obligatoire fixée à `Arrêté` | `Arrêté` |
 | **`dateEtat`** | Date de l'arrêté de la carte par le Préfet de bassin | 1 | `date` | valeur obligatoire | `18/12/2013` |
 
 #### Associations de la classe Cartographie TRI
@@ -546,7 +563,7 @@ Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-class
 | | |
 | - | - |
 | **Classe d'objet** | **`Reference Internet`** |
-| **Définition** | Cette classe permet de décrire les ressources en ligne associées au TRI.  |
+| **Définition** | Cette classe permet de décrire les ressources en ligne associées au TRI. Les informations qu'elle permet de décrire sont à réutiliser pour le rapportage européen "FHRM". |
 | **Regroupement** | Une seule référence peut être associée et correspond à celle renseignée pour le rapportage européen. Il s'agit de la plateforme nationale de diffusion des TRI, ou, à défaut celle de la plateforme régionale de bassin. |
 | **Modélisation géométrique** | Cette classe n'a pas de géométrie associée. |
 
@@ -555,7 +572,7 @@ Cf. aussi [associations de la classe Cartographie TRI](#associations-de-la-class
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
 | **`adresse`** | URL d'accès à la ressource internet. Faisant office de clé primaire pour la classe. | 1 | `url` | Clé primaire | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
-| `nomRessource` | Nom de la ressource internet (titre du site, de la page). | 0..1 | `CharacterString` | Valeur vide autorisée | `Georisques : Zonages Inondation - Rapportage 2020` |
+| `nomRessource` | Nom de la ressource internet (titre du site, de la page). | 1 | `CharacterString` | Saisie obligatoire | `Georisques : Zonages Inondation - Rapportage 2020` |
 | `description` | Description de la ressource internet | 0..1 | `CharacterString` | Valeur vide autorisée | `Page de téléchargement des TRI du rapportage 2020` |
 | **`typeReference`** | Type de de référence internet selon la classification déterminée par [TypeReferenceTRI](#typereferencetri) | 1 | [TypeReferenceTRI](#typereferencetri) | Valeur à prendre parmi celles de [TypeReferenceTRI](#typereferencetri) | `Plateforme nationale` |
 
@@ -579,7 +596,7 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 | **`idZoneAlea`** | Identifiant de la surface inondable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `SIN_0001` |
 | **`typeAlea`** | Type d'aléa inondation engendrant la surface; selon la codification GASPAR | 1 | `CharacterString` | Valeur à prendre parmi les valeurs de [TypeAleaCartoDI](#typealeacartodi) selon la nomenclature GASPAR | `112` |
 | **`occurrence`** | Probabilité de survenue de l'aléa inondation associée à la surface selon la caractérisation définie par [TypeProbabiliteAlea](#typeprobabilitealea) | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
-| **`dateCalcul`** | Date de calcul de la surface | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| **`dateCalcul`** | Date de calcul de la surface | 0..1 | `date` | Saisie obligatoire | `26/11/2012` |
 | `description` | Description de la surface inondable. Champ hérité du modèle commun. | 0..1 | `CharacterString` | Valeur facultative | ... |
 | `niveauAlea` | Champ hérité du modèle commun. Niveau d'aléa à renseigner lorsque la surface inondable correspond à la zone d'aléa d'un PPRI | 0..1 | [TypeNiveauAlea](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/Document.md#enumeration-typeniveaualea) | Valeur à prendre parmi les valeurs de niveau d'aléa définies dans le standard PPR |  `Fort` |
 
@@ -873,7 +890,7 @@ Le tableau suivant liste les valeurs possibles permettant de caractériser les d
 | `Aléa de forte probabilité` | (également dénommé événement fréquent) Événement provoquant les premiers dommages conséquents, commençant à un temps de retour de 10 ans et dans la limite d'une période de retour de l’ordre de 30 ans. |
 | `Aléa de forte probabilité avec prise en compte du changement climatique à court terme` | (également dénommé événement fréquent avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
 | `Aléa de forte probabilité avec prise en compte du changement climatique à échéance 100 ans` | (également dénommé événement fréquent avec changement climatique à échéance 100 ans) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 10 et 30 ans qui est l’événement choisi de forte probabilité. |
-| `Aléa de moyenne probabilité` | (également dénommé événement moyen) Événement ayant une période de retour comprise entre 100 et 300 ans, qui correspond dans la plupart à l’aléa de référence du PPRi, s’il existe. Si un événement historique de référence n’est pas utilisé, un événement de type centennal est recherché. |
+| `Aléa de moyenne probabilité` | (également dénommé événement moyen) Événement ayant une période de retour comprise entre 100 et 300 ans, qui correspond dans la plupart à l’aléa de référence du PPRI, s’il existe. Si un événement historique de référence n’est pas utilisé, un événement de type centennal est recherché. |
 | `Aléa de moyenne probabilité avec prise en compte du changement climatique à court terme` | (également dénommé événement moyen avec changement climatique à court terme) Événement calculé par majoration à court terme d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. |
 | `Aléa de moyenne probabilité avec prise en compte du changement climatique à échéance 100 ans` | (également dénommé événement moyen avec changement climatique) Événement calculé par majoration à échéance 100 ans d'un événement de période de retour comprise entre 100 et 300 ans qui est l’événement choisi de moyenne probabilité. Correspond à l'aléa échéance 100 ans du PPRI, s'il existe, pour l'aléa submersion marine. |
 | `Aléa de faible probabilité` | (également dénommé événement extrême) Phénomène d'inondation exceptionnel inondant toute la surface de la plaine alluviale fonctionnelle (lit majeur) ou de la plaine littorale fonctionnelle pouvant être estimé comme un maximum à prendre en compte pour la gestion d’un territoire (hors aménagements spécifiques : centrales nucléaires, grands barrages), et pour lequel les éventuels systèmes de protection mis en place ne sont plus efficaces. A titre indicatif, une période de retour d'au moins 1000 ans est recherchée. |
@@ -988,7 +1005,7 @@ La nomenclature des enjeux pour les cartographies de la directive inondation s'a
 | **/patrimoineEnvironement/zpdce** | Zones protégées de la directive cadre eau | Cette catégorie permet de reprendre les enjeux "zone protégée DCE" de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf). Les sous catégories suivantes permettent de distinguer : les zones de captage d'eau potable, les zones de baignades et les zones de protection du réseau Natura 2000. |
 | **/patrimoineEnvironement/zpdce/eaupotable** | Zone de captage d'eau potable | Zones désignées pour le captage d'eau destinée à la consommation humaine en application de l'article 7 de la DCE. |
 | **/patrimoineEnvironement/zpdce/baignades** | Baignades | Zones de masses d'eau désignées en tant qu'eaux de plaisance, y compris les zones désignées en tant qu'eaux de baignade dans le cadre de la directive 2006/7/CE; |
-| **/patrimoineEnvironement/zpdce/natura2000** | Zones Natura 2000 | Zones naturelles désignées par la Commission européenne et transposées au niveau national dans le cadre du réseau Natura 2000. Sites d'importance communautaire (SIC) et zones spéciales de conservation (ZSC). |
+| **/patrimoineEnvironement/zpdce/natura2000** | Zones Natura 2000 | Zones naturelles désignées par la Commission européenne et transposées au niveau national dans le cadre du réseau Natura 2000 en lien avec la DCE. Sites d'importance communautaire (SIC), zones spéciales de conservation (ZSC) et zones de protection spéciales (ZPS). |
 
 ### Autre enjeu
 
@@ -1365,12 +1382,14 @@ La table `tri_s` implémente la classe [Territoire à risque important d'inondat
 | Nom colonne | Type SQL | Domaine de valeurs, contraintes | Exemple |
 | - | - | - | - |
 | **`id_tri`** | TEXT | Clé primaire, Saisie obligatoire selon les règles spécifiées dans la partie [Identification des TRIs](#identification-des-tris) | `FRG_TRI_TOURS` |
-| `nom` | TEXT | Valeur vide autorisée. Nom long du TRI, tel qu'utilisé historiquement par le standard précédent. | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
-| **`id_procedure`** | `TEXT` | Saisie obligatoire | `45DREAL20130002` |
-| `lib_procedure` | `TEXT` | Valeur vide autorisée | `Tours` |
+| **`nom`** | TEXT | Saisie obligatoire. Nom long du TRI, tel qu'utilisé par le standard précédent. | `Vallée de la Loire et du Cher dans l'agglomération de Tours` |
+| **`id_procedure`** | `TEXT` | Saisie obligatoire. Code procédure dans GASPAR. | `45DREAL20130002` |
+| **`lib_procedure`** | `TEXT` | Saisie obligatoire. Valeur du champ correspondant dans GASPAR. | `Tours` |
 | **`date_procedure`** | `DATE` | Date de l'arrêté de première création du TRI. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
-| `url_ref`| `TEXT` | URL de la référence internet associée au TRI pour le rapportage. Saisie obligatoire. | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
-| `type_ref` | `TEXT` | Type de référence internet. Saisie obligatoire, valeur à prendre parmi les codes de la [table des valeurs typereferencetri](#table-de-valeurs-typereferencetri) | `nat` |
+| **`url_ref`** | `TEXT` | URL de la référence internet associée au TRI pour le rapportage. Saisie obligatoire. | `https://www.georisques.gouv.fr/donnees/bases-de-donnees/zonages-inondation-rapportage-2020` |
+| **`nom_ref`** | `TEXT` | Nom ou titre de la référence internet associée au TRI pour le rapportage. Saisie obligatoire. | `Georisques : Zonages Inondation - Rapportage 2020` |
+| `desc_ref` | `TEXT` | Description de la référence internet associée au TRI pour le rapportage. Saisie facultative. | `Page de téléchargement des TRI du rapportage 2020` |
+| **`type_ref`** | `TEXT` | Type de référence internet. Saisie obligatoire, valeur à prendre parmi les codes de la [table des valeurs typereferencetri](#table-de-valeurs-typereferencetri) | `nat` |
 | `geom` | `MULTIPOLYGON` | Périmètre du TRI. | |
 
 Note : Les champs du modèle `typeProcedure` et `typeEtatProcedure` à valeurs fixes, uniques `Territoires à risques d'inondation` et `Arrêté` n'ont pas été repris pour l'implémentation car inutiles.
@@ -2131,7 +2150,7 @@ L'application des styles suivants est recommandée pour les enjeux ponctuels ([e
 
 # Annexe A - Règles de passage COVADIS DI -> CNIG Cartographies DI
 
-Le tableau suivant indique comment remplir chaque table du présent standard à partir des données des tables de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) qu'il remplace. Ces règles ont pour but de faciliter la migration du patrimoine des données TRI. 
+Le tableau suivant indique comment remplir chaque table du présent standard à partir des données des tables de l'ancien standard [COVADIS DI:2019](https://files.georisques.fr/di_2020/COVADIS_standard_DI_v2.1.pdf) qu'il remplace. Ces règles ont pour but de faciliter la migration du patrimoine des données TRI.
 
 Pour chaque table, il est indiqué comment remplir la valeur du champ "Nom colonne" à partie de la (ou des) "table(s) COVADIS" et des valeurs du (ou des) champ(s) correspondant(s) ("Colonne(s) COVADIS). La colonne "Commentaire" précise des consignes additionnelles de saisie le cas échéant.
 
@@ -2143,12 +2162,14 @@ A un objet de la table `tri_s` correspond un objet de la table COVADIS `N_[prefi
 | - | - | - | - |
 | **`id_tri`** | `N_[prefixTri]_TRI_S_ddd` | `ID_TRI` | |
 | `nom` | `N_[prefixTri]_TRI_S_ddd` | `NOM` | |
-| **`id_procedure`** | -  | - | cf. valeur `CODE PROCEDURE` dans GASPAR |
+| **`id_procedure`** | - | - | cf. valeur `CODE PROCEDURE` dans GASPAR |
 | `lib_procedure` | - | - | cf. valeur `LIBELLE PROCEDURE` dans GASPAR |
 | **`date_procedure`** | - | - | cf. valeur `ARRETE_PREF_COORD` dans GASPAR |
-| `url_ref` | - | - | - |
-| `type_ref` | - | - | - | 
-| `geom` | `N_[prefixTri]_TRI_S_ddd` | Géométrie de l'objet |  |
+| **`url_ref`** | - | - | - |
+| **`nom_ref`** | - | - | - |
+| `desc_ref` | - | - | - |
+| `type_ref` | - | - | - |
+| `geom` | `N_[prefixTri]_TRI_S_ddd` | Géométrie de l'objet | - |
 
 ## Correspondances table `carte_surfaces_inondables_s`
 
@@ -2173,7 +2194,6 @@ A un objet de la table `carte_risques_inondation_s` correspond un objet de la ta
 | **`id_tri`** | `N_[prefixTri]_CARTE_RISQ_S_ddd` | `ID_TRI` |  |
 | **`date_carte`** | `N_[prefixTri]_CARTE_RISQ_S_ddd` | `DATAPPRO` |  |
 | `geom` | `N_[prefixTri]_CARTE_INOND_S_ddd` | Géométrie de l'objet |  |
-
 
 ## Correspondances table `surface_inondable_s`
 
@@ -2201,7 +2221,7 @@ La contrainte de géométrie en polygones simples de la table `zone_iso_classe_h
 | - | - | - | - |
 | **`id_zch`** |  |  | Nouveaux identifiants à générer. |
 | **`id_tri`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_TRI` |  |
-| **`id_sin`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_SIN` | la valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s).|
+| **`id_sin`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_SIN` | la valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
 | **`palier_hauteur`** | `N_[prefixTri]_ISO_HT_S_ddd` | `HT_MIN` et `HT_MAX` | trouver la [valeur de palier](#typeclassehauteureau) correspondant le mieux à la plage délimitée par les valeurs de `HT_MIN` et `HT_MAX`|
 | `origine_inond` | `N_[prefixTri]_ISO_HT_S_ddd` | `COURS_DEAU` |  |
 | `geom` | `N_[prefixTri]_ISO_HT_S_ddd` | Géométrie déduite de l'objet |  |
