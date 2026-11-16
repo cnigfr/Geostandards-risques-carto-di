@@ -843,7 +843,7 @@ Cf.  [associations de la classe Ouvrage Protecteur](#associations-de-la-classe-o
 | `idRefExterne` | identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. | 0..1 | CharacterString | Saisie libre. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
 | `refExterne` | Référentiel externe d'où est extrait l'enjeu, lorsque c'est le cas. | 0..1 | CharacterString | Saisie libre. | `BD Topo` |
 | `typeEnjeu` | Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. | 1 | [TypeEnjeu](#typeenjeu) | Saisie obligatoire. | `NomenclatureEnjeuCartoDI` : `Enjeu patrimonial` |
-| `dateEnjeu` | Date de collecte de l'enjeu. | Date | 0..1 | Saisie facultative | `20/12/2024` |
+| **`dateEnjeu`** | Date de collecte de l'enjeu (millésime du référentiel utilisé) | Date | 1 | Saisie obligatoire | `20/12/2024` |
 
 #### Associations de la classe Enjeu
 
@@ -1582,7 +1582,7 @@ La table `enjeu_s` implémente la classe [Enjeu](#enjeu) pour les enjeux ayant u
 | `id_ref_externe` | `TEXT` | Saisie facultative. identifiant de l'enjeu dans le référentiel dont il est extrait lorsque c'est le cas. Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. | `PAICULOI0000000031059085` |
 | `ref_externe` | `TEXT` | Saisie facultative. Référentiel externe d'où est extrait l'enjeu, lorsque c'est le cas. | `BD Topo` |
 | **`type_enjeu`** | `TEXT` | Saisie obligatoire. Qualification de l'enjeu à l'aide de la nomenclature des cartographies de la directive inondation. Valeur à prendre parmi les valeurs de code de la table [typeenjeucartodi](#table-de-valeurs-typeenjeucartodi)| `030103` |
-| `date_enjeu` | `DATE` | Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". Date de collecte de l'enjeu. | `2024-12-20` |
+| **`date_enjeu`** | `DATE` | Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". Date de collecte de l'enjeu (millésime du référentiel utilisé). | `2024-12-20` |
 | **`geom`** | `MULTIPOLYGON` | Polygone(s) de l'enjeu surfacique. | |
 
 Note : la colonne `type_enjeu` implémente directement le champ `codeEnjeu` du type de données [TypeEnjeu](#typeenjeu) dans la mesure où la valeur du champ `nomenclatureEnjeu` de ce même type est fixée pour désigner la [nomenclature des enjeux Carto DI](#nomenclature-enjeux-carto-di) décrite dans ce standard.
@@ -2375,7 +2375,7 @@ La répartition dans les tables `enjeu_s`, `enjeu_l` et `enjeu_p` dépend de la 
 | `ref_externe` | `N_[prefixTri]_ENJEU_IPPC_P_ddd`, `N_[prefixTri]_ENJEU_IED_P_ddd` |  | Valeur `S3IC`  |
 | `ref_externe` | `N_[prefixTri]_ENJEU_CRISE_[LP]_ddd`, `N_[prefixTri]_ENJEU_ECO_S_ddd`, `N_[prefixTri]_ENJEU_PATRIM_[SP]_ddd` |  | Valeur à déterminer au cas par cas selon le type d'enjeu. |
 | **`type_enjeu`** | _Toutes tables_ |  | Cf. [Nomenclature enjeux Carto DI](#nomenclature-enjeux-carto-di) où il est indiqué dans la colonne "Définition", pour chaque catégorie, les enjeux COVADIS correspondants. |
-| `date_enjeu` | _Toutes tables_ | `DATIMPORT` |  |
+| **`date_enjeu`** | _Toutes tables_ | `DATIMPORT` |  |
 | **`geom`** | Géométrie de l'objet. |  |  |
 
 ## Correspondances table `enjeux_rapportes_tri`
