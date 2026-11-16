@@ -596,7 +596,7 @@ Cf. [associations de la classe TRI](#associations-de-la-classe-tri)
 | **`idZoneAlea`** | Identifiant de la surface inondable. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `SIN_0001` |
 | **`typeAlea`** | Type d'aléa inondation engendrant la surface; selon la codification GASPAR | 1 | `CharacterString` | Valeur à prendre parmi les valeurs de [TypeAleaCartoDI](#typealeacartodi) selon la nomenclature GASPAR | `112` |
 | **`occurrence`** | Probabilité de survenue de l'aléa inondation associée à la surface selon la caractérisation définie par [TypeProbabiliteAlea](#typeprobabilitealea) | 1 | [TypeProbabiliteAlea](#typeprobabilitealea) | Valeur obligatoire à prendre parmi les valeurs de[TypeProbabiliteAlea](#typeprobabilitealea) | `Aléa de moyenne probabilité` |
-| **`dateCalcul`** | Date de calcul de la surface | 0..1 | `date` | Saisie obligatoire | `26/11/2012` |
+| **`dateCalcul`** | Date de calcul de la surface | 1 | `date` | Saisie obligatoire | `26/11/2012` |
 | `description` | Description de la surface inondable. Champ hérité du modèle commun. | 0..1 | `CharacterString` | Valeur facultative | ... |
 | `niveauAlea` | Champ hérité du modèle commun. Niveau d'aléa à renseigner lorsque la surface inondable correspond à la zone d'aléa d'un PPRI | 0..1 | [TypeNiveauAlea](https://github.com/cnigfr/Geostandards-risques-ppr/blob/master/standard/Document.md#enumeration-typeniveaualea) | Valeur à prendre parmi les valeurs de niveau d'aléa définies dans le standard PPR |  `Fort` |
 
@@ -626,11 +626,11 @@ Cf. aussi [associations de la classe Carte des surfaces inondables](#association
 
 | Attribut | Définition | Occurrences | Type | Contraintes | Exemples |
 | - | - | - | - | - | - |
-| `idOrigineRisque` | Identifiant unique de l'objet origine du risque | 1..1 | `identifiant` | Deux objets de la classe OrigineRisque ne peuvent avoir la même valeur |   |
+| `idOrigineRisque` | Identifiant unique de l'objet origine du risque | 1..1 | `identifiant` | Deux objets de la classe OrigineRisque ne peuvent avoir la même valeur. |   |
 | `nom` | Nom de l'objet origine du risque | 1..1 | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `La Loire` |
 | `idRefExterne` | Identifiant de l'objet dans le référentiel externe d'où il est extrait | 0..1 | CharacterString | Le formalisme de l'identifiant est déterminé par les spécifications du référentiel externe. |  |
-| `refExterne` | Référentiel externe d'où est extrait l'objet. | 0..1 | CharacterString | Saisie Libre | `BD Topage` |
-| `nom` | Nom de l'objet origine du risque | 1..1 | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait) | `La Loire` |
+| `refExterne` | Référentiel externe d'où est extrait l'objet. | 0..1 | CharacterString | Saisie Libre. | `BD Topage` |
+| `nom` | Nom de l'objet origine du risque | 1..1 | CharacterString | Saisie libre (si possible en fonction du nom de l'objet dans le référentiel d'où il est extrait). | `La Loire` |
 
 #### Associations de la classe Origine du risque
 
@@ -651,7 +651,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant de la ligne iso cote. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `LIC_0001` |
 | `cote` | Altitude de la surface de l’eau | 1..1 | `réel` | Valeur vide interdite, exprimée en mètre dans le système IGN/NGF (cf. [Systèmes de référence spatiaux](#systèmes-de-référence-spatiaux)). | `250,5` |
-| `dateCalcul` | Date de calcul de la ligne iso cote | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| **`dateCalcul`** | Date de calcul de la ligne iso cote | 1 | `date` | Saisie obligatoire. | `26/11/2012` |
 
 #### Associations de la classe Ligne iso cote
 
@@ -672,6 +672,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 |---|---|---|---|---|---|
 | **`identifiant`** | Identifiant de la zone iso classe de hauteur. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCH_0001` |
 | `palierHauteur` | Palier de hauteur d'eau | 1..1 | [TypeClasseHauteurEau](#typeclassehauteureau) | Valeur obligatoire à prendre parmi les valeurs de [TypeClasseHauteurEau](#typeclassehauteureau) | `Inférieur à 0,5m` |
+| **`dateCalcul`** | Date de calcul de la zone iso classe hauteur. | 1 | `date` | Saisie obligatoire. | `26/11/2012` |
 
 #### Associations de la classe Zone iso classe hauteur
 
@@ -692,7 +693,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | - | - | - | - | - | - |
 | **`identifiant`** | Identifiant de la zone iso classe vitesse. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCV_0001` |
 | **`vitesseQualitative`** | Classe de vitesse d'écoulement | 1 | [TypeVitesseEcoulement](#typevitesseecoulement) | Saisie obligatoire à prendre parmi les valeurs de [TypeVitesseEcoulement](#typevitesseecoulement) | `Ecoulement faible` |
-| `dateCalcul` | Date de calcul de la zone iso classe vitesse | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| **`dateCalcul`** | Date de calcul de la zone iso classe vitesse | 0..1 | `date` | Saisie obligatoire. | `26/11/2012` |
 
 #### Associations de la Zone iso classe vitesse
 
@@ -714,7 +715,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | **`identifiant`** | Identifiant de la zone iso classe débit. Cf. [Règles de codification des identifiants](#règles-de-codification-des-identifiants). | 1 | `identifiant` | Clé primaire | `ZCD_0001` |
 | **`debitLineiqueMin`** | Seuil inférieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 1..1 | `réel` | Saisie obligatoire, exprimée en m2/s, ne peut être négative. | `0.2` |
 | `debitLineiqueMax` | Seuil supérieur de la plage de débit linéaire d’écoulement des eaux dans le cas d’une inondation par ruissellement. | 0..1 | `réel` | Saisie facultative exprimée en m2/s. Si cette valeur n’est pas renseignée, la plage de débit correspond à la plage des débits maximaux (supérieur à un débit donné). Par exemple, la plage des « débits supérieurs ou égaux à 0.2 m²/s (vitesse de 1 m/s pour une hauteur de 20 cm)» se traduit par un seuil inférieur de la plage de débit (avec dans le cas de l’exemple la valeur « 0.2 ») et un seuil supérieur laissé vide. | `0.4` |
-| `dateCalcul` | Date de calcul de la zone iso classe débit | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| **`dateCalcul`** | Date de calcul de la zone iso classe débit | 0..1 | `date` | Saisie obligatoire. | `26/11/2012` |
 
 #### Associations de la Zone iso classe débit
 
@@ -738,7 +739,7 @@ Cf. [associations de la classe surface inondable](#associations-de-la-classe-sur
 | `vitesse` | Vitesse d’écoulement de l’eau dans le cas d’une inondation. | 0..1 | `réel` | Saisie facultative, exprimée en m/s. | `2` |
 | `debitLineique` | Débit linéique d'écoulement dans le cas d’une inondation par ruissellement. | 0..1 | `réel` | Saisie facultative, exprimée en m2/s, ne peut être négative. | `0.2` |
 | `azimuth` | Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre. | 0..1 | `réel` | Saisie facultative, exprimée en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `90.0` |
-| `dateCalcul` | Date de calcul du point remarquable. | 0..1 | `date` | Valeur facultative | `26/11/2012` |
+| **`dateCalcul`** | Date de calcul du point remarquable. | 1 | `date` | Saisie obligatoire. | `26/11/2012` |
 
 #### Associations de la classe Point remarquable cote vitesse débit
 
@@ -1431,7 +1432,7 @@ La table `surface_inondable_s` implémente la classe [Surface inondable](#surfac
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`type_alea`** | `TEXT` | Type d'aléa inondation engendrant la surface, selon la codification GASPAR. Saisie obligatoire à faire parmi les valeurs de code de la table [typealeacartodi](#table-de-valeurs-typealeacartodi). | `112` |
 | **`occurrence`** | `TEXT` | Probabilité de survenue de l'aléa inondation associée à la surface. Valeur obligatoire à prendre parmi les valeurs de code de la table[typeprobabilitealea](#table-de-valeurs-typeprobabilitealea) | `Moy` |
-| **`date_calcul`** | `DATE` | Date de calcul de la surface. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| **`date_calcul`** | `DATE` | Date de calcul de la surface. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `origine_inond` | `TEXT` | Nom de l'entité (cours d'eau, mer,...) à l'origine du risque inondation et de la surface inondable. Saisie facultative | `La Seine` |
 | `geom` | `POLYGON` | Polygone de la surface inondable | |
 
@@ -1453,6 +1454,7 @@ La table `zone_iso_classe_hauteur_s` implémente la classe [Zone iso classe haut
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable qu'elle permet de caractériser. | `SIN_0001` |
 | **`palier_hauteur`** | `TEXT` | Palier de hauteur d'eau. Valeur obligatoire à prendre parmi les valeurs de code de la table [typeclassehauteureau](#table-de-valeurs-typeclassehauteureau) | `Inf05` |
+| **`date_calcul`** | `DATE` | Date de calcul de la zone. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `origine_inond` | `TEXT` | Nom de l'entité (cours d'eau, mer,...) à l'origine du risque inondation, engendrant la zone de hauteur d'eau. Saisie facultative | `La Seine` |
 | `geom` | `POLYGON` | Polygone de la zone | |
 
@@ -1472,7 +1474,7 @@ La table `zone_iso_classe_vitesse_s` implémente la classe [Zone iso classe vite
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable qu'elle permet de caractériser. | `SIN_0001` |
 | **`vitesse_quali`** | `TEXT` | Saisie obligatoire à prendre parmi les valeurs de code de la table [TypeVitesseEcoulement](#table-de-valeurs-typevitesseecoulement) | `Fai` |
-| `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| **`date_calcul`** | `DATE` | Date de calcul de la zone. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `geom` | `POLYGON` | Polygone de la zone | |
 
 ##### Table `zone_iso_classe_debit_s`
@@ -1486,7 +1488,7 @@ La table `zone_iso_classe_debit_s` implémente la classe [Zone iso classe débit
 | **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que la zone permet de caractériser. | `SIN_0001` |
 | **`debit_lin_min`** | `FLOAT` | Saisie obligatoire. Seuil inférieur de débit exprimé en m2/s. | `0.2` |
 | `debit_lin_max` | `FLOAT` | Saisie facultative. Seuil supérieur de débit exprimé en m2/s. | `0.4` |
-| `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| **`date_calcul`** | `DATE` | Date de calcul de la zone. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `geom` | `POLYGON` | Polygone de la zone | |
 
 ##### Table `ligne_iso_cote_l`
@@ -1499,7 +1501,7 @@ La table `ligne_iso_cote_l` implémente la classe [Ligne iso cote](#ligne-iso-co
 | **`id_tri`** | `TEXT` | Clé étrangère vers la table [tri_s](#table-tri_s). Saisie obligatoire. | `FRG_TRI_TOURS` |
 | **`id_sin`** | `TEXT` | Clé étrangère vers la table [surface_inondable_s](#table-surface_inondable_s). Saisie obligatoire. Surface inondable que l'iso côte permet de caractériser. | `SIN_0001` |
 | **`cote`** | `FLOAT` | Saisie obligatoire. Altitude de la surface de l’eau en mètres. | `250.5` |
-| `date_calcul` | `DATE` | Date de calcul de la zone. Saisie facultative, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
+| **`date_calcul`** | `DATE` | Date de calcul de la zone. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `geom` | `MULTILINESTRING` | Matérialise le tracé de la ligne iso-cote. | |
 
 ##### Table `point_remarquable_cvd_p`
@@ -1515,6 +1517,7 @@ La table `point_remarquable_cvd_p` implémente la classe [Point remarquable cote
 | `vitesse` | `FLOAT` | Saisie facultative. Vitesse d’écoulement de l’eau en ce point dans le cas d’une inondation. exprimée en m/s. | `2.0` |
 | `debit_lin` | `FLOAT` | Saisie facultative, Débit linéique d'écoulement en ce point dans le cas d’une inondation par ruissellement, exprimé en m2/s, ne peut être négative. | `0.2` |
 | `azimuth` | `FLOAT` | Saisie facultative, Angle entre le Nord géographique et la direction de l’écoulement, pris dans le sens des aiguilles d’une montre, exprimé en degré décimal. Si la vitesse ou le débit linéique est renseigné, alors l’azimuth doit aussi être renseigné. | `85.80` |
+| **`date_calcul`** | `DATE` | Date de calcul du point. Saisie obligatoire, au format ISO 8601 : "YYYY-MM-DD". | `2012-11-26` |
 | `geom` | `POINT` | Matérialise la position du point remarquable. | |
 
 ##### Table `zone_protegee_s`
@@ -2224,7 +2227,8 @@ La contrainte de géométrie en polygones simples de la table `zone_iso_classe_h
 | **`id_sin`** | `N_[prefixTri]_ISO_HT_S_ddd` | `ID_SIN` | la valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
 | **`palier_hauteur`** | `N_[prefixTri]_ISO_HT_S_ddd` | `HT_MIN` et `HT_MAX` | trouver la [valeur de palier](#typeclassehauteureau) correspondant le mieux à la plage délimitée par les valeurs de `HT_MIN` et `HT_MAX`|
 | `origine_inond` | `N_[prefixTri]_ISO_HT_S_ddd` | `COURS_DEAU` |  |
-| `geom` | `N_[prefixTri]_ISO_HT_S_ddd` | Géométrie déduite de l'objet |  |
+| **`date_calcul`** | `N_[prefixTri]_ISO_HT_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| `geom` | `N_[prefixTri]_ISO_HT_S_ddd` | Géométrie déduite de l'objet | - |
 
 
 ## Correspondances table `zone_iso_classe_vitesse_s`
@@ -2239,7 +2243,7 @@ La contrainte de géométrie en polygones simples de la table `zone_iso_classe_v
 | **`id_tri`** | `N_[prefixTri]_ECOUL_S_ddd` | `ID_TRI` |  |
 | **`id_sin`** | `N_[prefixTri]_ECOUL_S_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
 | **`vitesse_quali`** | `N_[prefixTri]_ECOUL_S_ddd` | VITESSE | Les valeurs de [typevitesseecoulement](#table-de-valeurs-typevitesseecoulement) sont les mêmes que celles du standard COVADIS. |
-| `date_calcul` | `N_[prefixTri]_ECOUL_S_ddd` | `DATEENTREE` |  Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul.  |
+| **`date_calcul`** | `N_[prefixTri]_ECOUL_S_ddd` | `DATEENTREE` |  Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul.  |
 | `geom` | `N_[prefixTri]_ECOUL_S_ddd` | Géométrie déduite de l'objet |  |
 
 ## Correspondances table `zone_iso_classe_debit_s`
@@ -2255,7 +2259,7 @@ La contrainte de géométrie en polygones simples de la table `zone_iso_classe_d
 | **`id_sin`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
 | **`debit_lin_min`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `DEBLIN_MIN` |  | 
 | `debit_lin_max` | `N_[prefixTri]_ISO_DEB_S_ddd` | `DEBLIN_MAX` |  | 
-| `date_calcul` | `N_[prefixTri]_ISO_DEB_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| **`date_calcul`** | `N_[prefixTri]_ISO_DEB_S_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
 | `geom` | `N_[prefixTri]_ISO_DEB_S_ddd` | Géométrie déduite de l'objet |  |
 
 ## Correspondances table `ligne_iso_cote_l`
@@ -2268,8 +2272,8 @@ Les objets de la table `ligne_iso_cote_l` sont générés à partir des objets d
 | **`id_tri`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_TRI` |  |
 | **`id_sin`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
 | **`cote`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `COTE` |  |
-| `date_calcul` | `N_[prefixTri]_ISO_COTE_L_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
-| `geom` | `N_[prefixTri]_ISO_COTE_L_ddd` | Géométrie de l'objet. |  |
+| **`date_calcul`** | `N_[prefixTri]_ISO_COTE_L_ddd` | `DATEENTREE` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` est nul. |
+| `geom` | `N_[prefixTri]_ISO_COTE_L_ddd` | Géométrie de l'objet. | - |
 
 ## Correspondances table `point_remarquable_cvd_p`
 
@@ -2277,14 +2281,15 @@ Les objets de la table `point_remarquable_cvd_p` sont générés à partir des o
 
 | Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
-| **`id_pre`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_POINT` |  |
-| **`id_tri`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_TRI` |  |
+| **`id_pre`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_POINT` | - |
+| **`id_tri`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_TRI` | - |
 | **`id_sin`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `ID_SIN` | La valeur est celle du nouveau `id_sin` [déduit du `ID_SIN` de la table `N_[prefixTri]_INONDABLE_S_ddd`](#correspondances-table-surface_inondable_s). |
-| `cote` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `COTE` |  |
-| `vitesse` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `VITESSE` |  |
-| `debit_lin` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `DEBLIN` |  |
-| `azimuth` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `AZIMUTH` |  |
-| `geom` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | Géométrie de l'objet. |  |
+| `cote` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `COTE` | - |
+| `vitesse` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `VITESSE` | - |
+| `debit_lin` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `DEBLIN` | - |
+| `azimuth` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `AZIMUTH` | - |
+| **`date_calcul`** | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | `DATEENTREE` ou `DATOBSERV` | Lorsque `DATSORTIE` est nul. La date de génération de la nouvelle table (passage en géométries simples) peut aussi être utilisée si `DATENTREE` et `DATOBSERV` sont nuls. |
+| `geom` | `N_[prefixTri]_COTE_VIT_DEB_P_ddd` | Géométrie de l'objet. | - |
 
 ## Correspondances table `zone_protegee_s`
 
@@ -2292,12 +2297,12 @@ Les objets de la table `zone_protegee_s` sont générés à partir des objets de
 
 | Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
-| **`id_zpr`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_ZONE` |  |
-| **`id_tri`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_TRI` |  |
-| `description` |  |  | Pas de champ correspondant dans le standard COVADIS. |
-| **`occurrence`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `SCENARIO` |  Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
-| `niveau_protec` |  |  | Pas de champ correspondant dans le standard COVADIS. |
-| `geom` | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | Géométrie de l'objet. |  |
+| **`id_zpr`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_ZONE` | - |
+| **`id_tri`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `ID_TRI` | - |
+| `description` | - | - | Pas de champ correspondant dans le standard COVADIS. |
+| **`occurrence`** | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
+| `niveau_protec` | - | - | Pas de champ correspondant dans le standard COVADIS. |
+| `geom` | `N_[prefixTri]_SOUST_INOND_S_ddd` ou `N_[prefixTri]_ZONE_PROTEG_S_ddd` | Géométrie de l'objet. | - |
 
 ## Correspondances table `ouvrageprotecteur_l`
 
@@ -2305,16 +2310,16 @@ Les objets de la table `ouvrageprotecteur_l` sont générés à partir des objet
 
 | Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS | Commentaire |
 | - | - | - | - |
-| **`id_ouv`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_OUVRAGE` |  |
-| **`id_tri`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_TRI` |  |
-| `nom` |  |  | Pas de champ correspondant dans le standard COVADIS. |
-| `id_ref_ext` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_SIOUH` ou `ID_ROE` |  |
+| **`id_ouv`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_OUVRAGE` | - |
+| **`id_tri`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_TRI` | - |
+| `nom` | - | - | Pas de champ correspondant dans le standard COVADIS. |
+| `id_ref_ext` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_SIOUH` ou `ID_ROE` | - |
 | **`ref_externe`** | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `ID_SIOUH` ou `ID_ROE` | `O1` (ROE) si `ID_ROE` est renseigné `02` (SIOUH II) si `ID_SIOUH` est renseigné ; `99` sinon. |
-| `ref_externe_autre` |  |  | Pas de champ correspondant dans le standard COVADIS. |
-| `type_ouv_protec` |  |  | Pas de champ correspondant dans le standard COVADIS. |
-| `role_protection` |  |  | Pas de champ correspondant dans le standard COVADIS. |
+| `ref_externe_autre` | - | - | Pas de champ correspondant dans le standard COVADIS. |
+| `type_ouv_protec` | - | - | Pas de champ correspondant dans le standard COVADIS. |
+| `role_protection` | - | - | Pas de champ correspondant dans le standard COVADIS. |
 | `occurrence` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | `SCENA_RUPT` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
-| `geom` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | Géométrie de l'objet. |  |
+| `geom` | `N_[prefixTri]_OUV_PROTEC_L_ddd` | Géométrie de l'objet. | - |
 
 ## Correspondances table `zone_suralea_s`
 
@@ -2322,11 +2327,11 @@ Les objets de la table `zone_suralea_s` sont générés à partir des objets de 
 
 | Nom colonne | Table(s) COVADIS | Colonne(s) COVADIS |Commentaire |
 | - | - | - | - |
-| **`id_zsa`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_ZONE` |  |
-| **`id_tri`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_TRI` |  |
+| **`id_zsa`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_ZONE` | - |
+| **`id_tri`** | `N_[prefixTri]_SURALEA_S_ddd` | `ID_TRI` | - |
 | `description` |  |  | Pas de champ correspondant dans le standard COVADIS. |
-| **`occurrence`** | `N_[prefixTri]_SURALEA_S_ddd` | `SCENARIO` |  Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
-| `geom` | `N_[prefixTri]_SURALEA_S_ddd` | Géométrie de l'objet. |  |  |
+| **`occurrence`** | `N_[prefixTri]_SURALEA_S_ddd` | `SCENARIO` | Cf. [Correspondances de valeurs probabilité aléa - scénarios](#correspondances-probabilite-aléa-et-scénarios). |
+| `geom` | `N_[prefixTri]_SURALEA_S_ddd` | Géométrie de l'objet. | - |
 
 ## Correspondances tables `enjeu_s`, `enjeu_l` et `enjeu_p`
 
